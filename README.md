@@ -1,6 +1,6 @@
 # Portfolio foundation
 
-Portfolio foundation, homepage shell, project features, and both case studies (Tickets 01–06): React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Requires Node.js 22.12+ (or a supported newer release).
+Portfolio foundation, homepage, case studies, and restrained motion (Tickets 01–07): React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Requires Node.js 22.12+ (or a supported newer release).
 
 ```sh
 npm ci
@@ -9,7 +9,7 @@ npm run build
 npm run preview
 ```
 
-The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The root has a hero, CodeGraph and TaskForge homepage features, about/journey, and contact. Both projects have static case studies using a shared reading layout. The broader animation pass belongs to later tickets.
+The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The root has a hero, CodeGraph and TaskForge homepage features, about/journey, and contact. Both projects have case studies using a shared reading layout. Motion highlights the existing content without hiding copy or changing numerical values.
 
 ## Structure
 
@@ -20,9 +20,10 @@ The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The 
 - `src/components/Contact.tsx`: email link and accessible copy feedback.
 - `src/content/portfolio.ts`: selected authoritative facts and shared project/contact data.
 - `src/content/codegraph.ts`: sourced CodeGraph homepage copy and result.
-- `src/components/CodeGraphFeature.tsx`: static system visual and project feature.
+- `src/components/CodeGraphFeature.tsx`: semantic system visual with a finite highlight sequence and project feature.
 - `src/content/taskforge.ts`: sourced TaskForge homepage copy and workload-qualified benchmarks.
-- `src/components/TaskForgeFeature.tsx`: static coordination visual and project feature.
+- `src/components/TaskForgeFeature.tsx`: coordination visual with a finite execution/retry sequence and project feature.
+- `src/components/Motion.tsx`: shared preferences, finite diagram sequences, entrances, and decorative rules. Desktop sequences pause offscreen and when the document is hidden; mobile and reduced-motion modes show static completed visuals. The footer's Reduce motion control persists its preference, and system reduced motion always takes precedence.
 - `src/components/CaseStudyLayout.tsx`: reusable case-study header, section navigation, and reading layout.
 - `src/content/codegraph-case-study.ts`: selected details from the attached CodeGraph mastery manual.
 - `src/pages/CodeGraphCaseStudy.tsx`: architecture, walkthrough, tradeoffs, correctness, results, and lessons.
@@ -42,3 +43,5 @@ Reviewed https://www.radnaabazar.com/en for hierarchy and pacing: a prominent in
 The foundation has native links and buttons, a skip link, route-change focus handling, visible keyboard focus, and reduced-motion support. Fonts are local system fonts; no remote font request or heavy visual library is required.
 
 Clipboard checks: `node --experimental-strip-types --test tests/copy-email.test.mjs`.
+
+Motion verification is recorded in `docs/ticket-07-verification.md`. The test-only server `node tests/homepage-preview.mjs` supports `/?motion=system-reduced` to simulate the application media signal before mount; it does not change the OS setting and is not included in production output.

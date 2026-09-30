@@ -15,6 +15,7 @@ export const taskforgeFeature = {
     ],
     caption: 'Workers skip locked tasks instead of competing for the same claim. Renewable leases guard ownership; heartbeats report liveness. Due retries return to the queue through the scheduler.',
     recovery: 'When a lease expires, the scheduler abandons the stale attempt and requeues eligible work within its attempt budget.',
+    retryPath: 'Alternative path / Retryable failure → backoff → due promotion → queue, within the attempt budget.',
     note: 'Conceptual coordination flow; worker symbols illustrate concurrency, not a benchmark configuration.',
   },
   explanations: [

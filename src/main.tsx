@@ -1,7 +1,7 @@
 import { StrictMode, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom';
-import { MotionConfig } from 'framer-motion';
+import { MotionProvider, MotionRule, MotionToggle } from './components/Motion';
 import { Container, Heading, TextLink } from './components/ui';
 import { Home } from './pages/Home';
 import { CodeGraphCaseStudy } from './pages/CodeGraphCaseStudy';
@@ -36,7 +36,7 @@ function App() {
       window.scrollTo(0, 0);
     }
   }, [pathname, hash]);
-  return <MotionConfig reducedMotion="user">
+  return <MotionProvider>
     <a className="skip-link" href="#main">Skip to content</a>
     <Container>
       <header className="site-header">
@@ -48,15 +48,16 @@ function App() {
         </nav>
       </header>
       <main id="main" ref={main} tabIndex={-1}>
+        <MotionRule key={pathname} className="route-motion" route />
         <Routes>
           <Route path="/" element={<Home />} />
           {projects.map((project) => <Route key={project.id} path={project.path} element={project.id === 'codegraph' ? <CodeGraphCaseStudy project={project} /> : <TaskForgeCaseStudy project={project} />} />)}
           <Route path="*" element={<section className="intro"><Heading as="h1">Page not found</Heading><TextLink to="/">Return home</TextLink></section>} />
         </Routes>
       </main>
-      <footer className="site-footer"><span>{profile.name} / {profile.role}</span><span>Built around the work.</span></footer>
+      <footer className="site-footer"><span>{profile.name} / {profile.role}</span><MotionToggle /><span>Built around the work.</span></footer>
     </Container>
-  </MotionConfig>;
+  </MotionProvider>;
 }
 
 createRoot(document.getElementById('root')!).render(<StrictMode><BrowserRouter><App /></BrowserRouter></StrictMode>);

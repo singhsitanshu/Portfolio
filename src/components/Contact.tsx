@@ -2,6 +2,7 @@ import { copyEmailAddress } from './copyEmail';
 import { useState } from 'react';
 import { profile } from '../content/portfolio';
 import { Button, Heading } from './ui';
+import { Entrance } from './Motion';
 
 export function Contact() {
   const [feedback, setFeedback] = useState('');
@@ -13,7 +14,7 @@ export function Contact() {
     setCopying(false);
   }
   return <section id="contact" className="section contact-section" aria-labelledby="contact-title" tabIndex={-1}>
-    <Heading id="contact-title" eyebrow="04 / Contact">Let’s build something useful.</Heading>
+    <Entrance><Heading id="contact-title" eyebrow="04 / Contact">Let’s build something useful.</Heading></Entrance>
     <p className="lede">Have a project or an idea to discuss? Get in touch.</p>
     <div className="actions">
       <a className="text-link email-link" href={`mailto:${profile.email}`}>{profile.email} <span aria-hidden="true">↗</span></a>

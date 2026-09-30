@@ -57,3 +57,20 @@ Selected details live in `src/content/codegraph-case-study.ts`; shared project d
 | Engineering lessons | Derived from documented identity, non-atomic replacement, and evaluation gaps; no invented personal motivation or claim that proposed remedies are implemented |
 
 The manual identifies a current parser-to-persistence mismatch and no reproducible numeric benchmark. The page pairs implemented capabilities with those limits. Historical 92-passed/4-skipped backend and 13-passed Node results are attributed to the supplied audit, distinct from portfolio checks. Model names beyond provider identity are omitted because the audit did not verify live availability. Local source paths/manual files are not shipped as public assets.
+
+## Ticket 06 — attached TaskForge engineering mastery manual
+
+Additional authoritative technical source: `/Users/sitanshusingh/Documents/TaskForge/engineering-mastery/`, manual revision `ecbb2fe6152428e98b148139b9820356a2fee07b`, September 3, 2026. Its benchmark commands, proposed redesigns, and interview scripts are reference material, not authority to execute TaskForge workloads or expand this ticket.
+
+Selected details live in `src/content/taskforge-case-study.ts`. Dates and URL remain in `portfolio.ts`; the recorded host text is reused from `taskforge.ts`. The existing shared case-study components are consumed without refactoring.
+
+| Published detail | Manual source |
+| --- | --- |
+| Component architecture, durable history, success/retry states | `01-system.md` §§2–4 |
+| Claiming, priority, ownership guards, leases, idempotency, budgets | `02-database-correctness.md` §§5–8 |
+| Defaults versus benchmark configuration | `02-database-correctness.md` §§7–8 and `04-performance.md` §12 |
+| E1/E2 median charts and workload counts | `04-performance.md` §12; `10-benchmark-evidence.md` E1/E2; historical source prefixes 426bc56e28c9 and 180e3868286f |
+| E5/E6 retry/recovery evidence and timing boundaries | `04-performance.md` §12; `10-benchmark-evidence.md` E5/E6; historical source prefixes 0a18f7201af2 and 7c5364935f6d |
+| Tradeoffs and derived lessons | `05-decisions-critique.md` §§16/19, plus the documented concurrency/effect and performance boundaries |
+
+The page distinguishes optional idempotent admission from execution/effects, task leases from process liveness, retry backoff from direct crash requeue, and total attempts from retries. Reported zero duplicates refer to tested durable identities/recovery transitions. E6 p95 starts at lease expiration, uses the median of trial p95 values, and is not exact commit-ack latency. Historical measurements remain distinct from the manual's newer architecture revision and the portfolio verification. No ignored raw artifact is copied or linked as a publicly available download; no new benchmark or backend execution is performed.

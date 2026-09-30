@@ -5,7 +5,7 @@ import { MotionConfig } from 'framer-motion';
 import { Container, Heading, TextLink } from './components/ui';
 import { Home } from './pages/Home';
 import { CodeGraphCaseStudy } from './pages/CodeGraphCaseStudy';
-import { ProjectPlaceholder } from './pages/ProjectPlaceholder';
+import { TaskForgeCaseStudy } from './pages/TaskForgeCaseStudy';
 import { projects, profile } from './content/portfolio';
 import './styles.css';
 
@@ -50,7 +50,7 @@ function App() {
       <main id="main" ref={main} tabIndex={-1}>
         <Routes>
           <Route path="/" element={<Home />} />
-          {projects.map((project) => <Route key={project.id} path={project.path} element={project.id === 'codegraph' ? <CodeGraphCaseStudy project={project} /> : <ProjectPlaceholder project={project} />} />)}
+          {projects.map((project) => <Route key={project.id} path={project.path} element={project.id === 'codegraph' ? <CodeGraphCaseStudy project={project} /> : <TaskForgeCaseStudy project={project} />} />)}
           <Route path="*" element={<section className="intro"><Heading as="h1">Page not found</Heading><TextLink to="/">Return home</TextLink></section>} />
         </Routes>
       </main>

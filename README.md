@@ -1,6 +1,6 @@
 # Portfolio foundation
 
-Portfolio foundation, homepage shell, project features, and CodeGraph case study (Tickets 01–05): React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Requires Node.js 22.12+ (or a supported newer release).
+Portfolio foundation, homepage shell, project features, and both case studies (Tickets 01–06): React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Requires Node.js 22.12+ (or a supported newer release).
 
 ```sh
 npm ci
@@ -9,7 +9,7 @@ npm run build
 npm run preview
 ```
 
-The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The root has a hero, CodeGraph and TaskForge homepage features, about/journey, and contact. CodeGraph has a complete static case study; TaskForge remains an explicit route placeholder. Its case study and the broader animation pass belong to later tickets.
+The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The root has a hero, CodeGraph and TaskForge homepage features, about/journey, and contact. Both projects have static case studies using a shared reading layout. The broader animation pass belongs to later tickets.
 
 ## Structure
 
@@ -26,6 +26,8 @@ The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The 
 - `src/components/CaseStudyLayout.tsx`: reusable case-study header, section navigation, and reading layout.
 - `src/content/codegraph-case-study.ts`: selected details from the attached CodeGraph mastery manual.
 - `src/pages/CodeGraphCaseStudy.tsx`: architecture, walkthrough, tradeoffs, correctness, results, and lessons.
+- `src/content/taskforge-case-study.ts`: selected architecture, coordination, and benchmark details from the attached mastery manual.
+- `src/pages/TaskForgeCaseStudy.tsx`: task lifecycle, execution/retry walkthroughs, recovery boundaries, and workload-qualified charts.
 - `docs/content-sources.md`: source references and content selection constraints for subsequent tickets.
 - `docs/content-checklist.md`: required content and evidence.
 

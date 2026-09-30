@@ -1,6 +1,6 @@
 # Portfolio foundation
 
-Portfolio foundation, homepage, case studies, and restrained motion (Tickets 01–07): React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Requires Node.js 22.12+ (or a supported newer release).
+Portfolio foundation, homepage, case studies, restrained motion, and responsive/accessibility verification (Tickets 01–08): React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Requires Node.js 22.12+ (or a supported newer release).
 
 ```sh
 npm ci
@@ -45,3 +45,5 @@ The foundation has native links and buttons, a skip link, route-change focus han
 Clipboard checks: `node --experimental-strip-types --test tests/copy-email.test.mjs`.
 
 Motion verification is recorded in `docs/ticket-07-verification.md`. The test-only server `node tests/homepage-preview.mjs` supports `/?motion=system-reduced` to simulate the application media signal before mount; it does not change the OS setting and is not included in production output.
+
+Responsive and accessibility checks, audit setup, and verification limits are recorded in `docs/ticket-08-verification.md`. The test preview supports `?text=200` for text enlargement and `?audit=1` for an axe-core scan using the local file specified by `AXE_SCRIPT_PATH`. These scripts and query behaviors are absent from the production bundle.

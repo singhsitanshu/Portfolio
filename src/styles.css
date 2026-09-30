@@ -27,6 +27,7 @@
   font-family: var(--font-sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  overflow-wrap: anywhere;
 }
 * { box-sizing: border-box; }
 body { margin: 0; }
@@ -37,10 +38,10 @@ a, button { touch-action: manipulation; }
 .container { width: min(100% - var(--layout-gutter) * 2, var(--layout-max)); margin-inline: auto; }
 .site-header, .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.5rem; }
 .site-header { border-bottom: var(--border-thin); }
-.wordmark { font-size: 1.25rem; font-weight: 700; text-decoration: none; letter-spacing: -0.05em; }
-.wordmark span { color: var(--color-accent); }
+.wordmark { display: inline-flex; align-items: center; min-height: 2.75rem; min-width: 2.75rem; font-size: 1.25rem; font-weight: 700; text-decoration: none; letter-spacing: -0.05em; }
+.wordmark span { color: var(--color-accent); white-space: pre; }
 nav { display: flex; gap: clamp(0.75rem, 3vw, 2rem); flex-wrap: wrap; }
-nav a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 0.875rem; color: var(--color-muted); text-underline-offset: 0.35em; }
+nav a { display: inline-flex; align-items: center; min-height: 2.75rem; min-width: 2.75rem; font-size: 0.875rem; color: var(--color-muted); text-underline-offset: 0.35em; }
 nav a[aria-current="page"] { color: var(--color-ink); text-decoration: underline; }
 .intro { padding-block: var(--space-section); max-width: 58rem; }
 h1, h2, h3, p { margin: 0; }
@@ -89,8 +90,8 @@ p { line-height: 1.65; }
 .hero-period { color: var(--color-accent); }
 .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; margin-top: 2rem; }
 .file-label { font-family: var(--font-mono); font-size: 0.625rem; }
-.hero-index { padding: 2rem; border: var(--border-thin); border-radius: var(--radius-panel); background: var(--color-surface); }
-.hero-index > a { display: grid; grid-template-columns: 1.5rem 1fr auto; gap: 1rem; align-items: center; padding-block: 1.5rem; border-bottom: var(--border-thin); font-size: 1.25rem; }
+.hero-index { display: block; padding: 2rem; border: var(--border-thin); border-radius: var(--radius-panel); background: var(--color-surface); }
+.hero-index > a { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr) auto; gap: 1rem; align-items: center; padding-block: 1.5rem; border-bottom: var(--border-thin); font-size: 1.25rem; color: var(--color-ink); }
 .hero-index > a:hover { color: var(--color-accent); }
 .hero-index-note { margin-top: 2rem; font-size: 0.875rem; color: var(--color-muted); }
 .project-shell { min-height: 34rem; display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; }
@@ -295,7 +296,7 @@ main { position: relative; }
 .motion-rule { display: block; height: 2px; background: var(--color-accent); transform-origin: left; pointer-events: none; }
 .route-motion { position: absolute; top: 0; left: 0; width: 100%; opacity: 0.45; }
 .metric-motion { grid-column: 1 / -1; width: 100%; margin-top: 1rem; opacity: 0.35; }
-.motion-toggle { min-height: 2.75rem; padding: 0.5rem; color: var(--color-accent); background: transparent; border: var(--border-thin); border-radius: var(--radius-panel); font: inherit; cursor: pointer; }
+.motion-toggle { min-height: 2.75rem; padding: 0.5rem; color: var(--color-accent); background: transparent; border: 1px solid var(--color-accent); border-radius: var(--radius-panel); font: inherit; cursor: pointer; }
 .motion-toggle[aria-pressed="true"] { background: var(--color-surface); }
 .motion-toggle:disabled { cursor: default; color: var(--color-muted); }
 .flow-symbol[data-complete="true"] { background-color: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface)); }
@@ -315,3 +316,14 @@ main { position: relative; }
 .motion-root[data-motion="reduced"] *, .motion-root[data-motion="reduced"] *::before, .motion-root[data-motion="reduced"] *::after,
 .motion-root[data-motion="mobile"] *, .motion-root[data-motion="mobile"] *::before, .motion-root[data-motion="mobile"] *::after { animation: none !important; transition: none !important; }
 .motion-root[data-motion="reduced"] .hero-index > a > span:last-child { transform: none !important; }
+
+/* Ticket 08: retain content and controls when text is enlarged on narrow screens. */
+.container, .site-header > nav, .site-footer > *, .hero > *, .actions > * { min-width: 0; }
+.text-link, .button, .motion-toggle { max-width: 100%; }
+.taskforge-chart-label { flex-wrap: wrap; }
+@media (max-width: 60rem) {
+  .codegraph-stages li, .taskforge-stages li { grid-template-columns: 3rem minmax(0, 1fr); }
+}
+@media (max-width: 40rem) {
+  .hero-index { padding: 1rem; }
+}

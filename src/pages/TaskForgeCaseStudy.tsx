@@ -27,7 +27,7 @@ export function TaskForgeCaseStudy({ project }: { project: Project }) {
     </CaseStudySection>
     <CaseStudySection section={recovery}>
       <div className="case-study-cards">{content.recovery.map(item => <div key={item.title}><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>
-      <aside className="case-study-missing" aria-label="Execution guarantee"><p>{content.guarantee}</p></aside>
+      <div role="note" className="case-study-missing" aria-label="Execution guarantee"><p>{content.guarantee}</p></div>
     </CaseStudySection>
     <CaseStudySection section={benchmarks}>
       <p>{content.benchmarks.methodology}</p><p>{content.benchmarks.configuration}</p>

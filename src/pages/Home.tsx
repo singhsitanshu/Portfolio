@@ -19,11 +19,11 @@ export function Home() {
           <a className="text-link" href={profile.links.linkedin}>LinkedIn</a>
         </div>
       </Entrance>
-      <aside className="hero-index" aria-label="Selected work index">
+      <nav className="hero-index" aria-label="Selected work index">
         <p className="eyebrow">Selected work / {projects[0].dates}</p>
         {projects.map((project, index) => <a key={project.id} href={`#${project.id}`}><span className="eyebrow">0{index + 1}</span><span>{project.name}</span><span aria-hidden="true">↘</span></a>)}
         <p className="hero-index-note">From understanding code<br />to coordinating execution.</p>
-      </aside>
+      </nav>
     </section>
     <div id="work" tabIndex={-1}>
       {projects.map((project) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <TaskForgeFeature key={project.id} project={project} />)}

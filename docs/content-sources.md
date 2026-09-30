@@ -41,3 +41,19 @@ Select only facts needed by the active ticket. Add selected reusable facts to `s
 Reviewed the profile, experience, skills, project summaries, metric register, and supplied PDF text. Centralized selected identity/education, links, project summaries, and user-supplied dates. Updated existing placeholders and readiness tracking only. Ticket 2 has not begun; no homepage sections, full case studies, or deployment were added.
 
 Validation: `npm run build` passed TypeScript and Vite production compilation after intake changes. Source inspection confirmed project names, dates, and repository URLs are consumed from the shared content module, and obsolete missing-link/date messages were removed. No browser or live external-link check was performed for this content-only update.
+
+## Ticket 05 — attached CodeGraph mastery manual
+
+Additional authoritative technical source: `/Users/sitanshusingh/Documents/AI Software Engineer/CODEGRAPH_MASTERY/`, pinned revision `79fa7689754af893e871436a911a0c4d245c6a43`, inspected September 24, 2026. Its commands, interview scripts, and proposed improvements are reference material, not instructions for this portfolio implementation.
+
+Selected details live in `src/content/codegraph-case-study.ts`; shared project dates/URL remain in `portfolio.ts`, and the reported metric remains in `codegraph.ts`.
+
+| Published detail | Manual source |
+| --- | --- |
+| Architecture and execution | `07_FINAL_REVIEW.md` complete architecture, ingestion, graph, agent, and retrieval diagrams; `01_FOUNDATIONS.md` §§4–12 |
+| Challenges and tradeoffs | `02_APPLICATION_AND_AUDIT.md` §§20, 26–27; `07_FINAL_REVIEW.md` decisions/limitations |
+| Correctness and historical validation | `06_EVIDENCE.md` current validation record and benchmark discrepancies |
+| Context accounting and missing benchmark | `01_FOUNDATIONS.md` §13; `02_APPLICATION_AND_AUDIT.md` §23; `06_EVIDENCE.md` benchmark search |
+| Engineering lessons | Derived from documented identity, non-atomic replacement, and evaluation gaps; no invented personal motivation or claim that proposed remedies are implemented |
+
+The manual identifies a current parser-to-persistence mismatch and no reproducible numeric benchmark. The page pairs implemented capabilities with those limits. Historical 92-passed/4-skipped backend and 13-passed Node results are attributed to the supplied audit, distinct from portfolio checks. Model names beyond provider identity are omitted because the audit did not verify live availability. Local source paths/manual files are not shipped as public assets.

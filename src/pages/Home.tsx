@@ -1,6 +1,7 @@
 import { Heading } from '../components/ui';
 import { Contact } from '../components/Contact';
 import { CodeGraphFeature } from '../components/CodeGraphFeature';
+import { TaskForgeFeature } from '../components/TaskForgeFeature';
 import { profile, projects, journey } from '../content/portfolio';
 
 export function Home() {
@@ -24,14 +25,7 @@ export function Home() {
       </aside>
     </section>
     <div id="work" tabIndex={-1}>
-      {projects.map((project, index) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <section id={project.id} key={project.id} className="section project-shell" aria-labelledby={`${project.id}-title`} tabIndex={-1}>
-        <div className="project-meta"><span className="eyebrow">0{index + 1} / Selected work</span><span className="eyebrow">{project.dates}</span></div>
-        <div className="project-shell-body">
-          <Heading id={`${project.id}-title`}>{project.name}</Heading>
-          <div><p className="project-summary">{project.summary}</p><a className="text-link" href={project.repository}>View repository <span aria-hidden="true">↗</span></a></div>
-        </div>
-        <p className="project-shell-note">Project overview · Detailed feature forthcoming</p>
-      </section>)}
+      {projects.map((project) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <TaskForgeFeature key={project.id} project={project} />)}
     </div>
     <section id="about" className="section about-section" aria-labelledby="about-title" tabIndex={-1}>
       <div>

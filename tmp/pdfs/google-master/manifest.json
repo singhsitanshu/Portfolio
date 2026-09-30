@@ -1,0 +1,57 @@
+{
+  "bridgeVersion": "3.6",
+  "kind": "google-docs-trusted-read",
+  "status": "complete",
+  "outputDir": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-master",
+  "target": {
+    "documentId": "1d9kmul2TaIdi8efsVkQVPmCGhzGGqcvPfhke4oaW-e4",
+    "title": "Aansh Singh — Master Software Engineering Resume",
+    "revisionId": "ANLCKQn9qCPiZzilsdmF6L0loyxnrq9mQ5QCPNmNzvK_dcsoXDzbAkBiJVnxrUtkilxcgLvr_efDbT_0eCl6ZhSwfQF3a5QZ8sI03f0AdGk",
+    "documentUrl": "https://docs.google.com/document/d/1d9kmul2TaIdi8efsVkQVPmCGhzGGqcvPfhke4oaW-e4",
+    "selectedTabId": null
+  },
+  "dropdownMetadata": {
+    "status": "unavailable",
+    "resolvedTool": null,
+    "authoritative": false,
+    "count": 0
+  },
+  "controlAwareness": {
+    "hasProtectedControls": false,
+    "authoritativeDropdownCount": 0,
+    "opaqueControlCount": 0,
+    "affectedParagraphCount": 0,
+    "nativeElementCounts": {},
+    "preservationRequired": false,
+    "recommendedBehavior": "No protected controls were detected in the scanned scope."
+  },
+  "warnings": [],
+  "files": {
+    "document_result": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-master/document-result.json",
+      "bytes": 135419,
+      "sha256": "df01beaa601a387fdfa68e9c452cf4415f8d5bae2828cb27c465aed9d1a12cc3"
+    },
+    "control_inventory": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-master/control-inventory.json",
+      "bytes": 1066,
+      "sha256": "0e24726c30e32c8fd15422f6cd26e2e21a30788ff5154b411e60d397650155a2"
+    },
+    "document_outline": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-master/document-outline.json",
+      "bytes": 24447,
+      "sha256": "8e827030d00a0da1d3c12c6e7404ffd02feaf63318027176cd7347866fc3a58f"
+    },
+    "document_text": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-master/document-text.md",
+      "bytes": 6642,
+      "sha256": "757a3af202c6dabc792331abe8b6652ef66a89a07167e97672aff96505fabcca"
+    },
+    "receipt": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-master/receipt.json",
+      "bytes": 986,
+      "sha256": "9329b4642eb782b7089aa24b4a748a80c2fc080284c604da5a5887aa3bd82bc1"
+    }
+  },
+  "error": null
+}

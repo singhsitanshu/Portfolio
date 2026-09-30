@@ -1,0 +1,29 @@
+{
+  "bridgeVersion": "3.6",
+  "kind": "google-docs-trusted-read-receipt",
+  "status": "complete",
+  "target": {
+    "documentId": "1hT1y6Q-BJBJTk5hBssHed0nP8TaVPfo8HJpMgpvNObA",
+    "title": "Aansh Singh — Workiva Software Engineering Intern Summer 2027 — Resume",
+    "revisionId": "ANLCKQnvvZqergrSWEW1Hmb3_glsVF7mG2As497z2smfr-qAQKgi2cRnYSmaXKkFzsGwu60GDVwT55rlFrFcNb4cDmW63IFXP6dBaL03ODM",
+    "documentUrl": "https://docs.google.com/document/d/1hT1y6Q-BJBJTk5hBssHed0nP8TaVPfo8HJpMgpvNObA",
+    "selectedTabId": "t.nddzyfo93agp"
+  },
+  "dropdownMetadata": {
+    "status": "unavailable",
+    "resolvedTool": null,
+    "authoritative": false,
+    "count": 0
+  },
+  "controlAwareness": {
+    "hasProtectedControls": false,
+    "authoritativeDropdownCount": 0,
+    "opaqueControlCount": 0,
+    "affectedParagraphCount": 0,
+    "nativeElementCounts": {},
+    "preservationRequired": false,
+    "recommendedBehavior": "No protected controls were detected in the scanned scope."
+  },
+  "warnings": [],
+  "error": null
+}

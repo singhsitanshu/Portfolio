@@ -1,0 +1,57 @@
+{
+  "bridgeVersion": "3.6",
+  "kind": "google-docs-trusted-read",
+  "status": "complete",
+  "outputDir": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-source",
+  "target": {
+    "documentId": "1hT1y6Q-BJBJTk5hBssHed0nP8TaVPfo8HJpMgpvNObA",
+    "title": "Aansh Singh — Workiva Software Engineering Intern Summer 2027 — Resume",
+    "revisionId": "ANLCKQnvvZqergrSWEW1Hmb3_glsVF7mG2As497z2smfr-qAQKgi2cRnYSmaXKkFzsGwu60GDVwT55rlFrFcNb4cDmW63IFXP6dBaL03ODM",
+    "documentUrl": "https://docs.google.com/document/d/1hT1y6Q-BJBJTk5hBssHed0nP8TaVPfo8HJpMgpvNObA",
+    "selectedTabId": "t.nddzyfo93agp"
+  },
+  "dropdownMetadata": {
+    "status": "unavailable",
+    "resolvedTool": null,
+    "authoritative": false,
+    "count": 0
+  },
+  "controlAwareness": {
+    "hasProtectedControls": false,
+    "authoritativeDropdownCount": 0,
+    "opaqueControlCount": 0,
+    "affectedParagraphCount": 0,
+    "nativeElementCounts": {},
+    "preservationRequired": false,
+    "recommendedBehavior": "No protected controls were detected in the scanned scope."
+  },
+  "warnings": [],
+  "files": {
+    "document_result": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-source/document-result.json",
+      "bytes": 135443,
+      "sha256": "6cf9980c930f8e48e616739a3a3b3c6e95bdf3979cc46014e97c10303587f056"
+    },
+    "control_inventory": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-source/control-inventory.json",
+      "bytes": 1102,
+      "sha256": "3bb5c3749bb7d096d35cc06c73df107441b4c524bd2d4f3a892915b7febaf3ab"
+    },
+    "document_outline": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-source/document-outline.json",
+      "bytes": 24483,
+      "sha256": "4536555da818ad9e2fa5910e6dbc36950c3d17798c6112c8e1ac4718a134934a"
+    },
+    "document_text": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-source/document-text.md",
+      "bytes": 6677,
+      "sha256": "302a7f8ecc466dc080b218fa4972d097c23282e61f1516dc9ea9c5c9d441eae0"
+    },
+    "receipt": {
+      "path": "/Users/sitanshusingh/Documents/AanshSingh.com/tmp/pdfs/google-source/receipt.json",
+      "bytes": 1022,
+      "sha256": "341cf355a0f4883d2b97f2113c0ad61bef7f76662bf9df66707d3eb63590aaad"
+    }
+  },
+  "error": null
+}

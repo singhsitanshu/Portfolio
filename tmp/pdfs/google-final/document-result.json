@@ -1,0 +1,4102 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "documentId": "1d9kmul2TaIdi8efsVkQVPmCGhzGGqcvPfhke4oaW-e4",
+    "title": "Aansh Singh — Master Software Engineering Resume",
+    "revisionId": "ANLCKQmJDSMH1NCyp2x2_a1NzbUhok0c-mofDz6iDtxhqJ-0lE_S7E2Bo1pj5ADE9I4_sGIYLVGmuAiR0xg0FCMDOhFDIP35zBIn31Z2qlU",
+    "suggestionsViewMode": "SUGGESTIONS_INLINE",
+    "url": null,
+    "body": null,
+    "tabs": [
+      {
+        "tabId": "t.nddzyfo93agp",
+        "title": "working on it",
+        "parentTabId": null,
+        "index": 0,
+        "nestingLevel": null,
+        "iconEmoji": null,
+        "body": {
+          "content": [
+            {
+              "endIndex": 1,
+              "sectionBreak": {
+                "sectionStyle": {
+                  "columnSeparatorStyle": "NONE",
+                  "contentDirection": "LEFT_TO_RIGHT",
+                  "sectionType": "CONTINUOUS"
+                }
+              }
+            },
+            {
+              "startIndex": 1,
+              "endIndex": 14,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1,
+                    "endIndex": 14,
+                    "textRun": {
+                      "content": "Aansh Singh \n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 19,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "CENTER",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "COLLAPSE_LISTS",
+                  "avoidWidowAndOrphan": false
+                }
+              }
+            },
+            {
+              "startIndex": 14,
+              "endIndex": 85,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 14,
+                    "endIndex": 29,
+                    "textRun": {
+                      "content": "512-221-8562 | ",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 29,
+                    "endIndex": 37,
+                    "textRun": {
+                      "content": "LinkedIn",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        },
+                        "link": {
+                          "url": "https://www.linkedin.com/in/aansh-singh/"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 37,
+                    "endIndex": 40,
+                    "textRun": {
+                      "content": " | ",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 40,
+                    "endIndex": 46,
+                    "textRun": {
+                      "content": "GitHub",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        },
+                        "link": {
+                          "url": "https://github.com/singhsitanshu"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 46,
+                    "endIndex": 49,
+                    "textRun": {
+                      "content": " | ",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 49,
+                    "endIndex": 71,
+                    "textRun": {
+                      "content": "singhsitanshu@ucla.edu",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        },
+                        "link": {
+                          "url": "mailto:singhsitanshu@ucla.edu"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 71,
+                    "endIndex": 85,
+                    "textRun": {
+                      "content": " | Austin, TX\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "CENTER",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "avoidWidowAndOrphan": false
+                }
+              }
+            },
+            {
+              "startIndex": 85,
+              "endIndex": 86,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 85,
+                    "endIndex": 86,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "smallCaps": true,
+                        "fontSize": {
+                          "magnitude": 4,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "borderBottom": {
+                    "color": {
+                      "color": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "width": {
+                      "magnitude": 0.75,
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "magnitude": 1,
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 86,
+              "endIndex": 96,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 86,
+                    "endIndex": 95,
+                    "textRun": {
+                      "content": "EDUCATION",
+                      "textStyle": {
+                        "bold": true,
+                        "smallCaps": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 95,
+                    "endIndex": 96,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "borderBottom": {
+                    "color": {
+                      "color": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "width": {
+                      "magnitude": 0.75,
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "magnitude": 1,
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 96,
+              "endIndex": 97,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 96,
+                    "endIndex": 97,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 2,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 97,
+              "endIndex": 189,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 97,
+                    "endIndex": 188,
+                    "textRun": {
+                      "content": "University of California, Los Angeles | Henry Samueli School of Engineering\tLos Angeles, CA",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 188,
+                    "endIndex": 189,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 1,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 567.1500000000001,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 189,
+              "endIndex": 263,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 189,
+                    "endIndex": 262,
+                    "textRun": {
+                      "content": "Bachelor of Science in Computer Science\t   Expected Graduation: June 2029",
+                      "textStyle": {
+                        "italic": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 262,
+                    "endIndex": 263,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 567.1500000000001,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 263,
+              "endIndex": 264,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 263,
+                    "endIndex": 264,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "smallCaps": true,
+                        "fontSize": {
+                          "magnitude": 4,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "borderBottom": {
+                    "color": {
+                      "color": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "width": {
+                      "magnitude": 0.75,
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "magnitude": 1,
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 264,
+              "endIndex": 275,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 264,
+                    "endIndex": 275,
+                    "textRun": {
+                      "content": "EXPERIENCE\n",
+                      "textStyle": {
+                        "bold": true,
+                        "smallCaps": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "borderBottom": {
+                    "color": {
+                      "color": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "width": {
+                      "magnitude": 0.75,
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "magnitude": 1,
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 275,
+              "endIndex": 276,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 275,
+                    "endIndex": 276,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 3,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 276,
+              "endIndex": 309,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 276,
+                    "endIndex": 309,
+                    "textRun": {
+                      "content": "Software Engineer\t2025 – Present\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 567.1500000000001,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 309,
+              "endIndex": 364,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 309,
+                    "endIndex": 364,
+                    "textRun": {
+                      "content": "Bruin Underwater Robotics (BUR) @ UCLA\tLos Angeles, CA\n",
+                      "textStyle": {
+                        "italic": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 567.1500000000001,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 364,
+              "endIndex": 509,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 364,
+                    "endIndex": 508,
+                    "textRun": {
+                      "content": "Developed Python/YOLOv11 object-detection models for autonomous RoboSub perception, recognizing path markers, slalom gates, maps, and obstacles.",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 508,
+                    "endIndex": 509,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 509,
+              "endIndex": 642,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 509,
+                    "endIndex": 642,
+                    "textRun": {
+                      "content": "Automated a Unity simulation pipeline to generate 3,000+ labeled images and bounding boxes for underwater perception model training.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 642,
+              "endIndex": 814,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 642,
+                    "endIndex": 814,
+                    "textRun": {
+                      "content": "Exported PyTorch models to ONNX for TensorRT acceleration on NVIDIA Jetson; integrated Jetson and Raspberry Pi via ROS2 for onboard perception and real-time motor control.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "COLLAPSE_LISTS",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 814,
+              "endIndex": 940,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 814,
+                    "endIndex": 940,
+                    "textRun": {
+                      "content": "Collaborated with software, electrical, and mechanical engineers to integrate perception, computing, sensors, and propulsion.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "COLLAPSE_LISTS",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 940,
+              "endIndex": 941,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 940,
+                    "endIndex": 941,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 3,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 941,
+              "endIndex": 1000,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 941,
+                    "endIndex": 1000,
+                    "textRun": {
+                      "content": "Software Engineering Team Lead Intern\tMay 2024 – Sept 2025\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 567.1500000000001,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1000,
+              "endIndex": 1014,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1000,
+                    "endIndex": 1014,
+                    "textRun": {
+                      "content": "D-Tech\tRemote\n",
+                      "textStyle": {
+                        "italic": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 567.1500000000001,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1014,
+              "endIndex": 1200,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1014,
+                    "endIndex": 1200,
+                    "textRun": {
+                      "content": "Led 5 interns designing Flippper, an ePaper education platform; translated a German patent into software requirements, user flows, component interactions, and functional specifications.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 1200,
+              "endIndex": 1358,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1200,
+                    "endIndex": 1358,
+                    "textRun": {
+                      "content": "Defined ePaper workflows, interface behavior, and hardware/software integration points with the founder and an Oracle mentor to assess technical feasibility.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 1358,
+              "endIndex": 1466,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1358,
+                    "endIndex": 1466,
+                    "textRun": {
+                      "content": "Directed UI/UX prototypes, 3D models, and visualizations to validate workflows and explain system behavior.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 1466,
+              "endIndex": 1467,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1466,
+                    "endIndex": 1467,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 3,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1467,
+              "endIndex": 1498,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1467,
+                    "endIndex": 1498,
+                    "textRun": {
+                      "content": "Instructor\tMay 2024 – Jan 2025\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 567.1500000000001,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1498,
+              "endIndex": 1520,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1498,
+                    "endIndex": 1520,
+                    "textRun": {
+                      "content": "CompuChild\tAustin, TX\n",
+                      "textStyle": {
+                        "italic": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 567.1500000000001,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1520,
+              "endIndex": 1633,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1520,
+                    "endIndex": 1633,
+                    "textRun": {
+                      "content": "Taught Python and Scratch to middle school students through hands-on coding exercises and project-based lessons.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 108.00001,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 1633,
+              "endIndex": 1720,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1633,
+                    "endIndex": 1720,
+                    "textRun": {
+                      "content": "Guided line-following robot and solar-car projects; debugged student code and devices.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 108.00001,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 1720,
+              "endIndex": 1721,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1720,
+                    "endIndex": 1721,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "smallCaps": true,
+                        "fontSize": {
+                          "magnitude": 3,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "borderBottom": {
+                    "color": {
+                      "color": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "width": {
+                      "magnitude": 0.75,
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "magnitude": 1,
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1721,
+              "endIndex": 1730,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1721,
+                    "endIndex": 1729,
+                    "textRun": {
+                      "content": "PROJECTS",
+                      "textStyle": {
+                        "bold": true,
+                        "smallCaps": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 1729,
+                    "endIndex": 1730,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "borderBottom": {
+                    "color": {
+                      "color": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "width": {
+                      "magnitude": 0.75,
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "magnitude": 1,
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1730,
+              "endIndex": 1731,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1730,
+                    "endIndex": 1731,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 3,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1731,
+              "endIndex": 1821,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1731,
+                    "endIndex": 1768,
+                    "textRun": {
+                      "content": "CodeGraph: Repository Intelligence | ",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 1768,
+                    "endIndex": 1821,
+                    "textRun": {
+                      "content": "TypeScript, React, Python, FastAPI, Neo4j, LangGraph\n",
+                      "textStyle": {
+                        "italic": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 1821,
+              "endIndex": 2027,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 1821,
+                    "endIndex": 2026,
+                    "textRun": {
+                      "content": "Built a full-stack React/TypeScript and Python/FastAPI repository intelligence app with GitHub ingestion, 32-way bounded Tree-sitter parsing, Neo4j file/function/call graphs, and NDJSON progress streaming.",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 2026,
+                    "endIndex": 2027,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 2027,
+              "endIndex": 2202,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 2027,
+                    "endIndex": 2202,
+                    "textRun": {
+                      "content": "Developed a Claude-powered LangGraph ReAct agent with 7 repository-scoped tools for dependency, blast-radius, external-call, architecture, source, and vector-search analysis.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 2202,
+              "endIndex": 2370,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 2202,
+                    "endIndex": 2370,
+                    "textRun": {
+                      "content": "Built Graph-RAG with Neo4j vector indexes, 1,536-dimensional OpenAI embeddings, and GDS Leiden subgraphs; reduced LLM context 97.5% from 737K to ~18K tokens per query.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 2370,
+              "endIndex": 2575,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 2370,
+                    "endIndex": 2575,
+                    "textRun": {
+                      "content": "Automated Postman API tests for ingestion, graph retrieval, Graph-RAG, and cleanup with NDJSON assertions, negative cases, and HMAC-SHA256 webhook validation; verified with 82 Pytest cases and Node tests.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 2575,
+              "endIndex": 2576,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 2575,
+                    "endIndex": 2576,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 3,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                }
+              }
+            },
+            {
+              "startIndex": 2576,
+              "endIndex": 2662,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 2576,
+                    "endIndex": 2620,
+                    "textRun": {
+                      "content": "TaskForge: Fault-Tolerant Task Processing | ",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 2620,
+                    "endIndex": 2662,
+                    "textRun": {
+                      "content": "Go, PostgreSQL, Redis, Docker, Prometheus\n",
+                      "textStyle": {
+                        "italic": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 2662,
+              "endIndex": 2862,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 2662,
+                    "endIndex": 2861,
+                    "textRun": {
+                      "content": "Engineered Go/PostgreSQL task processing with atomic SQL claims, priority scheduling, heartbeats, renewable leases, backoff retries, and idempotent submission; added Prometheus/Grafana observability.",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 2861,
+                    "endIndex": 2862,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 2862,
+              "endIndex": 3038,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 2862,
+                    "endIndex": 3038,
+                    "textRun": {
+                      "content": "Tested task-state integrity and crash recovery across 3,000 tasks / 6,000 ordered attempts with zero duplicates; recovered 30 hard-killed attempts with zero duplicate effects.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 3038,
+              "endIndex": 3231,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 3038,
+                    "endIndex": 3231,
+                    "textRun": {
+                      "content": "Benchmarked 15.84× scaling across 16 workers at 99% efficiency with Prometheus reconciliation; persisted 30,000/30,000 API submissions at a 2,143/sec median with zero request/transport errors.\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "alignment": "START",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "spacingMode": "NEVER_COLLAPSE",
+                  "spaceAbove": {
+                    "unit": "PT"
+                  },
+                  "spaceBelow": {
+                    "unit": "PT"
+                  },
+                  "borderBetween": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderTop": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderBottom": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderLeft": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "borderRight": {
+                    "color": {},
+                    "width": {
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "indentFirstLine": {
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 9,
+                    "unit": "PT"
+                  },
+                  "indentEnd": {
+                    "unit": "PT"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 540,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ],
+                  "keepLinesTogether": false,
+                  "keepWithNext": false,
+                  "avoidWidowAndOrphan": true,
+                  "shading": {
+                    "backgroundColor": {}
+                  },
+                  "pageBreakBefore": false
+                },
+                "bullet": {
+                  "listId": "kix.3egcl3kx3uya",
+                  "textStyle": {
+                    "weightedFontFamily": {
+                      "fontFamily": "Times New Roman",
+                      "weight": 400
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "startIndex": 3231,
+              "endIndex": 3232,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 3231,
+                    "endIndex": 3232,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "smallCaps": true,
+                        "fontSize": {
+                          "magnitude": 3,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "borderBottom": {
+                    "color": {
+                      "color": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "width": {
+                      "magnitude": 0.75,
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "magnitude": 1,
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 3232,
+              "endIndex": 3249,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 3232,
+                    "endIndex": 3248,
+                    "textRun": {
+                      "content": "TECHNICAL SKILLS",
+                      "textStyle": {
+                        "bold": true,
+                        "smallCaps": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 3248,
+                    "endIndex": 3249,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 100,
+                  "direction": "LEFT_TO_RIGHT",
+                  "borderBottom": {
+                    "color": {
+                      "color": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "width": {
+                      "magnitude": 0.75,
+                      "unit": "PT"
+                    },
+                    "padding": {
+                      "magnitude": 1,
+                      "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                  },
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 3249,
+              "endIndex": 3250,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 3249,
+                    "endIndex": 3250,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 4,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 3250,
+              "endIndex": 3325,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 3250,
+                    "endIndex": 3260,
+                    "textRun": {
+                      "content": "Languages:",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 3260,
+                    "endIndex": 3325,
+                    "textRun": {
+                      "content": " Python, TypeScript, JavaScript, Go, Java, SQL, C++, C, HTML/CSS\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 3325,
+              "endIndex": 3409,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 3325,
+                    "endIndex": 3336,
+                    "textRun": {
+                      "content": "Web / APIs:",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 3336,
+                    "endIndex": 3409,
+                    "textRun": {
+                      "content": " React, React Flow, FastAPI, REST APIs, Postman, Pytest, Node Tests, Git\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 3409,
+              "endIndex": 3496,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 3409,
+                    "endIndex": 3424,
+                    "textRun": {
+                      "content": "Backend / Data:",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 3424,
+                    "endIndex": 3496,
+                    "textRun": {
+                      "content": " PostgreSQL, Redis, Docker, Prometheus, Grafana, Neo4j GDS, Tree-sitter\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "startIndex": 3496,
+              "endIndex": 3621,
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": 3496,
+                    "endIndex": 3510,
+                    "textRun": {
+                      "content": "AI / Robotics:",
+                      "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 3510,
+                    "endIndex": 3620,
+                    "textRun": {
+                      "content": " LangGraph, RAG, OpenAI Embeddings, PyTorch, YOLOv11, ONNX, TensorRT, ROS2, NVIDIA Jetson, Raspberry Pi, Unity",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                          "fontFamily": "Times New Roman",
+                          "weight": 400
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "startIndex": 3620,
+                    "endIndex": 3621,
+                    "textRun": {
+                      "content": "\n",
+                      "textStyle": {
+                        "fontSize": {
+                          "magnitude": 12,
+                          "unit": "PT"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "NORMAL_TEXT",
+                  "lineSpacing": 95,
+                  "direction": "LEFT_TO_RIGHT",
+                  "tabStops": [
+                    {
+                      "offset": {
+                        "magnitude": 531,
+                        "unit": "PT"
+                      },
+                      "alignment": "END"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "headers": null,
+        "footers": null,
+        "footnotes": null,
+        "documentStyle": {
+          "background": {
+            "color": {}
+          },
+          "pageNumberStart": 1,
+          "marginTop": {
+            "magnitude": 21.599999999999998,
+            "unit": "PT"
+          },
+          "marginBottom": {
+            "magnitude": 21.599999999999998,
+            "unit": "PT"
+          },
+          "marginRight": {
+            "magnitude": 21.599999999999998,
+            "unit": "PT"
+          },
+          "marginLeft": {
+            "magnitude": 21.599999999999998,
+            "unit": "PT"
+          },
+          "pageSize": {
+            "height": {
+              "magnitude": 792,
+              "unit": "PT"
+            },
+            "width": {
+              "magnitude": 612,
+              "unit": "PT"
+            }
+          },
+          "marginHeader": {
+            "magnitude": 36,
+            "unit": "PT"
+          },
+          "marginFooter": {
+            "magnitude": 36,
+            "unit": "PT"
+          },
+          "documentFormat": {
+            "documentMode": "PAGES"
+          }
+        },
+        "suggestedDocumentStyleChanges": null,
+        "namedStyles": {
+          "styles": [
+            {
+              "namedStyleType": "NORMAL_TEXT",
+              "textStyle": {
+                "bold": false,
+                "italic": false,
+                "underline": false,
+                "strikethrough": false,
+                "smallCaps": false,
+                "backgroundColor": {},
+                "foregroundColor": {
+                  "color": {
+                    "rgbColor": {}
+                  }
+                },
+                "fontSize": {
+                  "magnitude": 11,
+                  "unit": "PT"
+                },
+                "weightedFontFamily": {
+                  "fontFamily": "Arial",
+                  "weight": 400
+                },
+                "baselineOffset": "NONE"
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "alignment": "START",
+                "lineSpacing": 115,
+                "direction": "LEFT_TO_RIGHT",
+                "spacingMode": "NEVER_COLLAPSE",
+                "spaceAbove": {
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "unit": "PT"
+                },
+                "borderBetween": {
+                  "color": {},
+                  "width": {
+                    "unit": "PT"
+                  },
+                  "padding": {
+                    "unit": "PT"
+                  },
+                  "dashStyle": "SOLID"
+                },
+                "borderTop": {
+                  "color": {},
+                  "width": {
+                    "unit": "PT"
+                  },
+                  "padding": {
+                    "unit": "PT"
+                  },
+                  "dashStyle": "SOLID"
+                },
+                "borderBottom": {
+                  "color": {},
+                  "width": {
+                    "unit": "PT"
+                  },
+                  "padding": {
+                    "unit": "PT"
+                  },
+                  "dashStyle": "SOLID"
+                },
+                "borderLeft": {
+                  "color": {},
+                  "width": {
+                    "unit": "PT"
+                  },
+                  "padding": {
+                    "unit": "PT"
+                  },
+                  "dashStyle": "SOLID"
+                },
+                "borderRight": {
+                  "color": {},
+                  "width": {
+                    "unit": "PT"
+                  },
+                  "padding": {
+                    "unit": "PT"
+                  },
+                  "dashStyle": "SOLID"
+                },
+                "indentFirstLine": {
+                  "unit": "PT"
+                },
+                "indentStart": {
+                  "unit": "PT"
+                },
+                "indentEnd": {
+                  "unit": "PT"
+                },
+                "keepLinesTogether": false,
+                "keepWithNext": false,
+                "avoidWidowAndOrphan": true,
+                "shading": {
+                  "backgroundColor": {}
+                },
+                "pageBreakBefore": false
+              }
+            },
+            {
+              "namedStyleType": "HEADING_1",
+              "textStyle": {
+                "bold": true,
+                "fontSize": {
+                  "magnitude": 24,
+                  "unit": "PT"
+                }
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "spaceAbove": {
+                  "magnitude": 24,
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "magnitude": 6,
+                  "unit": "PT"
+                },
+                "keepLinesTogether": true,
+                "keepWithNext": true,
+                "pageBreakBefore": false
+              }
+            },
+            {
+              "namedStyleType": "HEADING_2",
+              "textStyle": {
+                "bold": true,
+                "fontSize": {
+                  "magnitude": 18,
+                  "unit": "PT"
+                }
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "spaceAbove": {
+                  "magnitude": 18,
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "magnitude": 4,
+                  "unit": "PT"
+                },
+                "keepLinesTogether": true,
+                "keepWithNext": true,
+                "pageBreakBefore": false
+              }
+            },
+            {
+              "namedStyleType": "HEADING_3",
+              "textStyle": {
+                "bold": true,
+                "fontSize": {
+                  "magnitude": 14,
+                  "unit": "PT"
+                }
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "spaceAbove": {
+                  "magnitude": 14,
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "magnitude": 4,
+                  "unit": "PT"
+                },
+                "keepLinesTogether": true,
+                "keepWithNext": true,
+                "pageBreakBefore": false
+              }
+            },
+            {
+              "namedStyleType": "HEADING_4",
+              "textStyle": {
+                "bold": true,
+                "fontSize": {
+                  "magnitude": 12,
+                  "unit": "PT"
+                }
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "spaceAbove": {
+                  "magnitude": 12,
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "magnitude": 2,
+                  "unit": "PT"
+                },
+                "keepLinesTogether": true,
+                "keepWithNext": true,
+                "pageBreakBefore": false
+              }
+            },
+            {
+              "namedStyleType": "HEADING_5",
+              "textStyle": {
+                "bold": true,
+                "fontSize": {
+                  "magnitude": 11,
+                  "unit": "PT"
+                }
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "spaceAbove": {
+                  "magnitude": 11,
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "magnitude": 2,
+                  "unit": "PT"
+                },
+                "keepLinesTogether": true,
+                "keepWithNext": true,
+                "pageBreakBefore": false
+              }
+            },
+            {
+              "namedStyleType": "HEADING_6",
+              "textStyle": {
+                "bold": true,
+                "fontSize": {
+                  "magnitude": 10,
+                  "unit": "PT"
+                }
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "spaceAbove": {
+                  "magnitude": 10,
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "magnitude": 2,
+                  "unit": "PT"
+                },
+                "keepLinesTogether": true,
+                "keepWithNext": true,
+                "pageBreakBefore": false
+              }
+            },
+            {
+              "namedStyleType": "TITLE",
+              "textStyle": {
+                "bold": true,
+                "fontSize": {
+                  "magnitude": 36,
+                  "unit": "PT"
+                }
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "spaceAbove": {
+                  "magnitude": 24,
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "magnitude": 6,
+                  "unit": "PT"
+                },
+                "keepLinesTogether": true,
+                "keepWithNext": true,
+                "pageBreakBefore": false
+              }
+            },
+            {
+              "namedStyleType": "SUBTITLE",
+              "textStyle": {
+                "italic": true,
+                "foregroundColor": {
+                  "color": {
+                    "rgbColor": {
+                      "red": 0.4,
+                      "green": 0.4,
+                      "blue": 0.4
+                    }
+                  }
+                },
+                "fontSize": {
+                  "magnitude": 24,
+                  "unit": "PT"
+                },
+                "weightedFontFamily": {
+                  "fontFamily": "Georgia",
+                  "weight": 400
+                }
+              },
+              "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "spaceAbove": {
+                  "magnitude": 18,
+                  "unit": "PT"
+                },
+                "spaceBelow": {
+                  "magnitude": 4,
+                  "unit": "PT"
+                },
+                "keepLinesTogether": true,
+                "keepWithNext": true,
+                "pageBreakBefore": false
+              }
+            }
+          ]
+        },
+        "suggestedNamedStylesChanges": null,
+        "lists": {
+          "kix.3egcl3kx3uya": {
+            "listProperties": {
+              "nestingLevels": [
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "●",
+                  "glyphFormat": "%0",
+                  "indentFirstLine": {
+                    "magnitude": 18,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 36,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false,
+                    "fontSize": {
+                      "magnitude": 7,
+                      "unit": "PT"
+                    }
+                  },
+                  "startNumber": 1
+                },
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "○",
+                  "glyphFormat": "%1",
+                  "indentFirstLine": {
+                    "magnitude": 54,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 72,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false
+                  },
+                  "startNumber": 1
+                },
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "■",
+                  "glyphFormat": "%2",
+                  "indentFirstLine": {
+                    "magnitude": 90,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 108,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false
+                  },
+                  "startNumber": 1
+                },
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "●",
+                  "glyphFormat": "%3",
+                  "indentFirstLine": {
+                    "magnitude": 126,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 144,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false
+                  },
+                  "startNumber": 1
+                },
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "○",
+                  "glyphFormat": "%4",
+                  "indentFirstLine": {
+                    "magnitude": 162,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 180,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false
+                  },
+                  "startNumber": 1
+                },
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "■",
+                  "glyphFormat": "%5",
+                  "indentFirstLine": {
+                    "magnitude": 198,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 216,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false
+                  },
+                  "startNumber": 1
+                },
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "●",
+                  "glyphFormat": "%6",
+                  "indentFirstLine": {
+                    "magnitude": 234,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 252,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false
+                  },
+                  "startNumber": 1
+                },
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "○",
+                  "glyphFormat": "%7",
+                  "indentFirstLine": {
+                    "magnitude": 270,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 288,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false
+                  },
+                  "startNumber": 1
+                },
+                {
+                  "bulletAlignment": "START",
+                  "glyphSymbol": "■",
+                  "glyphFormat": "%8",
+                  "indentFirstLine": {
+                    "magnitude": 306,
+                    "unit": "PT"
+                  },
+                  "indentStart": {
+                    "magnitude": 324,
+                    "unit": "PT"
+                  },
+                  "textStyle": {
+                    "underline": false
+                  },
+                  "startNumber": 1
+                }
+              ]
+            }
+          }
+        },
+        "namedRanges": null,
+        "inlineObjects": null,
+        "positionedObjects": null,
+        "documentId": "1d9kmul2TaIdi8efsVkQVPmCGhzGGqcvPfhke4oaW-e4",
+        "document_url": "https://docs.google.com/document/d/1d9kmul2TaIdi8efsVkQVPmCGhzGGqcvPfhke4oaW-e4"
+      }
+    ],
+    "document_url": "https://docs.google.com/document/d/1d9kmul2TaIdi8efsVkQVPmCGhzGGqcvPfhke4oaW-e4"
+  },
+  "isError": false
+}

@@ -1,0 +1,29 @@
+{
+  "bridgeVersion": "3.6",
+  "kind": "google-docs-trusted-read-receipt",
+  "status": "complete",
+  "target": {
+    "documentId": "1d9kmul2TaIdi8efsVkQVPmCGhzGGqcvPfhke4oaW-e4",
+    "title": "Aansh Singh — Master Software Engineering Resume",
+    "revisionId": "ANLCKQmJDSMH1NCyp2x2_a1NzbUhok0c-mofDz6iDtxhqJ-0lE_S7E2Bo1pj5ADE9I4_sGIYLVGmuAiR0xg0FCMDOhFDIP35zBIn31Z2qlU",
+    "documentUrl": "https://docs.google.com/document/d/1d9kmul2TaIdi8efsVkQVPmCGhzGGqcvPfhke4oaW-e4",
+    "selectedTabId": null
+  },
+  "dropdownMetadata": {
+    "status": "unavailable",
+    "resolvedTool": null,
+    "authoritative": false,
+    "count": 0
+  },
+  "controlAwareness": {
+    "hasProtectedControls": false,
+    "authoritativeDropdownCount": 0,
+    "opaqueControlCount": 0,
+    "affectedParagraphCount": 0,
+    "nativeElementCounts": {},
+    "preservationRequired": false,
+    "recommendedBehavior": "No protected controls were detected in the scanned scope."
+  },
+  "warnings": [],
+  "error": null
+}

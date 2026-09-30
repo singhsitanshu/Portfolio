@@ -81,3 +81,93 @@ p { line-height: 1.65; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Homepage shell: shared palette, typography, and spacing from the foundation. */
+[id] { scroll-margin-top: 1.5rem; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(15rem, 1fr); gap: 4rem; align-items: end; padding-block: var(--space-section); }
+.hero h1 { margin-top: 1.5rem; font-size: clamp(4.5rem, 10vw, 8rem); }
+.hero-period { color: var(--color-accent); }
+.actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; margin-top: 2rem; }
+.file-label { font-family: var(--font-mono); font-size: 0.625rem; }
+.hero-index { padding: 2rem; border: var(--border-thin); border-radius: var(--radius-panel); background: var(--color-surface); }
+.hero-index > a { display: grid; grid-template-columns: 1.5rem 1fr auto; gap: 1rem; align-items: center; padding-block: 1.5rem; border-bottom: var(--border-thin); font-size: 1.25rem; }
+.hero-index > a:hover { color: var(--color-accent); }
+.hero-index-note { margin-top: 2rem; font-size: 0.875rem; color: var(--color-muted); }
+.project-shell { min-height: 34rem; display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; }
+.project-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.project-shell-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.project-shell h2 { font-size: clamp(2.75rem, 6vw, 5rem); }
+.project-summary { font-size: clamp(1.25rem, 2.5vw, 1.75rem); line-height: 1.4; letter-spacing: -0.025em; margin-bottom: 1.5rem; }
+.project-shell-note { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--color-muted); }
+.about-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.about-copy { margin-top: 1.5rem; max-width: 32rem; }
+.journey { list-style: none; margin: 0; padding: 0; }
+.journey li { padding: 0 0 2rem 1.5rem; border-left: var(--border-thin); }
+.journey li:last-child { padding-bottom: 0; }
+.journey h3 { font-size: 1.125rem; margin-top: 0.75rem; }
+.journey-role { margin-block: 0.5rem; font-size: 0.875rem; }
+.journey .muted { font-size: 0.875rem; }
+.email-link { overflow-wrap: anywhere; }
+.copy-feedback { min-height: 3.5rem; margin-top: 1rem; color: var(--color-accent); font-size: 0.875rem; }
+@media (max-width: 52rem) {
+  .hero, .about-section, .project-shell-body { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-index { max-width: 30rem; }
+  .project-shell { min-height: 32rem; }
+}
+
+/* Ticket 03: a static, semantic system visual for the CodeGraph feature. */
+.codegraph-feature { display: grid; gap: 3rem; }
+.codegraph-introduction { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; }
+.codegraph-feature h2 { font-size: clamp(2.75rem, 6vw, 5rem); }
+.codegraph-positioning { margin-top: 1rem; color: var(--color-muted); max-width: 23rem; }
+.codegraph-question { font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.25; letter-spacing: -0.035em; margin-bottom: 1.5rem; }
+.codegraph-system { margin-top: 1rem; }
+.codegraph-flow { margin: 0; border: var(--border-thin); border-radius: var(--radius-panel); padding: clamp(1.25rem, 3vw, 2rem); background: var(--color-surface); }
+.codegraph-stages { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2rem; padding: 0; margin: 2rem 0; }
+.codegraph-stages li { position: relative; min-width: 0; }
+.codegraph-stages h3 { font-size: 1rem; letter-spacing: -0.02em; margin: 0.5rem 0; }
+.codegraph-stages p { color: var(--color-muted); font-size: 0.8125rem; }
+.flow-step { display: block; margin-top: 1rem; }
+.flow-symbol { display: block; width: 3rem; height: 3rem; border: 1px solid var(--color-accent); border-radius: var(--radius-panel); position: relative; color: var(--color-accent); font-family: var(--font-mono); font-size: 2rem; text-align: center; line-height: 2.875rem; }
+.flow-symbol-file::before, .flow-symbol-file::after { content: ''; position: absolute; left: 0.75rem; right: 0.75rem; border-top: 1px solid var(--color-accent); }
+.flow-symbol-file::before { top: 1rem; }
+.flow-symbol-file::after { top: 1.75rem; }
+.flow-symbol-graph { background: linear-gradient(45deg, transparent 49%, var(--color-rule) 49%, var(--color-rule) 51%, transparent 51%); }
+.flow-symbol-graph::before, .flow-symbol-graph::after { content: ''; width: 0.5rem; height: 0.5rem; border: 1px solid var(--color-accent); border-radius: 50%; background: var(--color-surface); position: absolute; }
+.flow-symbol-graph::before { top: 0.5rem; left: 0.5rem; }
+.flow-symbol-graph::after { bottom: 0.5rem; right: 0.5rem; }
+.flow-symbol-context::before { content: ''; position: absolute; inset: 0.625rem; border: 1px solid var(--color-accent); background: var(--color-paper); }
+.flow-arrow { position: absolute; width: 1.5rem; border-top: 1px solid var(--color-accent); top: 1.5rem; right: -1.75rem; }
+.flow-arrow::after { content: ''; position: absolute; width: 0.4rem; height: 0.4rem; border-top: 1px solid var(--color-accent); border-right: 1px solid var(--color-accent); right: 0; top: -0.25rem; transform: rotate(45deg); }
+.codegraph-flow figcaption { font-size: 0.875rem; color: var(--color-muted); border-top: var(--border-thin); padding-top: 1.25rem; max-width: 52rem; }
+.codegraph-result { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem 3rem; border-block: var(--border-thin); padding-block: 2rem; }
+.context-comparison { display: flex; align-items: baseline; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.065em; line-height: 1.15; }
+.context-comparison > span:first-child { color: var(--color-muted); }
+.context-comparison strong { font-weight: 500; color: var(--color-accent); }
+.context-arrow { font-size: 0.7em; color: var(--color-muted); }
+.context-unit { font-family: var(--font-mono); font-size: 0.75rem; margin-top: 0.75rem; color: var(--color-muted); }
+.context-reduction { margin: 0; padding-left: 2rem; border-left: 2px solid var(--color-accent); align-self: end; }
+.context-reduction dt { color: var(--color-muted); font-size: 0.875rem; }
+.context-reduction dd { margin: 0.5rem 0 0; color: var(--color-accent); font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.065em; line-height: 1.1; }
+.context-evidence { grid-column: 1 / -1; color: var(--color-muted); font-size: 0.75rem; }
+.codegraph-explanations { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+.codegraph-explanations h3 { font-size: 1.125rem; line-height: 1.4; letter-spacing: -0.02em; }
+.codegraph-explanations p { color: var(--color-muted); font-size: 0.875rem; margin-top: 0.75rem; }
+.codegraph-agent { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; padding-top: 1.5rem; border-top: var(--border-thin); }
+.codegraph-footer { display: flex; justify-content: space-between; align-items: end; gap: 2rem; flex-wrap: wrap; }
+.codegraph-technologies { color: var(--color-muted); font-size: 0.75rem; max-width: 38rem; }
+.codegraph-technologies .eyebrow { display: block; margin-bottom: 0.5rem; }
+@media (max-width: 60rem) {
+  .codegraph-explanations { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .codegraph-stages { grid-template-columns: 1fr; gap: 2rem; }
+  .codegraph-stages li { display: grid; grid-template-columns: 3rem 1fr; gap: 0 1rem; padding-bottom: 1rem; }
+  .flow-symbol { grid-row: 1 / 4; }
+  .flow-step { margin-top: 0; }
+  .codegraph-stages .flow-arrow { top: auto; bottom: -0.5rem; right: auto; left: 1.5rem; width: 0; height: 1.5rem; border-top: 0; border-left: 1px solid var(--color-accent); }
+  .codegraph-stages .flow-arrow::after { top: auto; bottom: 0; right: -0.15rem; transform: rotate(135deg); }
+}
+@media (max-width: 40rem) {
+  .codegraph-introduction, .codegraph-result, .codegraph-explanations, .codegraph-agent { grid-template-columns: 1fr; gap: 1.5rem; }
+  .codegraph-feature { gap: 2.5rem; }
+  .context-reduction { padding-left: 1rem; margin-top: 0.5rem; }
+}

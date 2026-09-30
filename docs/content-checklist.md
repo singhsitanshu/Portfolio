@@ -1,15 +1,17 @@
 # Content readiness
 
-No résumé, personal contact details, repository URLs, experience records, project dates, or benchmark evidence were supplied with ticket 01. Nothing below is approved for publication yet. Project names and routes come from the ticket; they do not establish capabilities or results.
+Updated after the user's authoritative résumé/information-bank handoff. Source locations and usage constraints are in `content-sources.md`; selected reusable facts live in `src/content/portfolio.ts`.
 
-| Required input | Status | Evidence needed |
+| Required input | Status | Remaining need |
 | --- | --- | --- |
-| Résumé | Missing | Approved current PDF, display name, and verified experience/education |
-| Contact links | Missing | Preferred public email and verified professional profile URLs |
-| CodeGraph repository | Missing | Real repository URL, access availability, and ownership/contribution context |
-| TaskForge repository | Missing | Real repository URL, access availability, and ownership/contribution context |
-| Project dates | Missing | Verified start/end dates and current status for each project |
-| Benchmark evidence | Missing | Source results, dataset/workload, hardware, versions, methodology, baseline, and reproducible commands for each numerical claim |
-| Project descriptions | Missing | Approved problem, role, scope, implementation decisions, and supported outcomes |
+| Résumé and display name | Received | Static PDF served at `/aansh-singh-resume.pdf` for Ticket 02; source bytes preserved. |
+| Preferred contact links | Supplied by user | Email, LinkedIn, and GitHub centralized and used by Ticket 02 navigation, hero, and contact. |
+| CodeGraph repository | Supplied by user | Exact URL retained; live repository availability was not independently checked in this intake. |
+| TaskForge repository | Supplied by user | Exact URL retained; live repository availability was not independently checked in this intake. |
+| Project dates | Supplied by user | Summer 2026 for both projects; no exact start/end dates inferred. |
+| Benchmark claims and context | Documented in bank | CodeGraph context result used in Ticket 03 with approximate counts, exact supplied reduction, and source pointers. Original reproducible CodeGraph benchmark artifacts were not supplied (bank evidence ledger); do not invent their conditions. TaskForge evidence selection remains deferred. No benchmark rerun performed. |
+| Project descriptions | Available | Short sourced descriptions selected; full case studies remain deferred. |
+| Personal, education, experience, skills | Available in authoritative bank | Select only what the active ticket needs; do not publish the complete source inventory. |
+| Public live demos / screenshots | Not supplied in this intake | Track if a later ticket requires them; do not invent links or images. |
 
-These inputs block final portfolio content, not the foundation ticket. Until supplied, route placeholders state what is missing; no invented statistics, résumé downloads, external links, or experience claims are displayed.
+No source dependency blocks this intake. If a future ticket requires an absent fact or artifact, retain a specific missing-content entry rather than inventing it. Received content is not the same as a completed future ticket.

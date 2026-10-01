@@ -2,6 +2,14 @@
 // Metric wording: catalog/resume-bullets.json B0013/B0032/B0185.
 // Original benchmark artifacts were not supplied; see docs/ticket-03-verification.md.
 export const codegraphFeature = {
+  showcase: {
+    summary: 'Explore a codebase through its files, call relationships, and question-specific context.',
+    highlights: [
+      { title: 'Structure & source', body: 'Inspect source on demand and explore repository structure, direct callers, and architectural communities.' },
+      { title: 'Focused retrieval', body: 'Graph tools and semantic search supply relevant observations to an AI agent. Retrieval quality depends on the stored index.' },
+    ],
+    visualNote: 'Structure and retrieval illustrated, not a product screenshot.',
+  },
   question: 'What if an AI agent could understand a codebase before touching it?',
   positioning: 'Repository intelligence for AI-assisted software engineering.',
   problem: 'Understanding unfamiliar code means finding the relevant files, tracing their relationships, and choosing what an agent needs to see.',

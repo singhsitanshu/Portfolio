@@ -33,7 +33,7 @@ export function Home() {
         <p className="portrait-caption"><span aria-hidden="true">01 /</span> {profile.educationLabel}</p>
       </Entrance>
     </section>
-    <div id="work" tabIndex={-1}>
+    <div id="work" className="project-showcases" tabIndex={-1}>
       {projects.map((project) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <TaskForgeFeature key={project.id} project={project} />)}
     </div>
     <section id="about" className="section about-section" aria-labelledby="about-title" tabIndex={-1}>

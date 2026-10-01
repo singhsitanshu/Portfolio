@@ -1,6 +1,14 @@
 // Supplied bank: projects/TASKFORGE.md; 04_METRICS.md E1/E2;
 // sources/manuals/taskforge/04-performance.md §12 and 10-benchmark-evidence.md.
 export const taskforgeFeature = {
+  showcase: {
+    summary: 'Coordinate background tasks with durable PostgreSQL queues, concurrent Go workers, and bounded retries.',
+    highlights: [
+      { title: 'Atomic ownership', body: 'Claim eligible work in a short transaction, then execute independently while renewable leases guard database ownership.' },
+      { title: 'Recovery with history', body: 'Keep numbered attempts for completion, retry, and crash recovery. External effects still need their own idempotency.' },
+    ],
+    visualNote: 'Illustrative coordination, not live telemetry or a benchmark setup.',
+  },
   question: 'What happens when thousands of tasks compete for the same workers?',
   positioning: 'Distributed task execution built around correctness, reliability, and concurrency.',
   introduction: 'TaskForge coordinates durable task admission, concurrent Go workers, retries, and crash recovery through PostgreSQL.',

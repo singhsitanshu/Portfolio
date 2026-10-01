@@ -27,7 +27,7 @@ export const taskforgeCaseStudy = {
       { label: '02 / Authority', title: 'PostgreSQL tasks + numbered attempts', body: 'Committed rows hold priority, schedule, owner, lease, current state, outcomes, and the history of each execution attempt.', connection: 'Claim / renew / finalize ↔ workers · Recover / promote ↔ schedulers ↓' },
       { label: '03 / Execution & maintenance', title: 'Go workers + Go schedulers', body: 'Each worker runs one handler at a time, with independent heartbeat and lease-renewal loops. Schedulers recover expired ownership and promote due retries; replicas coordinate through row locks.' },
     ],
-    caption: 'There is no central in-memory dispatcher. Workers poll PostgreSQL for eligible tasks; schedulers maintain eligibility and recovery. Prometheus scrapes API, worker, and scheduler metrics, and Grafana displays them. Metrics aid diagnosis while PostgreSQL remains the state authority. Redis is provisioned but unused by the current application.',
+    caption: 'There is no central in-memory dispatcher. Workers poll PostgreSQL for eligible tasks; schedulers maintain eligibility and recovery. Prometheus scrapes API, worker, and scheduler metrics, and Grafana displays throughput, latency, retries, lease recovery, and system health. Metrics aid diagnosis while PostgreSQL remains the state authority. Redis is provisioned but unused by the current application.',
   },
   submission: [
     { title: 'Admit a logical task', body: 'FastAPI validates task type, payload, queue, priority, total-attempt budget, and optional schedule. A committed task starts QUEUED with no attempts. An optional idempotency key makes uncertain client retries safe for admission.' },

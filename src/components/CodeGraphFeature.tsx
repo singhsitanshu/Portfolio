@@ -1,45 +1,31 @@
-import { Heading, TextLink } from './ui';
 import { codegraphFeature as content } from '../content/codegraph';
 import type { Project } from '../content/portfolio';
-import { Entrance, MotionRule, SequencePulse, SequenceSymbol, useDiagramSequence } from './Motion';
+import { ProjectShowcase } from './ProjectShowcase';
 
 export function CodeGraphFeature({ project }: { project: Project }) {
-  const sequence = useDiagramSequence(content.visual.stages.length);
-  return <section id={project.id} className="section codegraph-feature" aria-labelledby="codegraph-title" tabIndex={-1}>
-    <div className="project-meta"><span className="eyebrow">01 / Selected work</span><span className="eyebrow">{project.dates}</span></div>
-    <div className="codegraph-introduction">
-      <div><Entrance><Heading id="codegraph-title">{project.name}</Heading></Entrance><p className="codegraph-positioning">{content.positioning}</p></div>
-      <div><p className="codegraph-question">{content.question}</p><p className="muted">{content.problem}</p><p className="codegraph-system">{content.system}</p></div>
-    </div>
-    <figure ref={sequence.ref} className="codegraph-flow" aria-labelledby="codegraph-flow-title" data-sequence-state={sequence.state} data-sequence-step={sequence.phase}>
-      <p id="codegraph-flow-title" className="eyebrow">{content.visual.title}</p>
-      <ol className="codegraph-stages">
-        {content.visual.stages.map((stage, index) => <li key={stage.title}>
-          <SequenceSymbol className={`flow-symbol flow-symbol-${stage.symbol}`} active={sequence.active && sequence.phase === index} complete={sequence.phase > index}>{stage.symbol === 'function' ? 'ƒ' : stage.symbol === 'agent' ? '◎' : ''}</SequenceSymbol>
-          <span className="flow-step eyebrow">0{index + 1}</span>
-          <h3>{stage.title}</h3><p>{stage.detail}</p>
-          {index < content.visual.stages.length - 1 && <span className="flow-arrow" aria-hidden="true"><SequencePulse active={sequence.active && sequence.phase === index} /></span>}
-        </li>)}
-      </ol>
-      <figcaption>{content.visual.caption}</figcaption>
-    </figure>
-    <div className="codegraph-result">
-      <div>
-        <p className="eyebrow">{content.result.label}</p>
-        <p className="context-comparison"><span>{content.result.baseline}</span><span className="context-arrow" aria-hidden="true">→</span><span className="sr-only">to</span><strong>{content.result.focused}</strong></p>
-        <p className="context-unit">{content.result.unit}</p>
+  return <ProjectShowcase project={project} {...content.showcase} technologies={content.technologies}>
+    <figure className="showcase-visual repository-visual" aria-labelledby="codegraph-concept-caption">
+      <div className="repository-map">
+        <div className="repository-tree">
+          <p className="visual-label">Repository <span aria-hidden="true">→</span></p>
+          <ul><li><span className="mini-file" aria-hidden="true" />Files<ul><li>Functions</li><li>Calls</li></ul></li></ul>
+        </div>
+        <div className="dependency-map">
+          <p className="visual-label">Relationships</p>
+          <svg viewBox="0 0 220 130" width="220" height="130" aria-hidden="true" focusable="false">
+            <g className="graph-edges"><path d="M110 65 30 28M110 65 185 22M110 65 195 108M110 65 47 110M30 28 185 22M47 110 195 108" /></g>
+            <g className="graph-nodes"><circle cx="30" cy="28" r="9" /><circle cx="185" cy="22" r="9" /><circle cx="195" cy="108" r="9" /><circle cx="47" cy="110" r="9" /></g>
+            <circle className="graph-center" cx="110" cy="65" r="19" />
+            <path className="graph-focus" d="m102 65 6 6 11-13" />
+          </svg>
+        </div>
+        <div className="context-preview">
+          <p className="visual-label">Focused context <span aria-hidden="true">↗</span></p>
+          <p>Graph + vector retrieval</p>
+          <div className="context-lines" aria-hidden="true"><i /><i /><i /></div>
+        </div>
       </div>
-      <dl className="context-reduction"><dt>{content.result.reductionLabel}</dt><dd>{content.result.reduction}</dd></dl>
-      <p className="context-evidence">{content.result.note}</p>
-      <MotionRule className="metric-motion" />
-    </div>
-    <div className="codegraph-explanations">
-      {content.explanations.map((item) => <div key={item.title}><h3>{item.title}</h3><p>{item.body}</p></div>)}
-    </div>
-    <div className="codegraph-agent"><p className="eyebrow">{content.agent.label}</p><p>{content.agent.body}</p></div>
-    <div className="codegraph-footer">
-      <p className="codegraph-technologies"><span className="eyebrow">Built with</span>{content.technologies.join(' · ')}</p>
-      <TextLink to={project.path}>{content.linkLabel} <span aria-hidden="true">↗</span></TextLink>
-    </div>
-  </section>;
+      <figcaption id="codegraph-concept-caption"><strong>Conceptual view</strong><span>{content.showcase.visualNote}</span></figcaption>
+    </figure>
+  </ProjectShowcase>;
 }

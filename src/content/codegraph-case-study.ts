@@ -21,14 +21,14 @@ export const codegraphCaseStudy = {
     { id: 'repository', title: 'Repository' },
   ],
   problem: 'An unfamiliar repository presents two related problems: finding relevant code and understanding how it connects. A full-source prompt is large, while isolated snippets can lose caller and dependency context. CodeGraph builds a navigable structural index and lets an agent choose smaller observations for the current question.',
-  system: 'A React dashboard submits a GitHub repository to FastAPI, displays a React Flow graph, and fetches source separately when a function is selected. The backend combines Tree-sitter parsing, Neo4j relationships, metadata embeddings, Leiden communities, and a Claude-powered LangGraph ReAct agent.',
+  system: 'A React dashboard submits a GitHub repository to FastAPI, displays a React Flow graph, and fetches source separately when a function is selected. The backend combines Tree-sitter parsing, Neo4j relationships, metadata embeddings, Leiden communities, and a LangGraph ReAct agent powered by Claude Sonnet 5.',
   architecture: {
     title: 'Two paths through one repository index',
     layers: [
       { label: '01 / Interface', title: 'React dashboard ↔ FastAPI', detail: 'Repository submission, graph exploration, source inspection, and questions.', connection: 'Ingestion path ↓' },
       { label: '02 / Indexing', title: 'GitHub archive → Tree-sitter → ETL', detail: 'Safe temporary extraction; supported-source discovery; syntax records; three-pass graph writes.', connection: 'Persist + enrich ↓' },
       { label: '03 / Storage', title: 'Neo4j graph · vectors · communities', detail: 'Repository → File → Function; inferred CALLS edges. OpenAI name/path embeddings and sampled community labels enrich the index.', connection: 'Question path: agent ↔ tools ↔ index ↓' },
-      { label: '04 / Retrieval', title: 'LangGraph ReAct ↔ Claude', detail: 'Seven tools return structure, direct callers, outgoing calls, unresolved external names, semantic matches, and community summaries. Tool observations inform the final answer.' },
+      { label: '04 / Retrieval', title: 'LangGraph ReAct ↔ Claude Sonnet 5', detail: 'Seven tools return structure, direct callers, outgoing calls, unresolved external names, semantic matches, and community summaries. Tool observations inform the final answer.' },
     ],
     caption: 'Ingestion builds the repository index. Questions use graph and semantic retrieval, while the dashboard provides source inspection on demand.',
   },

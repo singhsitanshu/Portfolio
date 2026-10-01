@@ -42,7 +42,7 @@ export const codegraphFeature = {
   },
   agent: {
     label: '7 repository-scoped tools',
-    body: 'A Claude-powered LangGraph ReAct agent uses tools for structure, dependencies, blast radius, external calls, semantic search, and architecture analysis.',
+    body: 'A LangGraph ReAct agent powered by Claude Sonnet 5 uses tools for structure, dependencies, blast radius, external calls, semantic search, and architecture analysis.',
   },
   technologies: ['React / TypeScript', 'Python / FastAPI', 'Tree-sitter', 'Neo4j', 'LangGraph'],
   linkLabel: 'Explore CodeGraph',

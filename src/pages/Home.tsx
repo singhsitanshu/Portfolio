@@ -55,7 +55,6 @@ export function Home() {
           <div className="experience-entry">
             <h3>{entry.organization}</h3>
             <p className="experience-role">{entry.role}</p>
-            {'affiliation' in entry && <p className="muted"><em>{entry.affiliation}</em></p>}
             <ul>{entry.contributions.map(contribution => <li key={contribution}>{contribution}</li>)}</ul>
           </div>
         </li>)}

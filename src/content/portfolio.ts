@@ -74,11 +74,10 @@ export const experience = [
   },
   {
     organization: 'exploretech.la', role: 'Operations Team Member',
-    affiliation: 'UCLA Samueli School of Engineering',
     dates: 'Sept 2025 – Present', category: 'Operations',
     contributions: [
       'Coordinated event logistics and procurement for an annual STEM outreach event serving ~500 high school students across Greater Los Angeles.',
-      'Partnered with ASUCLA Catering and external vendors, including Gorilla Marketing, to source catering, event supplies, and custom merchandise, ensuring materials were organized and ready for event-day execution.',
+      'Partnered with ASUCLA Catering and external vendors to source catering, event supplies, and custom merchandise, ensuring materials were ready for event.',
     ],
   },
   {

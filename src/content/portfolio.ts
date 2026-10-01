@@ -21,7 +21,7 @@ export const profile = {
   hero: {
     greeting: 'Hi, I’m',
     introduction: 'A computer science student at UCLA building developer tools, AI systems, and reliable backend software.',
-    perspective: 'Pragmatic, systems-minded.',
+    perspective: 'Pragmatic, system-minded.',
     portrait: {
       src: '/images/aansh-singh-800.jpg',
       srcSet: '/images/aansh-singh-480.webp 480w, /images/aansh-singh-800.webp 800w, /images/aansh-singh-1120.webp 1120w',

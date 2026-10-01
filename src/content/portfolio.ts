@@ -25,9 +25,9 @@ export const profile = {
     portrait: {
       src: '/images/aansh-singh-800.jpg',
       srcSet: '/images/aansh-singh-480.webp 480w, /images/aansh-singh-800.webp 800w, /images/aansh-singh-1120.webp 1120w',
-      alt: 'Aansh Singh resting his chin on his hands, with city lights behind him.',
+      alt: 'Aansh Singh wearing a brown hoodie and backpack at Rockefeller Center.',
       width: 800,
-      height: 778,
+      height: 1098,
     },
   },
 } as const;

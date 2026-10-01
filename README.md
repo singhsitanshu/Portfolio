@@ -9,7 +9,7 @@ npm run build
 npm run preview
 ```
 
-The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The root has a hero, CodeGraph and TaskForge homepage features, about/journey, and contact. Both projects have case studies using a shared reading layout. Motion highlights the existing content without hiding copy or changing numerical values.
+The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The root has a portrait hero, Projects, Experience, Education, and Contact. Both projects have case studies using a shared reading layout. Motion highlights the existing content without hiding copy or changing numerical values.
 
 ## Structure
 
@@ -60,3 +60,5 @@ Responsive and accessibility checks, audit setup, and verification limits are re
 Ticket 09 metadata, static routing, asset-size checks, and remaining deployment verification are recorded in `docs/ticket-09-verification.md`. After building, run `npm run check:production` for generated-file checks. With preview running at port 4177, `PREVIEW_URL=http://127.0.0.1:4177 npm run check:production` also tests HTTP route, asset, and 404 responses. The image's JPEG signature, 1200 × 630 dimensions, links, fragment targets, and supplied résumé bytes are checked. Fonts remain local system fonts; diagrams use HTML/CSS, and no noncritical content image requires a page request.
 
 Ticket 10's manual deployment commands, local Cloudflare checks, environment assumptions, and verification results are in [the deployment handoff](docs/ticket-10-deployment-readiness.md). This follows the replacement deployment-readiness ticket supplied by the user, superseding the older deployment instructions in `tickets/10-cloudflare-deployment.md`.
+
+Ticket 14 separates career and college content using the newly attached résumé. See [the source map and final copy](docs/ticket-14-content-map.md) and [verification](docs/ticket-14-verification.md). Canonical homepage sections use `#projects`, `#experience`, `#education`, and `#contact`; legacy `#work` and `#about` links resolve to Projects and the introduction. Focused navigation checks: `node --experimental-strip-types --test tests/navigation.test.mjs`.

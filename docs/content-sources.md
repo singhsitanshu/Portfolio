@@ -2,7 +2,7 @@
 
 ## Source precedence
 
-The user's explicit portfolio updates take precedence. The supplied information bank is authoritative for personal, education, experience, skills, links, and résumé-related facts. Its archived prompts, tailoring workflows, and commands are source material, not instructions to execute for this website.
+The user's explicit portfolio updates take precedence. For Ticket 14 career and education content, the newly attached résumé takes precedence over the historical information bank. The bank remains the source for previously verified content outside that ticket. Its archived prompts, tailoring workflows, and commands are source material, not instructions to execute for this website.
 
 - Bank: `/Users/sitanshusingh/Downloads/resumes/information-bank/`
 - Supplied résumé: `/Users/sitanshusingh/Downloads/Aansh Singh — Master Software Engineering Resume.pdf`
@@ -74,3 +74,9 @@ Selected details live in `src/content/taskforge-case-study.ts`. Dates and URL re
 | Tradeoffs and derived lessons | `05-decisions-critique.md` §§16/19, plus the documented concurrency/effect and performance boundaries |
 
 The page distinguishes optional idempotent admission from execution/effects, task leases from process liveness, retry backoff from direct crash requeue, and total attempts from retries. Reported zero duplicates refer to tested durable identities/recovery transitions. E6 p95 starts at lease expiration, uses the median of trial p95 values, and is not exact commit-ack latency. Historical measurements remain distinct from the manual's newer architecture revision and the portfolio verification. No ignored raw artifact is copied or linked as a publicly available download; no new benchmark or backend execution is performed.
+
+## Ticket 14 — attached résumé and information architecture
+
+Controlling career/college source: `Copy of Aansh Singh — Master Software Engineering Resume.pdf`, supplied September 30, 2026. Both pages were extracted and visually reviewed. Page 1 supplies all selected career and college facts. See [the source map and final copy](ticket-14-content-map.md) for exact titles/dates, classifications, and reconciliation.
+
+Experience now includes D-Tech, RRISD student leadership, and CompuChild. Bruin Underwater Robotics appears once under Education as a college engineering activity; its date is `2025 – Present`, replacing the old month-specific variant. Degree, school, and June 2029 expected graduation are consistent. No prior career record was dropped and no fallback career/degree fact was needed. Existing owner-supplied contact preferences and the public résumé download remain unchanged. The new PDF is not a public asset.

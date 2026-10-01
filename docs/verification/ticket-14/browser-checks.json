@@ -1,0 +1,1515 @@
+{
+  "responsive": [
+    {
+      "width": 360,
+      "text": 100,
+      "layout": {
+        "clipped": [],
+        "fonts": "loaded",
+        "heights": [
+          {
+            "height": 2273.3359375,
+            "id": "projects"
+          },
+          {
+            "height": 1171.1640625,
+            "id": "experience"
+          },
+          {
+            "height": 654.828125,
+            "id": "education"
+          }
+        ],
+        "motion": "mobile",
+        "overflow": false
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hero-role"
+            ],
+            [
+              ".hero-greeting"
+            ],
+            [
+              "#hero-title"
+            ],
+            [
+              ".hero-perspective"
+            ],
+            [
+              ".hero-copy > .lede"
+            ],
+            [
+              ".hero-actions > a[href$=\"#projects\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > .file-label"
+            ],
+            [
+              ".hero-socials > a:nth-child(1)"
+            ],
+            [
+              ".hero-socials > a:nth-child(2)"
+            ],
+            [
+              ".portrait-caption"
+            ],
+            [
+              ".portrait-caption > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > .visual-label"
+            ],
+            [
+              ".repository-tree > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > ul > li"
+            ],
+            [
+              "li > ul > li:nth-child(1)"
+            ],
+            [
+              "li > ul > li:nth-child(2)"
+            ],
+            [
+              ".dependency-map > .visual-label"
+            ],
+            [
+              "#codegraph-concept-caption > strong"
+            ],
+            [
+              "#codegraph-concept-caption > span"
+            ],
+            [
+              ".queue-preview > .visual-label"
+            ],
+            [
+              ".queue-preview > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".queue-preview > .queue-caption"
+            ],
+            [
+              ".worker-preview > .visual-label"
+            ],
+            [
+              ".worker-preview > .queue-caption"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".retry-return"
+            ],
+            [
+              ".retry-return > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#taskforge-concept-caption > strong"
+            ],
+            [
+              "#taskforge-concept-caption > span"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "text": 200,
+      "layout": {
+        "clipped": [],
+        "fonts": "loaded",
+        "heights": [
+          {
+            "height": 7447.7109375,
+            "id": "projects"
+          },
+          {
+            "height": 4503.4609375,
+            "id": "experience"
+          },
+          {
+            "height": 2276.953125,
+            "id": "education"
+          }
+        ],
+        "motion": "reduced",
+        "overflow": false
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hero-role"
+            ],
+            [
+              ".hero-greeting"
+            ],
+            [
+              "#hero-title"
+            ],
+            [
+              ".hero-perspective"
+            ],
+            [
+              ".hero-copy > .lede"
+            ],
+            [
+              ".hero-actions > a[href$=\"#projects\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > .file-label"
+            ],
+            [
+              ".hero-socials > a:nth-child(1)"
+            ],
+            [
+              ".hero-socials > a:nth-child(2)"
+            ],
+            [
+              ".portrait-caption"
+            ],
+            [
+              ".portrait-caption > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > .visual-label"
+            ],
+            [
+              ".repository-tree > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > ul > li"
+            ],
+            [
+              "li > ul > li:nth-child(1)"
+            ],
+            [
+              "li > ul > li:nth-child(2)"
+            ],
+            [
+              ".dependency-map > .visual-label"
+            ],
+            [
+              "#codegraph-concept-caption > strong"
+            ],
+            [
+              "#codegraph-concept-caption > span"
+            ],
+            [
+              ".queue-preview > .visual-label"
+            ],
+            [
+              ".queue-preview > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".queue-preview > .queue-caption"
+            ],
+            [
+              ".worker-preview > .visual-label"
+            ],
+            [
+              ".worker-preview > .queue-caption"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".retry-return"
+            ],
+            [
+              ".retry-return > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#taskforge-concept-caption > strong"
+            ],
+            [
+              "#taskforge-concept-caption > span"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "text": 100,
+      "layout": {
+        "clipped": [],
+        "fonts": "loaded",
+        "heights": [
+          {
+            "height": 2202.9453125,
+            "id": "projects"
+          },
+          {
+            "height": 1096.9140625,
+            "id": "experience"
+          },
+          {
+            "height": 630.078125,
+            "id": "education"
+          }
+        ],
+        "motion": "mobile",
+        "overflow": false
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hero-role"
+            ],
+            [
+              ".hero-greeting"
+            ],
+            [
+              "#hero-title"
+            ],
+            [
+              ".hero-perspective"
+            ],
+            [
+              ".hero-copy > .lede"
+            ],
+            [
+              ".hero-actions > a[href$=\"#projects\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > .file-label"
+            ],
+            [
+              ".hero-socials > a:nth-child(1)"
+            ],
+            [
+              ".hero-socials > a:nth-child(2)"
+            ],
+            [
+              ".portrait-caption"
+            ],
+            [
+              ".portrait-caption > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > .visual-label"
+            ],
+            [
+              ".repository-tree > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > ul > li"
+            ],
+            [
+              "li > ul > li:nth-child(1)"
+            ],
+            [
+              "li > ul > li:nth-child(2)"
+            ],
+            [
+              ".dependency-map > .visual-label"
+            ],
+            [
+              "#codegraph-concept-caption > strong"
+            ],
+            [
+              "#codegraph-concept-caption > span"
+            ],
+            [
+              ".queue-preview > .visual-label"
+            ],
+            [
+              ".queue-preview > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".queue-preview > .queue-caption"
+            ],
+            [
+              ".worker-preview > .visual-label"
+            ],
+            [
+              ".worker-preview > .queue-caption"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".retry-return"
+            ],
+            [
+              ".retry-return > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#taskforge-concept-caption > strong"
+            ],
+            [
+              "#taskforge-concept-caption > span"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "text": 200,
+      "layout": {
+        "clipped": [],
+        "fonts": "loaded",
+        "heights": [
+          {
+            "height": 6918.5546875,
+            "id": "projects"
+          },
+          {
+            "height": 3916.96875,
+            "id": "experience"
+          },
+          {
+            "height": 1931.359375,
+            "id": "education"
+          }
+        ],
+        "motion": "reduced",
+        "overflow": false
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hero-role"
+            ],
+            [
+              ".hero-greeting"
+            ],
+            [
+              "#hero-title"
+            ],
+            [
+              ".hero-perspective"
+            ],
+            [
+              ".hero-copy > .lede"
+            ],
+            [
+              ".hero-actions > a[href$=\"#projects\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > .file-label"
+            ],
+            [
+              ".hero-socials > a:nth-child(1)"
+            ],
+            [
+              ".hero-socials > a:nth-child(2)"
+            ],
+            [
+              ".portrait-caption"
+            ],
+            [
+              ".portrait-caption > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > .visual-label"
+            ],
+            [
+              ".repository-tree > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > ul > li"
+            ],
+            [
+              "li > ul > li:nth-child(1)"
+            ],
+            [
+              "li > ul > li:nth-child(2)"
+            ],
+            [
+              ".dependency-map > .visual-label"
+            ],
+            [
+              "#codegraph-concept-caption > strong"
+            ],
+            [
+              "#codegraph-concept-caption > span"
+            ],
+            [
+              ".queue-preview > .visual-label"
+            ],
+            [
+              ".queue-preview > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".queue-preview > .queue-caption"
+            ],
+            [
+              ".worker-preview > .visual-label"
+            ],
+            [
+              ".worker-preview > .queue-caption"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".retry-return"
+            ],
+            [
+              ".retry-return > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#taskforge-concept-caption > strong"
+            ],
+            [
+              "#taskforge-concept-caption > span"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "text": 100,
+      "layout": {
+        "clipped": [],
+        "fonts": "loaded",
+        "heights": [
+          {
+            "height": 1837.28125,
+            "id": "projects"
+          },
+          {
+            "height": 939.609375,
+            "id": "experience"
+          },
+          {
+            "height": 552.25,
+            "id": "education"
+          }
+        ],
+        "motion": "mobile",
+        "overflow": false
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hero-role"
+            ],
+            [
+              ".hero-greeting"
+            ],
+            [
+              "#hero-title"
+            ],
+            [
+              ".hero-perspective"
+            ],
+            [
+              ".hero-copy > .lede"
+            ],
+            [
+              ".hero-actions > a[href$=\"#projects\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > .file-label"
+            ],
+            [
+              ".hero-socials > a:nth-child(1)"
+            ],
+            [
+              ".hero-socials > a:nth-child(2)"
+            ],
+            [
+              ".portrait-caption"
+            ],
+            [
+              ".portrait-caption > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > .visual-label"
+            ],
+            [
+              ".repository-tree > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > ul > li"
+            ],
+            [
+              "li > ul > li:nth-child(1)"
+            ],
+            [
+              "li > ul > li:nth-child(2)"
+            ],
+            [
+              ".dependency-map > .visual-label"
+            ],
+            [
+              "#codegraph-concept-caption > strong"
+            ],
+            [
+              "#codegraph-concept-caption > span"
+            ],
+            [
+              ".queue-preview > .visual-label"
+            ],
+            [
+              ".queue-preview > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".queue-preview > .queue-caption"
+            ],
+            [
+              ".worker-preview > .visual-label"
+            ],
+            [
+              ".worker-preview > .queue-caption"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".retry-return"
+            ],
+            [
+              ".retry-return > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#taskforge-concept-caption > strong"
+            ],
+            [
+              "#taskforge-concept-caption > span"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "text": 200,
+      "layout": {
+        "clipped": [],
+        "fonts": "loaded",
+        "heights": [
+          {
+            "height": 3860.484375,
+            "id": "projects"
+          },
+          {
+            "height": 2296.90625,
+            "id": "experience"
+          },
+          {
+            "height": 1222.25,
+            "id": "education"
+          }
+        ],
+        "motion": "reduced",
+        "overflow": false
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hero-role"
+            ],
+            [
+              ".hero-greeting"
+            ],
+            [
+              "#hero-title"
+            ],
+            [
+              ".hero-perspective"
+            ],
+            [
+              ".hero-copy > .lede"
+            ],
+            [
+              ".hero-actions > a[href$=\"#projects\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > .file-label"
+            ],
+            [
+              ".hero-socials > a:nth-child(1)"
+            ],
+            [
+              ".hero-socials > a:nth-child(2)"
+            ],
+            [
+              ".portrait-caption"
+            ],
+            [
+              ".portrait-caption > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > .visual-label"
+            ],
+            [
+              ".repository-tree > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > ul > li"
+            ],
+            [
+              "li > ul > li:nth-child(1)"
+            ],
+            [
+              "li > ul > li:nth-child(2)"
+            ],
+            [
+              ".dependency-map > .visual-label"
+            ],
+            [
+              "#codegraph-concept-caption > strong"
+            ],
+            [
+              "#codegraph-concept-caption > span"
+            ],
+            [
+              ".queue-preview > .visual-label"
+            ],
+            [
+              ".queue-preview > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".queue-preview > .queue-caption"
+            ],
+            [
+              ".worker-preview > .visual-label"
+            ],
+            [
+              ".worker-preview > .queue-caption"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".retry-return"
+            ],
+            [
+              ".retry-return > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#taskforge-concept-caption > strong"
+            ],
+            [
+              "#taskforge-concept-caption > span"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "text": 100,
+      "layout": {
+        "clipped": [],
+        "fonts": "loaded",
+        "heights": [
+          {
+            "height": 1103.7578125,
+            "id": "projects"
+          },
+          {
+            "height": 856.890625,
+            "id": "experience"
+          },
+          {
+            "height": 653.28125,
+            "id": "education"
+          }
+        ],
+        "motion": "full",
+        "overflow": false
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hero-role"
+            ],
+            [
+              ".hero-greeting"
+            ],
+            [
+              "#hero-title"
+            ],
+            [
+              ".hero-perspective"
+            ],
+            [
+              ".hero-copy > .lede"
+            ],
+            [
+              ".hero-actions > a[href$=\"#projects\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > .file-label"
+            ],
+            [
+              ".hero-socials > a:nth-child(1)"
+            ],
+            [
+              ".hero-socials > a:nth-child(2)"
+            ],
+            [
+              ".portrait-caption"
+            ],
+            [
+              ".portrait-caption > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > .visual-label"
+            ],
+            [
+              ".repository-tree > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > ul > li"
+            ],
+            [
+              "li > ul > li:nth-child(1)"
+            ],
+            [
+              "li > ul > li:nth-child(2)"
+            ],
+            [
+              ".dependency-map > .visual-label"
+            ],
+            [
+              "#codegraph-concept-caption > strong"
+            ],
+            [
+              "#codegraph-concept-caption > span"
+            ],
+            [
+              ".queue-preview > .visual-label"
+            ],
+            [
+              ".queue-preview > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".queue-preview > .queue-caption"
+            ],
+            [
+              ".worker-preview > .visual-label"
+            ],
+            [
+              ".worker-preview > .queue-caption"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".retry-return"
+            ],
+            [
+              ".retry-return > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#taskforge-concept-caption > strong"
+            ],
+            [
+              "#taskforge-concept-caption > span"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "text": 200,
+      "layout": {
+        "clipped": [],
+        "fonts": "loaded",
+        "heights": [
+          {
+            "height": 2265.515625,
+            "id": "projects"
+          },
+          {
+            "height": 1860.4453125,
+            "id": "experience"
+          },
+          {
+            "height": 1054.5078125,
+            "id": "education"
+          }
+        ],
+        "motion": "reduced",
+        "overflow": false
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              ".hero-role"
+            ],
+            [
+              ".hero-greeting"
+            ],
+            [
+              "#hero-title"
+            ],
+            [
+              ".hero-perspective"
+            ],
+            [
+              ".hero-copy > .lede"
+            ],
+            [
+              ".hero-actions > a[href$=\"#projects\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > .file-label"
+            ],
+            [
+              ".hero-socials > a:nth-child(1)"
+            ],
+            [
+              ".hero-socials > a:nth-child(2)"
+            ],
+            [
+              ".portrait-caption"
+            ],
+            [
+              ".portrait-caption > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > .visual-label"
+            ],
+            [
+              ".repository-tree > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".repository-tree > ul > li"
+            ],
+            [
+              "li > ul > li:nth-child(1)"
+            ],
+            [
+              "li > ul > li:nth-child(2)"
+            ],
+            [
+              ".dependency-map > .visual-label"
+            ],
+            [
+              "#codegraph-concept-caption > strong"
+            ],
+            [
+              "#codegraph-concept-caption > span"
+            ],
+            [
+              ".queue-preview > .visual-label"
+            ],
+            [
+              ".queue-preview > .visual-label > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".queue-preview > .queue-caption"
+            ],
+            [
+              ".worker-preview > .visual-label"
+            ],
+            [
+              ".worker-preview > .queue-caption"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(1) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2)"
+            ],
+            [
+              ".outcome-preview > p:nth-child(2) > span[aria-hidden=\"true\"]"
+            ],
+            [
+              ".retry-return"
+            ],
+            [
+              ".retry-return > span[aria-hidden=\"true\"]"
+            ],
+            [
+              "#taskforge-concept-caption > strong"
+            ],
+            [
+              "#taskforge-concept-caption > span"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "mode": "same-document",
+      "focus": "projects",
+      "hash": "#projects",
+      "top": 23.828125,
+      "width": 390
+    },
+    {
+      "mode": "direct-load",
+      "focus": "projects",
+      "hash": "#projects",
+      "width": 390
+    },
+    {
+      "mode": "same-document",
+      "focus": "experience",
+      "hash": "#experience",
+      "top": 23.7734375,
+      "width": 390
+    },
+    {
+      "mode": "direct-load",
+      "focus": "experience",
+      "hash": "#experience",
+      "width": 390
+    },
+    {
+      "mode": "same-document",
+      "focus": "education",
+      "hash": "#education",
+      "top": 24.1875,
+      "width": 390
+    },
+    {
+      "mode": "direct-load",
+      "focus": "education",
+      "hash": "#education",
+      "width": 390
+    },
+    {
+      "mode": "same-document",
+      "focus": "contact",
+      "hash": "#contact",
+      "top": 238.765625,
+      "width": 390
+    },
+    {
+      "mode": "direct-load",
+      "focus": "contact",
+      "hash": "#contact",
+      "width": 390
+    },
+    {
+      "mode": "same-document",
+      "focus": "projects",
+      "hash": "#work",
+      "top": 22.828125,
+      "width": 390
+    },
+    {
+      "mode": "direct-load",
+      "focus": "projects",
+      "hash": "#work",
+      "width": 390
+    },
+    {
+      "mode": "same-document",
+      "focus": "introduction",
+      "hash": "#about",
+      "top": 24,
+      "width": 390
+    },
+    {
+      "mode": "direct-load",
+      "focus": "introduction",
+      "hash": "#about",
+      "width": 390
+    },
+    {
+      "mode": "same-document",
+      "focus": "codegraph",
+      "hash": "#codegraph",
+      "top": 24.171875,
+      "width": 390
+    },
+    {
+      "mode": "direct-load",
+      "focus": "codegraph",
+      "hash": "#codegraph",
+      "width": 390
+    },
+    {
+      "mode": "same-document",
+      "focus": "taskforge",
+      "hash": "#taskforge",
+      "top": 24.21875,
+      "width": 390
+    },
+    {
+      "mode": "direct-load",
+      "focus": "taskforge",
+      "hash": "#taskforge",
+      "width": 390
+    },
+    {
+      "from": "codegraph",
+      "focus": "projects",
+      "hash": "#projects",
+      "width": 390
+    },
+    {
+      "from": "codegraph",
+      "focus": "experience",
+      "hash": "#experience",
+      "width": 390
+    },
+    {
+      "from": "codegraph",
+      "focus": "education",
+      "hash": "#education",
+      "width": 390
+    },
+    {
+      "from": "codegraph",
+      "focus": "contact",
+      "hash": "#contact",
+      "width": 390
+    },
+    {
+      "from": "codegraph",
+      "legacy": true,
+      "focus": "projects",
+      "hash": "#work",
+      "width": 390
+    },
+    {
+      "from": "codegraph",
+      "legacy": true,
+      "focus": "introduction",
+      "hash": "#about",
+      "width": 390
+    },
+    {
+      "from": "taskforge",
+      "focus": "projects",
+      "hash": "#projects",
+      "width": 390
+    },
+    {
+      "from": "taskforge",
+      "focus": "experience",
+      "hash": "#experience",
+      "width": 390
+    },
+    {
+      "from": "taskforge",
+      "focus": "education",
+      "hash": "#education",
+      "width": 390
+    },
+    {
+      "from": "taskforge",
+      "focus": "contact",
+      "hash": "#contact",
+      "width": 390
+    },
+    {
+      "from": "taskforge",
+      "legacy": true,
+      "focus": "projects",
+      "hash": "#work",
+      "width": 390
+    },
+    {
+      "from": "taskforge",
+      "legacy": true,
+      "focus": "introduction",
+      "hash": "#about",
+      "width": 390
+    },
+    {
+      "mode": "same-document",
+      "focus": "projects",
+      "hash": "#projects",
+      "top": 23.9453125,
+      "width": 1440
+    },
+    {
+      "mode": "direct-load",
+      "focus": "projects",
+      "hash": "#projects",
+      "width": 1440
+    },
+    {
+      "mode": "same-document",
+      "focus": "experience",
+      "hash": "#experience",
+      "top": 24.203125,
+      "width": 1440
+    },
+    {
+      "mode": "direct-load",
+      "focus": "experience",
+      "hash": "#experience",
+      "width": 1440
+    },
+    {
+      "mode": "same-document",
+      "focus": "education",
+      "hash": "#education",
+      "top": 24.09375,
+      "width": 1440
+    },
+    {
+      "mode": "direct-load",
+      "focus": "education",
+      "hash": "#education",
+      "width": 1440
+    },
+    {
+      "mode": "same-document",
+      "focus": "contact",
+      "hash": "#contact",
+      "top": 328.375,
+      "width": 1440
+    },
+    {
+      "mode": "direct-load",
+      "focus": "contact",
+      "hash": "#contact",
+      "width": 1440
+    },
+    {
+      "mode": "same-document",
+      "focus": "projects",
+      "hash": "#work",
+      "top": 22.9453125,
+      "width": 1440
+    },
+    {
+      "mode": "direct-load",
+      "focus": "projects",
+      "hash": "#work",
+      "width": 1440
+    },
+    {
+      "mode": "same-document",
+      "focus": "introduction",
+      "hash": "#about",
+      "top": 24,
+      "width": 1440
+    },
+    {
+      "mode": "direct-load",
+      "focus": "introduction",
+      "hash": "#about",
+      "width": 1440
+    },
+    {
+      "mode": "same-document",
+      "focus": "codegraph",
+      "hash": "#codegraph",
+      "top": 24.1875,
+      "width": 1440
+    },
+    {
+      "mode": "direct-load",
+      "focus": "codegraph",
+      "hash": "#codegraph",
+      "width": 1440
+    },
+    {
+      "mode": "same-document",
+      "focus": "taskforge",
+      "hash": "#taskforge",
+      "top": 24.1875,
+      "width": 1440
+    },
+    {
+      "mode": "direct-load",
+      "focus": "taskforge",
+      "hash": "#taskforge",
+      "width": 1440
+    },
+    {
+      "from": "codegraph",
+      "focus": "projects",
+      "hash": "#projects",
+      "width": 1440
+    },
+    {
+      "from": "codegraph",
+      "focus": "experience",
+      "hash": "#experience",
+      "width": 1440
+    },
+    {
+      "from": "codegraph",
+      "focus": "education",
+      "hash": "#education",
+      "width": 1440
+    },
+    {
+      "from": "codegraph",
+      "focus": "contact",
+      "hash": "#contact",
+      "width": 1440
+    },
+    {
+      "from": "codegraph",
+      "legacy": true,
+      "focus": "projects",
+      "hash": "#work",
+      "width": 1440
+    },
+    {
+      "from": "codegraph",
+      "legacy": true,
+      "focus": "introduction",
+      "hash": "#about",
+      "width": 1440
+    },
+    {
+      "from": "taskforge",
+      "focus": "projects",
+      "hash": "#projects",
+      "width": 1440
+    },
+    {
+      "from": "taskforge",
+      "focus": "experience",
+      "hash": "#experience",
+      "width": 1440
+    },
+    {
+      "from": "taskforge",
+      "focus": "education",
+      "hash": "#education",
+      "width": 1440
+    },
+    {
+      "from": "taskforge",
+      "focus": "contact",
+      "hash": "#contact",
+      "width": 1440
+    },
+    {
+      "from": "taskforge",
+      "legacy": true,
+      "focus": "projects",
+      "hash": "#work",
+      "width": 1440
+    },
+    {
+      "from": "taskforge",
+      "legacy": true,
+      "focus": "introduction",
+      "hash": "#about",
+      "width": 1440
+    }
+  ],
+  "keyboardAndHistory": [
+    {
+      "label": "Experience",
+      "outline": "solid",
+      "step": "Tab to Experience",
+      "width": 390
+    },
+    {
+      "focus": "experience",
+      "hash": "#experience",
+      "step": "Back",
+      "width": 390
+    },
+    {
+      "focus": "education",
+      "hash": "#education",
+      "step": "Forward",
+      "width": 390
+    },
+    {
+      "focus": "projects",
+      "hash": "#projects",
+      "step": "Hero action",
+      "width": 390
+    },
+    {
+      "label": "Experience",
+      "outline": "solid",
+      "step": "Tab to Experience",
+      "width": 1440
+    },
+    {
+      "focus": "experience",
+      "hash": "#experience",
+      "step": "Back",
+      "width": 1440
+    },
+    {
+      "focus": "education",
+      "hash": "#education",
+      "step": "Forward",
+      "width": 1440
+    },
+    {
+      "focus": "projects",
+      "hash": "#projects",
+      "step": "Hero action",
+      "width": 1440
+    }
+  ],
+  "utilities": [
+    {
+      "copy": "Email copied to clipboard.",
+      "links": [
+        {
+          "href": "/aansh-singh-resume.pdf",
+          "label": "Resume PDF"
+        },
+        {
+          "href": "/aansh-singh-resume.pdf",
+          "label": "Resume PDF"
+        },
+        {
+          "href": "https://github.com/singhsitanshu",
+          "label": "GitHub ↗"
+        },
+        {
+          "href": "https://www.linkedin.com/in/aansh-singh/",
+          "label": "LinkedIn ↗"
+        },
+        {
+          "href": "mailto:singhsitanshu@ucla.edu",
+          "label": "singhsitanshu@ucla.edu ↗"
+        },
+        {
+          "href": "https://github.com/singhsitanshu",
+          "label": "GitHub"
+        },
+        {
+          "href": "https://www.linkedin.com/in/aansh-singh/",
+          "label": "LinkedIn"
+        }
+      ]
+    },
+    {
+      "route": "http://127.0.0.1:4177/projects/codegraph",
+      "heading": "CodeGraph"
+    },
+    {
+      "focus": "projects",
+      "hash": "#projects"
+    },
+    {
+      "route": "http://127.0.0.1:4177/projects/taskforge",
+      "heading": "TaskForge"
+    },
+    {
+      "focus": "projects",
+      "hash": "#projects"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { profile, projects } from './portfolio.ts';
 export const site = {
   origin: 'https://aanshsingh.com',
   image: '/social-preview.jpg',
-  imageAlt: `${profile.name} — ${profile.role} · ${profile.educationLabel}. Featured work: CodeGraph and TaskForge.`,
+  imageAlt: `${profile.name} — ${profile.role} · ${profile.educationLabel}. Featured projects: CodeGraph and TaskForge.`,
 } as const;
 
 export const pages = [

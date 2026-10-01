@@ -43,6 +43,6 @@ export function TaskForgeCaseStudy({ project }: { project: Project }) {
       <p>{content.benchmarks.recoveryTiming}</p><p>{content.benchmarks.limits}</p><p className="case-study-note">{content.benchmarks.availability}</p>
     </CaseStudySection>
     <CaseStudySection section={tradeoffs}><div className="case-study-cards">{content.tradeoffs.map(item => <div key={item.title}><h3>{item.title}</h3><p>{item.benefit}</p><p>{item.tradeoff}</p><p className="taskforge-lesson">{item.lesson}</p></div>)}</div></CaseStudySection>
-    <CaseStudySection section={repository}><p>{content.repository}</p><div className="actions"><a className="text-link" href={project.repository}>View {project.name} repository ↗</a><TextLink to={`/#${project.id}`}>← Back to homepage work</TextLink></div></CaseStudySection>
+    <CaseStudySection section={repository}><p>{content.repository}</p><div className="actions"><a className="text-link" href={project.repository}>View {project.name} repository ↗</a><TextLink to="/#projects">← Back to projects</TextLink></div></CaseStudySection>
   </CaseStudyLayout>;
 }

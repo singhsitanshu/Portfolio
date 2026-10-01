@@ -7,11 +7,19 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/aansh-singh/',
     github: 'https://github.com/singhsitanshu',
   },
+  // Ticket 14 attached résumé, p. 1 Education and BUR entry; see content map.
   education: {
-    institution: 'University of California, Los Angeles',
+    institution: 'University of California, Los Angeles (UCLA)',
     school: 'Henry Samueli School of Engineering',
     degree: 'Bachelor of Science in Computer Science',
     expectedGraduation: 'June 2029',
+    activity: {
+      category: 'College engineering activity',
+      organization: 'Bruin Underwater Robotics (BUR) @ UCLA',
+      role: 'Software Engineer',
+      dates: '2025 – Present',
+      summary: 'Developed Python/YOLOv11 perception models for autonomous RoboSub and automated a Unity pipeline generating 3,000+ labeled training images.',
+    },
   },
   resumeUrl: '/aansh-singh-resume.pdf',
   role: 'Software Engineer',
@@ -29,7 +37,6 @@ export const profile = {
       height: 778,
     },
   },
-  introduction: 'I’m Aansh, a computer science student at UCLA. My work spans developer tooling, reliable backend systems, and underwater robotics. I enjoy connecting the details of implementation to a clear, useful experience.',
 } as const;
 
 export const projects = [
@@ -62,10 +69,31 @@ export const contentReadiness = {
   dates: { value: projects[0].dates, note: 'User-supplied project period for CodeGraph and TaskForge.' },
 } as const;
 
-// Source: information-bank/01_PROFILE.md and 02_EXPERIENCE.md.
-// “Present” is preserved as of the September 2026 source collection.
-export const journey = [
-  { organization: 'Bruin Underwater Robotics · UCLA', role: 'Software Engineer', dates: 'Sept 2025–Present', summary: 'Developing perception models and integrating onboard computing for autonomous underwater robotics.' },
-  { organization: 'D-Tech', role: 'Software Engineering Team Lead Intern', dates: 'May 2024–Sept 2025', summary: 'Led five interns designing Flippper, translating requirements into workflows, interfaces, and prototypes.' },
-  { organization: 'CompuChild', role: 'Instructor', dates: 'May 2024–Jan 2025', summary: 'Taught Python and Scratch through hands-on projects and helped students debug code and devices.' },
+// Ticket 14 attached résumé, p. 1 Experience. See docs/ticket-14-content-map.md.
+// Dates retain source precision; completed roles sort by most recent end date.
+export const experience = [
+  {
+    organization: 'D-Tech', role: 'Software Engineering Team Lead Intern',
+    dates: 'May 2024 – Sept 2025', category: 'Internship',
+    contributions: [
+      'Led 5 interns designing Flippper, an ePaper education platform, translating requirements into user flows and functional specifications.',
+      'Directed UI/UX prototypes and visualizations to validate workflows and explain system behavior.',
+    ],
+  },
+  {
+    organization: 'Round Rock Independent School District (RRISD)', role: 'Advanced Academic Ambassador - Projects Chair',
+    dates: 'August 2023 – May 2025', category: 'Student leadership',
+    contributions: [
+      'Led and mentored 30 ambassadors developing projects and educational presentations for the student body.',
+      'Represented over 34,000 students, delivering presentations and answering questions at conferences and college fairs.',
+    ],
+  },
+  {
+    organization: 'CompuChild', role: 'Instructor',
+    dates: 'May 2024 – Jan 2025', category: '',
+    contributions: [
+      'Taught Python and Scratch to middle school students through hands-on coding projects.',
+      'Guided line-following robot and solar-car projects, helping students debug code and devices.',
+    ],
+  },
 ] as const;

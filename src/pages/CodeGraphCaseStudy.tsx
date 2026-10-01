@@ -40,6 +40,6 @@ export function CodeGraphCaseStudy({ project }: { project: Project }) {
       <div role="note" className="case-study-missing" aria-label="Missing benchmark evidence"><p className="eyebrow">Evidence status / reported result</p><p>{content.results.missing}</p></div>
     </CaseStudySection>
     <CaseStudySection section={lessons}><div className="case-study-cards">{content.lessons.map(item => <div key={item.title}><h3>{item.title}</h3><p>{item.body}</p></div>)}</div></CaseStudySection>
-    <CaseStudySection section={repository}><p>{content.repository}</p><div className="actions"><a className="text-link" href={project.repository}>View {project.name} repository ↗</a><TextLink to={`/#${project.id}`}>← Back to homepage work</TextLink></div></CaseStudySection>
+    <CaseStudySection section={repository}><p>{content.repository}</p><div className="actions"><a className="text-link" href={project.repository}>View {project.name} repository ↗</a><TextLink to="/#projects">← Back to projects</TextLink></div></CaseStudySection>
   </CaseStudyLayout>;
 }

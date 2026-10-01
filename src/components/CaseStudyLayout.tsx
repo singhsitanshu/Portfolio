@@ -12,7 +12,7 @@ export function CaseStudyLayout({ project, introduction, overview, sections, chi
 }) {
   return <article className="case-study" aria-labelledby="case-study-title">
     <header className="case-study-header">
-      <TextLink to={`/#${project.id}`}>← Back to homepage work</TextLink>
+      <TextLink to="/#projects">← Back to projects</TextLink>
       <Entrance><Heading as="h1" id="case-study-title" eyebrow={`Case study / ${project.dates}`}>{project.name}</Heading></Entrance>
       <p className="case-study-lede">{introduction}</p>
       <dl className="case-study-overview">{overview.map(item => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>

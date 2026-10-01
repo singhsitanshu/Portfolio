@@ -87,7 +87,7 @@ test('sitemap, robots, and noindex not-found output use the intended origin', as
   assert.equal(tags(html, 'link').filter(tag => tag.rel === 'canonical').length, 0);
   assert.equal(meta(html, 'og:url').length, 0);
   assert.match(html, /Return home/);
-  assert.match(html, /Explore the work/);
+  assert.match(html, /View Projects/);
 });
 
 test('social image dimensions, MIME signature, and production asset sizes are appropriate', async () => {
@@ -173,5 +173,32 @@ test('Workers redirects project HTML and trailing slashes to canonical route pat
       assert.equal(response.status, 307);
       assert.equal(new URL(response.headers.get('location'), process.env.CLOUDFLARE_PREVIEW_URL).pathname, page.path);
     }
+  }
+});
+
+test('homepage sections, legacy anchors, and navigation are accessible in prerendered HTML', () => {
+  const home = documents.get('/');
+  const ids = [...home.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(ids.length, new Set(ids).size, 'IDs must be unique');
+  const ordered = ['introduction', 'projects', 'experience', 'education', 'contact'];
+  let previous = -1;
+  for (const id of ordered) {
+    const index = home.indexOf(`id="${id}"`);
+    assert.ok(index > previous, `${id} is present in homepage order`);
+    previous = index;
+    assert.match(home, new RegExp(`<section[^>]*id="${id}"[^>]*tabindex="-1"`));
+  }
+  for (const id of ['work', 'about', 'codegraph', 'taskforge']) assert.ok(ids.includes(id));
+  for (const [id, title] of [['projects', 'Projects'], ['experience', 'Experience'], ['education', 'Education']]) {
+    assert.match(home, new RegExp(`<h2 id="${id}-title">${title}</h2>`));
+  }
+  for (const project of ['codegraph', 'taskforge']) assert.match(home, new RegExp(`<h3 id="${project}-title">`));
+  for (const role of ['Software Engineering Team Lead Intern', 'Advanced Academic Ambassador - Projects Chair', 'Instructor', 'College engineering activity']) assert.ok(home.includes(role));
+  assert.ok(home.includes('2025 – Present') && home.includes('June 2029'));
+  assert.doesNotMatch(home, /About &amp; journey/);
+  for (const html of documents.values()) {
+    const nav = html.match(/<nav[^>]*aria-label="Primary"[^>]*>([\s\S]*?)<\/nav>/)[1];
+    assert.deepEqual(tags(nav, 'a').map(a => a.href), ['/#projects', '/#experience', '/#education', '/#contact']);
+    assert.ok(tags(html, 'a').some(a => a.href === '/aansh-singh-resume.pdf'));
   }
 });

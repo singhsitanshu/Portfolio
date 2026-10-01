@@ -17,7 +17,7 @@ export const profile = {
   resumeUrl: '/aansh-singh-resume.pdf',
   role: 'Software Engineer',
   educationLabel: 'UCLA Computer Science',
-  positioning: 'Pragmatic, systems-minded | AI Engineering, Developer Tools & Distributed Systems | UCLA CS',
+  positioning: 'Pragmatic, system-minded | AI Engineering, Developer Tools & Distributed Systems | UCLA CS',
   hero: {
     greeting: 'Hi, I’m',
     introduction: 'A computer science student at UCLA building developer tools, AI systems, and reliable backend software.',

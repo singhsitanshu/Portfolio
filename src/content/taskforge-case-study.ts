@@ -19,7 +19,7 @@ export const taskforgeCaseStudy = {
     { id: 'tradeoffs', title: 'Tradeoffs & lessons' },
     { id: 'repository', title: 'Repository' },
   ],
-  system: 'Background work must outlive an HTTP request and remain inspectable when a process fails. TaskForge separates admission, execution, and lifecycle maintenance around one durable database. Its current handlers are predefined synthetic/demo handlers, not arbitrary uploaded code.',
+  system: 'Background work must outlive an HTTP request and remain inspectable when a process fails. TaskForge separates admission, execution, and lifecycle maintenance around one durable database.',
   architecture: {
     title: 'PostgreSQL coordinates independent processes',
     layers: [
@@ -27,12 +27,12 @@ export const taskforgeCaseStudy = {
       { label: '02 / Authority', title: 'PostgreSQL tasks + numbered attempts', body: 'Committed rows hold priority, schedule, owner, lease, current state, outcomes, and the history of each execution attempt.', connection: 'Claim / renew / finalize ↔ workers · Recover / promote ↔ schedulers ↓' },
       { label: '03 / Execution & maintenance', title: 'Go workers + Go schedulers', body: 'Each worker runs one handler at a time, with independent heartbeat and lease-renewal loops. Schedulers recover expired ownership and promote due retries; replicas coordinate through row locks.' },
     ],
-    caption: 'There is no central in-memory dispatcher. Workers poll PostgreSQL for eligible tasks; schedulers maintain eligibility and recovery. Prometheus scrapes API, worker, and scheduler metrics, and Grafana displays throughput, latency, retries, lease recovery, and system health. Metrics aid diagnosis while PostgreSQL remains the state authority. Redis is provisioned but unused by the current application.',
+    caption: 'There is no central in-memory dispatcher. Workers poll PostgreSQL for eligible tasks; schedulers maintain eligibility and recovery. Prometheus scrapes API, worker, and scheduler metrics, and Grafana displays throughput, latency, retries, lease recovery, and system health. Metrics aid diagnosis while PostgreSQL remains the state authority.',
   },
   submission: [
     { title: 'Admit a logical task', body: 'FastAPI validates task type, payload, queue, priority, total-attempt budget, and optional schedule. A committed task starts QUEUED with no attempts. An optional idempotency key makes uncertain client retries safe for admission.' },
     { title: 'Arbitrate matching replays', body: 'A global partial unique index reserves the key. A SHA-256 fingerprint covers the canonical request, including queue, priority, budget, and normalized schedule. Concurrent inserts resolve to the stored task: matching fingerprints return its current state; different requests with the same key conflict.' },
-    { title: 'Keep the guarantee scoped', body: 'Keys survive process restarts while their task rows persist; there is no key TTL or tenant scope. Admission deduplication does not deduplicate external handler effects, and replaying a completed task does not create new work.' },
+    { title: 'Retain admission identity', body: 'Idempotency keys remain associated with their stored task records. Replaying a completed task does not create new work.' },
   ],
   claiming: {
     introduction: 'Workers select due QUEUED tasks with attempts remaining, ordered by descending priority, then creation time and ID. A short transaction uses FOR UPDATE SKIP LOCKED so replicas can claim different rows without a central dispatcher.',
@@ -41,7 +41,7 @@ export const taskforgeCaseStudy = {
       { title: 'Worker B skips X', body: 'While X is locked, B can claim another eligible row or return no work. If A rolls back, X stays QUEUED without that attempt and becomes available to a later poll.' },
       { title: 'Execute after commit', body: 'The handler runs outside the claim transaction. Completion locks the task again and checks owner, attempt number, RUNNING state, and valid lease before committing task and attempt outcomes together.' },
     ],
-    boundary: 'Priority is a candidate-selection policy, not strict FIFO or fairness. A locked higher-priority task can be bypassed, sustained high-priority arrivals can starve others, and handlers are not preempted. Unique (task_id, attempt_number) prevents duplicate history identities, not repeated business operations.',
+    boundary: 'Workers prioritize eligible tasks and skip locked rows so other work can proceed.',
   },
   execution: {
     paths: [
@@ -62,30 +62,29 @@ export const taskforgeCaseStudy = {
   recovery: [
     { title: 'Lease and heartbeat answer different questions', body: 'Defaults are a 30-second task lease renewed every 10 seconds, and a process heartbeat every 5 seconds. A heartbeat shows recent communication; it neither proves useful progress nor revokes a task. Ownership comparisons use database time.' },
     { title: 'Expired ownership triggers recovery', body: 'A crash stops renewals but causes no immediate state transition. Schedulers lock expired RUNNING tasks and matching attempts, mark attempts ABANDONED, and requeue within the remaining budget—or mark the logical task FAILED when exhausted. Crash recovery requeues directly rather than applying retry backoff.' },
-    { title: 'Guard state; fence effects separately', body: 'The owner and attempt number reject stale database completion after replacement. A paused or partitioned old handler can still overlap a replacement, or have completed a remote effect before losing ownership. External idempotency or destination fencing is needed for stronger effect guarantees.' },
+    { title: 'Guard completion with ownership', body: 'The owner and attempt number reject stale database completion after replacement.' },
   ],
-  guarantee: 'TaskForge supports bounded reattempt semantics, not exactly-once execution. Eventual success is not guaranteed: budgets can exhaust, healthy database/workers/schedulers are required, and a hung handler that keeps renewing can remain active indefinitely.',
+  guarantee: 'Retries and crash recovery operate within the configured attempt budget; execution can be repeated.',
   benchmarks: {
-    methodology: 'The supplied audit revalidated saved historical E1–E6 bundles through their existing trust evaluators; it did not rerun the workloads. Accepted runs identify clean source commits, container images, hashed artifacts, independent reset blocks, and durable task/attempt evidence. Trial-only Prometheus deltas reconcile with exact counts; 100 warmup tasks are excluded.',
-    configuration: 'E1 uses 5,000 no-op tasks per trial; E2 uses 1,000 synthetic 50 ms waits per trial. Both test 1, 4, 8, and 16 worker processes across three independently reset blocks: 12 trials each. The runs contain 60,000 and 12,000 tasks respectively.',
+    methodology: 'Benchmarks compare worker configurations across independently reset trials. Persisted task and attempt counts are reconciled with Prometheus metrics, excluding 100 warmup tasks.',
+    configuration: 'The no-op workload uses 5,000 no-op tasks per trial; the synthetic-wait workload uses 1,000 synthetic 50 ms waits per trial. Both test 1, 4, 8, and 16 worker processes across three independently reset blocks: 12 trials each. The runs contain 60,000 and 12,000 tasks respectively.',
     formula: 'Processing tasks/sec = logical tasks / (latest attempt finish − earliest attempt start)',
     aggregation: 'Charts show medians of per-trial processing throughput. Speedup is the ratio of aggregate medians; parallel efficiency is speedup divided by worker count. Each chart has its own zero-based scale.',
     charts: [
-      { id: 'noop', title: 'E1 / No-op coordination', maximum: 1400, unit: 'median processing tasks/sec', source: '426bc56e28c9', rows: [{ workers: 1, value: 779.748 }, { workers: 4, value: 1284.015 }, { workers: 8, value: 1279.605 }, { workers: 16, value: 1214.429 }], caption: 'Four workers produced the highest tested median: 1,284.015 tasks/sec. More workers saturated coordination for nearly free handlers; no-op throughput is not representative application throughput.' },
-      { id: 'wait', title: 'E2 / Synthetic 50 ms waits', maximum: 320, unit: 'median processing tasks/sec', source: '180e3868286f', rows: [{ workers: 1, value: 18.764 }, { workers: 4, value: 74.668 }, { workers: 8, value: 149.442 }, { workers: 16, value: 297.264 }], caption: 'From 1 to 16 workers: 15.842× speedup and 99.0% parallel efficiency. Independent waits overlap; this is synthetic test.sleep, not real network or disk I/O.' },
+      { id: 'noop', title: 'No-op coordination', maximum: 1400, unit: 'median processing tasks/sec', rows: [{ workers: 1, value: 779.748 }, { workers: 4, value: 1284.015 }, { workers: 8, value: 1279.605 }, { workers: 16, value: 1214.429 }], caption: 'Four workers produced the highest tested median: 1,284.015 tasks/sec. With minimal handler work, coordination overhead becomes the scaling constraint.' },
+      { id: 'wait', title: 'Synthetic 50 ms waits', maximum: 320, unit: 'median processing tasks/sec', rows: [{ workers: 1, value: 18.764 }, { workers: 4, value: 74.668 }, { workers: 8, value: 149.442 }, { workers: 16, value: 297.264 }], caption: 'From 1 to 16 workers: 15.842× speedup and 99.0% parallel efficiency on synthetic 50 ms waits.' },
     ],
     failures: [
-      { label: 'E5 / Fail-once retries', value: '3,000 tasks · 6,000 attempts', detail: 'Three trials; 10 workers and 3 schedulers; fixed 100 ms retry/promotion configuration. Exactly FAILED → SUCCEEDED histories, with zero duplicate identities or stranded leases in these runs.' },
-      { label: 'E6 / Hard-kill recovery', value: '30 abandoned attempts replaced', detail: 'Three trials of 1,000 synthetic 500 ms waits; 20 workers, 3 schedulers, 10 killed owners per trial, and 5-second leases. Every captured abandoned attempt had exactly one later successful replacement.' },
+      { label: 'Fail-once retries', value: '3,000 tasks · 6,000 attempts', detail: 'Three trials; 10 workers and 3 schedulers; fixed 100 ms retry/promotion configuration. Exactly FAILED → SUCCEEDED histories, with zero duplicate identities or stranded leases in these runs.' },
+      { label: 'Hard-kill recovery', value: '30 abandoned attempts replaced', detail: 'Three trials of 1,000 synthetic 500 ms waits; 20 workers, 3 schedulers, 10 killed owners per trial, and 5-second leases. Every captured abandoned attempt had exactly one later successful replacement, with zero duplicate recovery-state transitions in these runs.' },
     ],
-    recoveryTiming: 'E6 median-trial p95 recovery lag was 36.681 ms after lease expiration—not after process death, and not a pooled p95. The timestamp is recorded during the recovery SQL path and persisted on commit; it is not exact commit-ack latency. Median kill-to-final-drain was 25.271239 seconds.',
-    limits: 'Single-host Docker results on synthetic workloads do not establish production capacity or universal worker scaling. Three blocks do not cover broader hardware variance. Zero duplicate recovery effects refers to durable recovery-state transitions; these handlers do not test payment, email, or other remote-effect deduplication.',
-    availability: 'Historical bundles and reports were retained locally as ignored artifacts and may be absent from a fresh clone. This page uses the supplied manual’s evidence summaries; no public raw-artifact availability or fresh benchmark run is claimed.',
+    recoveryTiming: 'Median-trial p95 recovery lag was 36.681 ms from lease expiration to the recovery timestamp recorded in the SQL path. Median kill-to-final-drain was 25.271239 seconds.',
+    limits: 'Measurements use synthetic workloads in local Docker; throughput depends on handler work and available resources.',
   },
   tradeoffs: [
-    { title: 'Short transactions, explicit ownership', benefit: 'Release database locks before slow handler work while keeping claim and history consistent.', tradeoff: 'Remote execution is outside the transaction. Leases and attempt epochs protect database state, not external effects.', lesson: 'Treat destination idempotency as a separate part of handler design.' },
-    { title: 'One durable authority', benefit: 'PostgreSQL can commit admission, ownership, outcomes, and history together.', tradeoff: 'Polling adds idle queries and discovery delay; write contention and database availability bound scale.', lesson: 'Measure the workload and database pressure before increasing worker counts or adding a broker.' },
-    { title: 'Priority and bounded attempts', benefit: 'Prioritize urgency and stop repeated failures within an explicit budget.', tradeoff: 'No fairness aging; low priorities can starve. Exhaustion preserves FAILED history without a dead-letter replay facility.', lesson: 'Make scheduling and recovery policy visible instead of promising unconditional progress.' },
+    { title: 'Short transactions, explicit ownership', benefit: 'Claim and completion transactions keep task state and attempt history consistent while handlers run outside database locks.', tradeoff: 'Renewable leases protect ownership; handlers use destination idempotency when external effects must be deduplicated.', lesson: 'Design task-state consistency and external-effect safety together.' },
+    { title: 'One durable authority', benefit: 'PostgreSQL coordinates admission, ownership, outcomes, and history in one place.', tradeoff: 'Polling and write contention make database pressure an important scaling consideration.', lesson: 'Use workload measurements to choose worker counts.' },
+    { title: 'Priority and bounded attempts', benefit: 'Priority ordering supports urgent work, while attempt budgets bound repeated failures.', tradeoff: 'Fairness under sustained high-priority load remains a scheduling tradeoff.', lesson: 'Make scheduling and retry policy explicit.' },
   ],
-  repository: 'Explore the API, Go workers and schedulers, SQL migrations, console, and benchmark harness in the supplied repository. Architecture details reflect manual revision ecbb2fe, dated September 3, 2026; benchmark source revisions are historical and listed with the charts.',
+  repository: 'Explore the API, Go workers and schedulers, SQL migrations, console, and benchmark harness on GitHub.',
 } as const;

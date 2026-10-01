@@ -28,7 +28,7 @@ export function CodeGraphCaseStudy({ project }: { project: Project }) {
     <CaseStudySection section={correctness}>
       <p>{content.correctness.introduction}</p>
       <dl className="case-study-evidence">{content.correctness.evidence.map(item => <div key={item.label}><dt>{item.label}</dt><dd><strong>{item.value}</strong><p>{item.detail}</p></dd></div>)}</dl>
-      <p className="case-study-note">{content.correctness.boundary}</p><p>{content.correctness.controls}</p>
+      <p>{content.correctness.controls}</p>
     </CaseStudySection>
     <CaseStudySection section={results}>
       <div className="codegraph-result">
@@ -37,7 +37,6 @@ export function CodeGraphCaseStudy({ project }: { project: Project }) {
         <p className="context-evidence">{result.note}</p>
       </div>
       <p>{content.results.baseline}</p><p>{content.results.context}</p><p className="case-study-formula">{content.results.formula}</p><p>{content.results.limits}</p>
-      <div role="note" className="case-study-missing" aria-label="Missing benchmark evidence"><p className="eyebrow">Evidence status / reported result</p><p>{content.results.missing}</p></div>
     </CaseStudySection>
     <CaseStudySection section={lessons}><div className="case-study-cards">{content.lessons.map(item => <div key={item.title}><h3>{item.title}</h3><p>{item.body}</p></div>)}</div></CaseStudySection>
     <CaseStudySection section={repository}><p>{content.repository}</p><div className="actions"><a className="text-link" href={project.repository}>View {project.name} repository ↗</a><TextLink to="/#projects">← Back to projects</TextLink></div></CaseStudySection>

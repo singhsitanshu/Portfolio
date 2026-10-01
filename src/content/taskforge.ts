@@ -5,9 +5,9 @@ export const taskforgeFeature = {
     summary: 'Coordinate background tasks with durable PostgreSQL queues, concurrent Go workers, and bounded retries.',
     highlights: [
       { title: 'Atomic ownership', body: 'Claim eligible work in a short transaction, then execute independently while renewable leases guard database ownership.' },
-      { title: 'Recovery with history', body: 'Keep numbered attempts for completion, retry, and crash recovery. External effects still need their own idempotency.' },
+      { title: 'Recovery with history', body: 'Keep numbered attempts for completion, retry, and crash recovery.' },
     ],
-    visualNote: 'Illustrative coordination, not live telemetry or a benchmark setup.',
+    visualNote: 'Task coordination and retry flow.',
   },
   question: 'What happens when thousands of tasks compete for the same workers?',
   positioning: 'Distributed task execution built around correctness, reliability, and concurrency.',
@@ -35,9 +35,9 @@ export const taskforgeFeature = {
   benchmarks: {
     title: 'Measured under defined workloads',
     metrics: [
-      { experiment: 'E1 / No-op workload', value: '60,000', label: 'validated task executions', context: '12 trials × 5,000 no-op tasks, across 1 / 4 / 8 / 16 workers. Persisted task and attempt counts reconciled with Prometheus.' },
-      { experiment: 'E1 / No-op workload', value: '≈1,284', label: 'tasks/sec median', context: 'Four workers: the highest tested median for this no-op workload (1,284.015 tasks/sec). Three independently reset blocks.' },
-      { experiment: 'E2 / Synthetic waits', value: '99%', label: 'parallel efficiency', context: 'Synthetic 50ms waits, scaling from 1 to 16 workers. 12 trials and 12,000 tasks; 15.84× measured speedup at 16 workers.' },
+      { experiment: 'No-op workload', value: '60,000', label: 'validated task executions', context: '12 trials × 5,000 no-op tasks, across 1 / 4 / 8 / 16 workers. Persisted task and attempt counts reconciled with Prometheus.' },
+      { experiment: 'No-op workload', value: '≈1,284', label: 'tasks/sec median', context: 'Four workers: the highest tested median for this no-op workload (1,284.015 tasks/sec). Three independently reset blocks.' },
+      { experiment: 'Synthetic waits', value: '99%', label: 'parallel efficiency', context: 'Synthetic 50ms waits, scaling from 1 to 16 workers. 12 trials and 12,000 tasks; 15.84× measured speedup at 16 workers.' },
     ],
     host: 'Recorded environment: Apple M4 Pro · 12 logical CPUs · 24 GiB RAM · local Docker.',
     qualification: 'These are controlled local results. Throughput and efficiency depend on the workload and resources; they are not production capacity guarantees.',

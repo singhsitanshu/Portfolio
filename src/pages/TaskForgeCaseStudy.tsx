@@ -31,16 +31,16 @@ export function TaskForgeCaseStudy({ project }: { project: Project }) {
     </CaseStudySection>
     <CaseStudySection section={benchmarks}>
       <p>{content.benchmarks.methodology}</p><p>{content.benchmarks.configuration}</p>
-      <p className="case-study-note">{taskforgeFeature.benchmarks.host}</p>
+      <p>{content.benchmarks.limits}</p><p className="case-study-note">{taskforgeFeature.benchmarks.host}</p>
       <p className="case-study-formula">{content.benchmarks.formula}</p><p>{content.benchmarks.aggregation}</p>
       {content.benchmarks.charts.map(chart => <figure className="taskforge-benchmark-chart" key={chart.id} aria-labelledby={`${chart.id}-chart-title`}>
         <h3 id={`${chart.id}-chart-title`}>{chart.title}</h3><p className="taskforge-chart-unit">{chart.unit}</p>
         <div className="taskforge-chart-scale" aria-hidden="true"><span>0</span><span>{chart.maximum} tasks/sec</span></div>
         <ol>{chart.rows.map(row => <li key={row.workers}><div className="taskforge-chart-label"><span>{row.workers} {row.workers === 1 ? 'worker' : 'workers'}</span><strong>{row.value.toFixed(3)} <span className="sr-only">tasks/sec</span></strong></div><div className="taskforge-chart-track" aria-hidden="true"><div style={{ width: `${row.value / chart.maximum * 100}%` }} /></div></li>)}</ol>
-        <figcaption>{chart.caption}<span className="taskforge-chart-source">Historical source: {chart.source} · 3 trials per configuration</span></figcaption>
+        <figcaption>{chart.caption}<span className="taskforge-chart-source">3 trials per configuration</span></figcaption>
       </figure>)}
       <dl className="case-study-evidence">{content.benchmarks.failures.map(item => <div key={item.label}><dt>{item.label}</dt><dd><strong>{item.value}</strong><p>{item.detail}</p></dd></div>)}</dl>
-      <p>{content.benchmarks.recoveryTiming}</p><p>{content.benchmarks.limits}</p><p className="case-study-note">{content.benchmarks.availability}</p>
+      <p>{content.benchmarks.recoveryTiming}</p>
     </CaseStudySection>
     <CaseStudySection section={tradeoffs}><div className="case-study-cards">{content.tradeoffs.map(item => <div key={item.title}><h3>{item.title}</h3><p>{item.benefit}</p><p>{item.tradeoff}</p><p className="taskforge-lesson">{item.lesson}</p></div>)}</div></CaseStudySection>
     <CaseStudySection section={repository}><p>{content.repository}</p><div className="actions"><a className="text-link" href={project.repository}>View {project.name} repository ↗</a><TextLink to="/#projects">← Back to projects</TextLink></div></CaseStudySection>

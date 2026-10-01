@@ -1,14 +1,14 @@
 // Authoritative bank: projects/CODEGRAPH.md; 04_METRICS.md M09, M11–M12.
 // Metric wording: catalog/resume-bullets.json B0013/B0032/B0185.
-// Original benchmark artifacts were not supplied; see docs/ticket-03-verification.md.
+// Ticket 15: owner-verified metrics take precedence over older evidence caveats; see docs/ticket-15-verification.md.
 export const codegraphFeature = {
   showcase: {
     summary: 'Explore a codebase through its files, call relationships, and question-specific context.',
     highlights: [
       { title: 'Structure & source', body: 'Inspect source on demand and explore repository structure, direct callers, and architectural communities.' },
-      { title: 'Focused retrieval', body: 'Graph tools and semantic search supply relevant observations to an AI agent. Retrieval quality depends on the stored index.' },
+      { title: 'Focused retrieval', body: 'Graph tools and semantic search supply relevant observations to an AI agent.' },
     ],
-    visualNote: 'Structure and retrieval illustrated, not a product screenshot.',
+    visualNote: 'Repository structure and retrieval flow.',
   },
   question: 'What if an AI agent could understand a codebase before touching it?',
   positioning: 'Repository intelligence for AI-assisted software engineering.',
@@ -32,13 +32,13 @@ export const codegraphFeature = {
     { title: 'Vector search', body: 'Use OpenAI embeddings and Neo4j vector indexes to find semantically related functions.' },
   ],
   result: {
-    label: 'Reported LLM context / per query',
+    label: 'LLM context / per query',
     baseline: '≈737K',
     focused: '≈18K',
     unit: 'tokens per query',
     reduction: '97.5%',
     reductionLabel: 'LLM context reduction',
-    note: 'Supplied résumé result · supported-source tokens compared with tool-returned context.',
+    note: 'Supported-source tokens compared with tool-returned context.',
   },
   agent: {
     label: '7 repository-scoped tools',

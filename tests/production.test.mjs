@@ -1,0 +1,131 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile, readdir, stat, access } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { gzipSync } from 'node:zlib';
+
+const origin = 'https://aanshsingh.com';
+const fixtures = [
+  { path: '/', file: 'index.html', title: 'Aansh Singh | Software Engineer', heading: 'Aansh' },
+  { path: '/projects/codegraph', file: 'projects/codegraph.html', title: 'CodeGraph Case Study | Aansh Singh', heading: 'CodeGraph' },
+  { path: '/projects/taskforge', file: 'projects/taskforge.html', title: 'TaskForge Case Study | Aansh Singh', heading: 'TaskForge' },
+];
+const root = resolve('dist');
+const documents = new Map(await Promise.all([...fixtures, { path: '/404', file: '404.html' }].map(async fixture => [fixture.path, await readFile(resolve(root, fixture.file), 'utf8')])));
+const decode = value => value.replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(match => [match[1], decode(match[2])]));
+const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map(match => attributes(match[0]));
+const meta = (html, key) => tags(html, 'meta').filter(tag => tag.name === key || tag.property === key);
+
+test('three generated pages expose distinct metadata and complete content without JavaScript', () => {
+  const descriptions = new Set();
+  for (const page of fixtures) {
+    const html = documents.get(page.path);
+    const head = html.match(/<head>([\s\S]*?)<\/head>/)[1];
+    assert.deepEqual([...head.matchAll(/<title>(.*?)<\/title>/g)].map(match => decode(match[1])), [page.title]);
+    assert.deepEqual(tags(head, 'link').filter(tag => tag.rel === 'canonical').map(tag => tag.href), [origin + page.path]);
+    assert.equal(meta(head, 'description').length, 1);
+    descriptions.add(meta(head, 'description')[0].content);
+    assert.equal(meta(head, 'og:title')[0].content, page.title);
+    assert.equal(meta(head, 'og:description')[0].content, meta(head, 'description')[0].content);
+    assert.equal(meta(head, 'og:url')[0].content, origin + page.path);
+    assert.equal(meta(head, 'og:image')[0].content, origin + '/social-preview.jpg');
+    assert.equal(meta(head, 'og:image:type')[0].content, 'image/jpeg');
+    assert.equal(meta(head, 'og:image:width')[0].content, '1200');
+    assert.equal(meta(head, 'og:image:height')[0].content, '630');
+    assert.equal(meta(head, 'twitter:card')[0].content, 'summary_large_image');
+    assert.equal(meta(head, 'twitter:image')[0].content, origin + '/social-preview.jpg');
+    assert.equal(meta(head, 'robots')[0].content, 'index, follow');
+    assert.match(html, new RegExp(`<h1[^>]*>${page.heading}`));
+    assert.ok(html.length > 10000, `${page.path} must contain its content, not just a shell`);
+    assert.ok(!html.includes('Loading page…') && !html.includes('<!--app-html-->'));
+    assert.ok(!html.includes('www.aanshsingh.com') && !html.includes('/_test/'));
+    assert.equal(tags(html, 'script').length, 1, 'only the local client entry is shipped');
+  }
+  assert.equal(descriptions.size, 3);
+});
+
+test('every generated internal link, hash target, and head asset resolves', async () => {
+  let checked = 0;
+  for (const [path, html] of documents) {
+    for (const tag of [...tags(html, 'a'), ...tags(html, 'link'), ...tags(html, 'script')]) {
+      const reference = tag.href ?? tag.src;
+      if (!reference) continue;
+      const url = new URL(reference, origin + path);
+      if (url.origin !== origin) continue;
+      const target = documents.get(url.pathname);
+      if (target) {
+        if (url.hash) assert.ok(target.includes(`id="${decodeURIComponent(url.hash.slice(1))}"`), `Broken fragment: ${reference} from ${path}`);
+      } else {
+        assert.ok(url.pathname.startsWith('/'));
+        await access(resolve(root, `.${url.pathname}`));
+      }
+      checked++;
+    }
+  }
+  assert.ok(checked > 50);
+});
+
+test('sitemap, robots, and noindex not-found output use the intended origin', async () => {
+  const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8');
+  assert.deepEqual([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]), fixtures.map(page => origin + page.path));
+  assert.equal(await readFile(resolve(root, 'robots.txt'), 'utf8'), `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
+  const html = documents.get('/404');
+  assert.match(html, /<h1[^>]*>Page not found\.<\/h1>/);
+  assert.equal(meta(html, 'robots')[0].content, 'noindex, follow');
+  assert.equal(tags(html, 'link').filter(tag => tag.rel === 'canonical').length, 0);
+  assert.equal(meta(html, 'og:url').length, 0);
+  assert.match(html, /Return home/);
+  assert.match(html, /Explore the work/);
+});
+
+test('social image dimensions, MIME signature, and production asset sizes are appropriate', async () => {
+  const image = await readFile(resolve(root, 'social-preview.jpg'));
+  assert.equal(image.readUInt16BE(0), 0xffd8);
+  let dimensions;
+  for (let offset = 2; offset < image.length;) {
+    const marker = image[offset + 1];
+    if ([0xc0, 0xc1, 0xc2].includes(marker)) {
+      dimensions = [image.readUInt16BE(offset + 7), image.readUInt16BE(offset + 5)];
+      break;
+    }
+    offset += 2 + image.readUInt16BE(offset + 2);
+  }
+  assert.deepEqual(dimensions, [1200, 630]);
+  assert.ok(image.length < 150000, 'social preview should remain lightweight');
+  assert.match(await readFile(resolve(root, 'favicon.svg'), 'utf8'), /viewBox="0 0 64 64"/);
+  const files = await readdir(resolve(root, 'assets'));
+  assert.ok(files.some(file => file.startsWith('Home-')) && files.some(file => file.startsWith('CodeGraphCaseStudy-')) && files.some(file => file.startsWith('TaskForgeCaseStudy-')));
+  for (const file of files) {
+    const body = await readFile(resolve(root, 'assets', file));
+    assert.ok(body.length < 500000, `Oversized asset: ${file}`);
+    if (file.endsWith('.js')) assert.ok(gzipSync(body).length < 150000, `Oversized compressed script: ${file}`);
+    assert.ok(!file.endsWith('.map') && !file.endsWith('.woff2'), 'no source maps or unnecessary web fonts');
+  }
+  assert.equal((await stat(resolve(root, 'aansh-singh-resume.pdf'))).size, (await stat('public/aansh-singh-resume.pdf')).size);
+  assert.deepEqual(await readFile(resolve(root, 'aansh-singh-resume.pdf')), await readFile('public/aansh-singh-resume.pdf'));
+});
+
+test('preview HTTP responses expose route metadata and a real 404 without executing JavaScript', { skip: !process.env.PREVIEW_URL }, async () => {
+  const base = process.env.PREVIEW_URL;
+  for (const page of fixtures) {
+    const response = await fetch(new URL(page.path, base));
+    assert.equal(response.status, 200);
+    const body = await response.text();
+    assert.equal(meta(body, 'og:url')[0].content, origin + page.path);
+    assert.match(body, new RegExp(`<h1[^>]*>${page.heading}`));
+  }
+  for (const path of ['/missing-page', '/projects/missing', '/missing.js']) {
+    const response = await fetch(new URL(path, base));
+    assert.equal(response.status, 404);
+    assert.match(await response.text(), /Page not found\./);
+  }
+  for (const asset of ['/social-preview.jpg', '/favicon.svg', '/sitemap.xml', '/robots.txt', '/aansh-singh-resume.pdf']) {
+    const response = await fetch(new URL(asset, base));
+    assert.equal(response.status, 200);
+    assert.deepEqual(Buffer.from(await response.arrayBuffer()), await readFile(resolve(root, `.${asset}`)));
+    if (asset.endsWith('.jpg')) assert.match(response.headers.get('content-type'), /image\/jpeg/);
+    if (asset.endsWith('.svg')) assert.match(response.headers.get('content-type'), /image\/svg\+xml/);
+    if (asset.endsWith('.pdf')) assert.match(response.headers.get('content-type'), /application\/pdf/);
+  }
+});

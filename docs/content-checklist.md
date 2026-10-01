@@ -15,5 +15,6 @@ Updated after the user's authoritative résumé/information-bank handoff. Source
 | TaskForge case-study evidence | Attached manual reviewed | Manual revision ecbb2fe, September 3, 2026. E1/E2 charts use exact historical medians and workload/host qualifiers; E5/E6 support bounded retry/recovery claims. Ignored raw bundles/reports may be absent from a fresh clone; no public artifact URL or fresh workload run claimed. Remote-effect deduplication, multi-host scaling, and production capacity are not established by the supplied synthetic evidence. |
 | Personal, education, experience, skills | Available in authoritative bank | Select only what the active ticket needs; do not publish the complete source inventory. |
 | Public live demos / screenshots | Not supplied in this intake | Track if a later ticket requires them; do not invent links or images. |
+| Production canonical origin | Supplied by user for Ticket 09 | `https://aanshsingh.com` (apex, not www); homepage `/` and both existing extensionless project paths used in generated metadata, sitemap, robots, and social-image URLs. Live domain connection is deferred to Ticket 10. |
 
 No source dependency blocks this intake. If a future ticket requires an absent fact or artifact, retain a specific missing-content entry rather than inventing it. Received content is not the same as a completed future ticket.

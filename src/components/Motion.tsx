@@ -5,7 +5,7 @@ const timing = { entrance: 0.32, step: 650, pulse: 0.4 };
 const reducedQuery = '(prefers-reduced-motion: reduce)';
 const mobileQuery = '(max-width: 60rem)';
 
-function useMedia(query: string) {
+function useMedia(query: string, serverValue = false) {
   return useSyncExternalStore(
     (notify) => {
       const media = window.matchMedia(query);
@@ -13,7 +13,7 @@ function useMedia(query: string) {
       return () => media.removeEventListener('change', notify);
     },
     () => window.matchMedia(query).matches,
-    () => true,
+    () => serverValue,
   );
 }
 
@@ -21,7 +21,7 @@ const Settings = createContext({ reduced: true, mobile: true, visible: true, ena
 
 export function MotionProvider({ children }: { children: ReactNode }) {
   const systemReduced = useMedia(reducedQuery);
-  const mobile = useMedia(mobileQuery);
+  const mobile = useMedia(mobileQuery, true);
   const visible = useSyncExternalStore(
     (notify) => {
       document.addEventListener('visibilitychange', notify);
@@ -30,10 +30,12 @@ export function MotionProvider({ children }: { children: ReactNode }) {
     () => document.visibilityState !== 'hidden',
     () => true,
   );
-  const [requested, setRequested] = useState(() => {
-    try { return window.localStorage.getItem('portfolio-reduce-motion') === 'true'; }
-    catch { return false; }
-  });
+  // Start with identical server/client markup; read saved preferences after hydration.
+  const [requested, setRequested] = useState(false);
+  useEffect(() => {
+    try { setRequested(window.localStorage.getItem('portfolio-reduce-motion') === 'true'); }
+    catch { /* The control still works when preference storage is unavailable. */ }
+  }, []);
   function toggle() {
     const next = !requested;
     setRequested(next);

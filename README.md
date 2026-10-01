@@ -1,6 +1,6 @@
 # Portfolio foundation
 
-Portfolio foundation, homepage, case studies, restrained motion, accessibility, and static production metadata (Tickets 01–09): React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Requires Node.js 22.12+ (or a supported newer release).
+Portfolio foundation, homepage, case studies, restrained motion, accessibility, static production metadata, and Cloudflare deployment readiness (Tickets 01–10): React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Requires Node.js 22.12+ (or a supported newer release).
 
 ```sh
 npm ci
@@ -41,7 +41,7 @@ The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The 
 
 `npm run build` emits `dist/index.html`, `dist/projects/codegraph.html`, `dist/projects/taskforge.html`, and `dist/404.html`, with complete rendered content and route-specific head metadata. It also generates `sitemap.xml` and `robots.txt`. Client hydration preserves navigation, contact, and motion behavior; page code is split into on-demand chunks. The temporary `.prerender/` server bundle is removed after generation.
 
-There is no production server runtime, CMS, authentication, or form service. Cloudflare Pages serves `.html` files at their extensionless paths and uses the generated top-level `404.html` for missing URLs ([static routing documentation](https://developers.cloudflare.com/pages/configuration/serving-pages/)). This replaces the prior SPA fallback; both project routes now have their own files. `npm run preview` mirrors this behavior, including HTTP 404 responses. Cloudflare account setup, deployment, DNS, HTTPS, and domain redirects remain deferred to ticket 10.
+There is no production server runtime, CMS, authentication, or form service. `wrangler.jsonc` configures **Cloudflare Workers Static Assets** to serve `dist/`, drop trailing slashes on project URLs, and serve the generated `404.html` with HTTP 404 for unknown paths ([static routing documentation](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/)). There is no Worker script or SPA catch-all. Run `npm run preview:cloudflare` after building to verify these rules locally with the pinned Wrangler runtime; `npm run preview` remains available for a Vite preview. Actual deployment and domain setup are manual owner actions after Ticket 10.
 
 The exact canonical URLs are `https://aanshsingh.com/`, `https://aanshsingh.com/projects/codegraph`, and `https://aanshsingh.com/projects/taskforge`. The same apex origin is used for sitemap, robots, Open Graph, and social-image URLs. Unknown pages are `noindex` and receive no canonical tag.
 
@@ -58,3 +58,5 @@ Motion verification is recorded in `docs/ticket-07-verification.md`. The test-on
 Responsive and accessibility checks, audit setup, and verification limits are recorded in `docs/ticket-08-verification.md`. The test preview supports `?text=200` for text enlargement and `?audit=1` for an axe-core scan using the local file specified by `AXE_SCRIPT_PATH`. These scripts and query behaviors are absent from the production bundle.
 
 Ticket 09 metadata, static routing, asset-size checks, and remaining deployment verification are recorded in `docs/ticket-09-verification.md`. After building, run `npm run check:production` for generated-file checks. With preview running at port 4177, `PREVIEW_URL=http://127.0.0.1:4177 npm run check:production` also tests HTTP route, asset, and 404 responses. The image's JPEG signature, 1200 × 630 dimensions, links, fragment targets, and supplied résumé bytes are checked. Fonts remain local system fonts; diagrams use HTML/CSS, and no noncritical content image requires a page request.
+
+Ticket 10's manual deployment commands, local Cloudflare checks, environment assumptions, and verification results are in [the deployment handoff](docs/ticket-10-deployment-readiness.md). This follows the replacement deployment-readiness ticket supplied by the user, superseding the older deployment instructions in `tickets/10-cloudflare-deployment.md`.

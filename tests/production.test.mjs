@@ -16,6 +16,17 @@ const decode = value => value.replace(/&amp;/g, '&').replace(/&#39;/g, "'").repl
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(match => [match[1], decode(match[2])]));
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map(match => attributes(match[0]));
 const meta = (html, key) => tags(html, 'meta').filter(tag => tag.name === key || tag.property === key);
+const outputFiles = (await readdir(root, { recursive: true, withFileTypes: true }))
+  .filter(entry => entry.isFile()).map(entry => resolve(entry.parentPath, entry.name));
+
+test('static output contains only production URLs and no server runtime', async () => {
+  for (const file of outputFiles) {
+    if (!/\.(html|js|css|xml|txt|svg)$/.test(file)) continue;
+    const body = await readFile(file, 'utf8');
+    assert.doesNotMatch(body, /localhost|127\.0\.0\.1|workers\.dev|pages\.dev|example\.(?:com|org)|www\.aanshsingh\.com|\/Users\/|file:\/\/|\/src\/main\.tsx|\/_test\//, file);
+  }
+  assert.ok(!outputFiles.some(file => /entry-server|\.map$/.test(file)), 'build-only runtime files are not deployed');
+});
 
 test('three generated pages expose distinct metadata and complete content without JavaScript', () => {
   const descriptions = new Set();
@@ -114,18 +125,32 @@ test('preview HTTP responses expose route metadata and a real 404 without execut
     const body = await response.text();
     assert.equal(meta(body, 'og:url')[0].content, origin + page.path);
     assert.match(body, new RegExp(`<h1[^>]*>${page.heading}`));
+    assert.equal((await fetch(new URL(page.path, base), { method: 'HEAD' })).status, 200);
   }
   for (const path of ['/missing-page', '/projects/missing', '/missing.js']) {
     const response = await fetch(new URL(path, base));
     assert.equal(response.status, 404);
     assert.match(await response.text(), /Page not found\./);
   }
-  for (const asset of ['/social-preview.jpg', '/favicon.svg', '/sitemap.xml', '/robots.txt', '/aansh-singh-resume.pdf']) {
+  for (const file of outputFiles.filter(file => !file.endsWith('.html'))) {
+    const asset = file.slice(root.length).replaceAll('\\', '/');
     const response = await fetch(new URL(asset, base));
     assert.equal(response.status, 200);
     assert.deepEqual(Buffer.from(await response.arrayBuffer()), await readFile(resolve(root, `.${asset}`)));
     if (asset.endsWith('.jpg')) assert.match(response.headers.get('content-type'), /image\/jpeg/);
     if (asset.endsWith('.svg')) assert.match(response.headers.get('content-type'), /image\/svg\+xml/);
     if (asset.endsWith('.pdf')) assert.match(response.headers.get('content-type'), /application\/pdf/);
+    if (asset.endsWith('.js')) assert.match(response.headers.get('content-type'), /(?:application|text)\/javascript/);
+    if (asset.endsWith('.css')) assert.match(response.headers.get('content-type'), /text\/css/);
+  }
+});
+
+test('Workers redirects project HTML and trailing slashes to canonical route paths', { skip: !process.env.CLOUDFLARE_PREVIEW_URL }, async () => {
+  for (const page of fixtures.filter(page => page.path !== '/')) {
+    for (const suffix of ['/', '.html']) {
+      const response = await fetch(new URL(page.path + suffix, process.env.CLOUDFLARE_PREVIEW_URL), { redirect: 'manual' });
+      assert.equal(response.status, 307);
+      assert.equal(new URL(response.headers.get('location'), process.env.CLOUDFLARE_PREVIEW_URL).pathname, page.path);
+    }
   }
 });

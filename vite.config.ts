@@ -3,7 +3,20 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { readFile, stat } from 'node:fs/promises';
 import { resolve, sep } from 'node:path';
-import { renderHead } from './src/content/metadata';
+import { renderHead, site } from './src/content/metadata';
+
+function productionRouterOrigin(): Plugin {
+  return {
+    name: 'portfolio-production-router-origin',
+    apply: 'build',
+    // React Router uses these inert URL parsing defaults when no browser origin
+    // is available. Keep even dependency fallbacks free of development URLs.
+    transform(code, id) {
+      if (!id.replaceAll('\\', '/').includes('/node_modules/react-router/dist/')) return;
+      return code.replaceAll('"http://localhost"', JSON.stringify(site.origin));
+    },
+  };
+}
 
 function staticPages(): Plugin {
   return {
@@ -13,7 +26,7 @@ function staticPages(): Plugin {
     },
     configurePreviewServer(server) {
       // Run after Vite resolves extensionless HTML files, before its HTML handler.
-      // Cloudflare Pages serves this same generated 404.html as its static fallback.
+      // Workers Static Assets serves this same generated 404.html as its fallback.
       return () => server.middlewares.use(async (request, response, next) => {
         if (!['GET', 'HEAD'].includes(request.method ?? '')) return next();
         const root = resolve(server.config.root, server.config.build.outDir);
@@ -32,5 +45,5 @@ function staticPages(): Plugin {
 
 export default defineConfig(({ isPreview }) => ({
   appType: isPreview ? 'mpa' : 'spa',
-  plugins: [react(), tailwindcss(), staticPages()],
+  plugins: [react(), tailwindcss(), staticPages(), productionRouterOrigin()],
 }));

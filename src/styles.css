@@ -439,10 +439,6 @@ main { position: relative; }
 .education-card h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); line-height: 1.35; margin-bottom: .4rem; }
 .education-card p { font-size: .9375rem; }
 .education-graduation { margin-top: .5rem; color: var(--color-accent); }
-.education-activity { border-top: var(--border-thin); margin-top: 1.25rem; padding-top: 1.25rem; }
-.education-activity .eyebrow { font-size: .6875rem; margin-bottom: .4rem; }
-.activity-title { max-width: 50rem; }
-.education-activity .activity-dates { font-size: .8125rem; color: var(--color-muted); margin-block: .25rem .5rem; }
 @media (max-width: 60rem) {
   .site-header { grid-template-columns: 1fr auto; gap: .75rem; }
   .primary-nav { grid-column: 1 / -1; grid-row: 2; justify-self: start; gap: .25rem 1.25rem; }

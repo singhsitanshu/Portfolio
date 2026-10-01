@@ -80,3 +80,7 @@ The page distinguishes optional idempotent admission from execution/effects, tas
 Controlling career/college source: `Copy of Aansh Singh — Master Software Engineering Resume.pdf`, supplied September 30, 2026. Both pages were extracted and visually reviewed. Page 1 supplies all selected career and college facts. See [the source map and final copy](ticket-14-content-map.md) for exact titles/dates, classifications, and reconciliation.
 
 Experience now includes D-Tech, RRISD student leadership, and CompuChild. Bruin Underwater Robotics appears once under Education as a college engineering activity; its date is `2025 – Present`, replacing the old month-specific variant. Degree, school, and June 2029 expected graduation are consistent. No prior career record was dropped and no fallback career/degree fact was needed. Existing owner-supplied contact preferences and the public résumé download remain unchanged. The new PDF is not a public asset.
+
+## October 1, 2026 — owner career updates
+
+The owner requested UCLA alone under Education and Bruin Underwater Robotics as the first Experience entry. Its existing role, dates, and contribution are retained. CompuChild's missing category is labeled Teaching. The owner supplied the exploretech.la Operations Team Member title, UCLA Samueli School of Engineering affiliation, and both outreach/logistics contributions; it appears after BUR. The owner subsequently confirmed its dates as Sept 2025 – Present. This supersedes Ticket 14's placement of BUR under Education.

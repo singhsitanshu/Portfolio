@@ -7,19 +7,12 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/aansh-singh/',
     github: 'https://github.com/singhsitanshu',
   },
-  // Ticket 14 attached résumé, p. 1 Education and BUR entry; see content map.
+  // Ticket 14 attached résumé, p. 1 Education; see content map.
   education: {
     institution: 'University of California, Los Angeles (UCLA)',
     school: 'Henry Samueli School of Engineering',
     degree: 'Bachelor of Science in Computer Science',
     expectedGraduation: 'June 2029',
-    activity: {
-      category: 'College engineering activity',
-      organization: 'Bruin Underwater Robotics (BUR) @ UCLA',
-      role: 'Software Engineer',
-      dates: '2025 – Present',
-      summary: 'Developed Python/YOLOv11 perception models for autonomous RoboSub and automated a Unity pipeline generating 3,000+ labeled training images.',
-    },
   },
   resumeUrl: '/aansh-singh-resume.pdf',
   role: 'Software Engineer',
@@ -70,8 +63,24 @@ export const contentReadiness = {
 } as const;
 
 // Ticket 14 attached résumé, p. 1 Experience. See docs/ticket-14-content-map.md.
-// Dates retain source precision; completed roles sort by most recent end date.
+// Dates retain source precision. User requested BUR first; exploretech.la dates are owner-confirmed.
 export const experience = [
+  {
+    organization: 'Bruin Underwater Robotics (BUR) @ UCLA', role: 'Software Engineer',
+    dates: '2025 – Present', category: 'Engineering',
+    contributions: [
+      'Developed Python/YOLOv11 perception models for autonomous RoboSub and automated a Unity pipeline generating 3,000+ labeled training images.',
+    ],
+  },
+  {
+    organization: 'exploretech.la', role: 'Operations Team Member',
+    affiliation: 'UCLA Samueli School of Engineering',
+    dates: 'Sept 2025 – Present', category: 'Operations',
+    contributions: [
+      'Coordinated event logistics and procurement for an annual STEM outreach event serving ~500 high school students across Greater Los Angeles.',
+      'Partnered with ASUCLA Catering and external vendors, including Gorilla Marketing, to source catering, event supplies, and custom merchandise, ensuring materials were organized and ready for event-day execution.',
+    ],
+  },
   {
     organization: 'D-Tech', role: 'Software Engineering Team Lead Intern',
     dates: 'May 2024 – Sept 2025', category: 'Internship',
@@ -90,7 +99,7 @@ export const experience = [
   },
   {
     organization: 'CompuChild', role: 'Instructor',
-    dates: 'May 2024 – Jan 2025', category: '',
+    dates: 'May 2024 – Jan 2025', category: 'Teaching',
     contributions: [
       'Taught Python and Scratch to middle school students through hands-on coding projects.',
       'Guided line-following robot and solar-car projects, helping students debug code and devices.',

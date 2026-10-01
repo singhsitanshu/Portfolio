@@ -51,10 +51,11 @@ export function Home() {
       <Entrance><Heading id="experience-title" eyebrow="02 / Career & leadership">Experience</Heading></Entrance>
       <ol className="experience-timeline">
         {experience.map(entry => <li key={entry.organization}>
-          <div className="experience-dates"><p>{entry.dates}</p>{entry.category && <span>{entry.category}</span>}</div>
+          <div className="experience-dates">{entry.dates && <p>{entry.dates}</p>}{entry.category && <span>{entry.category}</span>}</div>
           <div className="experience-entry">
             <h3>{entry.organization}</h3>
             <p className="experience-role">{entry.role}</p>
+            {'affiliation' in entry && <p className="muted"><em>{entry.affiliation}</em></p>}
             <ul>{entry.contributions.map(contribution => <li key={contribution}>{contribution}</li>)}</ul>
           </div>
         </li>)}
@@ -68,12 +69,6 @@ export function Home() {
           <p className="muted">{profile.education.school}</p>
           <p>{profile.education.degree}</p>
           <p className="education-graduation">Expected graduation · {profile.education.expectedGraduation}</p>
-        </div>
-        <div className="education-activity">
-          <p className="eyebrow">{profile.education.activity.category}</p>
-          <p className="activity-title"><strong>{profile.education.activity.organization} — {profile.education.activity.role}</strong></p>
-          <p className="activity-dates">{profile.education.activity.dates}</p>
-          <p className="muted">{profile.education.activity.summary}</p>
         </div>
       </div>
     </section>

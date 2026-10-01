@@ -8,22 +8,30 @@ import { Entrance } from '../components/Motion';
 export function Home() {
   return <>
     <section className="hero" aria-labelledby="hero-title">
-      <Entrance>
-        <p className="eyebrow">{profile.role} / {profile.educationLabel}</p>
-        <h1 id="hero-title">{profile.name.split(' ')[0]}<br /><span className="muted">{profile.name.split(' ').slice(1).join(' ')}<span className="hero-period">.</span></span></h1>
-        <p className="lede">{profile.positioning}</p>
-        <div className="actions">
-          <a className="button" href="#work">Explore My Work <span aria-hidden="true">↓</span></a>
-          <a className="text-link" href={profile.resumeUrl}>Resume <span className="file-label">PDF</span></a>
-          <a className="text-link" href={profile.links.github}>GitHub</a>
-          <a className="text-link" href={profile.links.linkedin}>LinkedIn</a>
+      <Entrance className="hero-copy">
+        <p className="eyebrow hero-role">{profile.role} / {profile.educationLabel}</p>
+        <p className="hero-greeting">{profile.hero.greeting}</p>
+        <h1 id="hero-title">{profile.name}<span className="hero-period">.</span></h1>
+        <p className="hero-perspective">{profile.hero.perspective}</p>
+        <p className="lede">{profile.hero.introduction}</p>
+        <div className="actions hero-actions">
+          <a className="button" href="#work">View Projects <span aria-hidden="true">↗</span></a>
+          <a className="button button-secondary" href={profile.resumeUrl}>Resume <span className="file-label">PDF</span></a>
         </div>
+        <nav className="hero-socials" aria-label="Social profiles">
+          <a href={profile.links.github}>GitHub <span aria-hidden="true">↗</span></a>
+          <a href={profile.links.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a>
+        </nav>
       </Entrance>
-      <nav className="hero-index" aria-label="Selected work index">
-        <p className="eyebrow">Selected work / {projects[0].dates}</p>
-        {projects.map((project, index) => <a key={project.id} href={`#${project.id}`}><span className="eyebrow">0{index + 1}</span><span>{project.name}</span><span aria-hidden="true">↘</span></a>)}
-        <p className="hero-index-note">From understanding code<br />to coordinating execution.</p>
-      </nav>
+      <Entrance className="hero-portrait">
+        <div className="portrait-frame">
+          <picture className="portrait-image">
+            <source type="image/webp" srcSet={profile.hero.portrait.srcSet} sizes="(max-width: 52rem) min(27.5rem, 90vw), (max-width: 75rem) 40vw, 27.5rem" />
+            <img src={profile.hero.portrait.src} alt={profile.hero.portrait.alt} width={profile.hero.portrait.width} height={profile.hero.portrait.height} fetchPriority="high" loading="eager" decoding="async" />
+          </picture>
+        </div>
+        <p className="portrait-caption"><span aria-hidden="true">01 /</span> {profile.educationLabel}</p>
+      </Entrance>
     </section>
     <div id="work" tabIndex={-1}>
       {projects.map((project) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <TaskForgeFeature key={project.id} project={project} />)}

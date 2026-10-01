@@ -1,0 +1,278 @@
+{
+  "normal": [
+    {
+      "width": 360,
+      "route": "/",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 360,
+      "route": "/projects/codegraph",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 360,
+      "route": "/projects/taskforge",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/codegraph",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/projects/taskforge",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/projects/codegraph",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/projects/taskforge",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/codegraph",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/projects/taskforge",
+      "brokenImages": 0,
+      "clipped": [
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only",
+        "sr-only"
+      ],
+      "overflow": false,
+      "violations": [],
+      "incomplete": []
+    }
+  ],
+  "enlarged": [
+    {
+      "width": 360,
+      "route": "/",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 360,
+      "route": "/projects/codegraph",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 360,
+      "route": "/projects/taskforge",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects/codegraph",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects/taskforge",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "route": "/projects/codegraph",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "route": "/projects/taskforge",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects/codegraph",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects/taskforge",
+      "clipped": [],
+      "overflow": false,
+      "rootSize": "32px",
+      "violations": []
+    }
+  ]
+}

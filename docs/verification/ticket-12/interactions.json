@@ -1,0 +1,56 @@
+[
+  {
+    "action": "cross-route About",
+    "url": "http://127.0.0.1:4177/#about",
+    "focus": "about"
+  },
+  {
+    "action": "keyboard focus",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Resume PDF"
+  },
+  {
+    "action": "View Projects",
+    "url": "http://127.0.0.1:4177/#work",
+    "focus": "work"
+  },
+  {
+    "action": "TaskForge",
+    "heading": "TaskForge"
+  },
+  {
+    "action": "CodeGraph",
+    "heading": "CodeGraph"
+  },
+  {
+    "action": "resume",
+    "url": "http://127.0.0.1:4177/aansh-singh-resume.pdf"
+  },
+  {
+    "action": "copy email",
+    "feedback": "Email copied to clipboard."
+  },
+  {
+    "action": "motion toggle",
+    "mode": "reduced",
+    "transition": "0s"
+  },
+  {
+    "action": "motion persisted",
+    "mode": "reduced"
+  },
+  {
+    "action": "system reduced-motion signal",
+    "mode": "reduced",
+    "disabled": true
+  },
+  {
+    "action": "clipboard denied",
+    "feedback": "Couldn’t copy automatically. Select and copy singhsitanshu@ucla.edu, or use the email link."
+  },
+  {
+    "action": "clipboard unsupported",
+    "feedback": "Couldn’t copy automatically. Select and copy singhsitanshu@ucla.edu, or use the email link."
+  }
+]

@@ -17,6 +17,18 @@ export const profile = {
   role: 'Software Engineer',
   educationLabel: 'UCLA Computer Science',
   positioning: 'Pragmatic, systems-minded | AI Engineering, Developer Tools & Distributed Systems | UCLA CS',
+  hero: {
+    greeting: 'Hi, I’m',
+    introduction: 'A computer science student at UCLA building developer tools, AI systems, and reliable backend software.',
+    perspective: 'Pragmatic, systems-minded.',
+    portrait: {
+      src: '/images/aansh-singh-800.jpg',
+      srcSet: '/images/aansh-singh-480.webp 480w, /images/aansh-singh-800.webp 800w, /images/aansh-singh-1120.webp 1120w',
+      alt: 'Aansh Singh resting his chin on his hands, with city lights behind him.',
+      width: 800,
+      height: 778,
+    },
+  },
   introduction: 'I’m Aansh, a computer science student at UCLA. My work spans developer tooling, reliable backend systems, and underwater robotics. I enjoy connecting the details of implementation to a clear, useful experience.',
 } as const;
 

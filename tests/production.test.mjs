@@ -59,7 +59,7 @@ test('three generated pages expose distinct metadata and complete content withou
 test('every generated internal link, hash target, and head asset resolves', async () => {
   let checked = 0;
   for (const [path, html] of documents) {
-    for (const tag of [...tags(html, 'a'), ...tags(html, 'link'), ...tags(html, 'script')]) {
+    for (const tag of [...tags(html, 'a'), ...tags(html, 'link'), ...tags(html, 'script'), ...tags(html, 'img')]) {
       const reference = tag.href ?? tag.src;
       if (!reference) continue;
       const url = new URL(reference, origin + path);
@@ -111,10 +111,31 @@ test('social image dimensions, MIME signature, and production asset sizes are ap
     const body = await readFile(resolve(root, 'assets', file));
     assert.ok(body.length < 500000, `Oversized asset: ${file}`);
     if (file.endsWith('.js')) assert.ok(gzipSync(body).length < 150000, `Oversized compressed script: ${file}`);
-    assert.ok(!file.endsWith('.map') && !file.endsWith('.woff2'), 'no source maps or unnecessary web fonts');
+    assert.ok(!file.endsWith('.map'), 'no production source maps');
   }
   assert.equal((await stat(resolve(root, 'aansh-singh-resume.pdf'))).size, (await stat('public/aansh-singh-resume.pdf')).size);
   assert.deepEqual(await readFile(resolve(root, 'aansh-singh-resume.pdf')), await readFile('public/aansh-singh-resume.pdf'));
+});
+
+test('portrait variants and self-hosted display font are present and bounded', async () => {
+  const home = documents.get('/');
+  const portrait = tags(home, 'img')[0];
+  assert.equal(portrait.loading, 'eager');
+  assert.equal(portrait.fetchPriority ?? portrait.fetchpriority, 'high');
+  assert.ok(Number(portrait.width) > 0 && Number(portrait.height) > 0);
+  assert.ok(portrait.alt.includes('Aansh Singh'));
+  const source = tags(home, 'source').find(tag => tag.type === 'image/webp');
+  const variants = (source.srcSet ?? source.srcset).split(',').map(value => value.trim().split(' ')[0]);
+  assert.equal(variants.length, 3);
+  for (const path of variants) {
+    const bytes = await readFile(resolve(root, `.${path}`));
+    assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
+    assert.ok(bytes.length < 120000);
+  }
+  const font = await readFile(resolve(root, 'fonts/space-grotesk-latin-wght.woff2'));
+  assert.equal(font.toString('ascii', 0, 4), 'wOF2');
+  assert.ok(font.length < 30000);
+  assert.match(await readFile(resolve(root, 'fonts/space-grotesk-LICENSE.txt'), 'utf8'), /SIL OPEN FONT LICENSE/);
 });
 
 test('preview HTTP responses expose route metadata and a real 404 without executing JavaScript', { skip: !process.env.PREVIEW_URL }, async () => {

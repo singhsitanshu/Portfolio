@@ -10,7 +10,7 @@ export const site = {
 export const pages = [
   {
     path: '/',
-    title: `${profile.name} | ${profile.role}`,
+    title: profile.name,
     description: `${profile.positioning} Software engineer and UCLA computer science student.`,
   },
   {

@@ -7,7 +7,7 @@ import { gzipSync } from 'node:zlib';
 const origin = 'https://aanshsingh.com';
 const socialImage = '/social-preview-homepage-v3.jpg';
 const fixtures = [
-  { path: '/', file: 'index.html', title: 'Aansh Singh | Software Engineer', heading: 'Aansh' },
+  { path: '/', file: 'index.html', title: 'Aansh Singh', heading: 'Aansh' },
   { path: '/projects/codegraph', file: 'projects/codegraph.html', title: 'CodeGraph Case Study | Aansh Singh', heading: 'CodeGraph' },
   { path: '/projects/taskforge', file: 'projects/taskforge.html', title: 'TaskForge Case Study | Aansh Singh', heading: 'TaskForge' },
 ];

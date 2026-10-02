@@ -44,7 +44,7 @@ The numbers are owner-verified. This ticket improves readers' ability to underst
 
 ## Verification
 
-Open every added evidence destination and check its relevance, not only its HTTP status. Compare metric definitions across hero/cards/case studies and scan generated output for private source paths. Run shared checks if content changes.
+Open every added evidence destination and check its relevance, not only its HTTP status. Compare metric definitions across project cards/case studies and scan generated output for private source paths. Run shared checks if content changes.
 
 Record the implementation, checks actually performed, screenshots where relevant, and any remaining dependency in `docs/ticket-24-verification.md`. Do not report unperformed checks as passing.
 

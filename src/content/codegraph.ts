@@ -1,6 +1,7 @@
 // Authoritative bank: projects/CODEGRAPH.md; 04_METRICS.md M09, M11–M12.
 // Metric wording: catalog/resume-bullets.json B0013/B0032/B0185.
 // Ticket 15: owner-verified metrics take precedence over older evidence caveats; see docs/ticket-15-verification.md.
+import type { CaseStudyResultSummary } from './case-study';
 export const codegraphFeature = {
   showcase: {
     summary: 'Explore a codebase through its files, call relationships, and question-specific context.',
@@ -47,3 +48,16 @@ export const codegraphFeature = {
   technologies: ['React / TypeScript', 'Python / FastAPI', 'Tree-sitter', 'Neo4j', 'LangGraph'],
   linkLabel: 'Explore CodeGraph',
 } as const;
+
+export const codegraphResultSummary = {
+  id: 'result-summary',
+  title: 'Measured results',
+  metrics: [{
+    value: codegraphFeature.result.reduction,
+    label: codegraphFeature.result.reductionLabel,
+    detail: `${codegraphFeature.result.baseline} → ${codegraphFeature.result.focused} ${codegraphFeature.result.unit}`,
+  }],
+  note: codegraphFeature.result.note,
+  scope: 'Measures retrieved context size, excluding model prompts and generated answers; not accuracy, billing, or latency.',
+  evidence: { id: 'results', label: 'Read context measurement and scope' },
+} as const satisfies CaseStudyResultSummary;

@@ -3,7 +3,7 @@
 **Status:** Ready for implementation planning; not implemented by this ticket-writing task.  
 **Priority:** P1  
 **Review recommendation:** 4 of 12  
-**Depends on / coordinates with:** None; land before or alongside Tickets 16, 17, 20, and 25.
+**Depends on / coordinates with:** None; land before or alongside Tickets 16, 17, and 25.
 
 ## Shared requirements
 

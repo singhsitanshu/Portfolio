@@ -3,7 +3,7 @@
 **Status:** Ready for implementation planning; not implemented by this ticket-writing task.  
 **Priority:** P2  
 **Review recommendation:** 12 of 12  
-**Depends on / coordinates with:** None; align copy with Ticket 20 when it lands.
+**Depends on / coordinates with:** None; Ticket 20 is cancelled.
 
 ## Shared requirements
 
@@ -47,4 +47,4 @@ Record the implementation, checks actually performed, screenshots where relevant
 
 ## Scope boundaries and handoff
 
-Own employer invitation and contact access here; Ticket 20 should reuse its hiring-intent wording rather than maintaining conflicting availability statements.
+Own employer invitation and contact access here. Ticket 20 is cancelled; preserve the existing homepage hero and do not add recruiting language to it through this ticket.

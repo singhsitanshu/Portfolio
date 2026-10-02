@@ -1,12 +1,12 @@
-import { CaseStudyLayout, CaseStudySection } from '../components/CaseStudyLayout';
+import { CaseStudyLayout, CaseStudySection, sectionsById } from '../components/CaseStudyLayout';
 import { TextLink } from '../components/ui';
 import { taskforgeCaseStudy as content } from '../content/taskforge-case-study';
-import { taskforgeFeature } from '../content/taskforge';
+import { taskforgeFeature, taskforgeResultSummary } from '../content/taskforge';
 import type { Project } from '../content/portfolio';
 
 export function TaskForgeCaseStudy({ project }: { project: Project }) {
-  const [system, submission, claiming, execution, recovery, benchmarks, tradeoffs, repository] = content.sections;
-  return <CaseStudyLayout project={project} introduction={content.introduction} overview={content.overview} sections={content.sections}>
+  const { system, submission, claiming, execution, recovery, benchmarks, tradeoffs, repository } = sectionsById(content.sections);
+  return <CaseStudyLayout project={project} introduction={content.introduction} resultSummary={taskforgeResultSummary} overview={content.overview} sections={content.sections}>
     <CaseStudySection section={system}>
       <p>{content.system}</p>
       <figure className="case-study-architecture" aria-labelledby="taskforge-architecture-title">

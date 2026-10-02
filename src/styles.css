@@ -254,6 +254,18 @@ p { line-height: 1.65; }
 .case-study-header { padding-block: var(--space-section) 3rem; }
 .case-study-header > .heading-group, .case-study-header > .motion-entrance { margin-top: 3rem; }
 .case-study-lede { font-size: clamp(1.375rem, 3vw, 2rem); line-height: 1.4; letter-spacing: -0.025em; max-width: 47rem; margin-top: 2rem; }
+.case-study-result-summary { margin-top: 2rem; padding-block: 1.5rem; border-block: var(--border-thin); }
+.case-study-result-summary h2 { font-size: 1.125rem; letter-spacing: -0.025em; }
+.case-study-result-context { margin-top: 0.5rem; color: var(--color-muted); }
+.case-study-result-metrics { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; margin-block: 1rem; }
+.case-study-result-metrics > div { flex: 1 1 18rem; min-width: 0; max-width: 32rem; }
+.case-study-result-metrics dt { font-size: 1rem; }
+.case-study-result-metrics dd { margin: 0.25rem 0 0; }
+.case-study-result-metrics strong { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.05em; color: var(--color-accent); }
+.case-study-result-metrics p { margin-top: 0.5rem; font-size: 0.9375rem; }
+.case-study-result-scope { margin-top: 0.5rem; font-size: 0.8125rem; color: var(--color-muted); max-width: 48rem; }
+.case-study-result-summary > .text-link { margin-top: 0.5rem; }
+.case-study-ownership { margin-top: 1.5rem; color: var(--color-muted); }
 .case-study-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-block: 3rem 1.5rem; }
 .case-study-overview dt, .case-study-evidence dt, .case-study-decisions dt { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--color-muted); }
 .case-study-overview dd { margin: 0.75rem 0 0; font-size: 1.125rem; max-width: 18rem; }

@@ -1,0 +1,8 @@
+{
+  "status": 200,
+  "contentSecurityPolicy": "script-src 'none'",
+  "routes": [
+    "/projects/codegraph",
+    "/projects/taskforge"
+  ]
+}

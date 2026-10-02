@@ -1,5 +1,13 @@
 // Supplied bank: projects/TASKFORGE.md; 04_METRICS.md E1/E2;
 // sources/manuals/taskforge/04-performance.md §12 and 10-benchmark-evidence.md.
+import type { CaseStudyResultSummary } from './case-study';
+
+// Exact measured values shared by the concise summary and detailed evidence.
+export const taskforgeMeasurements = {
+  noopPeak: { workers: 4, tasksPerSecond: 1284.015 },
+  syntheticWait: { milliseconds: 50, baselineWorkers: 1, workers: 16, speedup: 15.842 },
+} as const;
+
 export const taskforgeFeature = {
   showcase: {
     summary: 'Coordinate background tasks with durable PostgreSQL queues, concurrent Go workers, and bounded retries.',
@@ -45,3 +53,22 @@ export const taskforgeFeature = {
   technologies: ['Go', 'PostgreSQL', 'Docker Compose', 'Prometheus', 'Grafana'],
   linkLabel: 'Explore TaskForge',
 } as const;
+
+export const taskforgeResultSummary = {
+  id: 'result-summary',
+  title: 'Measured results',
+  context: 'Local Docker benchmarks',
+  metrics: [
+    {
+      value: `${taskforgeMeasurements.syntheticWait.speedup.toFixed(2)}×`,
+      label: 'speedup',
+      detail: `From ${taskforgeMeasurements.syntheticWait.baselineWorkers} to ${taskforgeMeasurements.syntheticWait.workers} workers on synthetic ${taskforgeMeasurements.syntheticWait.milliseconds} ms waits`,
+    },
+    {
+      value: `≈${Math.round(taskforgeMeasurements.noopPeak.tasksPerSecond).toLocaleString('en-US')}`,
+      label: 'no-op tasks/sec',
+      detail: `Median processing throughput at ${taskforgeMeasurements.noopPeak.workers} workers; a separate no-op workload`,
+    },
+  ],
+  evidence: { id: 'benchmarks', label: 'Read benchmark methodology and detailed results' },
+} as const satisfies CaseStudyResultSummary;

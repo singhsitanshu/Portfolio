@@ -77,6 +77,26 @@ test('every generated internal link, hash target, and head asset resolves', asyn
   assert.ok(checked > 50);
 });
 
+test('case-study summaries precede technical content and link to distinct detailed evidence', () => {
+  for (const [path, evidenceId] of [['/projects/codegraph', 'results'], ['/projects/taskforge', 'benchmarks']]) {
+    const html = documents.get(path);
+    const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+    assert.equal(ids.length, new Set(ids).size, `${path} IDs must be unique`);
+    const header = html.match(/<header class="case-study-header">([\s\S]*?)<\/header>/)[1];
+    const summary = header.match(/<section class="case-study-result-summary"[^>]*>([\s\S]*?)<\/section>/)[1];
+    assert.ok(header.indexOf('case-study-lede') < header.indexOf('case-study-result-summary'));
+    assert.ok(header.indexOf('case-study-result-summary') < header.indexOf('case-study-overview'));
+    assert.match(summary, /<h2 id="result-summary-title">/);
+    assert.ok(tags(summary, 'a').some(a => a.href === `${path}#${evidenceId}`));
+    assert.ok(tags(html, 'section').some(section => section.id === evidenceId && section.tabindex === '-1'));
+    const nav = html.match(/<nav class="case-study-nav"[^>]*>([\s\S]*?)<\/nav>/)[1];
+    assert.deepEqual(tags(nav, 'a').map(a => a.href), tags(html, 'section').map(section => `${path}#${section.id}`));
+    for (const section of tags(html, 'section')) {
+      assert.ok(ids.includes(section['aria-labelledby']), `Section ${section.id} keeps its heading`);
+    }
+  }
+});
+
 test('sitemap, robots, and noindex not-found output use the intended origin', async () => {
   const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8');
   assert.deepEqual([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]), fixtures.map(page => origin + page.path));

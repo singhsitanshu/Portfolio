@@ -3,7 +3,7 @@
 **Status:** Ready for implementation planning; not implemented by this ticket-writing task.  
 **Priority:** P2  
 **Review recommendation:** 6 of 12  
-**Depends on / coordinates with:** Tickets 16, 17, 19, and 20; review again after Ticket 22 assets land.
+**Depends on / coordinates with:** Tickets 16, 17, and 19; review again after Ticket 22 assets land.
 
 ## Shared requirements
 
@@ -15,10 +15,10 @@ Large header spacing and illustrations currently delay achievements and project 
 
 ## Implementation scope
 
-- Audit the hero, case-study header, overview cards, project cards, and section gaps using screenshots of the implemented content.
+- Audit case-study headers, overview cards, project cards, and their section gaps using screenshots of the implemented content. The homepage hero is excluded: Ticket 20 was cancelled, and its existing copy, portrait, layout, and actions must be preserved.
 - Reduce excessive vertical padding, title scale, and gaps in the case-study headers so the project name, concise purpose, solo role, and primary result fit within a 1440×900 desktop viewport at default text size.
 - On homepage project cards, honor Ticket 17's text/result/action-before-visual structure; avoid CSS ordering that disagrees with assistive-technology reading order.
-- On 390×844 mobile screens, prioritize identity, purpose, and the result ahead of decorative media. Aim to show the primary result without a long introductory scroll, but do not clip text or shrink essential qualifications to force a viewport target.
+- In case-study headers and project cards on 390×844 mobile screens, prioritize identity, purpose, and the result ahead of decorative media. Aim to show the primary result without a long introductory scroll, but do not clip text or shrink essential qualifications to force a viewport target.
 - Keep heading hierarchy, comfortable body text, touch targets, focus styling, and breathing room between distinct sections.
 - Preserve image aspect ratios and meaningful captions. Do not distort the portrait or crop away important product controls.
 - Keep key achievements fully visible at rest and with reduced motion. Do not use scroll-triggered reveal as a prerequisite for reading them.
@@ -35,7 +35,8 @@ Large header spacing and illustrations currently delay achievements and project 
 ## Acceptance criteria
 
 - Desktop screenshots demonstrate the primary case-study achievement in the initial viewport at 1440×900.
-- Titles and achievement text precede illustrations in both DOM and visual reading order.
+- In case-study headers and project cards, titles and achievement text precede illustrations in both DOM and visual reading order.
+- The homepage hero copy, portrait, layout, and actions remain unchanged.
 - No horizontal scrolling at 320, 390, 768, or 1440 CSS-pixel widths.
 - At 200% text enlargement all content remains available without overlap, clipping, or fixed-height truncation.
 - Keyboard focus, section anchors, and reduced-motion rendering remain usable.

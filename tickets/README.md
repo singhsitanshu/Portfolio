@@ -1,8 +1,10 @@
 # Employer-facing portfolio improvement tickets
 
-Prepared October 1, 2026 from the homepage/case-study review and the current repository. This batch contains **12 implementation tickets**, one for each recommendation, numbered **16–27** to continue the existing backlog. Creating these tickets does not implement or deploy website changes. Earlier Tickets 01–15 remain historical context.
+Prepared October 1, 2026 from the homepage/case-study review and the current repository. This batch originally contained **12 implementation tickets**, numbered **16–27**. **Ticket 20 was cancelled by the owner on October 2, 2026, leaving 11 active tickets.** Creating these tickets does not implement or deploy website changes. Earlier Tickets 01–15 remain historical context.
 
 ## Owner clarification and controlling facts
+
+- October 2, 2026 owner decision: **Ticket 20 is cancelled. Preserve the existing homepage hero copy, portrait, layout, and actions.** Do not introduce its proposed changes through another ticket. Other project-card, case-study, experience, and contact improvements remain active.
 
 - CodeGraph's LangGraph ReAct agent is powered by **Claude Sonnet 5**, per the owner's October 1, 2026 clarification. Name it in technical architecture details; do not infer the model used for historical measurements.
 - Aansh independently built **both CodeGraph and TaskForge during summer 2026 before the school year began**. All project contribution is his. Do not request confirmation of solo ownership again or describe him as a partial contributor.
@@ -21,7 +23,7 @@ Prepared October 1, 2026 from the homepage/case-study review and the current rep
 | 2 | [17 — Lead homepage project cards with measured results](17-homepage-project-results.md) | P1 |
 | 3 | [18 — Condense and reposition engineering tradeoffs](18-focused-engineering-tradeoffs.md) | P2 |
 | 4 | [19 — Make solo ownership and summer project context explicit](19-solo-project-ownership.md) | P1 |
-| 5 | [20 — Give the homepage hero a concrete engineering pitch](20-employer-focused-hero.md) | P1 |
+| 5 | [20 — Homepage hero pitch (cancelled)](20-employer-focused-hero.md) | Cancelled |
 | 6 | [21 — Improve first-screen density and responsive reading order](21-information-density-and-reading-order.md) | P2 |
 | 7 | [22 — Show real project interfaces and a concrete walkthrough](22-authentic-project-demonstrations.md) | P2 |
 | 8 | [23 — Present TaskForge benchmark conclusions before methodology](23-taskforge-benchmark-story.md) | P1 |
@@ -35,7 +37,7 @@ P1 means the first implementation group because it directly improves the visibil
 ## Suggested implementation sequence
 
 1. **19 → 16 → 17:** establish ownership and reusable metric data, then surface results in case-study headers and homepage cards.
-2. **27 → 20 → 23:** align employer invitation, hero pitch, and detailed TaskForge benchmark storytelling.
+2. **27 and 23:** improve the employer contact invitation and detailed TaskForge benchmark storytelling. Ticket 20 is cancelled; no hero changes are included.
 3. **18 → 25:** condense decisions, then build specific engineering stories without duplication.
 4. **24 and 26:** enrich measurement context/public evidence links where available and reorganize experience.
 5. **22 → 21:** add authentic product media, then perform the final density/responsive pass. If media is unavailable, complete 21 with existing labeled diagrams and document the media dependency.

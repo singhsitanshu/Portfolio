@@ -1,0 +1,582 @@
+[
+  {
+    "check": "codegraph keyboard summary link",
+    "focused": "Read context measurement and scope ↓",
+    "href": "/projects/codegraph#results",
+    "outline": "solid"
+  },
+  {
+    "check": "codegraph keyboard evidence destination",
+    "focused": "results",
+    "hash": "#results",
+    "top": 24.21875
+  },
+  {
+    "check": "codegraph desktop route top",
+    "headings": [
+      [
+        "H1",
+        "CodeGraph"
+      ],
+      [
+        "H2",
+        "Measured results"
+      ],
+      [
+        "H2",
+        "The problem"
+      ],
+      [
+        "H2",
+        "System architecture"
+      ],
+      [
+        "H2",
+        "From ingestion to context"
+      ],
+      [
+        "H2",
+        "Engineering challenges"
+      ],
+      [
+        "H2",
+        "Design decisions & tradeoffs"
+      ],
+      [
+        "H2",
+        "Correctness & validation"
+      ],
+      [
+        "H2",
+        "Results & measurement"
+      ],
+      [
+        "H2",
+        "Engineering lessons"
+      ],
+      [
+        "H2",
+        "Repository"
+      ]
+    ],
+    "idsUnique": true,
+    "overflow": false,
+    "summary": "Measured results\nLLM context reduction\n97.5%\n\n≈737K → ≈18K tokens per query\n\nSupported-source tokens compared with tool-returned context.\n\nMeasures retrieved context size, excluding model prompts and generated answers; not accuracy, billing, or latency.\n\nRead context measurement and scope ↓",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "check": "codegraph desktop keyboard summary link",
+    "focused": "Read context measurement and scope ↓",
+    "href": "/projects/codegraph#results",
+    "outline": "solid"
+  },
+  {
+    "check": "codegraph desktop keyboard evidence destination",
+    "focused": "results",
+    "hash": "#results",
+    "top": 24.21875
+  },
+  {
+    "check": "taskforge desktop route top",
+    "headings": [
+      [
+        "H1",
+        "TaskForge"
+      ],
+      [
+        "H2",
+        "Measured results"
+      ],
+      [
+        "H2",
+        "System architecture"
+      ],
+      [
+        "H2",
+        "Submission & idempotency"
+      ],
+      [
+        "H2",
+        "Competing workers"
+      ],
+      [
+        "H2",
+        "Success & retry walkthrough"
+      ],
+      [
+        "H2",
+        "Lease renewal & recovery"
+      ],
+      [
+        "H2",
+        "Benchmark methodology & results"
+      ],
+      [
+        "H2",
+        "Tradeoffs & lessons"
+      ],
+      [
+        "H2",
+        "Repository"
+      ]
+    ],
+    "idsUnique": true,
+    "overflow": false,
+    "summary": "Measured results\n\nLocal Docker benchmarks\n\nspeedup\n15.84×\n\nFrom 1 to 16 workers on synthetic 50 ms waits\n\nno-op tasks/sec\n≈1,284\n\nMedian processing throughput at 4 workers; a separate no-op workload\n\nRead benchmark methodology and detailed results ↓",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "check": "taskforge desktop keyboard summary link",
+    "focused": "Read benchmark methodology and detailed results ↓",
+    "href": "/projects/taskforge#benchmarks",
+    "outline": "solid"
+  },
+  {
+    "check": "taskforge desktop keyboard evidence destination",
+    "focused": "benchmarks",
+    "hash": "#benchmarks",
+    "top": 23.75
+  },
+  {
+    "check": "codegraph tablet route top",
+    "headings": [
+      [
+        "H1",
+        "CodeGraph"
+      ],
+      [
+        "H2",
+        "Measured results"
+      ],
+      [
+        "H2",
+        "The problem"
+      ],
+      [
+        "H2",
+        "System architecture"
+      ],
+      [
+        "H2",
+        "From ingestion to context"
+      ],
+      [
+        "H2",
+        "Engineering challenges"
+      ],
+      [
+        "H2",
+        "Design decisions & tradeoffs"
+      ],
+      [
+        "H2",
+        "Correctness & validation"
+      ],
+      [
+        "H2",
+        "Results & measurement"
+      ],
+      [
+        "H2",
+        "Engineering lessons"
+      ],
+      [
+        "H2",
+        "Repository"
+      ]
+    ],
+    "idsUnique": true,
+    "overflow": false,
+    "summary": "Measured results\nLLM context reduction\n97.5%\n\n≈737K → ≈18K tokens per query\n\nSupported-source tokens compared with tool-returned context.\n\nMeasures retrieved context size, excluding model prompts and generated answers; not accuracy, billing, or latency.\n\nRead context measurement and scope ↓",
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "check": "codegraph tablet keyboard summary link",
+    "focused": "Read context measurement and scope ↓",
+    "href": "/projects/codegraph#results",
+    "outline": "solid"
+  },
+  {
+    "check": "codegraph tablet keyboard evidence destination",
+    "focused": "results",
+    "hash": "#results",
+    "top": 24.1796875
+  },
+  {
+    "check": "codegraph tablet summary navigation",
+    "focused": "result-summary",
+    "hash": "#result-summary",
+    "top": 23.796875
+  },
+  {
+    "check": "taskforge tablet route top",
+    "headings": [
+      [
+        "H1",
+        "TaskForge"
+      ],
+      [
+        "H2",
+        "Measured results"
+      ],
+      [
+        "H2",
+        "System architecture"
+      ],
+      [
+        "H2",
+        "Submission & idempotency"
+      ],
+      [
+        "H2",
+        "Competing workers"
+      ],
+      [
+        "H2",
+        "Success & retry walkthrough"
+      ],
+      [
+        "H2",
+        "Lease renewal & recovery"
+      ],
+      [
+        "H2",
+        "Benchmark methodology & results"
+      ],
+      [
+        "H2",
+        "Tradeoffs & lessons"
+      ],
+      [
+        "H2",
+        "Repository"
+      ]
+    ],
+    "idsUnique": true,
+    "overflow": false,
+    "summary": "Measured results\n\nLocal Docker benchmarks\n\nspeedup\n15.84×\n\nFrom 1 to 16 workers on synthetic 50 ms waits\n\nno-op tasks/sec\n≈1,284\n\nMedian processing throughput at 4 workers; a separate no-op workload\n\nRead benchmark methodology and detailed results ↓",
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "check": "taskforge tablet keyboard summary link",
+    "focused": "Read benchmark methodology and detailed results ↓",
+    "href": "/projects/taskforge#benchmarks",
+    "outline": "solid"
+  },
+  {
+    "check": "taskforge tablet keyboard evidence destination",
+    "focused": "benchmarks",
+    "hash": "#benchmarks",
+    "top": 24.1171875
+  },
+  {
+    "check": "taskforge tablet summary navigation",
+    "focused": "result-summary",
+    "hash": "#result-summary",
+    "top": 23.796875
+  },
+  {
+    "check": "codegraph mobile route top",
+    "headings": [
+      [
+        "H1",
+        "CodeGraph"
+      ],
+      [
+        "H2",
+        "Measured results"
+      ],
+      [
+        "H2",
+        "The problem"
+      ],
+      [
+        "H2",
+        "System architecture"
+      ],
+      [
+        "H2",
+        "From ingestion to context"
+      ],
+      [
+        "H2",
+        "Engineering challenges"
+      ],
+      [
+        "H2",
+        "Design decisions & tradeoffs"
+      ],
+      [
+        "H2",
+        "Correctness & validation"
+      ],
+      [
+        "H2",
+        "Results & measurement"
+      ],
+      [
+        "H2",
+        "Engineering lessons"
+      ],
+      [
+        "H2",
+        "Repository"
+      ]
+    ],
+    "idsUnique": true,
+    "overflow": false,
+    "summary": "Measured results\nLLM context reduction\n97.5%\n\n≈737K → ≈18K tokens per query\n\nSupported-source tokens compared with tool-returned context.\n\nMeasures retrieved context size, excluding model prompts and generated answers; not accuracy, billing, or latency.\n\nRead context measurement and scope ↓",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "check": "codegraph mobile keyboard summary link",
+    "focused": "Read context measurement and scope ↓",
+    "href": "/projects/codegraph#results",
+    "outline": "solid"
+  },
+  {
+    "check": "codegraph mobile keyboard evidence destination",
+    "focused": "results",
+    "hash": "#results",
+    "top": 24.0546875
+  },
+  {
+    "check": "codegraph mobile summary navigation",
+    "focused": "result-summary",
+    "hash": "#result-summary",
+    "top": 24.09375
+  },
+  {
+    "check": "taskforge mobile route top",
+    "headings": [
+      [
+        "H1",
+        "TaskForge"
+      ],
+      [
+        "H2",
+        "Measured results"
+      ],
+      [
+        "H2",
+        "System architecture"
+      ],
+      [
+        "H2",
+        "Submission & idempotency"
+      ],
+      [
+        "H2",
+        "Competing workers"
+      ],
+      [
+        "H2",
+        "Success & retry walkthrough"
+      ],
+      [
+        "H2",
+        "Lease renewal & recovery"
+      ],
+      [
+        "H2",
+        "Benchmark methodology & results"
+      ],
+      [
+        "H2",
+        "Tradeoffs & lessons"
+      ],
+      [
+        "H2",
+        "Repository"
+      ]
+    ],
+    "idsUnique": true,
+    "overflow": false,
+    "summary": "Measured results\n\nLocal Docker benchmarks\n\nspeedup\n15.84×\n\nFrom 1 to 16 workers on synthetic 50 ms waits\n\nno-op tasks/sec\n≈1,284\n\nMedian processing throughput at 4 workers; a separate no-op workload\n\nRead benchmark methodology and detailed results ↓",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "check": "taskforge mobile keyboard summary link",
+    "focused": "Read benchmark methodology and detailed results ↓",
+    "href": "/projects/taskforge#benchmarks",
+    "outline": "solid"
+  },
+  {
+    "check": "taskforge mobile keyboard evidence destination",
+    "focused": "benchmarks",
+    "hash": "#benchmarks",
+    "top": 24.2265625
+  },
+  {
+    "check": "taskforge mobile summary navigation",
+    "focused": "result-summary",
+    "hash": "#result-summary",
+    "top": 24.09375
+  },
+  {
+    "check": "codegraph reduced motion",
+    "motion": "reduced",
+    "opacity": "1",
+    "overflow": false,
+    "summary": "Measured results\nLLM context reduction\n97.5%\n\n≈737K → ≈18K tokens per query\n\nSupported-source tokens compared with tool-returned context.\n\nMeasures retrieved context size, excluding model prompts and generated answers; not accuracy, billing, or latency.\n\nRead context measurement and scope ↓",
+    "transform": "none"
+  },
+  {
+    "check": "codegraph direct evidence fragment",
+    "focused": "results",
+    "hash": "#results",
+    "top": 24.0546875
+  },
+  {
+    "check": "codegraph JavaScript blocked",
+    "motion": "mobile",
+    "overflow": false,
+    "summary": "Measured results\nLLM context reduction\n97.5%\n\n≈737K → ≈18K tokens per query\n\nSupported-source tokens compared with tool-returned context.\n\nMeasures retrieved context size, excluding model prompts and generated answers; not accuracy, billing, or latency.\n\nRead context measurement and scope ↓",
+    "top": 24.09375
+  },
+  {
+    "check": "codegraph native evidence link without JavaScript",
+    "focused": "results",
+    "hash": "#results",
+    "top": 24.0546875
+  },
+  {
+    "check": "taskforge reduced motion",
+    "motion": "reduced",
+    "opacity": "1",
+    "overflow": false,
+    "summary": "Measured results\n\nLocal Docker benchmarks\n\nspeedup\n15.84×\n\nFrom 1 to 16 workers on synthetic 50 ms waits\n\nno-op tasks/sec\n≈1,284\n\nMedian processing throughput at 4 workers; a separate no-op workload\n\nRead benchmark methodology and detailed results ↓",
+    "transform": "none"
+  },
+  {
+    "check": "taskforge direct evidence fragment",
+    "focused": "benchmarks",
+    "hash": "#benchmarks",
+    "top": 24.2265625
+  },
+  {
+    "check": "taskforge JavaScript blocked",
+    "motion": "mobile",
+    "overflow": false,
+    "summary": "Measured results\n\nLocal Docker benchmarks\n\nspeedup\n15.84×\n\nFrom 1 to 16 workers on synthetic 50 ms waits\n\nno-op tasks/sec\n≈1,284\n\nMedian processing throughput at 4 workers; a separate no-op workload\n\nRead benchmark methodology and detailed results ↓",
+    "top": 24.09375
+  },
+  {
+    "check": "taskforge native evidence link without JavaScript",
+    "focused": "benchmarks",
+    "hash": "#benchmarks",
+    "top": 24.2265625
+  },
+  {
+    "check": "taskforge mobile detailed benchmark values",
+    "captions": [
+      "Four workers produced the highest tested median: 1,284.015 tasks/sec. With minimal handler work, coordination overhead becomes the scaling constraint.\n3 trials per configuration",
+      "From 1 to 16 workers: 15.842× speedup and 99.0% parallel efficiency on synthetic 50 ms waits.\n3 trials per configuration"
+    ],
+    "overflow": false,
+    "rows": [
+      "1 worker\n779.748\ntasks/sec",
+      "4 workers\n1284.015\ntasks/sec",
+      "8 workers\n1279.605\ntasks/sec",
+      "16 workers\n1214.429\ntasks/sec",
+      "1 worker\n18.764\ntasks/sec",
+      "4 workers\n74.668\ntasks/sec",
+      "8 workers\n149.442\ntasks/sec",
+      "16 workers\n297.264\ntasks/sec"
+    ]
+  },
+  {
+    "check": "normal hydrated route browser logs",
+    "logs": []
+  },
+  {
+    "check": "codegraph desktop final header capture",
+    "fonts": "loaded",
+    "overflow": false,
+    "scroll": 0,
+    "summaryTop": 629.6953125,
+    "titleTop": 323.9251403808594,
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "check": "taskforge desktop final header capture",
+    "fonts": "loaded",
+    "overflow": false,
+    "scroll": 0,
+    "summaryTop": 629.6953125,
+    "titleTop": 323.15020751953125,
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "check": "codegraph tablet final header capture",
+    "fonts": "loaded",
+    "overflow": false,
+    "scroll": 0,
+    "summaryTop": 529.296875,
+    "titleTop": 336.90625,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "check": "taskforge tablet final header capture",
+    "fonts": "loaded",
+    "overflow": false,
+    "scroll": 0,
+    "summaryTop": 529.296875,
+    "titleTop": 336.90625,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "check": "codegraph mobile final header capture",
+    "fonts": "loaded",
+    "overflow": false,
+    "scroll": 0,
+    "summaryTop": 564.09375,
+    "titleTop": 331.1484375,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "check": "taskforge mobile final header capture",
+    "fonts": "loaded",
+    "overflow": false,
+    "scroll": 0,
+    "summaryTop": 564.09375,
+    "titleTop": 331.1484375,
+    "viewport": [
+      390,
+      844
+    ]
+  }
+]

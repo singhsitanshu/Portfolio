@@ -3,7 +3,7 @@
 **Status:** Ready for implementation planning; not implemented by this ticket-writing task.  
 **Priority:** P1  
 **Review recommendation:** 1 of 12  
-**Depends on / coordinates with:** None; establishes the shared result presentation used by Tickets 17 and 20.
+**Depends on / coordinates with:** None; establishes the shared result presentation used by Ticket 17.
 
 ## Shared requirements
 

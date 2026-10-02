@@ -2,6 +2,7 @@
 // 01-system §§2–4; 02-database-correctness §§5–8; 04-performance §12;
 // 05-decisions-critique §§16/19; 10-benchmark-evidence E1/E2/E5/E6.
 // Lessons are derived from documented tradeoffs, not invented personal history.
+import { taskforgeMeasurements } from './taskforge';
 export const taskforgeCaseStudy = {
   introduction: 'Coordinate background work through short PostgreSQL transactions, renewable ownership, and a durable record of every attempt.',
   overview: [
@@ -71,8 +72,8 @@ export const taskforgeCaseStudy = {
     formula: 'Processing tasks/sec = logical tasks / (latest attempt finish − earliest attempt start)',
     aggregation: 'Charts show medians of per-trial processing throughput. Speedup is the ratio of aggregate medians; parallel efficiency is speedup divided by worker count. Each chart has its own zero-based scale.',
     charts: [
-      { id: 'noop', title: 'No-op coordination', maximum: 1400, unit: 'median processing tasks/sec', rows: [{ workers: 1, value: 779.748 }, { workers: 4, value: 1284.015 }, { workers: 8, value: 1279.605 }, { workers: 16, value: 1214.429 }], caption: 'Four workers produced the highest tested median: 1,284.015 tasks/sec. With minimal handler work, coordination overhead becomes the scaling constraint.' },
-      { id: 'wait', title: 'Synthetic 50 ms waits', maximum: 320, unit: 'median processing tasks/sec', rows: [{ workers: 1, value: 18.764 }, { workers: 4, value: 74.668 }, { workers: 8, value: 149.442 }, { workers: 16, value: 297.264 }], caption: 'From 1 to 16 workers: 15.842× speedup and 99.0% parallel efficiency on synthetic 50 ms waits.' },
+      { id: 'noop', title: 'No-op coordination', maximum: 1400, unit: 'median processing tasks/sec', rows: [{ workers: 1, value: 779.748 }, { workers: taskforgeMeasurements.noopPeak.workers, value: taskforgeMeasurements.noopPeak.tasksPerSecond }, { workers: 8, value: 1279.605 }, { workers: 16, value: 1214.429 }], caption: `Four workers produced the highest tested median: ${taskforgeMeasurements.noopPeak.tasksPerSecond.toLocaleString('en-US', { minimumFractionDigits: 3 })} tasks/sec. With minimal handler work, coordination overhead becomes the scaling constraint.` },
+      { id: 'wait', title: 'Synthetic 50 ms waits', maximum: 320, unit: 'median processing tasks/sec', rows: [{ workers: 1, value: 18.764 }, { workers: 4, value: 74.668 }, { workers: 8, value: 149.442 }, { workers: 16, value: 297.264 }], caption: `From ${taskforgeMeasurements.syntheticWait.baselineWorkers} to ${taskforgeMeasurements.syntheticWait.workers} workers: ${taskforgeMeasurements.syntheticWait.speedup.toFixed(3)}× speedup and 99.0% parallel efficiency on synthetic ${taskforgeMeasurements.syntheticWait.milliseconds} ms waits.` },
     ],
     failures: [
       { label: 'Fail-once retries', value: '3,000 tasks · 6,000 attempts', detail: 'Three trials; 10 workers and 3 schedulers; fixed 100 ms retry/promotion configuration. Exactly FAILED → SUCCEEDED histories, with zero duplicate identities or stranded leases in these runs.' },

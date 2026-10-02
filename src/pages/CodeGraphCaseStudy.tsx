@@ -1,13 +1,13 @@
-import { CaseStudyLayout, CaseStudySection } from '../components/CaseStudyLayout';
+import { CaseStudyLayout, CaseStudySection, sectionsById } from '../components/CaseStudyLayout';
 import { TextLink } from '../components/ui';
 import { codegraphCaseStudy as content } from '../content/codegraph-case-study';
-import { codegraphFeature } from '../content/codegraph';
+import { codegraphFeature, codegraphResultSummary } from '../content/codegraph';
 import type { Project } from '../content/portfolio';
 
 export function CodeGraphCaseStudy({ project }: { project: Project }) {
-  const [problem, architecture, execution, challenges, decisions, correctness, results, lessons, repository] = content.sections;
+  const { problem, architecture, execution, challenges, decisions, correctness, results, lessons, repository } = sectionsById(content.sections);
   const result = codegraphFeature.result;
-  return <CaseStudyLayout project={project} introduction={content.introduction} overview={content.overview} sections={content.sections}>
+  return <CaseStudyLayout project={project} introduction={content.introduction} resultSummary={codegraphResultSummary} overview={content.overview} sections={content.sections}>
     <CaseStudySection section={problem}><p>{content.problem}</p></CaseStudySection>
     <CaseStudySection section={architecture}>
       <p>{content.system}</p>

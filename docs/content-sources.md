@@ -2,6 +2,8 @@
 
 ## Source precedence
 
+October 2, 2026 owner decision: Ticket 20 (homepage hero pitch) is cancelled. Preserve the existing homepage hero copy, portrait, layout, and actions. Remaining tickets still cover project cards, case studies, experience, and contact; do not reintroduce the cancelled hero changes through those tickets.
+
 October 1, 2026 owner portrait update: use the supplied `trim.jpg` as the homepage image. `public/images/aansh-singh-trim.jpg` is an unchanged byte-for-byte copy, 1277 × 1804 pixels with its embedded Display P3 profile. Preserve the original JPEG and color profile; do not replace it with recompressed/resized variants or apply color filters. Display its supplied proportions without an additional crop.
 
 October 1, 2026 owner clarification: CodeGraph's LangGraph ReAct agent is powered by **Claude Sonnet 5**. Use that model name in technical architecture details. This supersedes older notes limiting attribution to the provider name; it does not establish which model was used for historical measurements.

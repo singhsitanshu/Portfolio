@@ -1,12 +1,18 @@
 import type { ReactNode } from 'react';
 import type { Project } from '../content/portfolio';
+import type { CaseStudyResultSummary } from '../content/case-study';
 import { Heading, TextLink } from './ui';
 import { Entrance } from './Motion';
 
 type Section = { id: string; title: string };
 
-export function CaseStudyLayout({ project, introduction, overview, sections, children }: {
+export function sectionsById<T extends readonly Section[]>(sections: T) {
+  return Object.fromEntries(sections.map(section => [section.id, section])) as Record<T[number]['id'], Section>;
+}
+
+export function CaseStudyLayout({ project, introduction, resultSummary, ownership, overview, sections, children }: {
   project: Project; introduction: string;
+  resultSummary: CaseStudyResultSummary; ownership?: string;
   overview: readonly { label: string; value: string }[];
   sections: readonly Section[]; children: ReactNode;
 }) {
@@ -15,10 +21,21 @@ export function CaseStudyLayout({ project, introduction, overview, sections, chi
       <TextLink to="/#projects">← Back to projects</TextLink>
       <Entrance><Heading as="h1" id="case-study-title" eyebrow={`Case study / ${project.dates}`}>{project.name}</Heading></Entrance>
       <p className="case-study-lede">{introduction}</p>
+      <section className="case-study-result-summary" id={resultSummary.id} tabIndex={-1} aria-labelledby={`${resultSummary.id}-title`}>
+        <h2 id={`${resultSummary.id}-title`}>{resultSummary.title}</h2>
+        {resultSummary.context && <p className="case-study-result-context">{resultSummary.context}</p>}
+        <dl className="case-study-result-metrics">{resultSummary.metrics.map(metric => <div key={metric.label}>
+          <dt>{metric.label}</dt><dd><strong>{metric.value}</strong><p>{metric.detail}</p></dd>
+        </div>)}</dl>
+        {resultSummary.note && <p>{resultSummary.note}</p>}
+        {resultSummary.scope && <p className="case-study-result-scope">{resultSummary.scope}</p>}
+        <TextLink to={`${project.path}#${resultSummary.evidence.id}`}>{resultSummary.evidence.label} ↓</TextLink>
+      </section>
+      {ownership && <p className="case-study-ownership">{ownership}</p>}
       <dl className="case-study-overview">{overview.map(item => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
       <a className="text-link" href={project.repository}>View {project.name} repository ↗</a>
     </header>
-    <nav className="case-study-nav" aria-label="Case study sections">{sections.map(section => <TextLink key={section.id} to={`${project.path}#${section.id}`}>{section.title}</TextLink>)}</nav>
+    <nav className="case-study-nav" aria-label="Case study sections"><TextLink to={`${project.path}#${resultSummary.id}`}>{resultSummary.title}</TextLink>{sections.map(section => <TextLink key={section.id} to={`${project.path}#${section.id}`}>{section.title}</TextLink>)}</nav>
     {children}
   </article>;
 }

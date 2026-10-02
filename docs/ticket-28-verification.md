@@ -1,5 +1,15 @@
 # Ticket 28 — refreshed homepage social preview
 
+## Follow-up: reduced side whitespace (October 2, 2026)
+
+The current asset is now `public/social-preview-homepage-v3.jpg` (1200 × 630 JPEG, 72,877 bytes). This supersedes the v2 image described below. The composition places text 60 px from the left edge and the portrait 72 px from the right edge, versus approximately 300 px and 212 px in v2. Larger text and portrait fill the standard wide preview while retaining the complete hero copy, full original portrait, and comfortable padding. Navbar remains excluded. The wide framing takes precedence over v2's square-crop optimization; a square crop cannot retain all the content of this wider arrangement.
+
+Updated the composition source, Open Graph/Twitter image URL, README, and production fixture to v3. Reviewed the actual JPEG at full size and [360 × 189](verification/social-preview-v3/small-preview.jpg). Build, production/HTTP checks (10 passed; optional Workers redirect check skipped), and `git diff --check` passed. Checks include JPEG signature, dimensions, size, matching image URLs/alt text, route metadata, and HTTP image delivery.
+
+A fresh unauthenticated fetch of the live canonical homepage on October 2 still advertised `https://aanshsingh.com/social-preview-homepage-v2.jpg` in both image tags. The updated URL is `https://aanshsingh.com/social-preview-homepage-v3.jpg`. Actual messaging-app verification remains pending deployment through the existing owner-controlled workflow; the local small-preview screenshot is not a real shared-message result. No deployment or message was sent.
+
+The following sections record the original v2 implementation and checks.
+
 Local implementation verified October 2, 2026. Deployment and a real messaging-app share remain pending, following the ticket's owner-controlled deployment handoff.
 
 ## Deployed state inspected before changes

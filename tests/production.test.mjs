@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 import { gzipSync } from 'node:zlib';
 
 const origin = 'https://aanshsingh.com';
-const socialImage = '/social-preview-homepage-v2.jpg';
+const socialImage = '/social-preview-homepage-v3.jpg';
 const fixtures = [
   { path: '/', file: 'index.html', title: 'Aansh Singh | Software Engineer', heading: 'Aansh' },
   { path: '/projects/codegraph', file: 'projects/codegraph.html', title: 'CodeGraph Case Study | Aansh Singh', heading: 'CodeGraph' },

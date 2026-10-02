@@ -1,0 +1,890 @@
+[
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "id": "result-summary",
+    "focus": "result-summary",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 351.578125,
+      "height": 327.6875,
+      "left": 144,
+      "right": 1296,
+      "top": 23.890625,
+      "width": 1152,
+      "x": 144,
+      "y": 23.890625
+    }
+  },
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "id": "architecture",
+    "focus": "architecture",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1179.3125,
+      "height": 1155.34375,
+      "left": 144,
+      "right": 1296,
+      "top": 23.96875,
+      "width": 1152,
+      "x": 144,
+      "y": 23.96875
+    }
+  },
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "id": "results",
+    "focus": "results",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 650.046875,
+      "height": 626.1796875,
+      "left": 144,
+      "right": 1296,
+      "top": 23.8671875,
+      "width": 1152,
+      "x": 144,
+      "y": 23.8671875
+    }
+  },
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "id": "decisions",
+    "focus": "decisions",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 440.703125,
+      "height": 416.65625,
+      "left": 144,
+      "right": 1296,
+      "top": 24.046875,
+      "width": 1152,
+      "x": 144,
+      "y": 24.046875
+    }
+  },
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "action": "Enter on summary navigation",
+    "focus": "result-summary",
+    "top": 23.890625,
+    "url": "http://127.0.0.1:4181/projects/codegraph#result-summary"
+  },
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "action": "Tab from Back to projects",
+    "bounds": {
+      "bottom": 715.578125,
+      "height": 44,
+      "left": 144,
+      "right": 438.7265625,
+      "top": 671.578125,
+      "width": 294.7265625,
+      "x": 144,
+      "y": 671.578125
+    },
+    "href": "/projects/codegraph#results",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Read context measurement and scope ↓"
+  },
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "action": "Enter on evidence link",
+    "focus": "results",
+    "top": 23.8671875,
+    "url": "http://127.0.0.1:4181/projects/codegraph#results"
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "id": "result-summary",
+    "focus": "result-summary",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 330.1328125,
+      "height": 306.2421875,
+      "left": 144,
+      "right": 1296,
+      "top": 23.890625,
+      "width": 1152,
+      "x": 144,
+      "y": 23.890625
+    }
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "id": "claiming",
+    "focus": "claiming",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 667.296875,
+      "height": 643.4296875,
+      "left": 144,
+      "right": 1296,
+      "top": 23.8671875,
+      "width": 1152,
+      "x": 144,
+      "y": 23.8671875
+    }
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "id": "benchmarks",
+    "focus": "benchmarks",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1949.1328125,
+      "height": 1924.890625,
+      "left": 144,
+      "right": 1296,
+      "top": 24.2421875,
+      "width": 1152,
+      "x": 144,
+      "y": 24.2421875
+    }
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "id": "tradeoffs",
+    "focus": "tradeoffs",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 810.5390625,
+      "height": 786.40625,
+      "left": 144,
+      "right": 1296,
+      "top": 24.1328125,
+      "width": 1152,
+      "x": 144,
+      "y": 24.1328125
+    }
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "action": "Enter on summary navigation",
+    "focus": "result-summary",
+    "top": 23.890625,
+    "url": "http://127.0.0.1:4181/projects/taskforge#result-summary"
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "action": "Tab from Back to projects",
+    "bounds": {
+      "bottom": 694.1328125,
+      "height": 44,
+      "left": 144,
+      "right": 528.7265625,
+      "top": 650.1328125,
+      "width": 384.7265625,
+      "x": 144,
+      "y": 650.1328125
+    },
+    "href": "/projects/taskforge#benchmarks",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Read benchmark methodology and detailed results ↓"
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "action": "Enter on evidence link",
+    "focus": "benchmarks",
+    "top": 24.2421875,
+    "url": "http://127.0.0.1:4181/projects/taskforge#benchmarks"
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "id": "result-summary",
+    "focus": "result-summary",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 354.703125,
+      "height": 330.734375,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 23.96875,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 23.96875
+    }
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "id": "architecture",
+    "focus": "architecture",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1196.1953125,
+      "height": 1172.109375,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 24.0859375,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 24.0859375
+    }
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "id": "results",
+    "focus": "results",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 624.8046875,
+      "height": 600.9765625,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 23.828125,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 23.828125
+    }
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "id": "decisions",
+    "focus": "decisions",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 475.1484375,
+      "height": 451.34375,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 23.8046875,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 23.8046875
+    }
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "action": "Enter on summary navigation",
+    "focus": "result-summary",
+    "top": 23.96875,
+    "url": "http://127.0.0.1:4181/projects/codegraph#result-summary"
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "action": "Tab from Back to projects",
+    "bounds": {
+      "bottom": 715.203125,
+      "height": 44,
+      "left": 38.3984375,
+      "right": 333.125,
+      "top": 671.203125,
+      "width": 294.7265625,
+      "x": 38.3984375,
+      "y": 671.203125
+    },
+    "href": "/projects/codegraph#results",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Read context measurement and scope ↓"
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "action": "Enter on evidence link",
+    "focus": "results",
+    "top": 23.828125,
+    "url": "http://127.0.0.1:4181/projects/codegraph#results"
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "id": "result-summary",
+    "focus": "result-summary",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 336.5625,
+      "height": 312.59375,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 23.96875,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 23.96875
+    }
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "id": "claiming",
+    "focus": "claiming",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 678.875,
+      "height": 655.0234375,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 23.8515625,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 23.8515625
+    }
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "id": "benchmarks",
+    "focus": "benchmarks",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 2020.234375,
+      "height": 1996.328125,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 23.90625,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 23.90625
+    }
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "id": "tradeoffs",
+    "focus": "tradeoffs",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 891.515625,
+      "height": 867.28125,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 24.234375,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 24.234375
+    }
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "action": "Enter on summary navigation",
+    "focus": "result-summary",
+    "top": 23.96875,
+    "url": "http://127.0.0.1:4181/projects/taskforge#result-summary"
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "action": "Tab from Back to projects",
+    "bounds": {
+      "bottom": 697.0625,
+      "height": 44,
+      "left": 38.3984375,
+      "right": 423.125,
+      "top": 653.0625,
+      "width": 384.7265625,
+      "x": 38.3984375,
+      "y": 653.0625
+    },
+    "href": "/projects/taskforge#benchmarks",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Read benchmark methodology and detailed results ↓"
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "action": "Enter on evidence link",
+    "focus": "benchmarks",
+    "top": 23.90625,
+    "url": "http://127.0.0.1:4181/projects/taskforge#benchmarks"
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "id": "result-summary",
+    "focus": "result-summary",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 402.4453125,
+      "height": 378.578125,
+      "left": 20,
+      "right": 370,
+      "top": 23.8671875,
+      "width": 350,
+      "x": 20,
+      "y": 23.8671875
+    }
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "id": "architecture",
+    "focus": "architecture",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1603.4921875,
+      "height": 1579.375,
+      "left": 20,
+      "right": 370,
+      "top": 24.1171875,
+      "width": 350,
+      "x": 20,
+      "y": 24.1171875
+    }
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "id": "results",
+    "focus": "results",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 850.4453125,
+      "height": 826.4140625,
+      "left": 20,
+      "right": 370,
+      "top": 24.03125,
+      "width": 350,
+      "x": 20,
+      "y": 24.03125
+    }
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "id": "decisions",
+    "focus": "decisions",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 763.8515625,
+      "height": 739.90625,
+      "left": 20,
+      "right": 370,
+      "top": 23.9453125,
+      "width": 350,
+      "x": 20,
+      "y": 23.9453125
+    }
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "action": "Enter on summary navigation",
+    "focus": "result-summary",
+    "top": 23.8671875,
+    "url": "http://127.0.0.1:4181/projects/codegraph#result-summary"
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "action": "Tab from Back to projects",
+    "bounds": {
+      "bottom": 810.9453125,
+      "height": 44,
+      "left": 20,
+      "right": 314.7265625,
+      "top": 766.9453125,
+      "width": 294.7265625,
+      "x": 20,
+      "y": 766.9453125
+    },
+    "href": "/projects/codegraph#results",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Read context measurement and scope ↓"
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "action": "Enter on evidence link",
+    "focus": "results",
+    "top": 24.03125,
+    "url": "http://127.0.0.1:4181/projects/codegraph#results"
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "id": "result-summary",
+    "focus": "result-summary",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 471.2109375,
+      "height": 447.34375,
+      "left": 20,
+      "right": 370,
+      "top": 23.8671875,
+      "width": 350,
+      "x": 20,
+      "y": 23.8671875
+    }
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "id": "claiming",
+    "focus": "claiming",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1017.40625,
+      "height": 993.25,
+      "left": 20,
+      "right": 370,
+      "top": 24.15625,
+      "width": 350,
+      "x": 20,
+      "y": 24.15625
+    }
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "id": "benchmarks",
+    "focus": "benchmarks",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 2614.765625,
+      "height": 2590.875,
+      "left": 20,
+      "right": 370,
+      "top": 23.890625,
+      "width": 350,
+      "x": 20,
+      "y": 23.890625
+    }
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "id": "tradeoffs",
+    "focus": "tradeoffs",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1148.515625,
+      "height": 1124.75,
+      "left": 20,
+      "right": 370,
+      "top": 23.765625,
+      "width": 350,
+      "x": 20,
+      "y": 23.765625
+    }
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "action": "Enter on summary navigation",
+    "focus": "result-summary",
+    "top": 23.8671875,
+    "url": "http://127.0.0.1:4181/projects/taskforge#result-summary"
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "action": "Tab from Back to projects",
+    "bounds": {
+      "bottom": 844.2109375,
+      "height": 48,
+      "left": 20,
+      "right": 370,
+      "top": 796.2109375,
+      "width": 350,
+      "x": 20,
+      "y": 796.2109375
+    },
+    "href": "/projects/taskforge#benchmarks",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Read benchmark methodology and detailed results ↓"
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "action": "Enter on evidence link",
+    "focus": "benchmarks",
+    "top": 23.890625,
+    "url": "http://127.0.0.1:4181/projects/taskforge#benchmarks"
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "id": "result-summary",
+    "focus": "result-summary",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 406.4453125,
+      "height": 382.578125,
+      "left": 20,
+      "right": 300,
+      "top": 23.8671875,
+      "width": 280,
+      "x": 20,
+      "y": 23.8671875
+    }
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "id": "architecture",
+    "focus": "architecture",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1855.75,
+      "height": 1831.9375,
+      "left": 20,
+      "right": 300,
+      "top": 23.8125,
+      "width": 280,
+      "x": 20,
+      "y": 23.8125
+    }
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "id": "results",
+    "focus": "results",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 898.0703125,
+      "height": 874.2578125,
+      "left": 20,
+      "right": 300,
+      "top": 23.8125,
+      "width": 280,
+      "x": 20,
+      "y": 23.8125
+    }
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "id": "decisions",
+    "focus": "decisions",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 891.7578125,
+      "height": 867.6875,
+      "left": 20,
+      "right": 300,
+      "top": 24.0703125,
+      "width": 280,
+      "x": 20,
+      "y": 24.0703125
+    }
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "action": "Enter on summary navigation",
+    "focus": "result-summary",
+    "top": 23.8671875,
+    "url": "http://127.0.0.1:4181/projects/codegraph#result-summary"
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "action": "Tab from Back to projects",
+    "bounds": {
+      "bottom": 843.9453125,
+      "height": 48,
+      "left": 20,
+      "right": 300,
+      "top": 795.9453125,
+      "width": 280,
+      "x": 20,
+      "y": 795.9453125
+    },
+    "href": "/projects/codegraph#results",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Read context measurement and scope ↓"
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "action": "Enter on evidence link",
+    "focus": "results",
+    "top": 23.8125,
+    "url": "http://127.0.0.1:4181/projects/codegraph#results"
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "id": "result-summary",
+    "focus": "result-summary",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 496.15625,
+      "height": 472.09375,
+      "left": 20,
+      "right": 300,
+      "top": 24.0625,
+      "width": 280,
+      "x": 20,
+      "y": 24.0625
+    }
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "id": "claiming",
+    "focus": "claiming",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1122.90625,
+      "height": 1098.84375,
+      "left": 20,
+      "right": 300,
+      "top": 24.0625,
+      "width": 280,
+      "x": 20,
+      "y": 24.0625
+    }
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "id": "benchmarks",
+    "focus": "benchmarks",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 2876.71875,
+      "height": 2852.7578125,
+      "left": 20,
+      "right": 300,
+      "top": 23.9609375,
+      "width": 280,
+      "x": 20,
+      "y": 23.9609375
+    }
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "id": "tradeoffs",
+    "focus": "tradeoffs",
+    "outline": "solid",
+    "overflow": false,
+    "scrollMargin": "24px",
+    "target": {
+      "bottom": 1319.03125,
+      "height": 1294.8125,
+      "left": 20,
+      "right": 300,
+      "top": 24.21875,
+      "width": 280,
+      "x": 20,
+      "y": 24.21875
+    }
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "action": "Enter on summary navigation",
+    "focus": "result-summary",
+    "top": 24.0625,
+    "url": "http://127.0.0.1:4181/projects/taskforge#result-summary"
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "action": "Tab from Back to projects",
+    "bounds": {
+      "bottom": 446.15625,
+      "height": 48,
+      "left": 20,
+      "right": 300,
+      "top": 398.15625,
+      "width": 280,
+      "x": 20,
+      "y": 398.15625
+    },
+    "href": "/projects/taskforge#benchmarks",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "Read benchmark methodology and detailed results ↓"
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "action": "Enter on evidence link",
+    "focus": "benchmarks",
+    "top": 23.9609375,
+    "url": "http://127.0.0.1:4181/projects/taskforge#benchmarks"
+  }
+]

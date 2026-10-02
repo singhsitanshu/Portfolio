@@ -1,0 +1,74 @@
+[
+  {
+    "size": "desktop",
+    "route": "home",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "tablet",
+    "route": "home",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "mobile",
+    "route": "home",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "reflow",
+    "route": "home",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "motion": "reduced",
+    "overlaps": []
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "motion": "reduced",
+    "overlaps": []
+  }
+]

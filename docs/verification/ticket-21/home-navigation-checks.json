@@ -1,0 +1,90 @@
+[
+  {
+    "size": "desktop",
+    "action": "Tab from card case-study link",
+    "label": "CodeGraph on GitHub",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "GitHub\n↗"
+  },
+  {
+    "size": "desktop",
+    "action": "Enter card case-study link",
+    "focus": "main",
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4181/projects/codegraph"
+  },
+  {
+    "size": "desktop",
+    "action": "Enter Back to projects",
+    "focus": "projects",
+    "top": 24.1171875,
+    "url": "http://127.0.0.1:4181/#projects"
+  },
+  {
+    "size": "tablet",
+    "action": "Tab from card case-study link",
+    "label": "CodeGraph on GitHub",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "GitHub\n↗"
+  },
+  {
+    "size": "tablet",
+    "action": "Enter card case-study link",
+    "focus": "main",
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4181/projects/codegraph"
+  },
+  {
+    "size": "tablet",
+    "action": "Enter Back to projects",
+    "focus": "projects",
+    "top": 23.8515625,
+    "url": "http://127.0.0.1:4181/#projects"
+  },
+  {
+    "size": "mobile",
+    "action": "Tab from card case-study link",
+    "label": "CodeGraph on GitHub",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "GitHub\n↗"
+  },
+  {
+    "size": "mobile",
+    "action": "Enter card case-study link",
+    "focus": "main",
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4181/projects/codegraph"
+  },
+  {
+    "size": "mobile",
+    "action": "Enter Back to projects",
+    "focus": "projects",
+    "top": 23.859375,
+    "url": "http://127.0.0.1:4181/#projects"
+  },
+  {
+    "size": "reflow",
+    "action": "Tab from card case-study link",
+    "label": "CodeGraph on GitHub",
+    "outline": "solid",
+    "outlineWidth": "3px",
+    "text": "GitHub\n↗"
+  },
+  {
+    "size": "reflow",
+    "action": "Enter card case-study link",
+    "focus": "main",
+    "scrollY": 0,
+    "url": "http://127.0.0.1:4181/projects/codegraph"
+  },
+  {
+    "size": "reflow",
+    "action": "Enter Back to projects",
+    "focus": "projects",
+    "top": 23.7578125,
+    "url": "http://127.0.0.1:4181/#projects"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "page": "dist/index.html",
+    "prerenderedBody": "identical to baseline"
+  },
+  {
+    "page": "dist/projects/codegraph.html",
+    "prerenderedBody": "identical to baseline"
+  },
+  {
+    "page": "dist/projects/taskforge.html",
+    "prerenderedBody": "identical to baseline"
+  },
+  {
+    "size": "desktop",
+    "heroDimensionsPositionsAndFonts": "unchanged; existing desktop entrance translation can vary during capture by up to 6px"
+  },
+  {
+    "size": "tablet",
+    "heroDimensionsPositionsAndFonts": "unchanged; existing desktop entrance translation can vary during capture by up to 6px"
+  },
+  {
+    "size": "mobile",
+    "heroDimensionsPositionsAndFonts": "unchanged; existing desktop entrance translation can vary during capture by up to 6px"
+  },
+  {
+    "size": "reflow",
+    "heroDimensionsPositionsAndFonts": "unchanged; existing desktop entrance translation can vary during capture by up to 6px"
+  }
+]

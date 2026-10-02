@@ -1,0 +1,138 @@
+[
+  {
+    "size": "desktop",
+    "route": "home",
+    "width": 1440,
+    "motion": "reduced",
+    "scrollWidth": 1440,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 233
+  },
+  {
+    "size": "desktop",
+    "route": "codegraph",
+    "width": 1440,
+    "motion": "reduced",
+    "scrollWidth": 1440,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 235
+  },
+  {
+    "size": "desktop",
+    "route": "taskforge",
+    "width": 1440,
+    "motion": "reduced",
+    "scrollWidth": 1440,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 328
+  },
+  {
+    "size": "tablet",
+    "route": "home",
+    "width": 768,
+    "motion": "reduced",
+    "scrollWidth": 768,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 233
+  },
+  {
+    "size": "tablet",
+    "route": "codegraph",
+    "width": 768,
+    "motion": "reduced",
+    "scrollWidth": 768,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 235
+  },
+  {
+    "size": "tablet",
+    "route": "taskforge",
+    "width": 768,
+    "motion": "reduced",
+    "scrollWidth": 768,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 328
+  },
+  {
+    "size": "mobile",
+    "route": "home",
+    "width": 390,
+    "motion": "reduced",
+    "scrollWidth": 390,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 233
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "width": 390,
+    "motion": "reduced",
+    "scrollWidth": 390,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 235
+  },
+  {
+    "size": "mobile",
+    "route": "codegraph",
+    "action": "200% text keyboard evidence link",
+    "focus": "results",
+    "testStylePresent": true,
+    "top": 23.9765625
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "width": 390,
+    "motion": "reduced",
+    "scrollWidth": 390,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 328
+  },
+  {
+    "size": "mobile",
+    "route": "taskforge",
+    "action": "200% text keyboard evidence link",
+    "focus": "benchmarks",
+    "testStylePresent": true,
+    "top": 23.921875
+  },
+  {
+    "size": "reflow",
+    "route": "home",
+    "width": 320,
+    "motion": "reduced",
+    "scrollWidth": 320,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 233
+  },
+  {
+    "size": "reflow",
+    "route": "codegraph",
+    "width": 320,
+    "motion": "reduced",
+    "scrollWidth": 320,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 235
+  },
+  {
+    "size": "reflow",
+    "route": "taskforge",
+    "width": 320,
+    "motion": "reduced",
+    "scrollWidth": 320,
+    "visibleClips": [],
+    "fontsDoubled": true,
+    "fontsChecked": 328
+  }
+]

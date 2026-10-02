@@ -1,0 +1,4666 @@
+[
+  {
+    "size": "desktop",
+    "view": "codegraph-header",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1021.875,
+          "height": 928.875,
+          "left": 144,
+          "right": 1296,
+          "top": 93,
+          "width": 1152,
+          "x": 144,
+          "y": 93
+        },
+        "class": "case-study-header",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "HEADER"
+      },
+      {
+        "bounds": {
+          "bottom": 299.63665771484375,
+          "height": 66.5546875,
+          "left": 144,
+          "right": 1296,
+          "top": 233.08197021484375,
+          "width": 1152,
+          "x": 144,
+          "y": 233.08197021484375
+        },
+        "class": "",
+        "fontSize": "64px",
+        "id": "case-study-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 384.890625,
+          "height": 67.1875,
+          "left": 144,
+          "right": 896,
+          "top": 317.703125,
+          "width": 752,
+          "x": 144,
+          "y": 317.703125
+        },
+        "class": "case-study-lede",
+        "fontSize": "24px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 736.578125,
+          "height": 327.6875,
+          "left": 144,
+          "right": 1296,
+          "top": 408.890625,
+          "width": 1152,
+          "x": 144,
+          "y": 408.890625
+        },
+        "class": "case-study-result-summary",
+        "fontSize": "16px",
+        "id": "result-summary",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 562.0859375,
+          "height": 71.5,
+          "left": 144,
+          "right": 282.7578125,
+          "top": 490.5859375,
+          "width": 138.7578125,
+          "x": 144,
+          "y": 490.5859375
+        },
+        "class": "",
+        "fontSize": "56px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 809.375,
+          "height": 52.796875,
+          "left": 144,
+          "right": 1296,
+          "top": 756.578125,
+          "width": 1152,
+          "x": 144,
+          "y": 756.578125
+        },
+        "class": "case-study-ownership",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 928.875,
+          "height": 95.5,
+          "left": 144,
+          "right": 1296,
+          "top": 833.375,
+          "width": 1152,
+          "x": 144,
+          "y": 833.375
+        },
+        "class": "case-study-overview",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DL"
+      },
+      {
+        "bounds": {
+          "bottom": 1165.875,
+          "height": 144,
+          "left": 144,
+          "right": 1296,
+          "top": 1021.875,
+          "width": 1152,
+          "x": 144,
+          "y": 1021.875
+        },
+        "class": "case-study-nav",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "NAV"
+      }
+    ],
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "view": "taskforge-header",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1027.4296875,
+          "height": 934.4296875,
+          "left": 144,
+          "right": 1296,
+          "top": 93,
+          "width": 1152,
+          "x": 144,
+          "y": 93
+        },
+        "class": "case-study-header",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "HEADER"
+      },
+      {
+        "bounds": {
+          "bottom": 300.9599304199219,
+          "height": 66.5546875,
+          "left": 144,
+          "right": 1296,
+          "top": 234.40524291992188,
+          "width": 1152,
+          "x": 144,
+          "y": 234.40524291992188
+        },
+        "class": "",
+        "fontSize": "64px",
+        "id": "case-study-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 384.890625,
+          "height": 67.1875,
+          "left": 144,
+          "right": 896,
+          "top": 317.703125,
+          "width": 752,
+          "x": 144,
+          "y": 317.703125
+        },
+        "class": "case-study-lede",
+        "fontSize": "24px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 715.1328125,
+          "height": 306.2421875,
+          "left": 144,
+          "right": 1296,
+          "top": 408.890625,
+          "width": 1152,
+          "x": 144,
+          "y": 408.890625
+        },
+        "class": "case-study-result-summary",
+        "fontSize": "16px",
+        "id": "result-summary",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 596.484375,
+          "height": 71.5,
+          "left": 144,
+          "right": 304.8203125,
+          "top": 524.984375,
+          "width": 160.8203125,
+          "x": 144,
+          "y": 524.984375
+        },
+        "class": "",
+        "fontSize": "56px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 596.484375,
+          "height": 71.5,
+          "left": 704,
+          "right": 864.8359375,
+          "top": 524.984375,
+          "width": 160.8359375,
+          "x": 704,
+          "y": 524.984375
+        },
+        "class": "",
+        "fontSize": "56px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 787.9296875,
+          "height": 52.796875,
+          "left": 144,
+          "right": 1296,
+          "top": 735.1328125,
+          "width": 1152,
+          "x": 144,
+          "y": 735.1328125
+        },
+        "class": "case-study-ownership",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 934.4296875,
+          "height": 122.5,
+          "left": 144,
+          "right": 1296,
+          "top": 811.9296875,
+          "width": 1152,
+          "x": 144,
+          "y": 811.9296875
+        },
+        "class": "case-study-overview",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DL"
+      },
+      {
+        "bounds": {
+          "bottom": 1171.4296875,
+          "height": 144,
+          "left": 144,
+          "right": 1296,
+          "top": 1027.4296875,
+          "width": 1152,
+          "x": 144,
+          "y": 1027.4296875
+        },
+        "class": "case-study-nav",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "NAV"
+      }
+    ],
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "view": "hero",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 915.6171875,
+          "height": 822.6171875,
+          "left": 144,
+          "right": 1296,
+          "top": 93,
+          "width": 1152,
+          "x": 144,
+          "y": 93
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 741.3907470703125,
+          "height": 467.2577819824219,
+          "left": 144,
+          "right": 733.0859375,
+          "top": 274.1329650878906,
+          "width": 589.0859375,
+          "x": 144,
+          "y": 274.1329650878906
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 458.7970275878906,
+          "height": 87.1171875,
+          "left": 144,
+          "right": 733.0859375,
+          "top": 371.6798400878906,
+          "width": 589.0859375,
+          "x": 144,
+          "y": 371.6798400878906
+        },
+        "class": "",
+        "fontSize": "79.2px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 832.6720275878906,
+          "height": 649.8203125,
+          "left": 856,
+          "right": 1296,
+          "top": 182.85171508789065,
+          "width": 440,
+          "x": 856,
+          "y": 182.85171508789065
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 782.5235900878906,
+          "height": 587.671875,
+          "left": 868,
+          "right": 1284,
+          "top": 194.85171508789065,
+          "width": 416,
+          "x": 868,
+          "y": 194.85171508789065
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 1913.5703125,
+          "height": 836.2109375,
+          "left": 144,
+          "right": 708,
+          "top": 1077.359375,
+          "width": 564,
+          "x": 144,
+          "y": 1077.359375
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 1408.515625,
+          "height": 330.15625,
+          "left": 145,
+          "right": 707,
+          "top": 1078.359375,
+          "width": 562,
+          "x": 145,
+          "y": 1078.359375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1320.921875,
+          "height": 66.1875,
+          "left": 165,
+          "right": 687,
+          "top": 1254.734375,
+          "width": 522,
+          "x": 165,
+          "y": 1254.734375
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1388.515625,
+          "height": 51.59375,
+          "left": 165,
+          "right": 687,
+          "top": 1336.921875,
+          "width": 522,
+          "x": 165,
+          "y": 1336.921875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1751.484375,
+          "height": 342.96875,
+          "left": 145,
+          "right": 707,
+          "top": 1408.515625,
+          "width": 562,
+          "x": 145,
+          "y": 1408.515625
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 1913.5703125,
+          "height": 836.2109375,
+          "left": 732,
+          "right": 1296,
+          "top": 1077.359375,
+          "width": 564,
+          "x": 732,
+          "y": 1077.359375
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 1408.515625,
+          "height": 330.15625,
+          "left": 733,
+          "right": 1295,
+          "top": 1078.359375,
+          "width": 562,
+          "x": 733,
+          "y": 1078.359375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1320.921875,
+          "height": 66.1875,
+          "left": 753,
+          "right": 1275,
+          "top": 1254.734375,
+          "width": 522,
+          "x": 753,
+          "y": 1254.734375
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1388.515625,
+          "height": 51.59375,
+          "left": 753,
+          "right": 1275,
+          "top": 1336.921875,
+          "width": 522,
+          "x": 753,
+          "y": 1336.921875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1751.484375,
+          "height": 342.96875,
+          "left": 733,
+          "right": 1295,
+          "top": 1408.515625,
+          "width": 562,
+          "x": 733,
+          "y": 1408.515625
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "view": "codegraph-card",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": -137.8828125,
+          "height": 822.6171875,
+          "left": 144,
+          "right": 1296,
+          "top": -960.5,
+          "width": 1152,
+          "x": 144,
+          "y": -960.5
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": -315.5172119140625,
+          "height": 467.2578125,
+          "left": 144,
+          "right": 733.0859375,
+          "top": -782.7750244140625,
+          "width": 589.0859375,
+          "x": 144,
+          "y": -782.7750244140625
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -598.1109619140625,
+          "height": 87.1171875,
+          "left": 144,
+          "right": 733.0859375,
+          "top": -685.2281494140625,
+          "width": 589.0859375,
+          "x": 144,
+          "y": -685.2281494140625
+        },
+        "class": "",
+        "fontSize": "79.2px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": -224.2359619140625,
+          "height": 649.8203125,
+          "left": 856,
+          "right": 1296,
+          "top": -874.0562744140625,
+          "width": 440,
+          "x": 856,
+          "y": -874.0562744140625
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -274.3843994140625,
+          "height": 587.671875,
+          "left": 868,
+          "right": 1284,
+          "top": -862.0562744140625,
+          "width": 416,
+          "x": 868,
+          "y": -862.0562744140625
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 860.0703125,
+          "height": 836.2109375,
+          "left": 144,
+          "right": 708,
+          "top": 23.859375,
+          "width": 564,
+          "x": 144,
+          "y": 23.859375
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 355.015625,
+          "height": 330.15625,
+          "left": 145,
+          "right": 707,
+          "top": 24.859375,
+          "width": 562,
+          "x": 145,
+          "y": 24.859375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 267.421875,
+          "height": 66.1875,
+          "left": 165,
+          "right": 687,
+          "top": 201.234375,
+          "width": 522,
+          "x": 165,
+          "y": 201.234375
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 335.015625,
+          "height": 51.59375,
+          "left": 165,
+          "right": 687,
+          "top": 283.421875,
+          "width": 522,
+          "x": 165,
+          "y": 283.421875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 697.984375,
+          "height": 342.96875,
+          "left": 145,
+          "right": 707,
+          "top": 355.015625,
+          "width": 562,
+          "x": 145,
+          "y": 355.015625
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 860.0703125,
+          "height": 836.2109375,
+          "left": 732,
+          "right": 1296,
+          "top": 23.859375,
+          "width": 564,
+          "x": 732,
+          "y": 23.859375
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 355.015625,
+          "height": 330.15625,
+          "left": 733,
+          "right": 1295,
+          "top": 24.859375,
+          "width": 562,
+          "x": 733,
+          "y": 24.859375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 267.421875,
+          "height": 66.1875,
+          "left": 753,
+          "right": 1275,
+          "top": 201.234375,
+          "width": 522,
+          "x": 753,
+          "y": 201.234375
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 335.015625,
+          "height": 51.59375,
+          "left": 753,
+          "right": 1275,
+          "top": 283.421875,
+          "width": 522,
+          "x": 753,
+          "y": 283.421875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 697.984375,
+          "height": 342.96875,
+          "left": 733,
+          "right": 1295,
+          "top": 355.015625,
+          "width": 562,
+          "x": 733,
+          "y": 355.015625
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollY": 1053.5,
+    "width": 1440
+  },
+  {
+    "size": "desktop",
+    "view": "taskforge-card",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": -137.8828125,
+          "height": 822.6171875,
+          "left": 144,
+          "right": 1296,
+          "top": -960.5,
+          "width": 1152,
+          "x": 144,
+          "y": -960.5
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": -315.5625,
+          "height": 467.2578125,
+          "left": 144,
+          "right": 733.0859375,
+          "top": -782.8203125,
+          "width": 589.0859375,
+          "x": 144,
+          "y": -782.8203125
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -598.15625,
+          "height": 87.1171875,
+          "left": 144,
+          "right": 733.0859375,
+          "top": -685.2734375,
+          "width": 589.0859375,
+          "x": 144,
+          "y": -685.2734375
+        },
+        "class": "",
+        "fontSize": "79.2px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": -224.28125,
+          "height": 649.8203125,
+          "left": 856,
+          "right": 1296,
+          "top": -874.1015625,
+          "width": 440,
+          "x": 856,
+          "y": -874.1015625
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -274.4296875,
+          "height": 587.671875,
+          "left": 868,
+          "right": 1284,
+          "top": -862.1015625,
+          "width": 416,
+          "x": 868,
+          "y": -862.1015625
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 860.0703125,
+          "height": 836.2109375,
+          "left": 144,
+          "right": 708,
+          "top": 23.859375,
+          "width": 564,
+          "x": 144,
+          "y": 23.859375
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 355.015625,
+          "height": 330.15625,
+          "left": 145,
+          "right": 707,
+          "top": 24.859375,
+          "width": 562,
+          "x": 145,
+          "y": 24.859375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 267.421875,
+          "height": 66.1875,
+          "left": 165,
+          "right": 687,
+          "top": 201.234375,
+          "width": 522,
+          "x": 165,
+          "y": 201.234375
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 335.015625,
+          "height": 51.59375,
+          "left": 165,
+          "right": 687,
+          "top": 283.421875,
+          "width": 522,
+          "x": 165,
+          "y": 283.421875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 697.984375,
+          "height": 342.96875,
+          "left": 145,
+          "right": 707,
+          "top": 355.015625,
+          "width": 562,
+          "x": 145,
+          "y": 355.015625
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 860.0703125,
+          "height": 836.2109375,
+          "left": 732,
+          "right": 1296,
+          "top": 23.859375,
+          "width": 564,
+          "x": 732,
+          "y": 23.859375
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 355.015625,
+          "height": 330.15625,
+          "left": 733,
+          "right": 1295,
+          "top": 24.859375,
+          "width": 562,
+          "x": 733,
+          "y": 24.859375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 267.421875,
+          "height": 66.1875,
+          "left": 753,
+          "right": 1275,
+          "top": 201.234375,
+          "width": 522,
+          "x": 753,
+          "y": 201.234375
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 335.015625,
+          "height": 51.59375,
+          "left": 753,
+          "right": 1275,
+          "top": 283.421875,
+          "width": 522,
+          "x": 753,
+          "y": 283.421875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 697.984375,
+          "height": 342.96875,
+          "left": 733,
+          "right": 1295,
+          "top": 355.015625,
+          "width": 562,
+          "x": 733,
+          "y": 355.015625
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 900,
+    "scrollWidth": 1440,
+    "scrollY": 1053.5,
+    "width": 1440
+  },
+  {
+    "size": "tablet",
+    "view": "codegraph-header",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1074.8984375,
+          "height": 925.8984375,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 149,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 149
+        },
+        "class": "case-study-header",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "HEADER"
+      },
+      {
+        "bounds": {
+          "bottom": 311.078125,
+          "height": 39.9296875,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 271.1484375,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 271.1484375
+        },
+        "class": "",
+        "fontSize": "38.4px",
+        "id": "case-study-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 381.46875,
+          "height": 50.390625,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 331.078125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 331.078125
+        },
+        "class": "case-study-lede",
+        "fontSize": "18px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 736.203125,
+          "height": 330.734375,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 405.46875,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 405.46875
+        },
+        "class": "case-study-result-summary",
+        "fontSize": "16px",
+        "id": "result-summary",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 539.6640625,
+          "height": 51,
+          "left": 38.3984375,
+          "right": 137.515625,
+          "top": 488.6640625,
+          "width": 99.1171875,
+          "x": 38.3984375,
+          "y": 488.6640625
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 835.3984375,
+          "height": 79.1953125,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 756.203125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 756.203125
+        },
+        "class": "case-study-ownership",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 981.8984375,
+          "height": 122.5,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 859.3984375,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 859.3984375
+        },
+        "class": "case-study-overview",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DL"
+      },
+      {
+        "bounds": {
+          "bottom": 1270.8984375,
+          "height": 196,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 1074.8984375,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 1074.8984375
+        },
+        "class": "case-study-nav",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "NAV"
+      }
+    ],
+    "height": 1024,
+    "scrollWidth": 768,
+    "scrollY": 0,
+    "width": 768
+  },
+  {
+    "size": "tablet",
+    "view": "taskforge-header",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1056.7578125,
+          "height": 907.7578125,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 149,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 149
+        },
+        "class": "case-study-header",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "HEADER"
+      },
+      {
+        "bounds": {
+          "bottom": 311.078125,
+          "height": 39.9296875,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 271.1484375,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 271.1484375
+        },
+        "class": "",
+        "fontSize": "38.4px",
+        "id": "case-study-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 381.46875,
+          "height": 50.390625,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 331.078125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 331.078125
+        },
+        "class": "case-study-lede",
+        "fontSize": "18px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 718.0625,
+          "height": 312.59375,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 405.46875,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 405.46875
+        },
+        "class": "case-study-result-summary",
+        "fontSize": "16px",
+        "id": "result-summary",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 574.0625,
+          "height": 51,
+          "left": 38.3984375,
+          "right": 153.2734375,
+          "top": 523.0625,
+          "width": 114.875,
+          "x": 38.3984375,
+          "y": 523.0625
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 574.0625,
+          "height": 51,
+          "left": 407.9921875,
+          "right": 523.03125,
+          "top": 523.0625,
+          "width": 115.0390625,
+          "x": 407.9921875,
+          "y": 523.0625
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 817.2578125,
+          "height": 79.1953125,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 738.0625,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 738.0625
+        },
+        "class": "case-study-ownership",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 963.7578125,
+          "height": 122.5,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 841.2578125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 841.2578125
+        },
+        "class": "case-study-overview",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DL"
+      },
+      {
+        "bounds": {
+          "bottom": 1252.7578125,
+          "height": 196,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 1056.7578125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 1056.7578125
+        },
+        "class": "case-study-nav",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "NAV"
+      }
+    ],
+    "height": 1024,
+    "scrollWidth": 768,
+    "scrollY": 0,
+    "width": 768
+  },
+  {
+    "size": "tablet",
+    "view": "hero",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1341.8515625,
+          "height": 1192.8515625,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 149,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 149
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 604.03125,
+          "height": 407.03125,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 197,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 197
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 331.34375,
+          "height": 52.796875,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 278.546875,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 278.546875
+        },
+        "class": "",
+        "fontSize": "48px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 1293.8515625,
+          "height": 649.8203125,
+          "left": 163.9921875,
+          "right": 603.9921875,
+          "top": 644.03125,
+          "width": 440,
+          "x": 163.9921875,
+          "y": 644.03125
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1243.703125,
+          "height": 587.671875,
+          "left": 175.9921875,
+          "right": 591.9921875,
+          "top": 656.03125,
+          "width": 416,
+          "x": 175.9921875,
+          "y": 656.03125
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 2241.6953125,
+          "height": 769.375,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 1472.3203125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 1472.3203125
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 1759.0390625,
+          "height": 285.71875,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 1473.3203125,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 1473.3203125
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1671.4453125,
+          "height": 60.7890625,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 1610.65625,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 1610.65625
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1739.0390625,
+          "height": 51.59375,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 1687.4453125,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 1687.4453125
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2102.0078125,
+          "height": 342.96875,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 1759.0390625,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 1759.0390625
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 3046.171875,
+          "height": 780.4765625,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 2265.6953125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 2265.6953125
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 2578.0078125,
+          "height": 311.3125,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 2266.6953125,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 2266.6953125
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2490.4140625,
+          "height": 60.7890625,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 2429.625,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 2429.625
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2558.0078125,
+          "height": 51.59375,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 2506.4140625,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 2506.4140625
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2906.484375,
+          "height": 328.4765625,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 2578.0078125,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 2578.0078125
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 1024,
+    "scrollWidth": 768,
+    "scrollY": 0,
+    "width": 768
+  },
+  {
+    "size": "tablet",
+    "view": "codegraph-card",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": -106.6484375,
+          "height": 1192.8515625,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": -1299.5,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": -1299.5
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": -844.46875,
+          "height": 407.03125,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": -1251.5,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": -1251.5
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -1117.15625,
+          "height": 52.796875,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": -1169.953125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": -1169.953125
+        },
+        "class": "",
+        "fontSize": "48px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": -154.6484375,
+          "height": 649.8203125,
+          "left": 163.9921875,
+          "right": 603.9921875,
+          "top": -804.46875,
+          "width": 440,
+          "x": 163.9921875,
+          "y": -804.46875
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -204.796875,
+          "height": 587.671875,
+          "left": 175.9921875,
+          "right": 591.9921875,
+          "top": -792.46875,
+          "width": 416,
+          "x": 175.9921875,
+          "y": -792.46875
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 793.1953125,
+          "height": 769.375,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 23.8203125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 23.8203125
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 310.5390625,
+          "height": 285.71875,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 24.8203125,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 24.8203125
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 222.9453125,
+          "height": 60.7890625,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 162.15625,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 162.15625
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 290.5390625,
+          "height": 51.59375,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 238.9453125,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 238.9453125
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 653.5078125,
+          "height": 342.96875,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 310.5390625,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 310.5390625
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 1597.671875,
+          "height": 780.4765625,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 817.1953125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 817.1953125
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 1129.5078125,
+          "height": 311.3125,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 818.1953125,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 818.1953125
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1041.9140625,
+          "height": 60.7890625,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 981.125,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 981.125
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1109.5078125,
+          "height": 51.59375,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 1057.9140625,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 1057.9140625
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1457.984375,
+          "height": 328.4765625,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 1129.5078125,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 1129.5078125
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 1024,
+    "scrollWidth": 768,
+    "scrollY": 1448.5,
+    "width": 768
+  },
+  {
+    "size": "tablet",
+    "view": "taskforge-card",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": -899.6484375,
+          "height": 1192.8515625,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": -2092.5,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": -2092.5
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": -1637.46875,
+          "height": 407.03125,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": -2044.5,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": -2044.5
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -1910.15625,
+          "height": 52.796875,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": -1962.953125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": -1962.953125
+        },
+        "class": "",
+        "fontSize": "48px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": -947.6484375,
+          "height": 649.8203125,
+          "left": 163.9921875,
+          "right": 603.9921875,
+          "top": -1597.46875,
+          "width": 440,
+          "x": 163.9921875,
+          "y": -1597.46875
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -997.796875,
+          "height": 587.671875,
+          "left": 175.9921875,
+          "right": 591.9921875,
+          "top": -1585.46875,
+          "width": 416,
+          "x": 175.9921875,
+          "y": -1585.46875
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 0.1953125,
+          "height": 769.375,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": -769.1796875,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": -769.1796875
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": -482.4609375,
+          "height": 285.71875,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": -768.1796875,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": -768.1796875
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -570.0546875,
+          "height": 60.7890625,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": -630.84375,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": -630.84375
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -502.4609375,
+          "height": 51.59375,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": -554.0546875,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": -554.0546875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -139.4921875,
+          "height": 342.96875,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": -482.4609375,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": -482.4609375
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 804.671875,
+          "height": 780.4765625,
+          "left": 38.3984375,
+          "right": 729.59375,
+          "top": 24.1953125,
+          "width": 691.1953125,
+          "x": 38.3984375,
+          "y": 24.1953125
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 336.5078125,
+          "height": 311.3125,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 25.1953125,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 25.1953125
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 248.9140625,
+          "height": 60.7890625,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 188.125,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 188.125
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 316.5078125,
+          "height": 51.59375,
+          "left": 59.3984375,
+          "right": 708.59375,
+          "top": 264.9140625,
+          "width": 649.1953125,
+          "x": 59.3984375,
+          "y": 264.9140625
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 664.984375,
+          "height": 328.4765625,
+          "left": 39.3984375,
+          "right": 728.59375,
+          "top": 336.5078125,
+          "width": 689.1953125,
+          "x": 39.3984375,
+          "y": 336.5078125
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 1024,
+    "scrollWidth": 768,
+    "scrollY": 2241.5,
+    "width": 768
+  },
+  {
+    "size": "mobile",
+    "view": "codegraph-header",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1381.8359375,
+          "height": 1232.8359375,
+          "left": 20,
+          "right": 370,
+          "top": 149,
+          "width": 350,
+          "x": 20,
+          "y": 149
+        },
+        "class": "case-study-header",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "HEADER"
+      },
+      {
+        "bounds": {
+          "bottom": 308.5859375,
+          "height": 37.4375,
+          "left": 20,
+          "right": 370,
+          "top": 271.1484375,
+          "width": 350,
+          "x": 20,
+          "y": 271.1484375
+        },
+        "class": "",
+        "fontSize": "36px",
+        "id": "case-study-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 429.3671875,
+          "height": 100.78125,
+          "left": 20,
+          "right": 370,
+          "top": 328.5859375,
+          "width": 350,
+          "x": 20,
+          "y": 328.5859375
+        },
+        "class": "case-study-lede",
+        "fontSize": "18px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 831.9453125,
+          "height": 378.578125,
+          "left": 20,
+          "right": 370,
+          "top": 453.3671875,
+          "width": 350,
+          "x": 20,
+          "y": 453.3671875
+        },
+        "class": "case-study-result-summary",
+        "fontSize": "16px",
+        "id": "result-summary",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 587.5625,
+          "height": 51,
+          "left": 20,
+          "right": 119.1171875,
+          "top": 536.5625,
+          "width": 99.1171875,
+          "x": 20,
+          "y": 536.5625
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 1010.3359375,
+          "height": 158.390625,
+          "left": 20,
+          "right": 370,
+          "top": 851.9453125,
+          "width": 350,
+          "x": 20,
+          "y": 851.9453125
+        },
+        "class": "case-study-ownership",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 1288.8359375,
+          "height": 254.5,
+          "left": 20,
+          "right": 370,
+          "top": 1034.3359375,
+          "width": 350,
+          "x": 20,
+          "y": 1034.3359375
+        },
+        "class": "case-study-overview",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DL"
+      },
+      {
+        "bounds": {
+          "bottom": 1733.8359375,
+          "height": 352,
+          "left": 20,
+          "right": 370,
+          "top": 1381.8359375,
+          "width": 350,
+          "x": 20,
+          "y": 1381.8359375
+        },
+        "class": "case-study-nav",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "NAV"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 390,
+    "scrollY": 0,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "view": "taskforge-header",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1477.6015625,
+          "height": 1328.6015625,
+          "left": 20,
+          "right": 370,
+          "top": 149,
+          "width": 350,
+          "x": 20,
+          "y": 149
+        },
+        "class": "case-study-header",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "HEADER"
+      },
+      {
+        "bounds": {
+          "bottom": 308.5859375,
+          "height": 37.4375,
+          "left": 20,
+          "right": 370,
+          "top": 271.1484375,
+          "width": 350,
+          "x": 20,
+          "y": 271.1484375
+        },
+        "class": "",
+        "fontSize": "36px",
+        "id": "case-study-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 429.3671875,
+          "height": 100.78125,
+          "left": 20,
+          "right": 370,
+          "top": 328.5859375,
+          "width": 350,
+          "x": 20,
+          "y": 328.5859375
+        },
+        "class": "case-study-lede",
+        "fontSize": "18px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 900.7109375,
+          "height": 447.34375,
+          "left": 20,
+          "right": 370,
+          "top": 453.3671875,
+          "width": 350,
+          "x": 20,
+          "y": 453.3671875
+        },
+        "class": "case-study-result-summary",
+        "fontSize": "16px",
+        "id": "result-summary",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 621.9609375,
+          "height": 51,
+          "left": 20,
+          "right": 134.875,
+          "top": 570.9609375,
+          "width": 114.875,
+          "x": 20,
+          "y": 570.9609375
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 752.7109375,
+          "height": 51,
+          "left": 20,
+          "right": 135.0390625,
+          "top": 701.7109375,
+          "width": 115.0390625,
+          "x": 20,
+          "y": 701.7109375
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 1079.1015625,
+          "height": 158.390625,
+          "left": 20,
+          "right": 370,
+          "top": 920.7109375,
+          "width": 350,
+          "x": 20,
+          "y": 920.7109375
+        },
+        "class": "case-study-ownership",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 1384.6015625,
+          "height": 281.5,
+          "left": 20,
+          "right": 370,
+          "top": 1103.1015625,
+          "width": 350,
+          "x": 20,
+          "y": 1103.1015625
+        },
+        "class": "case-study-overview",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DL"
+      },
+      {
+        "bounds": {
+          "bottom": 1829.6015625,
+          "height": 352,
+          "left": 20,
+          "right": 370,
+          "top": 1477.6015625,
+          "width": 350,
+          "x": 20,
+          "y": 1477.6015625
+        },
+        "class": "case-study-nav",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "NAV"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 390,
+    "scrollY": 0,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "view": "hero",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1234.359375,
+          "height": 1085.359375,
+          "left": 20,
+          "right": 370,
+          "top": 149,
+          "width": 350,
+          "x": 20,
+          "y": 149
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 615.6796875,
+          "height": 426.6796875,
+          "left": 20,
+          "right": 370,
+          "top": 189,
+          "width": 350,
+          "x": 20,
+          "y": 189
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 318.9453125,
+          "height": 48.3984375,
+          "left": 20,
+          "right": 370,
+          "top": 270.546875,
+          "width": 350,
+          "x": 20,
+          "y": 270.546875
+        },
+        "class": "",
+        "fontSize": "44px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 1178.359375,
+          "height": 522.6796875,
+          "left": 20,
+          "right": 370,
+          "top": 655.6796875,
+          "width": 350,
+          "x": 20,
+          "y": 655.6796875
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1128.2109375,
+          "height": 460.53125,
+          "left": 32,
+          "right": 358,
+          "top": 667.6796875,
+          "width": 326,
+          "x": 32,
+          "y": 667.6796875
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 2236.65625,
+          "height": 874.953125,
+          "left": 20,
+          "right": 370,
+          "top": 1361.703125,
+          "width": 350,
+          "x": 20,
+          "y": 1361.703125
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 1697.109375,
+          "height": 334.40625,
+          "left": 21,
+          "right": 369,
+          "top": 1362.703125,
+          "width": 348,
+          "x": 21,
+          "y": 1362.703125
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1609.515625,
+          "height": 83.8828125,
+          "left": 41,
+          "right": 349,
+          "top": 1525.6328125,
+          "width": 308,
+          "x": 41,
+          "y": 1525.6328125
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1677.109375,
+          "height": 51.59375,
+          "left": 41,
+          "right": 349,
+          "top": 1625.515625,
+          "width": 308,
+          "x": 41,
+          "y": 1625.515625
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2040.078125,
+          "height": 342.96875,
+          "left": 21,
+          "right": 369,
+          "top": 1697.109375,
+          "width": 348,
+          "x": 21,
+          "y": 1697.109375
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 3146.7109375,
+          "height": 886.0546875,
+          "left": 20,
+          "right": 370,
+          "top": 2260.65625,
+          "width": 350,
+          "x": 20,
+          "y": 2260.65625
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 2621.65625,
+          "height": 360,
+          "left": 21,
+          "right": 369,
+          "top": 2261.65625,
+          "width": 348,
+          "x": 21,
+          "y": 2261.65625
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2534.0625,
+          "height": 83.8828125,
+          "left": 41,
+          "right": 349,
+          "top": 2450.1796875,
+          "width": 308,
+          "x": 41,
+          "y": 2450.1796875
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2601.65625,
+          "height": 51.59375,
+          "left": 41,
+          "right": 349,
+          "top": 2550.0625,
+          "width": 308,
+          "x": 41,
+          "y": 2550.0625
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2950.1328125,
+          "height": 328.4765625,
+          "left": 21,
+          "right": 369,
+          "top": 2621.65625,
+          "width": 348,
+          "x": 21,
+          "y": 2621.65625
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 390,
+    "scrollY": 0,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "view": "codegraph-card",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": -103.140625,
+          "height": 1085.359375,
+          "left": 20,
+          "right": 370,
+          "top": -1188.5,
+          "width": 350,
+          "x": 20,
+          "y": -1188.5
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": -721.8203125,
+          "height": 426.6796875,
+          "left": 20,
+          "right": 370,
+          "top": -1148.5,
+          "width": 350,
+          "x": 20,
+          "y": -1148.5
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -1018.5546875,
+          "height": 48.3984375,
+          "left": 20,
+          "right": 370,
+          "top": -1066.953125,
+          "width": 350,
+          "x": 20,
+          "y": -1066.953125
+        },
+        "class": "",
+        "fontSize": "44px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": -159.140625,
+          "height": 522.6796875,
+          "left": 20,
+          "right": 370,
+          "top": -681.8203125,
+          "width": 350,
+          "x": 20,
+          "y": -681.8203125
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -209.2890625,
+          "height": 460.53125,
+          "left": 32,
+          "right": 358,
+          "top": -669.8203125,
+          "width": 326,
+          "x": 32,
+          "y": -669.8203125
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 899.15625,
+          "height": 874.953125,
+          "left": 20,
+          "right": 370,
+          "top": 24.203125,
+          "width": 350,
+          "x": 20,
+          "y": 24.203125
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 359.609375,
+          "height": 334.40625,
+          "left": 21,
+          "right": 369,
+          "top": 25.203125,
+          "width": 348,
+          "x": 21,
+          "y": 25.203125
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 272.015625,
+          "height": 83.8828125,
+          "left": 41,
+          "right": 349,
+          "top": 188.1328125,
+          "width": 308,
+          "x": 41,
+          "y": 188.1328125
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 339.609375,
+          "height": 51.59375,
+          "left": 41,
+          "right": 349,
+          "top": 288.015625,
+          "width": 308,
+          "x": 41,
+          "y": 288.015625
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 702.578125,
+          "height": 342.96875,
+          "left": 21,
+          "right": 369,
+          "top": 359.609375,
+          "width": 348,
+          "x": 21,
+          "y": 359.609375
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 1809.2109375,
+          "height": 886.0546875,
+          "left": 20,
+          "right": 370,
+          "top": 923.15625,
+          "width": 350,
+          "x": 20,
+          "y": 923.15625
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 1284.15625,
+          "height": 360,
+          "left": 21,
+          "right": 369,
+          "top": 924.15625,
+          "width": 348,
+          "x": 21,
+          "y": 924.15625
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1196.5625,
+          "height": 83.8828125,
+          "left": 41,
+          "right": 349,
+          "top": 1112.6796875,
+          "width": 308,
+          "x": 41,
+          "y": 1112.6796875
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1264.15625,
+          "height": 51.59375,
+          "left": 41,
+          "right": 349,
+          "top": 1212.5625,
+          "width": 308,
+          "x": 41,
+          "y": 1212.5625
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1612.6328125,
+          "height": 328.4765625,
+          "left": 21,
+          "right": 369,
+          "top": 1284.15625,
+          "width": 348,
+          "x": 21,
+          "y": 1284.15625
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 390,
+    "scrollY": 1337.5,
+    "width": 390
+  },
+  {
+    "size": "mobile",
+    "view": "taskforge-card",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": -1002.140625,
+          "height": 1085.359375,
+          "left": 20,
+          "right": 370,
+          "top": -2087.5,
+          "width": 350,
+          "x": 20,
+          "y": -2087.5
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": -1620.8203125,
+          "height": 426.6796875,
+          "left": 20,
+          "right": 370,
+          "top": -2047.5,
+          "width": 350,
+          "x": 20,
+          "y": -2047.5
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -1917.5546875,
+          "height": 48.3984375,
+          "left": 20,
+          "right": 370,
+          "top": -1965.953125,
+          "width": 350,
+          "x": 20,
+          "y": -1965.953125
+        },
+        "class": "",
+        "fontSize": "44px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": -1058.140625,
+          "height": 522.6796875,
+          "left": 20,
+          "right": 370,
+          "top": -1580.8203125,
+          "width": 350,
+          "x": 20,
+          "y": -1580.8203125
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -1108.2890625,
+          "height": 460.53125,
+          "left": 32,
+          "right": 358,
+          "top": -1568.8203125,
+          "width": 326,
+          "x": 32,
+          "y": -1568.8203125
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 0.15625,
+          "height": 874.953125,
+          "left": 20,
+          "right": 370,
+          "top": -874.796875,
+          "width": 350,
+          "x": 20,
+          "y": -874.796875
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": -539.390625,
+          "height": 334.40625,
+          "left": 21,
+          "right": 369,
+          "top": -873.796875,
+          "width": 348,
+          "x": 21,
+          "y": -873.796875
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -626.984375,
+          "height": 83.8828125,
+          "left": 41,
+          "right": 349,
+          "top": -710.8671875,
+          "width": 308,
+          "x": 41,
+          "y": -710.8671875
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -559.390625,
+          "height": 51.59375,
+          "left": 41,
+          "right": 349,
+          "top": -610.984375,
+          "width": 308,
+          "x": 41,
+          "y": -610.984375
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -196.421875,
+          "height": 342.96875,
+          "left": 21,
+          "right": 369,
+          "top": -539.390625,
+          "width": 348,
+          "x": 21,
+          "y": -539.390625
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 910.2109375,
+          "height": 886.0546875,
+          "left": 20,
+          "right": 370,
+          "top": 24.15625,
+          "width": 350,
+          "x": 20,
+          "y": 24.15625
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 385.15625,
+          "height": 360,
+          "left": 21,
+          "right": 369,
+          "top": 25.15625,
+          "width": 348,
+          "x": 21,
+          "y": 25.15625
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 297.5625,
+          "height": 83.8828125,
+          "left": 41,
+          "right": 349,
+          "top": 213.6796875,
+          "width": 308,
+          "x": 41,
+          "y": 213.6796875
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 365.15625,
+          "height": 51.59375,
+          "left": 41,
+          "right": 349,
+          "top": 313.5625,
+          "width": 308,
+          "x": 41,
+          "y": 313.5625
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 713.6328125,
+          "height": 328.4765625,
+          "left": 21,
+          "right": 369,
+          "top": 385.15625,
+          "width": 348,
+          "x": 21,
+          "y": 385.15625
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 390,
+    "scrollY": 2236.5,
+    "width": 390
+  },
+  {
+    "size": "reflow",
+    "view": "codegraph-header",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1514.234375,
+          "height": 1317.234375,
+          "left": 20,
+          "right": 300,
+          "top": 197,
+          "width": 280,
+          "x": 20,
+          "y": 197
+        },
+        "class": "case-study-header",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "HEADER"
+      },
+      {
+        "bounds": {
+          "bottom": 356.5859375,
+          "height": 37.4375,
+          "left": 20,
+          "right": 300,
+          "top": 319.1484375,
+          "width": 280,
+          "x": 20,
+          "y": 319.1484375
+        },
+        "class": "",
+        "fontSize": "36px",
+        "id": "case-study-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 477.3671875,
+          "height": 100.78125,
+          "left": 20,
+          "right": 300,
+          "top": 376.5859375,
+          "width": 280,
+          "x": 20,
+          "y": 376.5859375
+        },
+        "class": "case-study-lede",
+        "fontSize": "18px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 883.9453125,
+          "height": 382.578125,
+          "left": 20,
+          "right": 300,
+          "top": 501.3671875,
+          "width": 280,
+          "x": 20,
+          "y": 501.3671875
+        },
+        "class": "case-study-result-summary",
+        "fontSize": "16px",
+        "id": "result-summary",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 635.5625,
+          "height": 51,
+          "left": 20,
+          "right": 119.1171875,
+          "top": 584.5625,
+          "width": 99.1171875,
+          "x": 20,
+          "y": 584.5625
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 1088.734375,
+          "height": 184.7890625,
+          "left": 20,
+          "right": 300,
+          "top": 903.9453125,
+          "width": 280,
+          "x": 20,
+          "y": 903.9453125
+        },
+        "class": "case-study-ownership",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 1421.234375,
+          "height": 308.5,
+          "left": 20,
+          "right": 300,
+          "top": 1112.734375,
+          "width": 280,
+          "x": 20,
+          "y": 1112.734375
+        },
+        "class": "case-study-overview",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DL"
+      },
+      {
+        "bounds": {
+          "bottom": 1970.234375,
+          "height": 456,
+          "left": 20,
+          "right": 300,
+          "top": 1514.234375,
+          "width": 280,
+          "x": 20,
+          "y": 1514.234375
+        },
+        "class": "case-study-nav",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "NAV"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 320,
+    "scrollY": 0,
+    "width": 320
+  },
+  {
+    "size": "reflow",
+    "view": "taskforge-header",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1682.34375,
+          "height": 1485.34375,
+          "left": 20,
+          "right": 300,
+          "top": 197,
+          "width": 280,
+          "x": 20,
+          "y": 197
+        },
+        "class": "case-study-header",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "HEADER"
+      },
+      {
+        "bounds": {
+          "bottom": 356.5859375,
+          "height": 37.4375,
+          "left": 20,
+          "right": 300,
+          "top": 319.1484375,
+          "width": 280,
+          "x": 20,
+          "y": 319.1484375
+        },
+        "class": "",
+        "fontSize": "36px",
+        "id": "case-study-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 502.5625,
+          "height": 125.9765625,
+          "left": 20,
+          "right": 300,
+          "top": 376.5859375,
+          "width": 280,
+          "x": 20,
+          "y": 376.5859375
+        },
+        "class": "case-study-lede",
+        "fontSize": "18px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 998.65625,
+          "height": 472.09375,
+          "left": 20,
+          "right": 300,
+          "top": 526.5625,
+          "width": 280,
+          "x": 20,
+          "y": 526.5625
+        },
+        "class": "case-study-result-summary",
+        "fontSize": "16px",
+        "id": "result-summary",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 695.15625,
+          "height": 51,
+          "left": 20,
+          "right": 134.875,
+          "top": 644.15625,
+          "width": 114.875,
+          "x": 20,
+          "y": 644.15625
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 850.65625,
+          "height": 51,
+          "left": 20,
+          "right": 135.0390625,
+          "top": 799.65625,
+          "width": 115.0390625,
+          "x": 20,
+          "y": 799.65625
+        },
+        "class": "",
+        "fontSize": "40px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "STRONG"
+      },
+      {
+        "bounds": {
+          "bottom": 1229.84375,
+          "height": 211.1875,
+          "left": 20,
+          "right": 300,
+          "top": 1018.65625,
+          "width": 280,
+          "x": 20,
+          "y": 1018.65625
+        },
+        "class": "case-study-ownership",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "P"
+      },
+      {
+        "bounds": {
+          "bottom": 1589.34375,
+          "height": 335.5,
+          "left": 20,
+          "right": 300,
+          "top": 1253.84375,
+          "width": 280,
+          "x": 20,
+          "y": 1253.84375
+        },
+        "class": "case-study-overview",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DL"
+      },
+      {
+        "bounds": {
+          "bottom": 2086.34375,
+          "height": 404,
+          "left": 20,
+          "right": 300,
+          "top": 1682.34375,
+          "width": 280,
+          "x": 20,
+          "y": 1682.34375
+        },
+        "class": "case-study-nav",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "NAV"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 320,
+    "scrollY": 0,
+    "width": 320
+  },
+  {
+    "size": "reflow",
+    "view": "hero",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": 1293.2578125,
+          "height": 1096.2578125,
+          "left": 20,
+          "right": 300,
+          "top": 197,
+          "width": 280,
+          "x": 20,
+          "y": 197
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": 773.46875,
+          "height": 536.46875,
+          "left": 20,
+          "right": 300,
+          "top": 237,
+          "width": 280,
+          "x": 20,
+          "y": 237
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 385.09375,
+          "height": 48.3984375,
+          "left": 20,
+          "right": 300,
+          "top": 336.6953125,
+          "width": 280,
+          "x": 20,
+          "y": 336.6953125
+        },
+        "class": "",
+        "fontSize": "44px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": 1237.2578125,
+          "height": 423.7890625,
+          "left": 20,
+          "right": 300,
+          "top": 813.46875,
+          "width": 280,
+          "x": 20,
+          "y": 813.46875
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1187.109375,
+          "height": 361.640625,
+          "left": 32,
+          "right": 288,
+          "top": 825.46875,
+          "width": 256,
+          "x": 32,
+          "y": 825.46875
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 2599.0234375,
+          "height": 1178.421875,
+          "left": 20,
+          "right": 300,
+          "top": 1420.6015625,
+          "width": 280,
+          "x": 20,
+          "y": 1420.6015625
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 1886.390625,
+          "height": 464.7890625,
+          "left": 21,
+          "right": 299,
+          "top": 1421.6015625,
+          "width": 278,
+          "x": 21,
+          "y": 1421.6015625
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1746.796875,
+          "height": 136.671875,
+          "left": 41,
+          "right": 279,
+          "top": 1610.125,
+          "width": 238,
+          "x": 41,
+          "y": 1610.125
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1866.390625,
+          "height": 103.59375,
+          "left": 41,
+          "right": 279,
+          "top": 1762.796875,
+          "width": 238,
+          "x": 41,
+          "y": 1762.796875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2345.5546875,
+          "height": 459.1640625,
+          "left": 21,
+          "right": 299,
+          "top": 1886.390625,
+          "width": 278,
+          "x": 21,
+          "y": 1886.390625
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 3853.25,
+          "height": 1230.2265625,
+          "left": 20,
+          "right": 300,
+          "top": 2623.0234375,
+          "width": 280,
+          "x": 20,
+          "y": 2623.0234375
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 3084.7109375,
+          "height": 460.6875,
+          "left": 21,
+          "right": 299,
+          "top": 2624.0234375,
+          "width": 278,
+          "x": 21,
+          "y": 2624.0234375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2945.1171875,
+          "height": 106.9765625,
+          "left": 41,
+          "right": 279,
+          "top": 2838.140625,
+          "width": 238,
+          "x": 41,
+          "y": 2838.140625
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 3064.7109375,
+          "height": 103.59375,
+          "left": 41,
+          "right": 279,
+          "top": 2961.1171875,
+          "width": 238,
+          "x": 41,
+          "y": 2961.1171875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 3599.78125,
+          "height": 515.0703125,
+          "left": 21,
+          "right": 299,
+          "top": 3084.7109375,
+          "width": 278,
+          "x": 21,
+          "y": 3084.7109375
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 320,
+    "scrollY": 0,
+    "width": 320
+  },
+  {
+    "size": "reflow",
+    "view": "codegraph-card",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": -103.2421875,
+          "height": 1096.2578125,
+          "left": 20,
+          "right": 300,
+          "top": -1199.5,
+          "width": 280,
+          "x": 20,
+          "y": -1199.5
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": -623.03125,
+          "height": 536.46875,
+          "left": 20,
+          "right": 300,
+          "top": -1159.5,
+          "width": 280,
+          "x": 20,
+          "y": -1159.5
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -1011.40625,
+          "height": 48.3984375,
+          "left": 20,
+          "right": 300,
+          "top": -1059.8046875,
+          "width": 280,
+          "x": 20,
+          "y": -1059.8046875
+        },
+        "class": "",
+        "fontSize": "44px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": -159.2421875,
+          "height": 423.7890625,
+          "left": 20,
+          "right": 300,
+          "top": -583.03125,
+          "width": 280,
+          "x": 20,
+          "y": -583.03125
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -209.390625,
+          "height": 361.640625,
+          "left": 32,
+          "right": 288,
+          "top": -571.03125,
+          "width": 256,
+          "x": 32,
+          "y": -571.03125
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 1202.5234375,
+          "height": 1178.421875,
+          "left": 20,
+          "right": 300,
+          "top": 24.1015625,
+          "width": 280,
+          "x": 20,
+          "y": 24.1015625
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 489.890625,
+          "height": 464.7890625,
+          "left": 21,
+          "right": 299,
+          "top": 25.1015625,
+          "width": 278,
+          "x": 21,
+          "y": 25.1015625
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 350.296875,
+          "height": 136.671875,
+          "left": 41,
+          "right": 279,
+          "top": 213.625,
+          "width": 238,
+          "x": 41,
+          "y": 213.625
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 469.890625,
+          "height": 103.59375,
+          "left": 41,
+          "right": 279,
+          "top": 366.296875,
+          "width": 238,
+          "x": 41,
+          "y": 366.296875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 949.0546875,
+          "height": 459.1640625,
+          "left": 21,
+          "right": 299,
+          "top": 489.890625,
+          "width": 278,
+          "x": 21,
+          "y": 489.890625
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 2456.75,
+          "height": 1230.2265625,
+          "left": 20,
+          "right": 300,
+          "top": 1226.5234375,
+          "width": 280,
+          "x": 20,
+          "y": 1226.5234375
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 1688.2109375,
+          "height": 460.6875,
+          "left": 21,
+          "right": 299,
+          "top": 1227.5234375,
+          "width": 278,
+          "x": 21,
+          "y": 1227.5234375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1548.6171875,
+          "height": 106.9765625,
+          "left": 41,
+          "right": 279,
+          "top": 1441.640625,
+          "width": 238,
+          "x": 41,
+          "y": 1441.640625
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1668.2109375,
+          "height": 103.59375,
+          "left": 41,
+          "right": 279,
+          "top": 1564.6171875,
+          "width": 238,
+          "x": 41,
+          "y": 1564.6171875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 2203.28125,
+          "height": 515.0703125,
+          "left": 21,
+          "right": 299,
+          "top": 1688.2109375,
+          "width": 278,
+          "x": 21,
+          "y": 1688.2109375
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 320,
+    "scrollY": 1396.5,
+    "width": 320
+  },
+  {
+    "size": "reflow",
+    "view": "taskforge-card",
+    "blocks": [
+      {
+        "bounds": {
+          "bottom": -1305.7421875,
+          "height": 1096.2578125,
+          "left": 20,
+          "right": 300,
+          "top": -2402,
+          "width": 280,
+          "x": 20,
+          "y": -2402
+        },
+        "class": "hero",
+        "fontSize": "16px",
+        "id": "introduction",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "SECTION"
+      },
+      {
+        "bounds": {
+          "bottom": -1825.53125,
+          "height": 536.46875,
+          "left": 20,
+          "right": 300,
+          "top": -2362,
+          "width": 280,
+          "x": 20,
+          "y": -2362
+        },
+        "class": "motion-entrance hero-copy",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -2213.90625,
+          "height": 48.3984375,
+          "left": 20,
+          "right": 300,
+          "top": -2262.3046875,
+          "width": 280,
+          "x": 20,
+          "y": -2262.3046875
+        },
+        "class": "",
+        "fontSize": "44px",
+        "id": "hero-title",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "H1"
+      },
+      {
+        "bounds": {
+          "bottom": -1361.7421875,
+          "height": 423.7890625,
+          "left": 20,
+          "right": 300,
+          "top": -1785.53125,
+          "width": 280,
+          "x": 20,
+          "y": -1785.53125
+        },
+        "class": "motion-entrance hero-portrait",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -1411.890625,
+          "height": 361.640625,
+          "left": 32,
+          "right": 288,
+          "top": -1773.53125,
+          "width": 256,
+          "x": 32,
+          "y": -1773.53125
+        },
+        "class": "",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "clip",
+        "tag": "IMG"
+      },
+      {
+        "bounds": {
+          "bottom": 0.0234375,
+          "height": 1178.421875,
+          "left": 20,
+          "right": 300,
+          "top": -1178.3984375,
+          "width": 280,
+          "x": 20,
+          "y": -1178.3984375
+        },
+        "class": "project-showcase codegraph-showcase",
+        "fontSize": "16px",
+        "id": "codegraph",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": -712.609375,
+          "height": 464.7890625,
+          "left": 21,
+          "right": 299,
+          "top": -1177.3984375,
+          "width": 278,
+          "x": 21,
+          "y": -1177.3984375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -852.203125,
+          "height": 136.671875,
+          "left": 41,
+          "right": 279,
+          "top": -988.875,
+          "width": 238,
+          "x": 41,
+          "y": -988.875
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -732.609375,
+          "height": 103.59375,
+          "left": 41,
+          "right": 279,
+          "top": -836.203125,
+          "width": 238,
+          "x": 41,
+          "y": -836.203125
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": -253.4453125,
+          "height": 459.1640625,
+          "left": 21,
+          "right": 299,
+          "top": -712.609375,
+          "width": 278,
+          "x": 21,
+          "y": -712.609375
+        },
+        "class": "showcase-visual repository-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      },
+      {
+        "bounds": {
+          "bottom": 1254.25,
+          "height": 1230.2265625,
+          "left": 20,
+          "right": 300,
+          "top": 24.0234375,
+          "width": 280,
+          "x": 20,
+          "y": 24.0234375
+        },
+        "class": "project-showcase taskforge-showcase",
+        "fontSize": "16px",
+        "id": "taskforge",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "ARTICLE"
+      },
+      {
+        "bounds": {
+          "bottom": 485.7109375,
+          "height": 460.6875,
+          "left": 21,
+          "right": 299,
+          "top": 25.0234375,
+          "width": 278,
+          "x": 21,
+          "y": 25.0234375
+        },
+        "class": "showcase-copy showcase-intro",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 346.1171875,
+          "height": 106.9765625,
+          "left": 41,
+          "right": 279,
+          "top": 239.140625,
+          "width": 238,
+          "x": 41,
+          "y": 239.140625
+        },
+        "class": "showcase-result",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 465.7109375,
+          "height": 103.59375,
+          "left": 41,
+          "right": 279,
+          "top": 362.1171875,
+          "width": 238,
+          "x": 41,
+          "y": 362.1171875
+        },
+        "class": "showcase-actions",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "bottom": 1000.78125,
+          "height": 515.0703125,
+          "left": 21,
+          "right": 299,
+          "top": 485.7109375,
+          "width": 278,
+          "x": 21,
+          "y": 485.7109375
+        },
+        "class": "showcase-visual coordination-visual",
+        "fontSize": "16px",
+        "id": "",
+        "opacity": "1",
+        "overflow": "visible",
+        "tag": "FIGURE"
+      }
+    ],
+    "height": 844,
+    "scrollWidth": 320,
+    "scrollY": 2599,
+    "width": 320
+  }
+]

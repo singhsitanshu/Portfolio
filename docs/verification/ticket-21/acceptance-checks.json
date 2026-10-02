@@ -1,0 +1,8 @@
+{
+  "defaultResponsiveViews": 20,
+  "enlargedRouteAndSizeCombinations": 12,
+  "restingEnlargedOverlapChecks": 12,
+  "focusedDirectFragments": 32,
+  "reducedMotionViews": 8,
+  "desktopSummaryAndFullOwnershipWithinInitialViewport": true
+}

@@ -33,7 +33,6 @@ export function Home() {
       <Entrance className="hero-portrait">
         <div className="portrait-frame">
           <picture className="portrait-image">
-            <source type="image/webp" srcSet={profile.hero.portrait.srcSet} sizes="(max-width: 52rem) min(27.5rem, 90vw), (max-width: 75rem) 40vw, 27.5rem" />
             <img src={profile.hero.portrait.src} alt={profile.hero.portrait.alt} width={profile.hero.portrait.width} height={profile.hero.portrait.height} fetchPriority="high" loading="eager" decoding="async" />
           </picture>
         </div>

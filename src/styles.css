@@ -121,7 +121,7 @@ p { line-height: 1.65; }
 .portrait-frame { position: relative; }
 .portrait-frame::before { content: ''; position: absolute; inset: -0.75rem 0.75rem 0.75rem -0.75rem; border: 1px solid var(--color-accent); border-radius: var(--radius-portrait); z-index: -1; }
 .portrait-image { display: block; overflow: hidden; border-radius: var(--radius-portrait); background: var(--color-surface-raised); box-shadow: var(--shadow-portrait); }
-.portrait-image img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 52% 42%; }
+.portrait-image img { display: block; width: 100%; height: auto; }
 .portrait-caption { display: flex; gap: 0.75rem; margin-top: 1.25rem; color: var(--color-muted); font-family: var(--font-mono); font-size: 0.6875rem; }
 .portrait-caption span { color: var(--color-accent); }
 .project-shell { min-height: 34rem; display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; }

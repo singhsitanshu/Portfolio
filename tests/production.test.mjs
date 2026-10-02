@@ -117,21 +117,17 @@ test('social image dimensions, MIME signature, and production asset sizes are ap
   assert.deepEqual(await readFile(resolve(root, 'aansh-singh-resume.pdf')), await readFile('public/aansh-singh-resume.pdf'));
 });
 
-test('portrait variants and self-hosted display font are present and bounded', async () => {
+test('original portrait is preserved and self-hosted display font is present and bounded', async () => {
   const home = documents.get('/');
   const portrait = tags(home, 'img')[0];
   assert.equal(portrait.loading, 'eager');
   assert.equal(portrait.fetchPriority ?? portrait.fetchpriority, 'high');
   assert.ok(Number(portrait.width) > 0 && Number(portrait.height) > 0);
   assert.ok(portrait.alt.includes('Aansh Singh'));
-  const source = tags(home, 'source').find(tag => tag.type === 'image/webp');
-  const variants = (source.srcSet ?? source.srcset).split(',').map(value => value.trim().split(' ')[0]);
-  assert.equal(variants.length, 3);
-  for (const path of variants) {
-    const bytes = await readFile(resolve(root, `.${path}`));
-    assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
-    assert.ok(bytes.length < 120000);
-  }
+  assert.equal(tags(home, 'source').length, 0, 'portrait uses the original JPEG without converted variants');
+  const portraitBytes = await readFile(resolve(root, `.${portrait.src}`));
+  assert.equal(portraitBytes.readUInt16BE(0), 0xffd8);
+  assert.deepEqual(portraitBytes, await readFile(resolve('public', `.${portrait.src}`)), 'build preserves the portrait file byte for byte');
   const font = await readFile(resolve(root, 'fonts/space-grotesk-latin-wght.woff2'));
   assert.equal(font.toString('ascii', 0, 4), 'wOF2');
   assert.ok(font.length < 30000);

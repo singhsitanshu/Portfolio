@@ -2,6 +2,8 @@
 
 ## Source precedence
 
+October 1, 2026 owner portrait update: use the supplied `trim.jpg` as the homepage image. `public/images/aansh-singh-trim.jpg` is an unchanged byte-for-byte copy, 1277 × 1804 pixels with its embedded Display P3 profile. Preserve the original JPEG and color profile; do not replace it with recompressed/resized variants or apply color filters. Display its supplied proportions without an additional crop.
+
 October 1, 2026 owner clarification: CodeGraph's LangGraph ReAct agent is powered by **Claude Sonnet 5**. Use that model name in technical architecture details. This supersedes older notes limiting attribution to the provider name; it does not establish which model was used for historical measurements.
 
 Ticket 15 owner verification supersedes older project editorial notes: all website statistics are verified and true. Preserve their values, units, conditions, and prominence; remove only the explicitly requested “4 skipped” fragment. Do not restore public audit/manual/résumé citations or missing-evidence warnings from historical notes. Technical scope remains precise without inventing fixes or guarantees. See [Ticket 15 verification](ticket-15-verification.md).

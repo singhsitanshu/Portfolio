@@ -23,11 +23,10 @@ export const profile = {
     introduction: 'A computer science student at UCLA building developer tools, AI systems, and reliable backend software.',
     perspective: 'Pragmatic, system-minded.',
     portrait: {
-      src: '/images/aansh-singh-800.jpg',
-      srcSet: '/images/aansh-singh-480.webp 480w, /images/aansh-singh-800.webp 800w, /images/aansh-singh-1120.webp 1120w',
+      src: '/images/aansh-singh-trim.jpg',
       alt: 'Aansh Singh wearing a brown hoodie and backpack at Rockefeller Center.',
-      width: 800,
-      height: 1098,
+      width: 1277,
+      height: 1804,
     },
   },
 } as const;

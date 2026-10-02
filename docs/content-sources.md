@@ -2,6 +2,8 @@
 
 ## Source precedence
 
+October 1, 2026 owner clarification (Ticket 19): Aansh independently designed and built **all of CodeGraph and TaskForge during summer 2026, before the school year began**. Solo ownership is settled. Shared project records in `src/content/portfolio.ts` supply the public **Solo project · Summer 2026** label, first-person ownership statement, and full implementation scope to homepage cards and case-study headers. CodeGraph scope includes repository ingestion/parsing, graph and retrieval pipeline, API, and interactive dashboard. TaskForge scope includes API and console, PostgreSQL task/attempt model, Go workers and schedulers, observability, and benchmark harness. This attribution covers project implementation, not authorship of third-party libraries or models. It implies no team/client/employment sponsorship, college-entry timing, exact start/end dates, duration, or production adoption; employment attribution remains separate.
+
 October 2, 2026 owner decision: Ticket 20 (homepage hero pitch) is cancelled. Preserve the existing homepage hero copy, portrait, layout, and actions. Remaining tickets still cover project cards, case studies, experience, and contact; do not reintroduce the cancelled hero changes through those tickets.
 
 October 1, 2026 owner portrait update: use the supplied `trim.jpg` as the homepage image. `public/images/aansh-singh-trim.jpg` is an unchanged byte-for-byte copy, 1277 × 1804 pixels with its embedded Display P3 profile. Preserve the original JPEG and color profile; do not replace it with recompressed/resized variants or apply color filters. Display its supplied proportions without an additional crop.

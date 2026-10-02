@@ -31,13 +31,23 @@ export const profile = {
   },
 } as const;
 
+// October 1, 2026 owner clarification: both projects were built independently
+// before the school year began. This does not establish a college-entry date.
+const projectDates = 'Summer 2026';
+const projectOwnershipLabel = `Solo project · ${projectDates}`;
+
 export const projects = [
   {
     id: 'codegraph',
     name: 'CodeGraph',
     path: '/projects/codegraph',
     repository: 'https://github.com/singhsitanshu/Codegraph',
-    dates: 'Summer 2026',
+    dates: projectDates,
+    ownership: {
+      label: projectOwnershipLabel,
+      statement: 'I designed and built CodeGraph independently during summer 2026, before the school year began.',
+      scope: 'My work spans the full system: repository ingestion and parsing, the graph and retrieval pipeline, the API, and the interactive dashboard.',
+    },
     summary: 'Repository intelligence through interactive code graphs, source inspection, and natural-language analysis.',
     source: 'projects/CODEGRAPH.md',
   },
@@ -46,7 +56,12 @@ export const projects = [
     name: 'TaskForge',
     path: '/projects/taskforge',
     repository: 'https://github.com/singhsitanshu/TaskForge',
-    dates: 'Summer 2026',
+    dates: projectDates,
+    ownership: {
+      label: projectOwnershipLabel,
+      statement: 'I designed and built TaskForge independently during summer 2026, before the school year began.',
+      scope: 'My work spans the full system: the API and console, PostgreSQL task and attempt model, Go workers and schedulers, observability, and benchmark harness.',
+    },
     summary: 'Fault-tolerant background-task processing with durable admission, retries, crash recovery, and operational visibility.',
     source: 'projects/TASKFORGE.md',
   },

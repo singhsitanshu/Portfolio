@@ -1,0 +1,305 @@
+[
+  {
+    "size": "desktop",
+    "path": "/",
+    "headerOrder": [],
+    "height": 900,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026",
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownershipLineHeight": null,
+    "scrollY": 0,
+    "width": 1440,
+    "ownershipLines": null
+  },
+  {
+    "size": "desktop",
+    "path": "/projects/codegraph",
+    "eyebrowBounds": {
+      "bottom": 300.9222412109375,
+      "height": 18.1484375,
+      "left": 144,
+      "right": 1296,
+      "top": 282.7738037109375,
+      "width": 1152,
+      "x": 144,
+      "y": 282.7738037109375
+    },
+    "headerOrder": [
+      "text-link ",
+      "motion-entrance ",
+      "case-study-lede",
+      "case-study-result-summary",
+      "case-study-ownership",
+      "case-study-overview",
+      "text-link"
+    ],
+    "height": 900,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownership": "I designed and built CodeGraph independently during summer 2026, before the school year began. My work spans the full system: repository ingestion and parsing, the graph and retrieval pipeline, the API, and the interactive dashboard.",
+    "ownershipBounds": {
+      "bottom": 1042.1796875,
+      "height": 52.796875,
+      "left": 144,
+      "right": 1296,
+      "top": 989.3828125,
+      "width": 1152,
+      "x": 144,
+      "y": 989.3828125
+    },
+    "ownershipLineHeight": "26.4px",
+    "scrollY": 0,
+    "width": 1440,
+    "ownershipLines": 2
+  },
+  {
+    "size": "desktop",
+    "path": "/projects/taskforge",
+    "eyebrowBounds": {
+      "bottom": 301.99688720703125,
+      "height": 18.1484375,
+      "left": 144,
+      "right": 1296,
+      "top": 283.84844970703125,
+      "width": 1152,
+      "x": 144,
+      "y": 283.84844970703125
+    },
+    "headerOrder": [
+      "text-link ",
+      "motion-entrance ",
+      "case-study-lede",
+      "case-study-result-summary",
+      "case-study-ownership",
+      "case-study-overview",
+      "text-link"
+    ],
+    "height": 900,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownership": "I designed and built TaskForge independently during summer 2026, before the school year began. My work spans the full system: the API and console, PostgreSQL task and attempt model, Go workers and schedulers, observability, and benchmark harness.",
+    "ownershipBounds": {
+      "bottom": 1020.734375,
+      "height": 52.796875,
+      "left": 144,
+      "right": 1296,
+      "top": 967.9375,
+      "width": 1152,
+      "x": 144,
+      "y": 967.9375
+    },
+    "ownershipLineHeight": "26.4px",
+    "scrollY": 0,
+    "width": 1440,
+    "ownershipLines": 2
+  },
+  {
+    "size": "tablet",
+    "path": "/",
+    "headerOrder": [],
+    "height": 1024,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026",
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownershipLineHeight": null,
+    "scrollY": 0,
+    "width": 768,
+    "ownershipLines": null
+  },
+  {
+    "size": "tablet",
+    "path": "/projects/codegraph",
+    "eyebrowBounds": {
+      "bottom": 312.90625,
+      "height": 18.1484375,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 294.7578125,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 294.7578125
+    },
+    "headerOrder": [
+      "text-link ",
+      "motion-entrance ",
+      "case-study-lede",
+      "case-study-result-summary",
+      "case-study-ownership",
+      "case-study-overview",
+      "text-link"
+    ],
+    "height": 1024,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownership": "I designed and built CodeGraph independently during summer 2026, before the school year began. My work spans the full system: repository ingestion and parsing, the graph and retrieval pipeline, the API, and the interactive dashboard.",
+    "ownershipBounds": {
+      "bottom": 971.2265625,
+      "height": 79.1953125,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 892.03125,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 892.03125
+    },
+    "ownershipLineHeight": "26.4px",
+    "scrollY": 0,
+    "width": 768,
+    "ownershipLines": 3
+  },
+  {
+    "size": "tablet",
+    "path": "/projects/taskforge",
+    "eyebrowBounds": {
+      "bottom": 312.90625,
+      "height": 18.1484375,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 294.7578125,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 294.7578125
+    },
+    "headerOrder": [
+      "text-link ",
+      "motion-entrance ",
+      "case-study-lede",
+      "case-study-result-summary",
+      "case-study-ownership",
+      "case-study-overview",
+      "text-link"
+    ],
+    "height": 1024,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownership": "I designed and built TaskForge independently during summer 2026, before the school year began. My work spans the full system: the API and console, PostgreSQL task and attempt model, Go workers and schedulers, observability, and benchmark harness.",
+    "ownershipBounds": {
+      "bottom": 953.0859375,
+      "height": 79.1953125,
+      "left": 38.3984375,
+      "right": 729.59375,
+      "top": 873.890625,
+      "width": 691.1953125,
+      "x": 38.3984375,
+      "y": 873.890625
+    },
+    "ownershipLineHeight": "26.4px",
+    "scrollY": 0,
+    "width": 768,
+    "ownershipLines": 3
+  },
+  {
+    "size": "mobile",
+    "path": "/",
+    "headerOrder": [],
+    "height": 844,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026",
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownershipLineHeight": null,
+    "scrollY": 0,
+    "width": 390,
+    "ownershipLines": null
+  },
+  {
+    "size": "mobile",
+    "path": "/projects/codegraph",
+    "eyebrowBounds": {
+      "bottom": 307.1484375,
+      "height": 18.1484375,
+      "left": 20,
+      "right": 370,
+      "top": 289,
+      "width": 350,
+      "x": 20,
+      "y": 289
+    },
+    "headerOrder": [
+      "text-link ",
+      "motion-entrance ",
+      "case-study-lede",
+      "case-study-result-summary",
+      "case-study-ownership",
+      "case-study-overview",
+      "text-link"
+    ],
+    "height": 844,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownership": "I designed and built CodeGraph independently during summer 2026, before the school year began. My work spans the full system: repository ingestion and parsing, the graph and retrieval pipeline, the API, and the interactive dashboard.",
+    "ownershipBounds": {
+      "bottom": 1133.0625,
+      "height": 158.390625,
+      "left": 20,
+      "right": 370,
+      "top": 974.671875,
+      "width": 350,
+      "x": 20,
+      "y": 974.671875
+    },
+    "ownershipLineHeight": "26.4px",
+    "scrollY": 0,
+    "width": 390,
+    "ownershipLines": 6
+  },
+  {
+    "size": "mobile",
+    "path": "/projects/taskforge",
+    "eyebrowBounds": {
+      "bottom": 307.1484375,
+      "height": 18.1484375,
+      "left": 20,
+      "right": 370,
+      "top": 289,
+      "width": 350,
+      "x": 20,
+      "y": 289
+    },
+    "headerOrder": [
+      "text-link ",
+      "motion-entrance ",
+      "case-study-lede",
+      "case-study-result-summary",
+      "case-study-ownership",
+      "case-study-overview",
+      "text-link"
+    ],
+    "height": 844,
+    "labels": [
+      "SOLO PROJECT · SUMMER 2026"
+    ],
+    "overflow": false,
+    "ownership": "I designed and built TaskForge independently during summer 2026, before the school year began. My work spans the full system: the API and console, PostgreSQL task and attempt model, Go workers and schedulers, observability, and benchmark harness.",
+    "ownershipBounds": {
+      "bottom": 1201.828125,
+      "height": 158.390625,
+      "left": 20,
+      "right": 370,
+      "top": 1043.4375,
+      "width": 350,
+      "x": 20,
+      "y": 1043.4375
+    },
+    "ownershipLineHeight": "26.4px",
+    "scrollY": 0,
+    "width": 390,
+    "ownershipLines": 6
+  }
+]

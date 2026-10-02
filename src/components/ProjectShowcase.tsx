@@ -13,7 +13,7 @@ export function ProjectShowcase({ project, summary, result, highlights, technolo
   return <article id={project.id} className={`project-showcase ${project.id}-showcase`} aria-labelledby={`${project.id}-title`} tabIndex={-1}>
     <div className="showcase-copy showcase-intro">
       <header>
-        <p className="eyebrow">Solo project · {project.dates}</p>
+        <p className="eyebrow">{project.ownership.label}</p>
         <h3 id={`${project.id}-title`}>{project.name}</h3>
         <p className="showcase-summary">{summary}</p>
       </header>

@@ -1,0 +1,123 @@
+{
+  "observedAt": "2026-10-02T10:00:22.843Z",
+  "routes": [
+    {
+      "path": "/",
+      "title": "Aansh Singh | Software Engineer",
+      "canonical": "https://aanshsingh.com/",
+      "imageMetadata": [
+        {
+          "property": "og:image",
+          "content": "https://aanshsingh.com/social-preview-homepage-v2.jpg"
+        },
+        {
+          "property": "og:image:type",
+          "content": "image/jpeg"
+        },
+        {
+          "property": "og:image:width",
+          "content": "1200"
+        },
+        {
+          "property": "og:image:height",
+          "content": "630"
+        },
+        {
+          "property": "og:image:alt",
+          "content": "Aansh Singh&#39;s homepage hero: his portrait, Software Engineer / UCLA Computer Science, and “Pragmatic, system-minded.”"
+        },
+        {
+          "name": "twitter:image",
+          "content": "https://aanshsingh.com/social-preview-homepage-v2.jpg"
+        },
+        {
+          "name": "twitter:image:alt",
+          "content": "Aansh Singh&#39;s homepage hero: his portrait, Software Engineer / UCLA Computer Science, and “Pragmatic, system-minded.”"
+        }
+      ],
+      "bodyUnchangedExcludingClientEntry": true,
+      "allOtherMetadataUnchanged": true
+    },
+    {
+      "path": "/projects/codegraph",
+      "title": "CodeGraph Case Study | Aansh Singh",
+      "canonical": "https://aanshsingh.com/projects/codegraph",
+      "imageMetadata": [
+        {
+          "property": "og:image",
+          "content": "https://aanshsingh.com/social-preview-homepage-v2.jpg"
+        },
+        {
+          "property": "og:image:type",
+          "content": "image/jpeg"
+        },
+        {
+          "property": "og:image:width",
+          "content": "1200"
+        },
+        {
+          "property": "og:image:height",
+          "content": "630"
+        },
+        {
+          "property": "og:image:alt",
+          "content": "Aansh Singh&#39;s homepage hero: his portrait, Software Engineer / UCLA Computer Science, and “Pragmatic, system-minded.”"
+        },
+        {
+          "name": "twitter:image",
+          "content": "https://aanshsingh.com/social-preview-homepage-v2.jpg"
+        },
+        {
+          "name": "twitter:image:alt",
+          "content": "Aansh Singh&#39;s homepage hero: his portrait, Software Engineer / UCLA Computer Science, and “Pragmatic, system-minded.”"
+        }
+      ],
+      "bodyUnchangedExcludingClientEntry": true,
+      "allOtherMetadataUnchanged": true
+    },
+    {
+      "path": "/projects/taskforge",
+      "title": "TaskForge Case Study | Aansh Singh",
+      "canonical": "https://aanshsingh.com/projects/taskforge",
+      "imageMetadata": [
+        {
+          "property": "og:image",
+          "content": "https://aanshsingh.com/social-preview-homepage-v2.jpg"
+        },
+        {
+          "property": "og:image:type",
+          "content": "image/jpeg"
+        },
+        {
+          "property": "og:image:width",
+          "content": "1200"
+        },
+        {
+          "property": "og:image:height",
+          "content": "630"
+        },
+        {
+          "property": "og:image:alt",
+          "content": "Aansh Singh&#39;s homepage hero: his portrait, Software Engineer / UCLA Computer Science, and “Pragmatic, system-minded.”"
+        },
+        {
+          "name": "twitter:image",
+          "content": "https://aanshsingh.com/social-preview-homepage-v2.jpg"
+        },
+        {
+          "name": "twitter:image:alt",
+          "content": "Aansh Singh&#39;s homepage hero: his portrait, Software Engineer / UCLA Computer Science, and “Pragmatic, system-minded.”"
+        }
+      ],
+      "bodyUnchangedExcludingClientEntry": true,
+      "allOtherMetadataUnchanged": true
+    }
+  ],
+  "image": {
+    "bytes": 61379,
+    "sha256": "a1a786889e22f5ae8517e44f2af6fa5163b29ceaed33526e3c0277b9f97b7e36",
+    "localHttpStatus": 200,
+    "contentType": "image/jpeg",
+    "servedBytesMatchPublicAsset": true
+  }
+}

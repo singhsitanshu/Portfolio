@@ -23,7 +23,7 @@ The three routes are `/`, `/projects/codegraph`, and `/projects/taskforge`. The 
 - `src/App.tsx`: shared route/layout tree, with focus committed after lazy page content resolves.
 - `src/main.tsx`: browser entry; hydrates generated HTML and loads each page's code on demand.
 - `src/entry-server.tsx` and `scripts/prerender.mjs`: build-time rendering of complete pages; no deployed server bundle.
-- `public/social-preview.jpg` and `public/social-preview.svg`: 1200 × 630 social image and editable vector source; `public/favicon.svg` is the small vector favicon.
+- `public/social-preview-homepage-v2.jpg`: current 1200 × 630 hero-only social image. `scripts/social-preview.mjs` is its reproducible composition source. `public/social-preview.jpg` remains for old incoming image URLs; the obsolete SVG source is retired. `public/favicon.svg` is the small vector favicon.
 - `src/content/codegraph.ts`: sourced CodeGraph homepage copy and result.
 - `src/components/CodeGraphFeature.tsx`: semantic system visual with a finite highlight sequence and project feature.
 - `src/content/taskforge.ts`: sourced TaskForge homepage copy and workload-qualified benchmarks.
@@ -62,3 +62,18 @@ Ticket 09 metadata, static routing, asset-size checks, and remaining deployment 
 Ticket 10's manual deployment commands, local Cloudflare checks, environment assumptions, and verification results are in [the deployment handoff](docs/ticket-10-deployment-readiness.md). This follows the replacement deployment-readiness ticket supplied by the user, superseding the older deployment instructions in `tickets/10-cloudflare-deployment.md`.
 
 Ticket 14 separates career and college content using the newly attached résumé. See [the source map and final copy](docs/ticket-14-content-map.md) and [verification](docs/ticket-14-verification.md). Canonical homepage sections use `#projects`, `#experience`, `#education`, and `#contact`; legacy `#work` and `#about` links resolve to Projects and the introduction. Focused navigation checks: `node --experimental-strip-types --test tests/navigation.test.mjs`.
+
+## Social preview capture and refresh
+
+Ticket 28 uses a faithful composition of the current rendered homepage hero, including its original portrait, copy, Space Grotesk typography, palette, portrait frame, and grid texture. It excludes the navbar, action buttons, and social links. The live homepage is not modified. Build-only composition overrides keep the name and face inside a useful central square crop.
+
+To reproduce the JPEG:
+
+1. Run `npm run build`, then `node scripts/social-preview.mjs`. The script extracts the hero and stylesheet from the generated homepage into ignored `.social-preview/` files; it does not ship these source/review pages.
+2. Run `node tests/homepage-preview.mjs` and open `http://127.0.0.1:4176/_test/social-preview.html` in a desktop browser. Use a **1200 × 630 CSS-pixel viewport**, device scale 1, at 100% zoom. Wait for `document.fonts.status === 'loaded'` and the portrait image to finish loading. The source has no JavaScript, entrances, navbar, development overlay, or browser chrome.
+3. Capture only the viewport as JPEG, without browser UI or resizing, and save it as `public/social-preview-homepage-v2.jpg`. The checked-in image was captured with the Codex browser screenshot API at those dimensions. View the actual JPEG at full size; after rebuilding, review `/_test/social-preview-small.html` at 360 × 189 and `/_test/social-preview-center.html` at 630 × 630.
+4. Run `npm run build` and `PREVIEW_URL=http://127.0.0.1:4176 npm run check:production`. Both social metadata families use the absolute URL in `src/content/metadata.ts`; the checks cover unique image tags, shared alt text, route metadata, JPEG signature/dimensions, size, and local HTTP delivery. Use a **new filename** and update `site.image`, the review source, and check fixture for subsequent material redesigns.
+
+Deployment remains the owner's existing workflow. After deployment, fetch the canonical homepage and both case-study HTML responses without executing JavaScript and confirm their new image URL, matching alt tags, route titles/descriptions, and canonical URLs. Fetch `https://aanshsingh.com/social-preview-homepage-v2.jpg` without authentication and confirm HTTP 200, `image/jpeg`, dimensions, and the expected new bytes. If public HTML or image responses are stale, purge only the affected URLs through the Cloudflare dashboard's Custom Purge, then fetch them again before requesting a platform refresh ([Cloudflare URL purge documentation](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-single-file/)).
+
+Where supported, request a re-scrape, such as Meta's [Sharing Debugger](https://developers.facebook.com/tools/debug/) or LinkedIn's [Post Inspector](https://www.linkedin.com/post-inspector/). For messaging apps without an available refresh tool, test a fresh share of the canonical homepage in an app the owner uses; record the app, date, result/screenshot, and any cache delay separately from public asset delivery. Existing messages and every platform cache cannot be guaranteed to refresh immediately. These deployment/share checks remain pending; see [Ticket 28 verification](docs/ticket-28-verification.md).

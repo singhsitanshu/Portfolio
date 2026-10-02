@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .prerender/
+.social-preview/
 .wrangler/
 *.tsbuildinfo
 .DS_Store

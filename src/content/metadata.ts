@@ -3,8 +3,8 @@ import { profile, projects } from './portfolio.ts';
 // Production origin explicitly supplied by the user for Ticket 09.
 export const site = {
   origin: 'https://aanshsingh.com',
-  image: '/social-preview.jpg',
-  imageAlt: `${profile.name} — ${profile.role} · ${profile.educationLabel}. Featured projects: CodeGraph and TaskForge.`,
+  image: '/social-preview-homepage-v2.jpg',
+  imageAlt: `${profile.name}'s homepage hero: his portrait, ${profile.role} / ${profile.educationLabel}, and “${profile.hero.perspective}”`,
 } as const;
 
 export const pages = [

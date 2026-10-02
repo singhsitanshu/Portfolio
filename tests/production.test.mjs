@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 import { gzipSync } from 'node:zlib';
 
 const origin = 'https://aanshsingh.com';
+const socialImage = '/social-preview-homepage-v2.jpg';
 const fixtures = [
   { path: '/', file: 'index.html', title: 'Aansh Singh | Software Engineer', heading: 'Aansh' },
   { path: '/projects/codegraph', file: 'projects/codegraph.html', title: 'CodeGraph Case Study | Aansh Singh', heading: 'CodeGraph' },
@@ -40,12 +41,19 @@ test('three generated pages expose distinct metadata and complete content withou
     assert.equal(meta(head, 'og:title')[0].content, page.title);
     assert.equal(meta(head, 'og:description')[0].content, meta(head, 'description')[0].content);
     assert.equal(meta(head, 'og:url')[0].content, origin + page.path);
-    assert.equal(meta(head, 'og:image')[0].content, origin + '/social-preview.jpg');
+    for (const key of ['og:image', 'twitter:image', 'og:image:alt', 'twitter:image:alt']) {
+      assert.equal(meta(head, key).length, 1, `${page.path}: exactly one ${key}`);
+    }
+    assert.equal(meta(head, 'og:image')[0].content, origin + socialImage);
     assert.equal(meta(head, 'og:image:type')[0].content, 'image/jpeg');
     assert.equal(meta(head, 'og:image:width')[0].content, '1200');
     assert.equal(meta(head, 'og:image:height')[0].content, '630');
     assert.equal(meta(head, 'twitter:card')[0].content, 'summary_large_image');
-    assert.equal(meta(head, 'twitter:image')[0].content, origin + '/social-preview.jpg');
+    assert.equal(meta(head, 'twitter:image')[0].content, origin + socialImage);
+    assert.equal(meta(head, 'og:image:alt')[0].content, meta(head, 'twitter:image:alt')[0].content);
+    for (const description of ['Aansh Singh', 'homepage hero', 'portrait', 'Software Engineer', 'UCLA Computer Science']) {
+      assert.ok(meta(head, 'og:image:alt')[0].content.includes(description));
+    }
     assert.equal(meta(head, 'robots')[0].content, 'index, follow');
     assert.match(html, new RegExp(`<h1[^>]*>${page.heading}`));
     assert.ok(html.length > 10000, `${page.path} must contain its content, not just a shell`);
@@ -135,7 +143,7 @@ test('sitemap, robots, and noindex not-found output use the intended origin', as
 });
 
 test('social image dimensions, MIME signature, and production asset sizes are appropriate', async () => {
-  const image = await readFile(resolve(root, 'social-preview.jpg'));
+  const image = await readFile(resolve(root, `.${socialImage}`));
   assert.equal(image.readUInt16BE(0), 0xffd8);
   let dimensions;
   for (let offset = 2; offset < image.length;) {

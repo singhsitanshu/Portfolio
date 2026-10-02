@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-02T09:52:11.448Z",
+  "homepage": "https://aanshsingh.com/",
+  "imageMetadata": [
+    "<meta data-portfolio-metadata property=\"og:image\" content=\"https://aanshsingh.com/social-preview.jpg\" />",
+    "<meta data-portfolio-metadata property=\"og:image:type\" content=\"image/jpeg\" />",
+    "<meta data-portfolio-metadata property=\"og:image:width\" content=\"1200\" />",
+    "<meta data-portfolio-metadata property=\"og:image:height\" content=\"630\" />",
+    "<meta data-portfolio-metadata property=\"og:image:alt\" content=\"Aansh Singh — Software Engineer · UCLA Computer Science. Featured projects: CodeGraph and TaskForge.\" />",
+    "<meta data-portfolio-metadata name=\"twitter:image\" content=\"https://aanshsingh.com/social-preview.jpg\" />",
+    "<meta data-portfolio-metadata name=\"twitter:image:alt\" content=\"Aansh Singh — Software Engineer · UCLA Computer Science. Featured projects: CodeGraph and TaskForge.\" />"
+  ],
+  "liveImageSha256": "166144d022b33535499aea0be5a9ea782cb80bf56568ab6f6ffa31b177bce53d",
+  "matchesOldRepositoryJpeg": true,
+  "bytes": 37915
+}

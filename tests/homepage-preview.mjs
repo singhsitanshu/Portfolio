@@ -11,6 +11,16 @@ const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 createServer(async (request, response) => {
   try {
     const url = new URL(request.url, 'http://127.0.0.1:4176');
+    const socialReview = {
+      '/_test/social-preview.html': 'index',
+      '/_test/social-preview-small.html': 'small',
+      '/_test/social-preview-center.html': 'center',
+    }[url.pathname];
+    if (socialReview) {
+      response.writeHead(200, { 'Content-Type': 'text/html', 'Cache-Control': 'no-store' });
+      response.end(await readFile(resolve('.social-preview', `${socialReview}.html`)));
+      return;
+    }
     if (url.pathname === '/_test/axe.min.js' || url.pathname === '/_test/accessibility-audit.js') {
       const file = url.pathname.endsWith('axe.min.js') ? process.env.AXE_SCRIPT_PATH : resolve('tests/accessibility-audit.js');
       if (!file) { response.writeHead(503).end('AXE_SCRIPT_PATH is required'); return; }

@@ -81,3 +81,11 @@ Record actual outcomes in each ticket's verification note. A deployment is a sep
 - [Career source map](../docs/ticket-14-content-map.md)
 
 No current website implementation was changed by the creation of this backlog.
+
+## Additional tickets
+
+| Ticket | Priority | Status |
+| --- | --- | --- |
+| [28 — Refresh the link thumbnail to match the current homepage](28-refresh-homepage-social-preview.md) | P2 | Ready for implementation |
+
+Ticket 28 was added October 2, 2026 at the owner's request and is separate from the original 16–27 improvement batch.

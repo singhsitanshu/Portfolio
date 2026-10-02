@@ -14,9 +14,9 @@ export const codegraphCaseStudy = {
     { id: 'architecture', title: 'System architecture' },
     { id: 'execution', title: 'From ingestion to context' },
     { id: 'challenges', title: 'Engineering challenges' },
-    { id: 'decisions', title: 'Design decisions & tradeoffs' },
     { id: 'correctness', title: 'Correctness & validation' },
     { id: 'results', title: 'Results & measurement' },
+    { id: 'decisions', title: 'Design decisions & tradeoffs' },
     { id: 'lessons', title: 'Engineering lessons' },
     { id: 'repository', title: 'Repository' },
   ],
@@ -45,10 +45,8 @@ export const codegraphCaseStudy = {
     { title: 'Combining structural and semantic retrieval', body: 'Graph queries expose relationships, while metadata embeddings find related names and paths. The two approaches support different ways of navigating unfamiliar code.' },
   ],
   decisions: [
-    { title: 'Tree-sitter for syntax', benefit: 'Multi-language structure without executing repository code.', tradeoff: 'Static syntax analysis has limits around dynamic dispatch and runtime call targets.' },
-    { title: 'Graph, vectors, and GDS together', benefit: 'Neo4j supports relationships, semantic candidates, and community enrichment in one store.', tradeoff: 'Community clusters provide exploratory groupings rather than exact module boundaries.' },
-    { title: 'Tools plus lazy source inspection', benefit: 'Question-specific observations and a separate source drawer keep bulk graph responses smaller.', tradeoff: 'Graph retrieval and source inspection serve separate workflows: the agent receives tool observations, while the reader can inspect code in the dashboard.' },
-    { title: 'Bounded stages and batches', benefit: 'Limit active per-file work and write in finite transaction units.', tradeoff: 'Batch size and parser concurrency balance resource usage with indexing work.' },
+    { title: 'Static syntax across languages', choice: 'Supported repositories span several languages. Tree-sitter extracts definitions and call syntax without running repository code.', benefit: 'One parsing pipeline supplies multi-language structure for exploration.', tradeoff: 'Syntax alone cannot resolve dynamic dispatch or runtime call targets.' },
+    { title: 'Graph, vectors, and communities', choice: 'Repository questions need relationship queries and metadata-vector search. Neo4j stores both, with Leiden communities for an architectural overview.', benefit: 'One store supports relationship, semantic, and community views.', tradeoff: 'Communities are exploratory groups, not verified module boundaries.' },
   ],
   correctness: {
     introduction: 'Tests cover parser behavior, API helpers, formatting, and repository scoping.',

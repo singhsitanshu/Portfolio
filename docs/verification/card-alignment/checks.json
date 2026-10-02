@@ -1,0 +1,354 @@
+[
+  {
+    "cards": [
+      {
+        "id": "codegraph",
+        "rows": [
+          {
+            "height": 51.1875,
+            "selector": ".showcase-summary",
+            "top": 352.046875
+          },
+          {
+            "height": 66.1875,
+            "selector": ".showcase-result",
+            "top": 423.234375
+          },
+          {
+            "height": 51.59375,
+            "selector": ".showcase-actions",
+            "top": 509.421875
+          },
+          {
+            "height": 342.96875,
+            "selector": ".showcase-visual",
+            "top": 585.015625
+          },
+          {
+            "height": 68.9921875,
+            "selector": ".showcase-highlights",
+            "top": 951.984375
+          },
+          {
+            "height": 28.09375,
+            "selector": ".showcase-technologies",
+            "top": 1044.9765625
+          }
+        ]
+      },
+      {
+        "id": "taskforge",
+        "rows": [
+          {
+            "height": 51.1875,
+            "selector": ".showcase-summary",
+            "top": 352.046875
+          },
+          {
+            "height": 66.1875,
+            "selector": ".showcase-result",
+            "top": 423.234375
+          },
+          {
+            "height": 51.59375,
+            "selector": ".showcase-actions",
+            "top": 509.421875
+          },
+          {
+            "height": 342.96875,
+            "selector": ".showcase-visual",
+            "top": 585.015625
+          },
+          {
+            "height": 68.9921875,
+            "selector": ".showcase-highlights",
+            "top": 951.984375
+          },
+          {
+            "height": 28.09375,
+            "selector": ".showcase-technologies",
+            "top": 1044.9765625
+          }
+        ]
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "cards": [
+      {
+        "id": "codegraph",
+        "rows": [
+          {
+            "height": 51.1875,
+            "overflow": false,
+            "selector": ".showcase-summary",
+            "top": 310.703125
+          },
+          {
+            "height": 83.8828125,
+            "overflow": false,
+            "selector": ".showcase-result",
+            "top": 381.890625
+          },
+          {
+            "height": 51.59375,
+            "overflow": false,
+            "selector": ".showcase-actions",
+            "top": 485.7734375
+          },
+          {
+            "height": 342.96875,
+            "overflow": false,
+            "selector": ".showcase-visual",
+            "top": 561.3671875
+          },
+          {
+            "height": 68.9921875,
+            "overflow": false,
+            "selector": ".showcase-highlights",
+            "top": 928.3359375
+          },
+          {
+            "height": 62.5859375,
+            "overflow": false,
+            "selector": ".showcase-technologies",
+            "top": 1021.328125
+          }
+        ]
+      },
+      {
+        "id": "taskforge",
+        "rows": [
+          {
+            "height": 51.1875,
+            "overflow": false,
+            "selector": ".showcase-summary",
+            "top": 310.703125
+          },
+          {
+            "height": 83.8828125,
+            "overflow": false,
+            "selector": ".showcase-result",
+            "top": 381.890625
+          },
+          {
+            "height": 51.59375,
+            "overflow": false,
+            "selector": ".showcase-actions",
+            "top": 485.7734375
+          },
+          {
+            "height": 342.96875,
+            "overflow": false,
+            "selector": ".showcase-visual",
+            "top": 561.3671875
+          },
+          {
+            "height": 68.9921875,
+            "overflow": false,
+            "selector": ".showcase-highlights",
+            "top": 928.3359375
+          },
+          {
+            "height": 62.5859375,
+            "overflow": false,
+            "selector": ".showcase-technologies",
+            "top": 1021.328125
+          }
+        ]
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      1024,
+      900
+    ]
+  },
+  {
+    "cards": [
+      {
+        "id": "codegraph",
+        "rows": [
+          {
+            "height": 25.59375,
+            "overflow": false,
+            "selector": ".showcase-summary",
+            "top": 280.8203125
+          },
+          {
+            "height": 60.7890625,
+            "overflow": false,
+            "selector": ".showcase-result",
+            "top": 326.4140625
+          },
+          {
+            "height": 51.59375,
+            "overflow": false,
+            "selector": ".showcase-actions",
+            "top": 407.203125
+          },
+          {
+            "height": 342.96875,
+            "overflow": false,
+            "selector": ".showcase-visual",
+            "top": 482.796875
+          },
+          {
+            "height": 46.59375,
+            "overflow": false,
+            "selector": ".showcase-highlights",
+            "top": 849.765625
+          },
+          {
+            "height": 28.09375,
+            "overflow": false,
+            "selector": ".showcase-technologies",
+            "top": 920.359375
+          }
+        ]
+      },
+      {
+        "id": "taskforge",
+        "rows": [
+          {
+            "height": 51.1875,
+            "overflow": false,
+            "selector": ".showcase-summary",
+            "top": 1098.1953125
+          },
+          {
+            "height": 60.7890625,
+            "overflow": false,
+            "selector": ".showcase-result",
+            "top": 1169.3828125
+          },
+          {
+            "height": 51.59375,
+            "overflow": false,
+            "selector": ".showcase-actions",
+            "top": 1250.171875
+          },
+          {
+            "height": 328.4765625,
+            "overflow": false,
+            "selector": ".showcase-visual",
+            "top": 1325.765625
+          },
+          {
+            "height": 46.59375,
+            "overflow": false,
+            "selector": ".showcase-highlights",
+            "top": 1678.2421875
+          },
+          {
+            "height": 28.09375,
+            "overflow": false,
+            "selector": ".showcase-technologies",
+            "top": 1748.8359375
+          }
+        ]
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "cards": [
+      {
+        "id": "codegraph",
+        "rows": [
+          {
+            "height": 51.1875,
+            "overflow": false,
+            "selector": ".showcase-summary",
+            "top": 271.9453125
+          },
+          {
+            "height": 83.8828125,
+            "overflow": false,
+            "selector": ".showcase-result",
+            "top": 343.1328125
+          },
+          {
+            "height": 103.59375,
+            "overflow": false,
+            "selector": ".showcase-actions",
+            "top": 447.015625
+          },
+          {
+            "height": 342.96875,
+            "overflow": false,
+            "selector": ".showcase-visual",
+            "top": 574.609375
+          },
+          {
+            "height": 68.9921875,
+            "overflow": false,
+            "selector": ".showcase-highlights",
+            "top": 941.578125
+          },
+          {
+            "height": 62.5859375,
+            "overflow": false,
+            "selector": ".showcase-technologies",
+            "top": 1034.5703125
+          }
+        ]
+      },
+      {
+        "id": "taskforge",
+        "rows": [
+          {
+            "height": 76.78125,
+            "overflow": false,
+            "selector": ".showcase-summary",
+            "top": 1246.8984375
+          },
+          {
+            "height": 83.8828125,
+            "overflow": false,
+            "selector": ".showcase-result",
+            "top": 1343.6796875
+          },
+          {
+            "height": 103.59375,
+            "overflow": false,
+            "selector": ".showcase-actions",
+            "top": 1447.5625
+          },
+          {
+            "height": 328.4765625,
+            "overflow": false,
+            "selector": ".showcase-visual",
+            "top": 1575.15625
+          },
+          {
+            "height": 68.9921875,
+            "overflow": false,
+            "selector": ".showcase-highlights",
+            "top": 1927.6328125
+          },
+          {
+            "height": 62.5859375,
+            "overflow": false,
+            "selector": ".showcase-technologies",
+            "top": 2020.625
+          }
+        ]
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ]
+  }
+]

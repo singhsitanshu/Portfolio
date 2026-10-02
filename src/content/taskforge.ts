@@ -10,9 +10,8 @@ export const taskforgeMeasurements = {
 
 export const taskforgeFeature = {
   showcase: {
-    summary: 'Coordinate background tasks with durable PostgreSQL queues, concurrent Go workers, and bounded retries.',
+    summary: 'Coordinate durable background work with concurrent Go workers, atomic claims, retries, and crash recovery.',
     highlights: [
-      { title: 'Atomic ownership', body: 'Claim eligible work in a short transaction, then execute independently while renewable leases guard database ownership.' },
       { title: 'Recovery with history', body: 'Keep numbered attempts for completion, retry, and crash recovery.' },
     ],
     visualNote: 'Task coordination and retry flow.',
@@ -72,3 +71,8 @@ export const taskforgeResultSummary = {
   ],
   evidence: { id: 'benchmarks', label: 'Read benchmark methodology and detailed results' },
 } as const satisfies CaseStudyResultSummary;
+
+export const taskforgeProjectResult = {
+  headline: `${taskforgeMeasurements.syntheticWait.speedup.toFixed(2)}× worker scaling`,
+  context: `${taskforgeMeasurements.syntheticWait.baselineWorkers} → ${taskforgeMeasurements.syntheticWait.workers} workers on synthetic ${taskforgeMeasurements.syntheticWait.milliseconds} ms waits; local Docker benchmark`,
+} as const;

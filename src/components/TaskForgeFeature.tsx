@@ -1,9 +1,9 @@
-import { taskforgeFeature as content } from '../content/taskforge';
+import { taskforgeFeature as content, taskforgeProjectResult } from '../content/taskforge';
 import type { Project } from '../content/portfolio';
 import { ProjectShowcase } from './ProjectShowcase';
 
 export function TaskForgeFeature({ project }: { project: Project }) {
-  return <ProjectShowcase project={project} {...content.showcase} technologies={content.technologies}>
+  return <ProjectShowcase project={project} {...content.showcase} result={taskforgeProjectResult} technologies={content.technologies}>
     <figure className="showcase-visual coordination-visual" aria-labelledby="taskforge-concept-caption">
       <div className="coordination-map">
         <div className="queue-preview">

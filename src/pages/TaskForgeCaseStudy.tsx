@@ -27,7 +27,7 @@ export function TaskForgeCaseStudy({ project }: { project: Project }) {
     </CaseStudySection>
     <CaseStudySection section={recovery}>
       <div className="case-study-cards">{content.recovery.map(item => <div key={item.title}><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>
-      <div role="note" className="case-study-missing" aria-label="Execution guarantee"><p>{content.guarantee}</p></div>
+      <div role="note" className="case-study-missing" aria-label="Execution boundary"><p>{content.guarantee}</p></div>
     </CaseStudySection>
     <CaseStudySection section={benchmarks}>
       <p>{content.benchmarks.methodology}</p><p>{content.benchmarks.configuration}</p>
@@ -42,7 +42,7 @@ export function TaskForgeCaseStudy({ project }: { project: Project }) {
       <dl className="case-study-evidence">{content.benchmarks.failures.map(item => <div key={item.label}><dt>{item.label}</dt><dd><strong>{item.value}</strong><p>{item.detail}</p></dd></div>)}</dl>
       <p>{content.benchmarks.recoveryTiming}</p>
     </CaseStudySection>
-    <CaseStudySection section={tradeoffs}><div className="case-study-cards">{content.tradeoffs.map(item => <div key={item.title}><h3>{item.title}</h3><p>{item.benefit}</p><p>{item.tradeoff}</p><p className="taskforge-lesson">{item.lesson}</p></div>)}</div></CaseStudySection>
+    <CaseStudySection section={tradeoffs}><div className="case-study-decisions">{content.tradeoffs.map(item => <div key={item.title}><h3>{item.title}</h3><p className="case-study-decision-choice">{item.choice}</p><dl><dt>Benefit</dt><dd>{item.benefit}</dd><dt>Accepted limitation</dt><dd>{item.tradeoff}</dd></dl></div>)}</div></CaseStudySection>
     <CaseStudySection section={repository}><p>{content.repository}</p><div className="actions"><a className="text-link" href={project.repository}>View {project.name} repository ↗</a><TextLink to="/#projects">← Back to projects</TextLink></div></CaseStudySection>
   </CaseStudyLayout>;
 }

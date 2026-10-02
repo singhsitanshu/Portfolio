@@ -89,11 +89,35 @@ test('case-study summaries precede technical content and link to distinct detail
     assert.match(summary, /<h2 id="result-summary-title">/);
     assert.ok(tags(summary, 'a').some(a => a.href === `${path}#${evidenceId}`));
     assert.ok(tags(html, 'section').some(section => section.id === evidenceId && section.tabindex === '-1'));
+    const decisionId = path.endsWith('codegraph') ? 'decisions' : 'tradeoffs';
+    for (const prerequisite of ['result-summary', evidenceId, ...(decisionId === 'decisions' ? ['architecture', 'correctness'] : [])]) {
+      assert.ok(ids.indexOf(prerequisite) < ids.indexOf(decisionId), `${path}: ${prerequisite} precedes ${decisionId}`);
+    }
     const nav = html.match(/<nav class="case-study-nav"[^>]*>([\s\S]*?)<\/nav>/)[1];
     assert.deepEqual(tags(nav, 'a').map(a => a.href), tags(html, 'section').map(section => `${path}#${section.id}`));
     for (const section of tags(html, 'section')) {
       assert.ok(ids.includes(section['aria-labelledby']), `Section ${section.id} keeps its heading`);
     }
+  }
+});
+
+test('homepage project cards expose outcome and actions before their visuals', () => {
+  const home = documents.get('/');
+  const cards = [...home.matchAll(/<article id="(codegraph|taskforge)"[^>]*>([\s\S]*?)<\/article>/g)];
+  assert.deepEqual(cards.map(card => card[1]), ['codegraph', 'taskforge']);
+  for (const [, id, card] of cards) {
+    let previous = -1;
+    for (const marker of [`id="${id}-title"`, 'class="showcase-summary"', 'class="showcase-result"', 'class="showcase-actions"', '<figure', 'class="showcase-highlights"', 'class="showcase-technologies"']) {
+      const position = card.indexOf(marker);
+      assert.ok(position > previous, `${id}: ${marker} is present in reading order`);
+      previous = position;
+    }
+    assert.doesNotMatch(card, /<details\b/);
+    const actions = tags(card, 'a');
+    assert.equal(actions.length, 2);
+    assert.equal(actions[0].href, `/projects/${id}`);
+    assert.ok(actions[0]['aria-label'].includes(id === 'codegraph' ? 'CodeGraph' : 'TaskForge'));
+    assert.ok(actions[1]['aria-label'].includes(id === 'codegraph' ? 'CodeGraph' : 'TaskForge'));
   }
 });
 

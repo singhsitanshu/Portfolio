@@ -4,10 +4,9 @@
 import type { CaseStudyResultSummary } from './case-study';
 export const codegraphFeature = {
   showcase: {
-    summary: 'Explore a codebase through its files, call relationships, and question-specific context.',
+    summary: 'Explore codebases through interactive graphs and question-specific retrieval.',
     highlights: [
-      { title: 'Structure & source', body: 'Inspect source on demand and explore repository structure, direct callers, and architectural communities.' },
-      { title: 'Focused retrieval', body: 'Graph tools and semantic search supply relevant observations to an AI agent.' },
+      { title: 'Structure & source', body: 'Inspect source on demand and trace direct callers and architectural communities.' },
     ],
     visualNote: 'Repository structure and retrieval flow.',
   },
@@ -61,3 +60,8 @@ export const codegraphResultSummary = {
   scope: 'Measures retrieved context size, excluding model prompts and generated answers; not accuracy, billing, or latency.',
   evidence: { id: 'results', label: 'Read context measurement and scope' },
 } as const satisfies CaseStudyResultSummary;
+
+export const codegraphProjectResult = {
+  headline: `${codegraphFeature.result.reduction} less LLM context`,
+  context: `${codegraphFeature.result.baseline} → ${codegraphFeature.result.focused} tokens/query; supported source vs. retrieved tool context`,
+} as const;

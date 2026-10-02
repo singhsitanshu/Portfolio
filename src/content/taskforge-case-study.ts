@@ -17,7 +17,7 @@ export const taskforgeCaseStudy = {
     { id: 'execution', title: 'Success & retry walkthrough' },
     { id: 'recovery', title: 'Lease renewal & recovery' },
     { id: 'benchmarks', title: 'Benchmark methodology & results' },
-    { id: 'tradeoffs', title: 'Tradeoffs & lessons' },
+    { id: 'tradeoffs', title: 'Design decisions & tradeoffs' },
     { id: 'repository', title: 'Repository' },
   ],
   system: 'Background work must outlive an HTTP request and remain inspectable when a process fails. TaskForge separates admission, execution, and lifecycle maintenance around one durable database.',
@@ -83,9 +83,9 @@ export const taskforgeCaseStudy = {
     limits: 'Measurements use synthetic workloads in local Docker; throughput depends on handler work and available resources.',
   },
   tradeoffs: [
-    { title: 'Short transactions, explicit ownership', benefit: 'Claim and completion transactions keep task state and attempt history consistent while handlers run outside database locks.', tradeoff: 'Renewable leases protect ownership; handlers use destination idempotency when external effects must be deduplicated.', lesson: 'Design task-state consistency and external-effect safety together.' },
-    { title: 'One durable authority', benefit: 'PostgreSQL coordinates admission, ownership, outcomes, and history in one place.', tradeoff: 'Polling and write contention make database pressure an important scaling consideration.', lesson: 'Use workload measurements to choose worker counts.' },
-    { title: 'Priority and bounded attempts', benefit: 'Priority ordering supports urgent work, while attempt budgets bound repeated failures.', tradeoff: 'Fairness under sustained high-priority load remains a scheduling tradeoff.', lesson: 'Make scheduling and retry policy explicit.' },
+    { title: 'Short transactions and renewable ownership', choice: 'Task state and attempt history must agree without holding locks through a handler. Use short claim/completion transactions and renewable task leases.', benefit: 'Task and attempt updates commit together while handler work runs outside transactions.', tradeoff: 'Database ownership does not deduplicate external effects; handlers need destination idempotency for those effects.' },
+    { title: 'One PostgreSQL authority', choice: 'Admission, ownership, outcomes, and history share durable state. PostgreSQL is the authority; workers poll it for eligible tasks.', benefit: 'Database transactions coordinate independent workers and schedulers.', tradeoff: 'Polling and shared writes create database pressure as concurrency rises.' },
+    { title: 'Priority with bounded attempts', choice: 'Urgent work and repeated failures need explicit scheduling limits. Claim by descending priority and cap each task’s total attempts.', benefit: 'Claim order favors higher-priority eligible tasks; the budget bounds retries and crash replacements.', tradeoff: 'Sustained high-priority load can delay lower-priority tasks; the policy does not guarantee fairness.' },
   ],
   repository: 'Explore the API, Go workers and schedulers, SQL migrations, console, and benchmark harness on GitHub.',
 } as const;

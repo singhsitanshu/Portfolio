@@ -1,9 +1,9 @@
-import { codegraphFeature as content } from '../content/codegraph';
+import { codegraphFeature as content, codegraphProjectResult } from '../content/codegraph';
 import type { Project } from '../content/portfolio';
 import { ProjectShowcase } from './ProjectShowcase';
 
 export function CodeGraphFeature({ project }: { project: Project }) {
-  return <ProjectShowcase project={project} {...content.showcase} technologies={content.technologies}>
+  return <ProjectShowcase project={project} {...content.showcase} result={codegraphProjectResult} technologies={content.technologies}>
     <figure className="showcase-visual repository-visual" aria-labelledby="codegraph-concept-caption">
       <div className="repository-map">
         <div className="repository-tree">

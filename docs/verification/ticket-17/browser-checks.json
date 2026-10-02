@@ -1,0 +1,703 @@
+[
+  {
+    "check": "codegraph desktop",
+    "blocks": [
+      {
+        "bottom": 126.046875,
+        "fontSize": "43.2px",
+        "selector": "h3",
+        "top": 74.203125,
+        "width": 514
+      },
+      {
+        "bottom": 189.234375,
+        "fontSize": "16px",
+        "selector": ".showcase-summary",
+        "top": 138.046875,
+        "width": 514
+      },
+      {
+        "bottom": 275.421875,
+        "fontSize": "16px",
+        "selector": ".showcase-result",
+        "top": 209.234375,
+        "width": 514
+      },
+      {
+        "bottom": 316.171875,
+        "fontSize": "15px",
+        "selector": ".showcase-contribution",
+        "top": 291.421875,
+        "width": 514
+      },
+      {
+        "bottom": 387.765625,
+        "fontSize": "16px",
+        "selector": ".showcase-actions",
+        "top": 336.171875,
+        "width": 514
+      },
+      {
+        "bottom": 754.734375,
+        "fontSize": "16px",
+        "selector": "figure",
+        "top": 411.765625,
+        "width": 562
+      },
+      {
+        "bottom": 847.7265625,
+        "fontSize": "16px",
+        "selector": ".showcase-highlights",
+        "top": 778.734375,
+        "width": 514
+      },
+      {
+        "bottom": 899.8203125,
+        "fontSize": "16px",
+        "selector": ".showcase-technologies",
+        "top": 871.7265625,
+        "width": 514
+      }
+    ],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nCodeGraph\n\nExplore codebases through interactive graphs and question-specific retrieval.\n\n97.5% less LLM context\n\n≈737K → ≈18K tokens/query; supported source vs. retrieved tool context\n\nI built the ingestion, graph retrieval, API, and interactive dashboard.\n\nRead case study\n↗\nGitHub\n↗\n\nRepository\n→\n\nFiles\nFunctions\nCalls\n\nRelationships\n\nFocused context\n↗\n\nGraph + vector retrieval\n\nConceptual view\nRepository structure and retrieval flow.\nStructure & source\n\nInspect source on demand and trace direct callers and architectural communities.\n\nReact / TypeScript\nPython / FastAPI\nTree-sitter\nNeo4j\nLangGraph",
+    "focused": "codegraph",
+    "hash": "#codegraph",
+    "links": [
+      {
+        "href": "/projects/codegraph",
+        "name": "Read CodeGraph case study"
+      },
+      {
+        "href": "https://github.com/singhsitanshu/Codegraph",
+        "name": "CodeGraph on GitHub"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "check": "taskforge desktop",
+    "blocks": [
+      {
+        "bottom": 126.046875,
+        "fontSize": "43.2px",
+        "selector": "h3",
+        "top": 74.203125,
+        "width": 514
+      },
+      {
+        "bottom": 163.640625,
+        "fontSize": "16px",
+        "selector": ".showcase-summary",
+        "top": 138.046875,
+        "width": 514
+      },
+      {
+        "bottom": 249.828125,
+        "fontSize": "16px",
+        "selector": ".showcase-result",
+        "top": 183.640625,
+        "width": 514
+      },
+      {
+        "bottom": 315.328125,
+        "fontSize": "15px",
+        "selector": ".showcase-contribution",
+        "top": 265.828125,
+        "width": 514
+      },
+      {
+        "bottom": 386.921875,
+        "fontSize": "16px",
+        "selector": ".showcase-actions",
+        "top": 335.328125,
+        "width": 514
+      },
+      {
+        "bottom": 739.3984375,
+        "fontSize": "16px",
+        "selector": "figure",
+        "top": 410.921875,
+        "width": 562
+      },
+      {
+        "bottom": 809.9921875,
+        "fontSize": "16px",
+        "selector": ".showcase-highlights",
+        "top": 763.3984375,
+        "width": 514
+      },
+      {
+        "bottom": 862.0859375,
+        "fontSize": "16px",
+        "selector": ".showcase-technologies",
+        "top": 833.9921875,
+        "width": 514
+      }
+    ],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nTaskForge\n\nCoordinate durable background work with concurrent Go workers.\n\n15.84× worker scaling\n\n1 → 16 workers on synthetic 50 ms waits; local Docker benchmark\n\nI built the API and console, PostgreSQL task model, Go workers and schedulers, and benchmark harness.\n\nRead case study\n↗\nGitHub\n↗\n\nQueue\n→\n\nDurable tasks\n\nWorkers\n\nAtomic claims\n\n✓ Completion\n\n↶ Retry / backoff\n\n↶ Due retries return to the queue\n\nConceptual view\nTask coordination and retry flow.\nRecovery with history\n\nKeep numbered attempts for completion, retry, and crash recovery.\n\nGo\nPostgreSQL\nDocker Compose\nPrometheus\nGrafana",
+    "focused": "taskforge",
+    "hash": "#taskforge",
+    "links": [
+      {
+        "href": "/projects/taskforge",
+        "name": "Read TaskForge case study"
+      },
+      {
+        "href": "https://github.com/singhsitanshu/TaskForge",
+        "name": "TaskForge on GitHub"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "check": "codegraph tablet",
+    "blocks": [
+      {
+        "bottom": 112.8203125,
+        "fontSize": "32px",
+        "selector": "h3",
+        "top": 74.421875,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 150.4140625,
+        "fontSize": "16px",
+        "selector": ".showcase-summary",
+        "top": 124.8203125,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 231.203125,
+        "fontSize": "16px",
+        "selector": ".showcase-result",
+        "top": 170.4140625,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 271.953125,
+        "fontSize": "15px",
+        "selector": ".showcase-contribution",
+        "top": 247.203125,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 343.546875,
+        "fontSize": "16px",
+        "selector": ".showcase-actions",
+        "top": 291.953125,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 710.515625,
+        "fontSize": "16px",
+        "selector": "figure",
+        "top": 367.546875,
+        "width": 689.1953125
+      },
+      {
+        "bottom": 781.109375,
+        "fontSize": "16px",
+        "selector": ".showcase-highlights",
+        "top": 734.515625,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 833.203125,
+        "fontSize": "16px",
+        "selector": ".showcase-technologies",
+        "top": 805.109375,
+        "width": 641.1953125
+      }
+    ],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nCodeGraph\n\nExplore codebases through interactive graphs and question-specific retrieval.\n\n97.5% less LLM context\n\n≈737K → ≈18K tokens/query; supported source vs. retrieved tool context\n\nI built the ingestion, graph retrieval, API, and interactive dashboard.\n\nRead case study\n↗\nGitHub\n↗\n\nRepository\n→\n\nFiles\nFunctions\nCalls\n\nRelationships\n\nFocused context\n↗\n\nGraph + vector retrieval\n\nConceptual view\nRepository structure and retrieval flow.\nStructure & source\n\nInspect source on demand and trace direct callers and architectural communities.\n\nReact / TypeScript\nPython / FastAPI\nTree-sitter\nNeo4j\nLangGraph",
+    "focused": "codegraph",
+    "hash": "#codegraph",
+    "links": [
+      {
+        "href": "/projects/codegraph",
+        "name": "Read CodeGraph case study"
+      },
+      {
+        "href": "https://github.com/singhsitanshu/Codegraph",
+        "name": "CodeGraph on GitHub"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "check": "taskforge tablet",
+    "blocks": [
+      {
+        "bottom": 112.9453125,
+        "fontSize": "32px",
+        "selector": "h3",
+        "top": 74.546875,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 150.5390625,
+        "fontSize": "16px",
+        "selector": ".showcase-summary",
+        "top": 124.9453125,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 231.328125,
+        "fontSize": "16px",
+        "selector": ".showcase-result",
+        "top": 170.5390625,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 296.828125,
+        "fontSize": "15px",
+        "selector": ".showcase-contribution",
+        "top": 247.328125,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 368.421875,
+        "fontSize": "16px",
+        "selector": ".showcase-actions",
+        "top": 316.828125,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 720.8984375,
+        "fontSize": "16px",
+        "selector": "figure",
+        "top": 392.421875,
+        "width": 689.1953125
+      },
+      {
+        "bottom": 791.4921875,
+        "fontSize": "16px",
+        "selector": ".showcase-highlights",
+        "top": 744.8984375,
+        "width": 641.1953125
+      },
+      {
+        "bottom": 843.5859375,
+        "fontSize": "16px",
+        "selector": ".showcase-technologies",
+        "top": 815.4921875,
+        "width": 641.1953125
+      }
+    ],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nTaskForge\n\nCoordinate durable background work with concurrent Go workers.\n\n15.84× worker scaling\n\n1 → 16 workers on synthetic 50 ms waits; local Docker benchmark\n\nI built the API and console, PostgreSQL task model, Go workers and schedulers, and benchmark harness.\n\nRead case study\n↗\nGitHub\n↗\n\nQueue\n→\n\nDurable tasks\n\nWorkers\n\nAtomic claims\n\n✓ Completion\n\n↶ Retry / backoff\n\n↶ Due retries return to the queue\n\nConceptual view\nTask coordination and retry flow.\nRecovery with history\n\nKeep numbered attempts for completion, retry, and crash recovery.\n\nGo\nPostgreSQL\nDocker Compose\nPrometheus\nGrafana",
+    "focused": "taskforge",
+    "hash": "#taskforge",
+    "links": [
+      {
+        "href": "/projects/taskforge",
+        "name": "Read TaskForge case study"
+      },
+      {
+        "href": "https://github.com/singhsitanshu/TaskForge",
+        "name": "TaskForge on GitHub"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "check": "codegraph mobile",
+    "blocks": [
+      {
+        "bottom": 112.9453125,
+        "fontSize": "32px",
+        "selector": "h3",
+        "top": 74.546875,
+        "width": 300
+      },
+      {
+        "bottom": 176.1328125,
+        "fontSize": "16px",
+        "selector": ".showcase-summary",
+        "top": 124.9453125,
+        "width": 300
+      },
+      {
+        "bottom": 280.015625,
+        "fontSize": "16px",
+        "selector": ".showcase-result",
+        "top": 196.1328125,
+        "width": 300
+      },
+      {
+        "bottom": 345.515625,
+        "fontSize": "15px",
+        "selector": ".showcase-contribution",
+        "top": 296.015625,
+        "width": 300
+      },
+      {
+        "bottom": 469.109375,
+        "fontSize": "16px",
+        "selector": ".showcase-actions",
+        "top": 365.515625,
+        "width": 300
+      },
+      {
+        "bottom": 836.078125,
+        "fontSize": "16px",
+        "selector": "figure",
+        "top": 493.109375,
+        "width": 348
+      },
+      {
+        "bottom": 929.0703125,
+        "fontSize": "16px",
+        "selector": ".showcase-highlights",
+        "top": 860.078125,
+        "width": 300
+      },
+      {
+        "bottom": 1015.65625,
+        "fontSize": "16px",
+        "selector": ".showcase-technologies",
+        "top": 953.0703125,
+        "width": 300
+      }
+    ],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nCodeGraph\n\nExplore codebases through interactive graphs and question-specific retrieval.\n\n97.5% less LLM context\n\n≈737K → ≈18K tokens/query; supported source vs. retrieved tool context\n\nI built the ingestion, graph retrieval, API, and interactive dashboard.\n\nRead case study\n↗\nGitHub\n↗\n\nRepository\n→\n\nFiles\nFunctions\nCalls\n\nRelationships\n\nFocused context\n↗\n\nGraph + vector retrieval\n\nConceptual view\nRepository structure and retrieval flow.\nStructure & source\n\nInspect source on demand and trace direct callers and architectural communities.\n\nReact / TypeScript\nPython / FastAPI\nTree-sitter\nNeo4j\nLangGraph",
+    "focused": "codegraph",
+    "hash": "#codegraph",
+    "links": [
+      {
+        "href": "/projects/codegraph",
+        "name": "Read CodeGraph case study"
+      },
+      {
+        "href": "https://github.com/singhsitanshu/Codegraph",
+        "name": "CodeGraph on GitHub"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "check": "taskforge mobile",
+    "blocks": [
+      {
+        "bottom": 112.8984375,
+        "fontSize": "32px",
+        "selector": "h3",
+        "top": 74.5,
+        "width": 300
+      },
+      {
+        "bottom": 176.0859375,
+        "fontSize": "16px",
+        "selector": ".showcase-summary",
+        "top": 124.8984375,
+        "width": 300
+      },
+      {
+        "bottom": 279.96875,
+        "fontSize": "16px",
+        "selector": ".showcase-result",
+        "top": 196.0859375,
+        "width": 300
+      },
+      {
+        "bottom": 370.21875,
+        "fontSize": "15px",
+        "selector": ".showcase-contribution",
+        "top": 295.96875,
+        "width": 300
+      },
+      {
+        "bottom": 493.8125,
+        "fontSize": "16px",
+        "selector": ".showcase-actions",
+        "top": 390.21875,
+        "width": 300
+      },
+      {
+        "bottom": 846.2890625,
+        "fontSize": "16px",
+        "selector": "figure",
+        "top": 517.8125,
+        "width": 348
+      },
+      {
+        "bottom": 939.28125,
+        "fontSize": "16px",
+        "selector": ".showcase-highlights",
+        "top": 870.2890625,
+        "width": 300
+      },
+      {
+        "bottom": 1025.8671875,
+        "fontSize": "16px",
+        "selector": ".showcase-technologies",
+        "top": 963.28125,
+        "width": 300
+      }
+    ],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nTaskForge\n\nCoordinate durable background work with concurrent Go workers.\n\n15.84× worker scaling\n\n1 → 16 workers on synthetic 50 ms waits; local Docker benchmark\n\nI built the API and console, PostgreSQL task model, Go workers and schedulers, and benchmark harness.\n\nRead case study\n↗\nGitHub\n↗\n\nQueue\n→\n\nDurable tasks\n\nWorkers\n\nAtomic claims\n\n✓ Completion\n\n↶ Retry / backoff\n\n↶ Due retries return to the queue\n\nConceptual view\nTask coordination and retry flow.\nRecovery with history\n\nKeep numbered attempts for completion, retry, and crash recovery.\n\nGo\nPostgreSQL\nDocker Compose\nPrometheus\nGrafana",
+    "focused": "taskforge",
+    "hash": "#taskforge",
+    "links": [
+      {
+        "href": "/projects/taskforge",
+        "name": "Read TaskForge case study"
+      },
+      {
+        "href": "https://github.com/singhsitanshu/TaskForge",
+        "name": "TaskForge on GitHub"
+      }
+    ],
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "check": "codegraph desktop 200% text",
+    "clipped": [],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nCodeGraph\n\nExplore codebases through interactive graphs and question-specific retrieval.\n\n97.5% less LLM context\n\n≈737K → ≈18K tokens/query; supported source vs. retrieved tool context\n\nI built the ingestion, graph retrieval, API, and interactive dashboard.\n\nRead case study\n↗\nGitHub\n↗\n\nRepository\n→\n\nFiles\nFunctions\nCalls\n\nRelationships\n\nFocused context\n↗\n\nGraph + vector retrieval\n\nConceptual view\nRepository structure and retrieval flow.\nStructure & source\n\nInspect source on demand and trace direct callers and architectural communities.\n\nReact / TypeScript\nPython / FastAPI\nTree-sitter\nNeo4j\nLangGraph",
+    "links": [
+      {
+        "display": "flex",
+        "text": "Read CodeGraph case study",
+        "width": 378.5390625
+      },
+      {
+        "display": "flex",
+        "text": "CodeGraph on GitHub",
+        "width": 163.09375
+      }
+    ],
+    "overflow": false,
+    "resultOverflow": "visible",
+    "rootFont": "32px",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "check": "taskforge desktop 200% text",
+    "clipped": [],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nTaskForge\n\nCoordinate durable background work with concurrent Go workers.\n\n15.84× worker scaling\n\n1 → 16 workers on synthetic 50 ms waits; local Docker benchmark\n\nI built the API and console, PostgreSQL task model, Go workers and schedulers, and benchmark harness.\n\nRead case study\n↗\nGitHub\n↗\n\nQueue\n→\n\nDurable tasks\n\nWorkers\n\nAtomic claims\n\n✓ Completion\n\n↶ Retry / backoff\n\n↶ Due retries return to the queue\n\nConceptual view\nTask coordination and retry flow.\nRecovery with history\n\nKeep numbered attempts for completion, retry, and crash recovery.\n\nGo\nPostgreSQL\nDocker Compose\nPrometheus\nGrafana",
+    "links": [
+      {
+        "display": "flex",
+        "text": "Read TaskForge case study",
+        "width": 378.5390625
+      },
+      {
+        "display": "flex",
+        "text": "TaskForge on GitHub",
+        "width": 163.09375
+      }
+    ],
+    "overflow": false,
+    "resultOverflow": "visible",
+    "rootFont": "32px",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "check": "codegraph tablet 200% text",
+    "clipped": [],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nCodeGraph\n\nExplore codebases through interactive graphs and question-specific retrieval.\n\n97.5% less LLM context\n\n≈737K → ≈18K tokens/query; supported source vs. retrieved tool context\n\nI built the ingestion, graph retrieval, API, and interactive dashboard.\n\nRead case study\n↗\nGitHub\n↗\n\nRepository\n→\n\nFiles\nFunctions\nCalls\n\nRelationships\n\nFocused context\n↗\n\nGraph + vector retrieval\n\nConceptual view\nRepository structure and retrieval flow.\nStructure & source\n\nInspect source on demand and trace direct callers and architectural communities.\n\nReact / TypeScript\nPython / FastAPI\nTree-sitter\nNeo4j\nLangGraph",
+    "links": [
+      {
+        "display": "flex",
+        "text": "Read CodeGraph case study",
+        "width": 378.5390625
+      },
+      {
+        "display": "flex",
+        "text": "CodeGraph on GitHub",
+        "width": 163.09375
+      }
+    ],
+    "overflow": false,
+    "resultOverflow": "visible",
+    "rootFont": "32px",
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "check": "taskforge tablet 200% text",
+    "clipped": [],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nTaskForge\n\nCoordinate durable background work with concurrent Go workers.\n\n15.84× worker scaling\n\n1 → 16 workers on synthetic 50 ms waits; local Docker benchmark\n\nI built the API and console, PostgreSQL task model, Go workers and schedulers, and benchmark harness.\n\nRead case study\n↗\nGitHub\n↗\n\nQueue\n→\n\nDurable tasks\n\nWorkers\n\nAtomic claims\n\n✓ Completion\n\n↶ Retry / backoff\n\n↶ Due retries return to the queue\n\nConceptual view\nTask coordination and retry flow.\nRecovery with history\n\nKeep numbered attempts for completion, retry, and crash recovery.\n\nGo\nPostgreSQL\nDocker Compose\nPrometheus\nGrafana",
+    "links": [
+      {
+        "display": "flex",
+        "text": "Read TaskForge case study",
+        "width": 378.5390625
+      },
+      {
+        "display": "flex",
+        "text": "TaskForge on GitHub",
+        "width": 163.09375
+      }
+    ],
+    "overflow": false,
+    "resultOverflow": "visible",
+    "rootFont": "32px",
+    "viewport": [
+      768,
+      1024
+    ]
+  },
+  {
+    "check": "codegraph mobile 200% text",
+    "clipped": [],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nCodeGraph\n\nExplore codebases through interactive graphs and question-specific retrieval.\n\n97.5% less LLM context\n\n≈737K → ≈18K tokens/query; supported source vs. retrieved tool context\n\nI built the ingestion, graph retrieval, API, and interactive dashboard.\n\nRead case study\n↗\nGitHub\n↗\n\nRepository\n→\n\nFiles\nFunctions\nCalls\n\nRelationships\n\nFocused context\n↗\n\nGraph + vector retrieval\n\nConceptual view\nRepository structure and retrieval flow.\nStructure & source\n\nInspect source on demand and trace direct callers and architectural communities.\n\nReact / TypeScript\nPython / FastAPI\nTree-sitter\nNeo4j\nLangGraph",
+    "links": [
+      {
+        "display": "flex",
+        "text": "Read CodeGraph case study",
+        "width": 260
+      },
+      {
+        "display": "flex",
+        "text": "CodeGraph on GitHub",
+        "width": 163.09375
+      }
+    ],
+    "overflow": false,
+    "resultOverflow": "visible",
+    "rootFont": "32px",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "check": "taskforge mobile 200% text",
+    "clipped": [],
+    "content": "SOLO PROJECT · SUMMER 2026\n\nTaskForge\n\nCoordinate durable background work with concurrent Go workers.\n\n15.84× worker scaling\n\n1 → 16 workers on synthetic 50 ms waits; local Docker benchmark\n\nI built the API and console, PostgreSQL task model, Go workers and schedulers, and benchmark harness.\n\nRead case study\n↗\nGitHub\n↗\n\nQueue\n→\n\nDurable tasks\n\nWorkers\n\nAtomic claims\n\n✓ Completion\n\n↶ Retry / backoff\n\n↶ Due retries return to the queue\n\nConceptual view\nTask coordination and retry flow.\nRecovery with history\n\nKeep numbered attempts for completion, retry, and crash recovery.\n\nGo\nPostgreSQL\nDocker Compose\nPrometheus\nGrafana",
+    "links": [
+      {
+        "display": "flex",
+        "text": "Read TaskForge case study",
+        "width": 260
+      },
+      {
+        "display": "flex",
+        "text": "TaskForge on GitHub",
+        "width": 163.09375
+      }
+    ],
+    "overflow": false,
+    "resultOverflow": "visible",
+    "rootFont": "32px",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "check": "keyboard sequence normal 1",
+    "href": "/projects/codegraph",
+    "name": "Read CodeGraph case study",
+    "outline": "solid"
+  },
+  {
+    "check": "keyboard sequence normal 2",
+    "href": "https://github.com/singhsitanshu/Codegraph",
+    "name": "CodeGraph on GitHub",
+    "outline": "solid"
+  },
+  {
+    "check": "keyboard sequence normal 3",
+    "href": "/projects/taskforge",
+    "name": "Read TaskForge case study",
+    "outline": "solid"
+  },
+  {
+    "check": "keyboard sequence normal 4",
+    "href": "https://github.com/singhsitanshu/TaskForge",
+    "name": "TaskForge on GitHub",
+    "outline": "solid"
+  },
+  {
+    "check": "keyboard sequence 200% 1",
+    "href": "/projects/codegraph",
+    "name": "Read CodeGraph case study",
+    "outline": "solid"
+  },
+  {
+    "check": "keyboard sequence 200% 2",
+    "href": "https://github.com/singhsitanshu/Codegraph",
+    "name": "CodeGraph on GitHub",
+    "outline": "solid"
+  },
+  {
+    "check": "keyboard sequence 200% 3",
+    "href": "/projects/taskforge",
+    "name": "Read TaskForge case study",
+    "outline": "solid"
+  },
+  {
+    "check": "keyboard sequence 200% 4",
+    "href": "https://github.com/singhsitanshu/TaskForge",
+    "name": "TaskForge on GitHub",
+    "outline": "solid"
+  },
+  {
+    "check": "codegraph case-study link",
+    "path": "/projects/codegraph",
+    "summary": "Measured results\nLLM context reduction\n97.5%\n\n≈737K → ≈18K tokens per query\n\nSupported-source tokens compared with tool-returned context.\n\nMeasures retrieved context size, excluding model prompts and generated answers; not accuracy, billing, or latency.\n\nRead context measurement and scope ↓",
+    "title": "CodeGraph"
+  },
+  {
+    "check": "taskforge case-study link",
+    "path": "/projects/taskforge",
+    "summary": "Measured results\n\nLocal Docker benchmarks\n\nspeedup\n15.84×\n\nFrom 1 to 16 workers on synthetic 50 ms waits\n\nno-op tasks/sec\n≈1,284\n\nMedian processing throughput at 4 workers; a separate no-op workload\n\nRead benchmark methodology and detailed results ↓",
+    "title": "TaskForge"
+  },
+  {
+    "check": "homepage cards reduced motion",
+    "cards": [
+      {
+        "id": "codegraph",
+        "result": "97.5% less LLM context\n\n≈737K → ≈18K tokens/query; supported source vs. retrieved tool context",
+        "resultOpacity": "1",
+        "transition": "0s"
+      },
+      {
+        "id": "taskforge",
+        "result": "15.84× worker scaling\n\n1 → 16 workers on synthetic 50 ms waits; local Docker benchmark",
+        "resultOpacity": "1",
+        "transition": "0s"
+      }
+    ],
+    "motion": "reduced",
+    "overflow": false
+  },
+  {
+    "check": "normal homepage warning/error logs",
+    "logs": []
+  }
+]

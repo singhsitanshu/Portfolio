@@ -2,70 +2,96 @@
   {
     "cards": [
       {
+        "captionGap": 0,
         "id": "codegraph",
         "rows": [
           {
             "height": 51.1875,
+            "overflow": false,
             "selector": ".showcase-summary",
             "top": 352.046875
           },
           {
             "height": 66.1875,
+            "overflow": false,
             "selector": ".showcase-result",
             "top": 423.234375
           },
           {
             "height": 51.59375,
+            "overflow": false,
             "selector": ".showcase-actions",
             "top": 509.421875
           },
           {
             "height": 342.96875,
+            "overflow": false,
             "selector": ".showcase-visual",
             "top": 585.015625
           },
           {
+            "height": 54.3828125,
+            "overflow": false,
+            "selector": "figcaption",
+            "top": 848.6015625
+          },
+          {
             "height": 68.9921875,
+            "overflow": false,
             "selector": ".showcase-highlights",
             "top": 951.984375
           },
           {
             "height": 28.09375,
+            "overflow": false,
             "selector": ".showcase-technologies",
             "top": 1044.9765625
           }
         ]
       },
       {
+        "captionGap": 14.4921875,
         "id": "taskforge",
         "rows": [
           {
             "height": 51.1875,
+            "overflow": false,
             "selector": ".showcase-summary",
             "top": 352.046875
           },
           {
             "height": 66.1875,
+            "overflow": false,
             "selector": ".showcase-result",
             "top": 423.234375
           },
           {
             "height": 51.59375,
+            "overflow": false,
             "selector": ".showcase-actions",
             "top": 509.421875
           },
           {
             "height": 342.96875,
+            "overflow": false,
             "selector": ".showcase-visual",
             "top": 585.015625
           },
           {
+            "height": 54.3828125,
+            "overflow": false,
+            "selector": "figcaption",
+            "top": 848.6015625
+          },
+          {
             "height": 68.9921875,
+            "overflow": false,
             "selector": ".showcase-highlights",
             "top": 951.984375
           },
           {
             "height": 28.09375,
+            "overflow": false,
             "selector": ".showcase-technologies",
             "top": 1044.9765625
           }
@@ -81,6 +107,7 @@
   {
     "cards": [
       {
+        "captionGap": 0,
         "id": "codegraph",
         "rows": [
           {
@@ -106,6 +133,12 @@
             "overflow": false,
             "selector": ".showcase-visual",
             "top": 561.3671875
+          },
+          {
+            "height": 54.3828125,
+            "overflow": false,
+            "selector": "figcaption",
+            "top": 824.953125
           },
           {
             "height": 68.9921875,
@@ -122,6 +155,7 @@
         ]
       },
       {
+        "captionGap": 14.4921875,
         "id": "taskforge",
         "rows": [
           {
@@ -147,6 +181,12 @@
             "overflow": false,
             "selector": ".showcase-visual",
             "top": 561.3671875
+          },
+          {
+            "height": 54.3828125,
+            "overflow": false,
+            "selector": "figcaption",
+            "top": 824.953125
           },
           {
             "height": 68.9921875,
@@ -172,6 +212,7 @@
   {
     "cards": [
       {
+        "captionGap": 0,
         "id": "codegraph",
         "rows": [
           {
@@ -199,6 +240,12 @@
             "top": 482.796875
           },
           {
+            "height": 54.3828125,
+            "overflow": false,
+            "selector": "figcaption",
+            "top": 746.3828125
+          },
+          {
             "height": 46.59375,
             "overflow": false,
             "selector": ".showcase-highlights",
@@ -213,6 +260,7 @@
         ]
       },
       {
+        "captionGap": 0,
         "id": "taskforge",
         "rows": [
           {
@@ -240,6 +288,12 @@
             "top": 1325.765625
           },
           {
+            "height": 54.3828125,
+            "overflow": false,
+            "selector": "figcaption",
+            "top": 1574.859375
+          },
+          {
             "height": 46.59375,
             "overflow": false,
             "selector": ".showcase-highlights",
@@ -263,6 +317,7 @@
   {
     "cards": [
       {
+        "captionGap": 0,
         "id": "codegraph",
         "rows": [
           {
@@ -290,6 +345,12 @@
             "top": 574.609375
           },
           {
+            "height": 54.3828125,
+            "overflow": false,
+            "selector": "figcaption",
+            "top": 838.1953125
+          },
+          {
             "height": 68.9921875,
             "overflow": false,
             "selector": ".showcase-highlights",
@@ -304,6 +365,7 @@
         ]
       },
       {
+        "captionGap": 0,
         "id": "taskforge",
         "rows": [
           {
@@ -329,6 +391,12 @@
             "overflow": false,
             "selector": ".showcase-visual",
             "top": 1575.15625
+          },
+          {
+            "height": 54.3828125,
+            "overflow": false,
+            "selector": "figcaption",
+            "top": 1824.25
           },
           {
             "height": 68.9921875,

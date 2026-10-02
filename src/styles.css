@@ -378,6 +378,7 @@ main { position: relative; }
 
 /* Ticket 13: compact, equally prominent project showcases. */
 .project-showcases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.5rem; padding-block: 1.5rem; }
+/* Share content rows so wrapping in either card keeps matching sections aligned. */
 .project-showcase { display: grid; grid-template-rows: subgrid; grid-row: span 6; min-width: 0; border: 1px solid var(--color-rule); border-radius: var(--radius-panel); background: var(--color-surface); transition: border-color var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease); }
 .project-showcase:hover, .project-showcase:focus-within { border-color: var(--color-accent); box-shadow: var(--shadow-panel); }
 .showcase-copy { padding: min(1.5rem, 24px); }
@@ -397,7 +398,7 @@ main { position: relative; }
 .showcase-highlights p { font-size: .875rem; line-height: 1.6; color: var(--color-muted); margin: 0; }
 .showcase-technologies { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.5rem; }
 .showcase-technologies li { font: .6875rem/1.5 var(--font-mono); padding: .3rem .5rem; border: 1px solid var(--color-rule); border-radius: .35rem; color: var(--color-muted); }
-.showcase-visual { container-type: inline-size; margin: 0; padding: min(1.5rem, 24px); border-block: 1px solid var(--color-rule); background: var(--color-paper); }
+.showcase-visual { display: flex; flex-direction: column; container-type: inline-size; margin: 0; padding: min(1.5rem, 24px); border-block: 1px solid var(--color-rule); background: var(--color-paper); }
 .repository-visual { background: linear-gradient(135deg, #1b3835, var(--color-paper)); }
 .coordination-visual { background: linear-gradient(135deg, #25333f, var(--color-paper)); }
 .repository-map, .coordination-map { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; min-height: 13rem; align-content: start; }
@@ -429,7 +430,7 @@ main { position: relative; }
 .outcome-preview p { margin: 0; padding: .4rem .6rem; border: 1px solid var(--color-rule); border-radius: .4rem; font-size: .75rem; }
 .outcome-preview span { color: var(--color-accent); margin-right: .3rem; }
 .retry-return { grid-column: 1 / -1; font: .6875rem/1.5 var(--font-mono); color: var(--color-muted); margin: 0; }
-.showcase-visual figcaption { display: flex; flex-direction: column; gap: .2rem; margin-top: 1rem; font-size: .6875rem; line-height: 1.6; color: var(--color-muted); }
+.showcase-visual figcaption { display: flex; flex-direction: column; gap: .2rem; margin-top: auto; padding-top: 1rem; font-size: .6875rem; line-height: 1.6; color: var(--color-muted); }
 .showcase-visual figcaption strong { color: var(--color-ink); font-weight: 500; }
 @media (max-width: 60rem) {
   .project-showcases { grid-template-columns: minmax(0, 1fr); row-gap: 1.5rem; }

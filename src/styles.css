@@ -477,3 +477,17 @@ main { position: relative; }
 @container (max-width: 44rem) {
   .experience-timeline > li { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
 }
+
+/* A shared hover surface; current location and focus remain independent. */
+.site-header .primary-nav { position: relative; isolation: isolate; gap: .25rem .5rem; }
+.site-header .primary-nav a { position: relative; padding-inline: .75rem; border-radius: var(--radius-control); white-space: nowrap; }
+.primary-nav .nav-highlight { position: absolute; top: 0; left: 0; z-index: -1; pointer-events: none; border-radius: var(--radius-control); background: #a5e4bc12; opacity: 0; transition: transform 220ms var(--motion-ease), width 220ms var(--motion-ease), height 220ms var(--motion-ease), opacity var(--motion-fast) var(--motion-ease); }
+.primary-nav .nav-highlight[data-visible="true"] { opacity: 1; }
+.site-header .primary-nav a[aria-current="location"] { color: var(--color-accent); }
+.primary-nav a[aria-current="location"]::after { content: ''; position: absolute; height: 2px; bottom: .25rem; left: .75rem; right: .75rem; background: var(--color-accent); border-radius: 1px; }
+.site-header .primary-nav a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; background: #a5e4bc12; }
+@media (max-width: 40rem) {
+  .site-header .primary-nav { gap: .25rem .125rem; }
+  .site-header .primary-nav a { padding-inline: .375rem; }
+  .primary-nav a[aria-current="location"]::after { left: .375rem; right: .375rem; }
+}

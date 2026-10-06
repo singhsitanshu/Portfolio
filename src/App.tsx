@@ -1,18 +1,19 @@
 import { Suspense, useEffect, useRef, type ComponentType, type RefObject } from 'react';
-import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
+import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { MotionProvider, MotionRule, MotionToggle } from './components/Motion';
+import { SectionNav } from './components/SectionNav';
 import { Container } from './components/ui';
 import { RouteMetadata } from './components/RouteMetadata';
 import { NotFound } from './pages/NotFound';
 import { projects, profile, type Project } from './content/portfolio';
-import { anchorIdFor, homeSections } from './content/navigation';
+import { anchorIdFor } from './content/navigation';
 
 export type PageComponents = { Home: ComponentType; CodeGraphCaseStudy: ComponentType<{ project: Project }>; TaskForgeCaseStudy: ComponentType<{ project: Project }> };
 
 // Commit focus effects with the resolved page, including lazily loaded routes.
 function RoutedContent({ main, pages }: { main: RefObject<HTMLElement | null>; pages: PageComponents }) {
   const { Home, CodeGraphCaseStudy, TaskForgeCaseStudy } = pages;
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
   const previousPath = useRef(pathname);
   useEffect(() => {
     const pathChanged = previousPath.current !== pathname;
@@ -28,7 +29,7 @@ function RoutedContent({ main, pages }: { main: RefObject<HTMLElement | null>; p
       main.current?.focus();
       window.scrollTo(0, 0);
     }
-  }, [pathname, hash]);
+  }, [pathname, hash, key]);
   return <Routes>
     <Route path="/" element={<Home />} />
     {projects.map((project) => <Route key={project.id} path={project.path} element={project.id === 'codegraph' ? <CodeGraphCaseStudy project={project} /> : <TaskForgeCaseStudy project={project} />} />)}
@@ -45,9 +46,7 @@ export function App({ pages }: { pages: PageComponents }) {
     <Container>
       <header className="site-header">
         <NavLink className="wordmark" to="/" aria-label={`${profile.name} home`}>A<span aria-hidden="true"> / </span>S</NavLink>
-        <nav className="primary-nav" aria-label="Primary">
-          {homeSections.map(section => <Link key={section.id} to={`/#${section.id}`}>{section.label}</Link>)}
-        </nav>
+        <SectionNav />
         <a className="text-link header-resume" href={profile.resumeUrl}>Resume <span className="file-label">PDF</span></a>
       </header>
       <main id="main" ref={main} tabIndex={-1}>

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { masthead, profile, ui } from '../content/site';
 import { Rule } from './print';
 import { SectionNav } from './SectionNav';
@@ -36,6 +36,24 @@ export function FrontMasthead() {
       <time dateTime={__EDITION_DATE__}>{editionLabel}</time>
     </p>
     <Rule variant="hairline" />
+  </header>;
+}
+
+// Inside pages (T-13): a slim masthead whose nameplate returns to the front page.
+export function InsideMasthead({ section }: { section?: string }) {
+  return <header className="inside-masthead np-sheet">
+    <div className="inside-masthead-row">
+      <p className="inside-title">
+        <Link className="inside-nameplate" to="/" aria-label={`${masthead.nameplate}: ${masthead.frontPage}`}>{masthead.nameplate}</Link>
+        {section && <span className="inside-section"><span aria-hidden="true"> · </span>{section}</span>}
+      </p>
+      <nav className="inside-links" aria-label={ui.socialLabel}>
+        <ResumeLink />
+        <a className="ear-link" href={profile.links.github}>{ui.github}</a>
+        <a className="ear-link" href={profile.links.linkedin}>{ui.linkedin}</a>
+      </nav>
+    </div>
+    <Rule variant="double" />
   </header>;
 }
 

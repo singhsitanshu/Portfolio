@@ -1,9 +1,11 @@
-import { Heading, TextLink } from '../components/ui';
+import { Deck, JumpLink, Kicker } from '../components/print';
+import { notFound } from '../content/site';
 
 export function NotFound() {
-  return <section className="intro" aria-labelledby="not-found-title">
-    <Heading as="h1" id="not-found-title" eyebrow="404 / Page not found">Page not found.</Heading>
-    <p className="lede">That page isn’t here. You can return home or explore the selected projects.</p>
-    <div className="actions"><TextLink to="/">Return home</TextLink><TextLink to="/#projects">View Projects</TextLink></div>
+  return <section className="not-found" aria-labelledby="not-found-title">
+    <Kicker>{notFound.kicker}</Kicker>
+    <h1 id="not-found-title" className="headline-lead">{notFound.title}</h1>
+    <Deck>{notFound.lede}</Deck>
+    <div className="not-found-links"><JumpLink to="/" label={notFound.homeLabel}>{notFound.home}</JumpLink><JumpLink to="/#projects" label={notFound.projectsLabel}>{notFound.projects}</JumpLink></div>
   </section>;
 }

@@ -97,7 +97,7 @@ test('case-study summaries precede technical content and link to distinct detail
     const summary = header.match(/<section class="case-study-result-summary"[^>]*>([\s\S]*?)<\/section>/)[1];
     assert.ok(header.indexOf('case-study-lede') < header.indexOf('case-study-result-summary'));
     assert.ok(header.indexOf('case-study-result-summary') < header.indexOf('case-study-overview'));
-    assert.match(summary, /<h2 id="result-summary-title">/);
+    assert.match(summary, /<h2 id="result-summary-title"/);
     assert.ok(tags(summary, 'a').some(a => a.href === `${path}#${evidenceId}`));
     assert.ok(tags(html, 'section').some(section => section.id === evidenceId && section.tabindex === '-1'));
     const decisionId = path.endsWith('codegraph') ? 'decisions' : 'tradeoffs';

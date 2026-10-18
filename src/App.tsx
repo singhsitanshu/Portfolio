@@ -1,9 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, type ComponentType, type RefObject } from 'react';
-import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { MotionProvider, MotionRule, MotionToggle } from './components/Motion';
-import { SectionNav } from './components/SectionNav';
-import { FrontMasthead, IndexBar } from './components/Masthead';
-import { Container } from './components/ui';
+import { FrontMasthead, IndexBar, InsideMasthead } from './components/Masthead';
 import { RouteMetadata } from './components/RouteMetadata';
 import { NotFound } from './pages/NotFound';
 import { colophon, masthead, projects, profile, ui, type Project } from './content/site';
@@ -51,13 +49,8 @@ export function App({ pages }: { pages: PageComponents }) {
     <RouteMetadata />
     <a className="skip-link" href="#main">{ui.skipLink}</a>
     <div className="paper-grain">
-      {front ? <><FrontMasthead /><IndexBar /></> : <Container>
-        <header className="site-header">
-          <NavLink className="wordmark" to="/" aria-label={ui.homeLink.label}>{ui.homeLink.initials[0]}<span aria-hidden="true">{ui.homeLink.separator}</span>{ui.homeLink.initials[1]}</NavLink>
-          <SectionNav />
-          <a className="text-link header-resume" href={profile.resumeUrl}>{ui.resume.label} <span className="file-label">{ui.resume.fileLabel}</span></a>
-        </header>
-      </Container>}
+      {front ? <FrontMasthead /> : <InsideMasthead section={projects.some(project => project.path === pathname) ? masthead.sections.projects : undefined} />}
+      <IndexBar />
       <div className="np-sheet">
         <main id="main" ref={main} tabIndex={-1}>
           <MotionRule key={pathname} className="route-motion" route />

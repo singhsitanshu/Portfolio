@@ -60,6 +60,27 @@ export const ui = {
   motion: { toggle: 'Reduce motion', system: 'Reduced motion (system)' },
 } as const;
 
+// Inside-page feature articles (T-13): the two case studies.
+export const article = {
+  back: '← Back to projects',
+  repository: (name: string) => `View ${name} repository ↗`,
+  navLabel: 'Case study sections',
+  navHeading: 'In this article',
+  dateline: (dates: string) => `Case study · ${dates}`,
+  graphicCredit: 'Graphic',
+} as const;
+
+// Not-found page, restyled as an inside page in T-13.
+export const notFound = {
+  kicker: '404 · Page not found',
+  title: 'Page not found.',
+  lede: 'That page isn’t here. You can return home or explore the selected projects.',
+  home: 'Return home',
+  homeLabel: 'Front page',
+  projects: 'View Projects',
+  projectsLabel: 'Inside',
+} as const;
+
 // Colophon footer (T-12): the closing lines of every page.
 export const colophon = {
   text: 'The Aansh Times is set in Playfair Display and Libre Caslon. Printed in Los Angeles.',
@@ -73,6 +94,8 @@ export const masthead = {
   motto: 'All the code that’s fit to ship.',
   edition: ['Los Angeles', profile.role, profile.educationLabel, 'Vol. 1, No. 1'],
   indexLabel: 'Inside Today',
+  frontPage: 'front page',
+  sections: { projects: 'Projects' },
 } as const;
 
 // October 1, 2026 owner clarification: both projects were built independently
@@ -198,13 +221,6 @@ export const projects = [
 ] as const;
 
 export type Project = (typeof projects)[number];
-
-export const contentReadiness = {
-  preview: 'Design system preview · Authoritative content sources received',
-  caseStudy: 'Case-study composition is deferred to its scheduled ticket.',
-  benchmarks: { value: 'Documented', note: 'Results and experiment conditions are available in the information bank; selection is deferred to the project tickets.' },
-  dates: { value: projects[0].dates, note: 'User-supplied project period for CodeGraph and TaskForge.' },
-} as const;
 
 // Ticket 14 attached résumé, p. 1 Experience. See docs/ticket-14-content-map.md.
 // Dates retain source precision. User requested BUR first; exploretech.la dates are owner-confirmed.

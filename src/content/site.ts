@@ -60,6 +60,12 @@ export const ui = {
   motion: { toggle: 'Reduce motion', system: 'Reduced motion (system)' },
 } as const;
 
+// Colophon footer (T-12): the closing lines of every page.
+export const colophon = {
+  text: 'The Aansh Times is set in Playfair Display and Libre Caslon. Printed in Los Angeles.',
+  signature: `${profile.name} / ${profile.role}`,
+} as const;
+
 // Front-page masthead (T-06). The edition date is the build date, added by the
 // Masthead component; it is not content. Motto approved by the owner, Oct 18, 2026.
 export const masthead = {
@@ -280,11 +286,14 @@ export const homepage = {
   },
   // T-11: education as a boxed notice beside the Business section.
   education: { kicker: 'Notice', title: 'Education', graduation: 'Expected graduation' },
+  // T-12: contact as a classified ad; the existing title and lede are its copy.
   contact: {
-    eyebrow: '04 / Contact',
+    section: 'Classifieds',
+    sectionAside: 'Contact',
+    heading: 'Wanted',
     title: 'Let’s build something useful.',
     lede: 'Have a project or an idea to discuss? Get in touch.',
-    kicker: '',
+    replyLabel: 'Reply to',
     copyButton: 'Copy email',
     copying: 'Copying email…',
     copied: 'Email copied to clipboard.',

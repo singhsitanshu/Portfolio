@@ -145,3 +145,74 @@
 @media (min-width: 68.75em) {
   .notice { align-self: start; margin-top: calc(var(--rule-heavy) + var(--space-3)); }
 }
+
+/* Classifieds (T-12): contact as a "Wanted" ad. */
+.classifieds { padding-bottom: var(--space-7); }
+.classified {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  border: var(--rule-hairline) dashed var(--ink);
+  text-align: center;
+}
+.classified-head {
+  margin: 0;
+  width: 100%;
+  padding-block: var(--space-1) 0;
+  background: var(--ink);
+  color: var(--paper);
+  font: var(--weight-headline-heavy) var(--text-4xl) / 1 var(--font-display);
+  font-stretch: var(--display-stretch);
+  font-variation-settings: 'wdth' 62.5;
+  text-transform: uppercase;
+}
+.classified-lede { margin: 0; font: var(--weight-regular) var(--size-body) / var(--leading-body) var(--font-body); }
+.classified-reply { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: var(--space-1) var(--space-2); margin: 0; }
+.classified-email {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  font: var(--weight-label) var(--text-base) / 1.2 var(--font-mono);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: var(--rule-hairline);
+  text-underline-offset: 0.3em;
+}
+.print-button {
+  min-height: var(--target-min);
+  padding: var(--space-2) var(--space-5);
+  font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label-wide);
+  color: var(--paper);
+  background: var(--ink);
+  border: var(--rule-hairline) solid var(--ink);
+  cursor: pointer;
+}
+.print-button:hover { color: var(--ink); background: var(--paper); }
+.print-button:disabled { cursor: progress; }
+.copy-feedback { min-height: calc(var(--text-sm) * var(--leading-snug) * 2); margin: 0; font: var(--weight-label) var(--text-sm) / var(--leading-snug) var(--font-label); color: var(--ink); }
+
+/* Colophon (T-12): the footer that closes the paper on every page. */
+.colophon { padding-bottom: var(--space-7); }
+.colophon-inner { display: grid; justify-items: center; gap: var(--space-2); padding-top: var(--space-5); text-align: center; }
+.colophon-nameplate { margin: 0; font: var(--weight-regular) var(--text-2xl) / 1 var(--font-nameplate); }
+.colophon-text { margin: 0; max-width: var(--measure); font: italic var(--weight-regular) var(--text-md) / var(--leading-snug) var(--font-headline); }
+.colophon-links { display: flex; gap: var(--space-5); }
+.colophon-links a { text-decoration: underline; text-decoration-thickness: var(--rule-hairline); text-underline-offset: 0.35em; }
+.colophon-links a, .motion-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--ink);
+}
+.motion-toggle { padding: 0 var(--space-3); background: transparent; border: var(--rule-hairline) solid var(--ink); cursor: pointer; }
+.motion-toggle[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
+.motion-toggle:disabled { cursor: default; color: var(--ink-muted); border-color: var(--rule); background: transparent; }

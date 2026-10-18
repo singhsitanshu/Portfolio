@@ -6,7 +6,8 @@ import { FrontMasthead, IndexBar } from './components/Masthead';
 import { Container } from './components/ui';
 import { RouteMetadata } from './components/RouteMetadata';
 import { NotFound } from './pages/NotFound';
-import { projects, profile, ui, type Project } from './content/site';
+import { colophon, masthead, projects, profile, ui, type Project } from './content/site';
+import { Rule } from './components/print';
 import { anchorIdFor } from './content/navigation';
 
 // Development-only print reference; the production build drops this route and chunk.
@@ -62,7 +63,16 @@ export function App({ pages }: { pages: PageComponents }) {
           <MotionRule key={pathname} className="route-motion" route />
           <Suspense fallback={<p className="status" role="status">{ui.loading}</p>}><RoutedContent main={main} pages={pages} /></Suspense>
         </main>
-        <footer className="site-footer"><span>{profile.name} / {profile.role}</span><nav aria-label={ui.footerSocialLabel}><a href={profile.links.github}>{ui.github}</a><a href={profile.links.linkedin}>{ui.linkedin}</a></nav><MotionToggle /></footer>
+        <footer className="colophon">
+          <Rule variant="double" />
+          <div className="colophon-inner">
+            <p className="colophon-nameplate">{masthead.nameplate}</p>
+            <p className="colophon-text">{colophon.text}</p>
+            <p className="credit">{colophon.signature}</p>
+            <nav className="colophon-links" aria-label={ui.footerSocialLabel}><a href={profile.links.github}>{ui.github}</a><a href={profile.links.linkedin}>{ui.linkedin}</a></nav>
+            <MotionToggle />
+          </div>
+        </footer>
       </div>
     </div>
   </MotionProvider>;

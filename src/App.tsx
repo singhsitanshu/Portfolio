@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef, type ComponentType, type RefObject } from 'react';
+import { lazy, Suspense, useEffect, useRef, type ComponentType, type RefObject } from 'react';
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { MotionProvider, MotionRule, MotionToggle } from './components/Motion';
 import { SectionNav } from './components/SectionNav';
@@ -7,6 +7,9 @@ import { RouteMetadata } from './components/RouteMetadata';
 import { NotFound } from './pages/NotFound';
 import { projects, profile, ui, type Project } from './content/site';
 import { anchorIdFor } from './content/navigation';
+
+// Development-only print reference; the production build drops this route and chunk.
+const Styleguide = import.meta.env.DEV ? lazy(() => import('./pages/Styleguide').then(module => ({ default: module.Styleguide }))) : null;
 
 export type PageComponents = { Home: ComponentType; CodeGraphCaseStudy: ComponentType<{ project: Project }>; TaskForgeCaseStudy: ComponentType<{ project: Project }> };
 
@@ -33,6 +36,7 @@ function RoutedContent({ main, pages }: { main: RefObject<HTMLElement | null>; p
   return <Routes>
     <Route path="/" element={<Home />} />
     {projects.map((project) => <Route key={project.id} path={project.path} element={project.id === 'codegraph' ? <CodeGraphCaseStudy project={project} /> : <TaskForgeCaseStudy project={project} />} />)}
+    {Styleguide && <Route path="/styleguide" element={<Styleguide />} />}
     <Route path="*" element={<NotFound />} />
   </Routes>;
 }

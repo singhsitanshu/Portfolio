@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 import { experience, profile, projects } from '../content/site';
+import { codegraphFeature } from '../content/codegraph';
+import { Box, Byline, Dateline, Deck, Figure, Headline, JumpLink, Kicker, PullQuote, Rule } from '../components/print';
 
 // Development-only reference for the print system. Routed only when
 // import.meta.env.DEV is true, never prerendered, and noindex like any
@@ -11,7 +13,7 @@ function Specimen({ name, children }: { name: string; children: ReactNode }) {
 }
 
 export function Styleguide() {
-  return <div className="paper styleguide">
+  return <div className="paper paper-grain styleguide">
     <h1 className="headline-lead">Styleguide</h1>
     <p className="deck">Every print style, grid and primitive in The Aansh Times, rendered from tokens.</p>
 
@@ -64,6 +66,25 @@ export function Styleguide() {
           <p className="credit">span-md-6 · span-lg-12</p>
         </article>
       </div>
+    </section>
+
+    <section className="styleguide-section" aria-labelledby="styleguide-primitives">
+      <h2 className="section-head" id="styleguide-primitives">Print primitives</h2>
+      <Specimen name="Rule: hairline · heavy · double"><Rule /><Rule variant="heavy" /><Rule variant="double" /></Specimen>
+      <Specimen name="Kicker · Headline · Deck · Byline · Dateline">
+        <Kicker>Developer Tools</Kicker>
+        <Headline as="h3" size="lead">{codegraph.name}</Headline>
+        <Deck>{codegraph.story.summary}</Deck>
+        <Byline>By {profile.name} · {codegraph.ownership.label}</Byline>
+        <Dateline>Los Angeles, {codegraph.dates}</Dateline>
+      </Specimen>
+      <Specimen name="PullQuote"><PullQuote quote={codegraph.story.result.headline} attribution={`${codegraphFeature.result.baseline} → ${codegraphFeature.result.focused} tokens/query`} /></Specimen>
+      <Specimen name="Figure">
+        <Figure caption={profile.hero.portrait.alt} credit="Graphic"><div className="styleguide-figure-well" /></Figure>
+      </Specimen>
+      <Specimen name="Box"><Box><p className="label">{profile.education.institution}</p><p className="caption">{profile.education.degree} · {profile.education.expectedGraduation}</p></Box></Specimen>
+      <Specimen name="JumpLink"><JumpLink to={codegraph.path}>{codegraph.name} case study</JumpLink></Specimen>
+      <Specimen name=".paper-grain"><p className="caption">This page carries the grain overlay: under 2 KB of inline SVG, fixed, pointer-events: none.</p></Specimen>
     </section>
   </div>;
 }

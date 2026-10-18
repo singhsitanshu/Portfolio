@@ -7,3 +7,4 @@
 .styleguide-specimen .body-copy { max-width: var(--measure); }
 .styleguide-grid { margin-top: var(--space-5); }
 .styleguide-grid > article { display: grid; align-content: start; gap: var(--space-3); padding-block: var(--space-4); border-top: var(--rule-hairline) solid var(--rule); }
+.styleguide-figure-well { aspect-ratio: 16 / 7; background: var(--paper-shade); }

@@ -6,7 +6,7 @@ import { gzipSync } from 'node:zlib';
 
 const origin = 'https://aanshsingh.com';
 // Stories rebuilt as front-page articles; the rest keep the legacy card checks until converted.
-const newspaperStories = ['codegraph'];
+const newspaperStories = ['codegraph', 'taskforge'];
 const socialImage = '/social-preview-homepage-v3.jpg';
 const fixtures = [
   { path: '/', file: 'index.html', title: 'Aansh Singh', heading: 'Aansh' },

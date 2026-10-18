@@ -6,9 +6,8 @@
 import { codegraphFeature } from './codegraph.ts';
 import { taskforgeMeasurements } from './taskforge.ts';
 
-// Newspaper presentation fields. T-01 adds them empty; each front-page ticket
-// writes the ones it names (headline, deck, kicker, pull quote, caption, dateline).
-const pullQuote = { quote: '', attribution: '' } as const;
+// Newspaper presentation fields (kicker, headline, deck, pull quote, caption,
+// dateline) were added empty in T-01; each front-page ticket writes its own.
 
 export const profile = {
   name: 'Aansh Singh',
@@ -79,6 +78,15 @@ const codegraphOwnership = {
   statement: 'I designed and built CodeGraph independently during summer 2026, before the school year began.',
   scope: 'My work spans the full system: repository ingestion and parsing, the graph and retrieval pipeline, the API, and the interactive dashboard.',
 } as const;
+const taskforgeOwnership = {
+  label: projectOwnershipLabel,
+  statement: 'I designed and built TaskForge independently during summer 2026, before the school year began.',
+  scope: 'My work spans the full system: the API and console, PostgreSQL task and attempt model, Go workers and schedulers, observability, and benchmark harness.',
+} as const;
+const taskforgeStory = {
+  summary: 'Coordinate durable background work with concurrent Go workers, atomic claims, retries, and crash recovery.',
+  highlight: { title: 'Recovery with history', body: 'Keep numbered attempts for completion, retry, and crash recovery.' },
+} as const;
 const codegraphStory = {
   summary: 'Explore codebases through interactive graphs and question-specific retrieval.',
   highlight: { title: 'Structure & source', body: 'Inspect source on demand and trace direct callers and architectural communities.' },
@@ -138,19 +146,13 @@ export const projects = [
     path: '/projects/taskforge',
     repository: 'https://github.com/singhsitanshu/TaskForge',
     dates: projectDates,
-    ownership: {
-      label: projectOwnershipLabel,
-      statement: 'I designed and built TaskForge independently during summer 2026, before the school year began.',
-      scope: 'My work spans the full system: the API and console, PostgreSQL task and attempt model, Go workers and schedulers, observability, and benchmark harness.',
-    },
+    ownership: taskforgeOwnership,
     summary: 'Fault-tolerant background-task processing with durable admission, retries, crash recovery, and operational visibility.',
     source: 'projects/TASKFORGE.md',
     // Homepage story. Supplied bank: projects/TASKFORGE.md; 04_METRICS.md E1/E2.
     story: {
-      summary: 'Coordinate durable background work with concurrent Go workers, atomic claims, retries, and crash recovery.',
-      highlights: [
-        { title: 'Recovery with history', body: 'Keep numbered attempts for completion, retry, and crash recovery.' },
-      ],
+      summary: taskforgeStory.summary,
+      highlights: [taskforgeStory.highlight],
       result: {
         headline: `${syntheticWait.speedup.toFixed(2)}× worker scaling`,
         context: `${syntheticWait.baselineWorkers} → ${syntheticWait.workers} workers on synthetic ${syntheticWait.milliseconds} ms waits; local Docker benchmark`,
@@ -167,12 +169,22 @@ export const projects = [
         retry: 'Retry / backoff',
         retryReturn: 'Due retries return to the queue',
       },
-      kicker: '',
-      headline: '',
-      deck: '',
-      byline: '',
+      // T-08 second story. Headline approved by the owner, Oct 18, 2026. The
+      // benchmark caveat is the pull quote's visible attribution.
+      kicker: 'Distributed Systems',
+      headline: 'Go Workers Scale 15.84× Under Load',
+      deck: 'TaskForge coordinates durable background tasks through PostgreSQL, with concurrent workers, retries and crash recovery.',
+      byline: `By ${profileName} · ${projectOwnershipLabel}`,
       dateline: '',
-      pullQuote,
+      pullQuote: {
+        quote: `${syntheticWait.speedup.toFixed(2)}× worker scaling`,
+        attribution: `${syntheticWait.baselineWorkers} → ${syntheticWait.workers} workers on synthetic ${syntheticWait.milliseconds} ms waits; local Docker benchmark`,
+      },
+      body: [
+        { runIn: '', text: taskforgeStory.summary },
+        { runIn: `${taskforgeStory.highlight.title}.`, text: taskforgeStory.highlight.body },
+        { runIn: '', text: `${taskforgeOwnership.statement} ${taskforgeOwnership.scope}` },
+      ],
     },
   },
 ] as const;

@@ -1,9 +1,9 @@
 import type { Project } from '../content/site';
-import { ProjectShowcase } from './ProjectShowcase';
+import { FrontStory } from './FrontStory';
 
 export function TaskForgeFeature({ project }: { project: Project & { id: 'taskforge' } }) {
   const visual = project.story.visual;
-  return <ProjectShowcase project={project}>
+  return <FrontStory project={project} size="secondary" className="front-second span-md-3 rule-md">
     <figure className="showcase-visual coordination-visual" aria-labelledby="taskforge-concept-caption">
       <div className="coordination-map">
         <div className="queue-preview">
@@ -21,5 +21,5 @@ export function TaskForgeFeature({ project }: { project: Project & { id: 'taskfo
       </div>
       <figcaption id="taskforge-concept-caption"><strong>{visual.label}</strong><span>{visual.note}</span></figcaption>
     </figure>
-  </ProjectShowcase>;
+  </FrontStory>;
 }

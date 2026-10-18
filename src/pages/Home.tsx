@@ -16,7 +16,7 @@ export function Home() {
     <section id="projects" className="front-page np-grid" aria-labelledby="projects-title" tabIndex={-1}>
       <LegacyAnchor id="work" />
       <h2 id="projects-title" className="sr-only">{homepage.projects.title}</h2>
-      {projects.map((project) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <div key={project.id} className="span-lg-4 rule-lg front-second"><TaskForgeFeature project={project} /></div>)}
+      {projects.map((project) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <TaskForgeFeature key={project.id} project={project} />)}
     </section>
     <section id="introduction" className="hero" aria-label={profile.name} tabIndex={-1}>
       <LegacyAnchor id="about" />

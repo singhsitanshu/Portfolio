@@ -26,6 +26,9 @@
     border-left: var(--rule-hairline) solid var(--rule);
   }
 }
+
+/* Second story: one narrow column beside the lead (rule-md draws its column rule). */
 @media (min-width: 68.75em) {
   .front-lead { grid-column: 1 / span 8; grid-row: 1 / span 2; }
+  .front-second { grid-column: 9 / span 4; }
 }

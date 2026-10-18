@@ -2,12 +2,10 @@ import type { ReactNode } from 'react';
 import { homepage, type Project } from '../content/site';
 import { Byline, Deck, Headline, JumpLink, Kicker, PullQuote } from './print';
 
-type StoryProject = Extract<Project, { id: 'codegraph' }>;
-
 // A front-page project story (T-07): kicker, headline, deck, byline, pulled
 // metric, body, stack and jump links, then the story's graphic.
 export function FrontStory({ project, size, className = '', children }: {
-  project: StoryProject; size: 'lead' | 'secondary'; className?: string; children?: ReactNode;
+  project: Project; size: 'lead' | 'secondary'; className?: string; children?: ReactNode;
 }) {
   const { story } = project;
   const copy = homepage.projects;

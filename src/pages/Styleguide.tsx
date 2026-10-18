@@ -35,5 +35,35 @@ export function Styleguide() {
       <Specimen name=".caption + .credit"><p className="caption">{profile.hero.portrait.alt} <span className="credit">Graphic</span></p></Specimen>
       <Specimen name=".mono"><p className="mono">{codegraph.story.technologies.join(' · ')}</p></Specimen>
     </section>
+
+    <section className="styleguide-section" aria-labelledby="styleguide-grid">
+      <h2 className="section-head" id="styleguide-grid">Grid: a four-story page</h2>
+      <p className="caption">12 columns at 1100px+, 6 at 700–1099px, 1 below 700px. Stories collapse in source order.</p>
+      <div className="np-grid styleguide-grid">
+        <article className="span-md-6 span-lg-6">
+          <p className="kicker">Developer Tools</p>
+          <h3 className="headline-lead">{codegraph.name}</h3>
+          <div className="body-copy"><p>{codegraph.ownership.statement} {codegraph.ownership.scope}</p></div>
+          <p className="credit">span-md-6 · span-lg-6</p>
+        </article>
+        <article className="span-md-3 span-lg-3 rule-lg">
+          <p className="kicker">Distributed Systems</p>
+          <h3 className="headline-secondary">{taskforge.name}</h3>
+          <div className="body-copy"><p>{taskforge.summary}</p></div>
+          <p className="credit">span-md-3 · span-lg-3 · rule-lg</p>
+        </article>
+        <article className="span-md-3 span-lg-3 rule-md">
+          <p className="kicker">Campus</p>
+          <h3 className="headline-brief">{experience[0].role}, {experience[0].organization}</h3>
+          <div className="body-copy"><p>{experience[0].contributions[0]}</p></div>
+          <p className="credit">span-md-3 · span-lg-3 · rule-md</p>
+        </article>
+        <article className="span-md-6 span-lg-12">
+          <h3 className="headline-brief">{experience[2].role}, {experience[2].organization}</h3>
+          <div className="body-copy"><p>{experience[2].contributions.join(' ')}</p></div>
+          <p className="credit">span-md-6 · span-lg-12</p>
+        </article>
+      </div>
+    </section>
   </div>;
 }

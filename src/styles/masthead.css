@@ -134,6 +134,11 @@ body { background: var(--paper); color: var(--ink); font-family: var(--font-body
   .index-links { gap: 0 var(--space-4); }
 }
 
+@media (max-width: 24.5em) {
+  .index-links { gap: 0 var(--space-3); }
+  .index-links a { letter-spacing: var(--tracking-label-tight); }
+}
+
 @media (min-width: 68.75em) {
   .index-bar { position: sticky; top: 0; }
   [id] { scroll-margin-top: calc(var(--index-bar-height) + var(--space-4)); }

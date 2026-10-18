@@ -19,6 +19,8 @@
   --font-body: "Libre Caslon Text", "Iowan Old Style", Georgia, "Times New Roman", serif; /* Body copy. */
   --font-label: "Libre Franklin", "Franklin Gothic Medium", "Helvetica Neue", Arial, sans-serif; /* Labels, bylines, edition bar. */
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; /* Metrics, code, stacks. */
+  --font-display: "Noto Serif Display", "Bodoni 72 Oldstyle", "Didot", Georgia, serif; /* Name banner and intro display, condensed caps only. */
+  --display-stretch: 62.5%;
 
   /* Weights actually loaded: Playfair 700–900 (+400 italic), Caslon 400/700 (+400 italic), Franklin 500/600, Plex Mono 400/500. */
   --weight-regular: 400;
@@ -58,6 +60,7 @@
   --leading-body: 1.55;
   --tracking-label: 0.08em;      /* Small caps: 0.06–0.1em. */
   --tracking-label-wide: 0.1em;
+  --tracking-label-tight: 0.06em; /* Narrow phones. */
   --tracking-headline: -0.01em;
 
   /* Spacing: a 4px-based scale. */
@@ -95,6 +98,11 @@
   --motion-fade: 280ms;
   --motion-stagger: 90ms;
   --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Photo halftone: dot pitch and ink strength. */
+  --halftone-pitch: 3px;
+  --halftone-ink: color-mix(in srgb, var(--ink) 38%, transparent);
+  --byline-photo-width: 1.75rem;
 
   /* Paper grain overlay strength (4–6%). */
   --grain-opacity: 0.05;

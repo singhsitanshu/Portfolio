@@ -21,10 +21,10 @@ export function FrontMasthead() {
         <p className="masthead-motto">“{masthead.motto}”</p>
         <ResumeLink />
       </div>
-      <h1 className="masthead-title">
+      <p className="masthead-title">
         <span className="masthead-name">{profile.name}</span><span className="sr-only">, </span>
         <span className="nameplate">{masthead.nameplate}</span>
-      </h1>
+      </p>
       <nav className="masthead-ear masthead-ear-right" aria-label={ui.socialLabel}>
         <a className="ear-link" href={profile.links.github}>{ui.github}</a>
         <a className="ear-link" href={profile.links.linkedin}>{ui.linkedin}</a>

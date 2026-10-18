@@ -172,7 +172,7 @@ test('social image dimensions, MIME signature, and production asset sizes are ap
   assert.deepEqual(await readFile(resolve(root, 'aansh-singh-resume.pdf')), await readFile('public/aansh-singh-resume.pdf'));
 });
 
-test('original portrait is preserved and redesign fonts load with swap', async () => {
+test('author portrait keeps the original, offers resized copies, and redesign fonts load with swap', async () => {
   const home = documents.get('/');
   const portrait = tags(home, 'img')[0];
   assert.equal(portrait.loading, 'eager');
@@ -183,6 +183,12 @@ test('original portrait is preserved and redesign fonts load with swap', async (
   const portraitBytes = await readFile(resolve(root, `.${portrait.src}`));
   assert.equal(portraitBytes.readUInt16BE(0), 0xffd8);
   assert.deepEqual(portraitBytes, await readFile(resolve('public', `.${portrait.src}`)), 'build preserves the portrait file byte for byte');
+  const candidates = (portrait.srcset ?? portrait.srcSet).split(',').map(candidate => candidate.trim().split(' '));
+  assert.ok(candidates.length >= 3 && candidates.some(([url]) => url === portrait.src), 'srcset offers resized copies and the original');
+  for (const [url, width] of candidates) {
+    assert.match(width, /^\d+w$/);
+    assert.equal((await readFile(resolve(root, `.${url}`))).readUInt16BE(0), 0xffd8, `${url} is a JPEG`);
+  }
   const fonts = tags(home, 'link').find(tag => tag.rel === 'stylesheet' && tag.href.startsWith('https://fonts.googleapis.com/css2'));
   assert.ok(fonts, 'Google Fonts stylesheet is linked');
   assert.match(fonts.href, /display=swap/);
@@ -231,7 +237,7 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
   const home = documents.get('/');
   const ids = [...home.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
   assert.equal(ids.length, new Set(ids).size, 'IDs must be unique');
-  const ordered = ['projects', 'introduction', 'experience', 'education', 'contact'];
+  const ordered = ['introduction', 'projects', 'experience', 'education', 'contact'];
   let previous = -1;
   for (const id of ordered) {
     const index = home.indexOf(`id="${id}"`);
@@ -241,7 +247,7 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
   }
   for (const id of ['work', 'about', 'codegraph', 'taskforge']) assert.ok(ids.includes(id));
   for (const [id, title] of [['projects', 'Projects'], ['experience', 'Experience'], ['education', 'Education']]) {
-    assert.match(home, new RegExp(`<h2 id="${id}-title"[^>]*>${title}</h2>`));
+    assert.match(home, new RegExp(`<h2[^>]*id="${id}-title"[^>]*>${title}</h2>`));
   }
   for (const project of ['codegraph', 'taskforge']) assert.match(home, new RegExp(`<h3 id="${project}-title"`));
   for (const role of ['Software Engineering Team Lead Intern', 'Advanced Academic Ambassador - Projects Chair', 'Instructor', 'Operations Team Member']) assert.ok(home.includes(role));

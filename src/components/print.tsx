@@ -50,6 +50,14 @@ export function Figure({ caption, credit, id, className = '', children }: {
   </figure>;
 }
 
+// A section front: a heavy rule over the section's name.
+export function SectionFront({ id, children, aside }: { id: string; children: ReactNode; aside?: ReactNode }) {
+  return <div className="section-front">
+    <h2 className="section-head" id={id}>{children}</h2>
+    {aside && <p className="label section-front-aside">{aside}</p>}
+  </div>;
+}
+
 // A bordered notice: a hairline frame with an inner second rule.
 export function Box({ as: Tag = 'div', className = '', children, ...props }: HTMLAttributes<HTMLElement> & { as?: 'div' | 'section' | 'article' }) {
   return <Tag className={`np-box ${className}`} {...props}>{children}</Tag>;

@@ -1,6 +1,78 @@
 /* Front page (T-07 onward): stories, photo, sections. Tokens only. */
 
-.front-page { padding-block: var(--space-5) var(--space-7); }
+.front-page { padding-bottom: var(--space-7); }
+
+/* Section front: a heavy rule over the section name, like a newspaper section page. */
+.section-front {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-5);
+  margin-bottom: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: var(--rule-heavy) solid var(--ink);
+}
+.section-front .section-head { text-transform: uppercase; letter-spacing: var(--tracking-label); }
+
+/* Introduction (T-09): the name banner opens the paper. */
+.front-intro { padding-block: var(--space-5) var(--space-7); }
+.name-banner {
+  container-type: inline-size;
+  margin: 0 0 var(--space-5);
+  padding: var(--space-2) var(--space-4) var(--space-1);
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+  overflow: hidden;
+}
+.name-banner > [aria-hidden] {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-headline-heavy);
+  font-stretch: var(--display-stretch);
+  font-variation-settings: 'wdth' 62.5;
+  /* AANSH sets 3.19em wide in this face; 29cqi fills about 92% of the banner. */
+  font-size: 29cqi;
+  line-height: 0.92;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.intro-grid { row-gap: var(--space-6); }
+.intro-lede { display: grid; align-content: start; gap: var(--space-4); }
+.intro-photo { margin: 0; display: grid; gap: var(--space-2); }
+.intro-perspective { font-size: var(--size-deck); }
+.intro-focus { display: grid; align-content: start; gap: var(--space-6); }
+
+/* Ruled display type: a hairline under each line, as on a ruled sheet. */
+.display-ruled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: var(--weight-headline-heavy);
+  font-stretch: var(--display-stretch);
+  font-variation-settings: 'wdth' 62.5;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.intro-focus-list { font-size: clamp(2.25rem, 0.9rem + 4.1vw, 4.75rem); line-height: 1.02; }
+/* Each line box gets its own hairline, so wrapped items stay ruled. */
+.intro-focus-list li {
+  background: linear-gradient(transparent calc(100% - var(--rule-hairline)), var(--rule) 0) 0 0 / 100% 1lh;
+  text-wrap: balance;
+}
+
+/* "In this edition": the two stories as an index box. */
+.intro-edition { display: grid; gap: var(--space-3); }
+.intro-edition ol { display: grid; gap: var(--space-3); margin: 0; padding: 0; list-style: none; }
+.intro-edition li { display: grid; gap: var(--space-1); padding-top: var(--space-3); border-top: var(--rule-hairline) solid var(--rule); }
+.intro-edition .jump-link { font: var(--weight-bold) var(--size-headline-brief) / var(--leading-snug) var(--font-headline); text-transform: none; letter-spacing: var(--tracking-headline); }
+.intro-edition .jump-link-label { font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); }
+
+/* Byline headshot: the author photo at mugshot size. */
+.byline-with-photo { display: flex; align-items: center; gap: var(--space-2); }
+.byline-photo { flex: none; width: var(--byline-photo-width); height: auto; border: var(--rule-hairline) solid var(--ink); filter: grayscale(1); }
 
 /* Project stories. */
 .front-story { display: grid; align-content: start; gap: var(--space-4); min-width: 0; }
@@ -29,6 +101,27 @@
 
 /* Second story: one narrow column beside the lead (rule-md draws its column rule). */
 @media (min-width: 68.75em) {
-  .front-lead { grid-column: 1 / span 8; grid-row: 1 / span 2; }
+  .front-lead { grid-column: 1 / span 8; }
   .front-second { grid-column: 9 / span 4; }
 }
+
+/* Halftone: grayscale photo under a multiplied dot screen; full color on
+   hover or focus for pointer devices. Width/height attributes reserve space. */
+.halftone { position: relative; overflow: hidden; background: var(--paper-shade); border: var(--rule-hairline) solid var(--ink); }
+.halftone img { display: block; width: 100%; height: auto; filter: grayscale(1) contrast(1.12) brightness(1.04); }
+.halftone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(circle, var(--halftone-ink) 30%, transparent 32%);
+  background-size: var(--halftone-pitch) var(--halftone-pitch);
+}
+@media (hover: hover) and (pointer: fine) {
+  .halftone img, .halftone::after { transition: filter var(--motion-fade) var(--motion-ease), opacity var(--motion-fade) var(--motion-ease); }
+  .intro-photo:hover .halftone img, .front-intro:focus-within .halftone img { filter: none; }
+  .intro-photo:hover .halftone::after, .front-intro:focus-within .halftone::after { opacity: 0; }
+}
+
+

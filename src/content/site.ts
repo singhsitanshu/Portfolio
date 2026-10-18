@@ -30,14 +30,18 @@ export const profile = {
   educationLabel: 'UCLA Computer Science',
   positioning: 'Pragmatic, system-minded | AI Engineering, Developer Tools & Distributed Systems | UCLA CS',
   hero: {
+    greeting: 'Hi, I’m',
     introduction: 'A computer science student at UCLA building developer tools, AI systems, and reliable backend software.',
     perspective: 'Pragmatic, system-minded.',
     portrait: {
       src: '/images/aansh-singh-trim.jpg',
+      // Resized copies keep the original's Display P3 profile and full proportions.
+      srcSet: '/images/aansh-singh-trim-320.jpg 320w, /images/aansh-singh-trim-640.jpg 640w, /images/aansh-singh-trim.jpg 1277w',
       alt: 'Aansh Singh wearing a brown hoodie and backpack at Rockefeller Center.',
       width: 1277,
       height: 1804,
-      caption: '',
+      // T-09: the alt text rewritten as a visible caption. No credit line (owner, Oct 18, 2026).
+      caption: 'Aansh Singh at Rockefeller Center, New York.',
     },
   },
 } as const;
@@ -244,9 +248,18 @@ export const experience = [
 
 // Homepage section and control copy, in reading order.
 export const homepage = {
-  hero: {
-    portraitIndex: '01 /',
+  // T-09: the front page opens on the owner (Oct 18, 2026 direction): a name
+  // banner, the original hero copy, the portrait, and what Aansh builds.
+  intro: {
+    banner: 'Aansh',
+    kicker: `${profile.role} / ${profile.educationLabel}`,
+    // Drawn from the hero introduction and edition bar; set as a ruled display list.
+    focus: [profile.role, 'Developer Tools', 'AI Systems', 'Reliable Backend Software', 'UCLA · Los Angeles, CA.'],
+    focusLabel: 'What Aansh builds',
+    editionLabel: 'In this edition',
+    editionPage: (index: number) => `Page A${index + 2}`,
   },
+  sections: { projects: 'Projects' },
   projects: {
     eyebrow: '01 / Selected projects',
     title: 'Projects',

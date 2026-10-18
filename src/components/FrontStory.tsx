@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { homepage, type Project } from '../content/site';
+import { homepage, profile, type Project } from '../content/site';
 import { Byline, Deck, Headline, JumpLink, Kicker, PullQuote } from './print';
 
 // A front-page project story (T-07): kicker, headline, deck, byline, pulled
@@ -14,7 +14,7 @@ export function FrontStory({ project, size, className = '', children }: {
       <Kicker>{story.kicker}</Kicker>
       <Headline as="h3" size={size} id={`${project.id}-title`}>{story.headline}</Headline>
       <Deck>{story.deck}</Deck>
-      <Byline>{story.byline}</Byline>
+      <Byline className="byline-with-photo"><img className="byline-photo" src={profile.hero.portrait.srcSet.split(' ')[0]} alt="" width={profile.hero.portrait.width} height={profile.hero.portrait.height} loading="lazy" decoding="async" />{story.byline}</Byline>
     </header>
     <div className="story-columns">
       <div className="story-body body-copy drop-cap">

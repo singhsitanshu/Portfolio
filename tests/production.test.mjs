@@ -193,7 +193,11 @@ test('author portrait keeps the original with AVIF and JPEG copies, and self-hos
   const sources = tags(home, 'source');
   assert.deepEqual(sources.map(source => source.type), ['image/avif'], 'portrait offers AVIF before the JPEG fallback');
   for (const [url] of (sources[0].srcset ?? sources[0].srcSet).split(',').map(candidate => candidate.trim().split(' '))) {
-    assert.equal((await readFile(resolve(root, `.${url}`))).toString('ascii', 4, 12), 'ftypavif', `${url} is AVIF`);
+    const avif = await readFile(resolve(root, `.${url}`));
+    assert.equal(avif.toString('ascii', 4, 12), 'ftypavif', `${url} is AVIF`);
+    // A tiled (grid) AVIF decoded as a blank image in Chrome; ship single-image AVIFs only.
+    assert.ok(!avif.subarray(0, 4096).includes('grid'), `${url} is a single image, not a tiled grid`);
+    assert.equal(avif.subarray(0, 4096).toString('latin1').split('av01').length - 1, 1, `${url} has exactly one coded image`);
   }
   const portraitBytes = await readFile(resolve(root, `.${portrait.src}`));
   assert.equal(portraitBytes.readUInt16BE(0), 0xffd8);

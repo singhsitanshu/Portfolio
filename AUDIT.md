@@ -105,7 +105,7 @@ Measured October 18, 2026 on `redesign/aansh-times` with the same local method a
 | Shared JS (`index-*.js`) | 400 KB raw, 128 KB gzip | 286 KB raw, 92 KB gzip (Framer Motion removed) |
 | CSS | 42 KB raw | 51 KB raw, 10 KB gzip |
 | Fonts | 22 KB (Space Grotesk) | 162 KB across 9 self-hosted Latin subsets; 2 preloaded on the front page |
-| Homepage portrait | 646 KB JPEG at every width | 19–85 KB AVIF (320/640/800/1200w), JPEG srcset fallback, original kept |
+| Homepage portrait | 646 KB JPEG at every width | 19–45 KB AVIF (320/640/720w, single-image, not tiled), JPEG srcset fallback, original kept |
 
 ### Targets not met
 

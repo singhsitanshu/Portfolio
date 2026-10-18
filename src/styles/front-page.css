@@ -42,7 +42,7 @@
 .intro-lede { display: grid; align-content: start; gap: var(--space-4); }
 .intro-photo { margin: 0; display: grid; gap: var(--space-2); }
 .intro-perspective { font-size: var(--size-deck); }
-.intro-focus { display: grid; align-content: start; gap: var(--space-6); }
+.intro-focus { container-type: inline-size; display: grid; align-content: start; gap: var(--space-6); }
 
 /* Ruled display type: a hairline under each line, as on a ruled sheet. */
 .display-ruled {
@@ -56,7 +56,8 @@
   text-transform: uppercase;
   letter-spacing: 0;
 }
-.intro-focus-list { font-size: clamp(2.25rem, 0.9rem + 4.1vw, 4.75rem); line-height: 1.02; }
+/* Sized to its column (T-15): the longest item takes at most two lines. */
+.intro-focus-list { font-size: clamp(1.75rem, 9.5cqi, 4.75rem); line-height: 1.02; }
 /* Each line box gets its own hairline, so wrapped items stay ruled. */
 .intro-focus-list li {
   background: linear-gradient(transparent calc(100% - var(--rule-hairline)), var(--rule) 0) 0 0 / 100% 1lh;
@@ -87,6 +88,10 @@
 
 /* Lead story: the headline runs the full eight columns; the body and the
    pulled metric share them below. */
+@media (min-width: 43.75em) and (max-width: 68.6875em) {
+  /* Tablets: the second story runs full width under the lead, so it borrows the lead's split. */
+  .front-story-secondary .story-columns { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--grid-gap); }
+}
 @media (min-width: 43.75em) {
   .front-story-lead .story-columns { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--grid-gap); }
   .front-story-lead .story-aside { position: relative; }
@@ -152,9 +157,10 @@
   display: grid;
   justify-items: center;
   gap: var(--space-3);
+  container-type: inline-size;
   max-width: 34rem;
   margin-inline: auto;
-  padding: var(--space-5) var(--space-5) var(--space-4);
+  padding: var(--space-5) clamp(var(--space-3), 4vw, var(--space-5)) var(--space-4);
   border: var(--rule-hairline) dashed var(--ink);
   text-align: center;
 }
@@ -164,7 +170,7 @@
   padding-block: var(--space-1) 0;
   background: var(--ink);
   color: var(--paper);
-  font: var(--weight-headline-heavy) var(--text-4xl) / 1 var(--font-display);
+  font: var(--weight-headline-heavy) clamp(var(--text-2xl), 22cqi, var(--text-4xl)) / 1 var(--font-display);
   font-stretch: var(--display-stretch);
   font-variation-settings: 'wdth' 62.5;
   text-transform: uppercase;

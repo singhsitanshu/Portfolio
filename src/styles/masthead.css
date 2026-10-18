@@ -119,15 +119,19 @@ body { background: var(--paper); color: var(--ink); font-family: var(--font-body
 }
 .index-links a:hover, .index-links a[aria-current="location"] { text-decoration: underline; text-decoration-thickness: var(--rule-medium); }
 
-/* Phones and small tablets: the nameplate leads, ears sit side by side below it. */
-@media (max-width: 43.6875em) {
-  .masthead { padding-top: var(--space-4); }
+/* Below 1100px the nameplate leads and the ears sit side by side under it. */
+@media (max-width: 68.6875em) {
   .masthead-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; gap: var(--space-3); }
   .masthead-title { grid-column: 1 / -1; }
-  .masthead-name { font-size: var(--text-md); }
   .masthead-ear { max-width: none; padding: var(--space-1) var(--space-3); }
   .masthead-ear-left { grid-row: 2; }
   .masthead-ear-right { grid-row: 2; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0 var(--space-3); }
+}
+
+/* Phones. */
+@media (max-width: 43.6875em) {
+  .masthead { padding-top: var(--space-4); }
+  .masthead-name { font-size: var(--text-md); }
   .masthead-motto { font-size: var(--text-sm); }
   /* The home link duplicates the front page itself; the index needs the width. */
   .index-home, .index-label { display: none; }

@@ -6,7 +6,7 @@ import { FrontStory } from './FrontStory';
 // outcomes as ordered stages, with the retry path written out.
 export function TaskForgeFeature({ project }: { project: Project & { id: 'taskforge' } }) {
   const visual = project.story.visual;
-  return <FrontStory project={project} size="secondary" className="front-second span-md-3 rule-md">
+  return <FrontStory project={project} size="secondary" className="front-second rule-lg">
     <Figure className="infographic" caption={<><strong>{visual.label}.</strong> {visual.note}</>} credit={visual.credit}>
       <ol className="infographic-flow">
         <li className="infographic-stage">

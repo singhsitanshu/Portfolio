@@ -118,7 +118,7 @@ test('front-page stories expose headline, metric and jump links before their gra
   assert.deepEqual(stories.map(story => story[1]), ['codegraph', 'taskforge']);
   for (const [, id, story] of stories.filter(([, id]) => newspaperStories.includes(id))) {
     let previous = -1;
-    for (const marker of [`id="${id}-title"`, 'class="deck', 'class="byline', 'class="pull-quote', 'class="story-stack', 'class="story-jumps', 'class="showcase-visual']) {
+    for (const marker of [`id="${id}-title"`, 'class="deck', 'class="byline', 'class="pull-quote', 'class="story-stack', 'class="story-jumps', 'class="np-figure infographic']) {
       const position = story.indexOf(marker);
       assert.ok(position > previous, `${id}: ${marker} is present in reading order`);
       previous = position;

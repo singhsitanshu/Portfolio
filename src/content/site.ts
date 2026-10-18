@@ -146,6 +146,7 @@ export const projects = [
       visual: {
         label: 'Conceptual view',
         note: 'Repository structure and retrieval flow.',
+        credit: 'Graphic',
         repository: 'Repository',
         files: 'Files',
         children: ['Functions', 'Calls'],
@@ -192,6 +193,7 @@ export const projects = [
       visual: {
         label: 'Conceptual view',
         note: 'Task coordination and retry flow.',
+        credit: 'Graphic',
         queue: 'Queue',
         queueCaption: 'Durable tasks',
         workers: 'Workers',

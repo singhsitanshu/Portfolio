@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { homeSections } from '../content/navigation';
 import { projects, ui } from '../content/site';
@@ -41,29 +41,13 @@ function useCurrentSection(pathname: string) {
   return pathname === '/' ? current : projects.some(project => project.path === pathname) ? 'projects' : null;
 }
 
-export function SectionNav() {
+export function SectionNav({ label }: { label?: string }) {
   const { pathname } = useLocation();
   const current = useCurrentSection(pathname);
-  const nav = useRef<HTMLElement>(null);
-  const [hovered, setHovered] = useState<string | null>(null);
-  const [highlight, setHighlight] = useState({ x: 0, y: 0, width: 0, height: 0 });
-  useEffect(() => {
-    if (!hovered || !nav.current) return;
-    const measure = () => {
-      const link = nav.current?.querySelector<HTMLElement>(`[data-section="${hovered}"]`);
-      if (link) setHighlight({ x: link.offsetLeft, y: link.offsetTop, width: link.offsetWidth, height: link.offsetHeight });
-    };
-    measure();
-    const resize = new ResizeObserver(measure);
-    resize.observe(nav.current);
-    return () => resize.disconnect();
-  }, [hovered]);
-  useEffect(() => { setHovered(null); }, [pathname]);
-  return <nav ref={nav} className="primary-nav" aria-label={ui.primaryNavLabel} onPointerLeave={() => setHovered(null)}>
-    <span aria-hidden="true" className="nav-highlight" data-visible={hovered !== null} style={{ transform: `translate(${highlight.x}px, ${highlight.y}px)`, width: highlight.width, height: highlight.height }} />
-    {homeSections.map(section => <Link key={section.id} to={`/#${section.id}`} data-section={section.id}
-      aria-current={current === section.id ? 'location' : undefined}
-      onPointerEnter={event => { if (event.pointerType !== 'touch') setHovered(section.id); }}
-    >{section.label}</Link>)}
+  return <nav className="primary-nav" aria-label={ui.primaryNavLabel}>
+    {label && <p className="index-label" aria-hidden="true">{label}</p>}
+    <ul className="index-links">
+      {homeSections.map(section => <li key={section.id}><Link to={`/#${section.id}`} aria-current={current === section.id ? 'location' : undefined}>{section.label}</Link></li>)}
+    </ul>
   </nav>;
 }

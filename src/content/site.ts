@@ -31,7 +31,6 @@ export const profile = {
   educationLabel: 'UCLA Computer Science',
   positioning: 'Pragmatic, system-minded | AI Engineering, Developer Tools & Distributed Systems | UCLA CS',
   hero: {
-    greeting: 'Hi, I’m',
     introduction: 'A computer science student at UCLA building developer tools, AI systems, and reliable backend software.',
     perspective: 'Pragmatic, system-minded.',
     portrait: {
@@ -54,9 +53,19 @@ export const ui = {
   external: '↗',
   socialLabel: 'Social profiles',
   footerSocialLabel: 'Footer social profiles',
-  primaryNavLabel: 'Primary',
+  primaryNavLabel: 'Inside today',
+  newTab: '(opens in a new tab)',
   loading: 'Loading page…',
   motion: { toggle: 'Reduce motion', system: 'Reduced motion (system)' },
+} as const;
+
+// Front-page masthead (T-06). The edition date is the build date, added by the
+// Masthead component; it is not content. Motto approved by the owner, Oct 18, 2026.
+export const masthead = {
+  nameplate: 'The Aansh Times',
+  motto: 'All the code that’s fit to ship.',
+  edition: ['Los Angeles', profile.role, profile.educationLabel, 'Vol. 1, No. 1'],
+  indexLabel: 'Inside Today',
 } as const;
 
 // October 1, 2026 owner clarification: both projects were built independently
@@ -210,7 +219,6 @@ export const experience = [
 // Homepage section and control copy, in reading order.
 export const homepage = {
   hero: {
-    viewProjects: 'View Projects',
     portraitIndex: '01 /',
   },
   projects: {

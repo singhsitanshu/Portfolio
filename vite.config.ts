@@ -43,7 +43,11 @@ function staticPages(): Plugin {
   };
 }
 
+// The masthead's edition date: the build date in Los Angeles, as YYYY-MM-DD.
+const editionDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
+
 export default defineConfig(({ isPreview }) => ({
   appType: isPreview ? 'mpa' : 'spa',
+  define: { __EDITION_DATE__: JSON.stringify(editionDate) },
   plugins: [react(), tailwindcss(), staticPages(), productionRouterOrigin()],
 }));

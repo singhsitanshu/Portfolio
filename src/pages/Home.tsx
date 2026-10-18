@@ -2,7 +2,7 @@ import { Heading } from '../components/ui';
 import { Contact } from '../components/Contact';
 import { CodeGraphFeature } from '../components/CodeGraphFeature';
 import { TaskForgeFeature } from '../components/TaskForgeFeature';
-import { homepage, profile, projects, experience, ui } from '../content/site';
+import { homepage, profile, projects, experience } from '../content/site';
 import { Entrance } from '../components/Motion';
 
 // Native same-document fragment navigation can focus the alias after router effects.
@@ -13,22 +13,11 @@ function LegacyAnchor({ id }: { id: string }) {
 
 export function Home() {
   return <>
-    <section id="introduction" className="hero" aria-labelledby="hero-title" tabIndex={-1}>
+    <section id="introduction" className="hero" aria-label={profile.name} tabIndex={-1}>
       <LegacyAnchor id="about" />
       <Entrance className="hero-copy">
-        <p className="eyebrow hero-role">{profile.role} / {profile.educationLabel}</p>
-        <p className="hero-greeting">{profile.hero.greeting}</p>
-        <h1 id="hero-title">{profile.name}<span className="hero-period">.</span></h1>
         <p className="hero-perspective">{profile.hero.perspective}</p>
         <p className="lede">{profile.hero.introduction}</p>
-        <div className="actions hero-actions">
-          <a className="button" href="#projects">{homepage.hero.viewProjects} <span aria-hidden="true">{ui.external}</span></a>
-          <a className="button button-secondary" href={profile.resumeUrl}>{ui.resume.label} <span className="file-label">{ui.resume.fileLabel}</span></a>
-        </div>
-        <nav className="hero-socials" aria-label={ui.socialLabel}>
-          <a href={profile.links.github}>{ui.github} <span aria-hidden="true">{ui.external}</span></a>
-          <a href={profile.links.linkedin}>{ui.linkedin} <span aria-hidden="true">{ui.external}</span></a>
-        </nav>
       </Entrance>
       <Entrance className="hero-portrait">
         <div className="portrait-frame">

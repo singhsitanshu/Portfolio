@@ -17,6 +17,7 @@ const decode = value => value.replace(/&amp;/g, '&').replace(/&#39;/g, "'").repl
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(match => [match[1], decode(match[2])]));
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map(match => attributes(match[0]));
 const meta = (html, key) => tags(html, 'meta').filter(tag => tag.name === key || tag.property === key);
+const headingText = html => decode(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)[1].replace(/<[^>]+>/g, ''));
 const outputFiles = (await readdir(root, { recursive: true, withFileTypes: true }))
   .filter(entry => entry.isFile()).map(entry => resolve(entry.parentPath, entry.name));
 
@@ -55,7 +56,7 @@ test('three generated pages expose distinct metadata and complete content withou
       assert.ok(meta(head, 'og:image:alt')[0].content.includes(description));
     }
     assert.equal(meta(head, 'robots')[0].content, 'index, follow');
-    assert.match(html, new RegExp(`<h1[^>]*>${page.heading}`));
+    assert.ok(headingText(html).startsWith(page.heading), `${page.path}: h1 starts with ${page.heading}`);
     assert.ok(html.length > 10000, `${page.path} must contain its content, not just a shell`);
     assert.ok(!html.includes('Loading page…') && !html.includes('<!--app-html-->'));
     assert.ok(!html.includes('www.aanshsingh.com') && !html.includes('/_test/'));
@@ -169,7 +170,7 @@ test('social image dimensions, MIME signature, and production asset sizes are ap
   assert.deepEqual(await readFile(resolve(root, 'aansh-singh-resume.pdf')), await readFile('public/aansh-singh-resume.pdf'));
 });
 
-test('original portrait is preserved and self-hosted display font is present and bounded', async () => {
+test('original portrait is preserved and redesign fonts load with swap', async () => {
   const home = documents.get('/');
   const portrait = tags(home, 'img')[0];
   assert.equal(portrait.loading, 'eager');
@@ -180,10 +181,10 @@ test('original portrait is preserved and self-hosted display font is present and
   const portraitBytes = await readFile(resolve(root, `.${portrait.src}`));
   assert.equal(portraitBytes.readUInt16BE(0), 0xffd8);
   assert.deepEqual(portraitBytes, await readFile(resolve('public', `.${portrait.src}`)), 'build preserves the portrait file byte for byte');
-  const font = await readFile(resolve(root, 'fonts/space-grotesk-latin-wght.woff2'));
-  assert.equal(font.toString('ascii', 0, 4), 'wOF2');
-  assert.ok(font.length < 30000);
-  assert.match(await readFile(resolve(root, 'fonts/space-grotesk-LICENSE.txt'), 'utf8'), /SIL OPEN FONT LICENSE/);
+  const fonts = tags(home, 'link').find(tag => tag.rel === 'stylesheet' && tag.href.startsWith('https://fonts.googleapis.com/css2'));
+  assert.ok(fonts, 'Google Fonts stylesheet is linked');
+  assert.match(fonts.href, /display=swap/);
+  for (const family of ['UnifrakturMaguntia', 'Playfair+Display', 'Libre+Caslon+Text', 'Libre+Franklin', 'IBM+Plex+Mono']) assert.ok(fonts.href.includes(family), family);
 });
 
 test('preview HTTP responses expose route metadata and a real 404 without executing JavaScript', { skip: !process.env.PREVIEW_URL }, async () => {
@@ -193,7 +194,7 @@ test('preview HTTP responses expose route metadata and a real 404 without execut
     assert.equal(response.status, 200);
     const body = await response.text();
     assert.equal(meta(body, 'og:url')[0].content, origin + page.path);
-    assert.match(body, new RegExp(`<h1[^>]*>${page.heading}`));
+    assert.ok(headingText(body).startsWith(page.heading));
     assert.equal((await fetch(new URL(page.path, base), { method: 'HEAD' })).status, 200);
   }
   for (const path of ['/missing-page', '/projects/missing', '/missing.js']) {
@@ -245,7 +246,7 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
   assert.ok(home.includes('2025 – Present') && home.includes('June 2029'));
   assert.doesNotMatch(home, /About &amp; journey/);
   for (const html of documents.values()) {
-    const nav = html.match(/<nav[^>]*aria-label="Primary"[^>]*>([\s\S]*?)<\/nav>/)[1];
+    const nav = html.match(/<nav[^>]*aria-label="Inside today"[^>]*>([\s\S]*?)<\/nav>/)[1];
     assert.deepEqual(tags(nav, 'a').map(a => a.href), ['/#projects', '/#experience', '/#education', '/#contact']);
     assert.ok(tags(html, 'a').some(a => a.href === '/aansh-singh-resume.pdf'));
   }

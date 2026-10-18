@@ -1,0 +1,101 @@
+/*
+ * The Aansh Times design tokens (T-02): the single source of truth for every
+ * visual value in the redesign. Components and print styles use these custom
+ * properties only; no hard-coded colors, font sizes or spacing elsewhere.
+ * Fonts load from Google Fonts in index.html with font-display: swap.
+ */
+:root {
+  /* Color: ink on paper, one restrained accent. */
+  --paper: #f4f3ee;              /* Page background; matches theme-color. */
+  --ink: #1b1a17;                /* Text and rules. 15.7:1 on paper. */
+  --ink-muted: #5c5a52;          /* Captions and datelines. 6.2:1 on paper, 5.6:1 on paper-shade. */
+  --rule: rgb(27 26 23 / 25%);   /* Hairline column rules (ink at 25%). */
+  --accent: #9e2a2b;             /* Kickers and one highlight per story, never body text. 6.7:1 on paper. */
+  --paper-shade: #e9e7df;        /* Boxed notices and figure wells: paper one step darker. */
+
+  /* Families. Each names its fallback stack for the swap period. */
+  --font-nameplate: "UnifrakturMaguntia", "Old English Text MT", "Times New Roman", serif; /* Nameplate only. */
+  --font-headline: "Playfair Display", "Playfair", Georgia, "Times New Roman", serif;    /* Headlines, decks. */
+  --font-body: "Libre Caslon Text", "Iowan Old Style", Georgia, "Times New Roman", serif; /* Body copy. */
+  --font-label: "Libre Franklin", "Franklin Gothic Medium", "Helvetica Neue", Arial, sans-serif; /* Labels, bylines, edition bar. */
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; /* Metrics, code, stacks. */
+
+  /* Weights actually loaded: Playfair 700–900 (+400 italic), Caslon 400/700 (+400 italic), Franklin 500/600, Plex Mono 400/500. */
+  --weight-regular: 400;
+  --weight-label: 500;
+  --weight-label-strong: 600;
+  --weight-bold: 700;
+  --weight-headline: 800;
+  --weight-headline-heavy: 900;
+
+  /* Type scale: nine fixed steps (rem, 1rem = 16px). */
+  --text-2xs: 0.6875rem;  /* 11px: credits, tag text */
+  --text-xs: 0.75rem;     /* 12px: small-caps labels */
+  --text-sm: 0.8125rem;   /* 13px: captions, datelines */
+  --text-md: 0.9375rem;   /* 15px: briefs, notices */
+  --text-base: 1.0625rem; /* 17px: body */
+  --text-lg: 1.25rem;     /* 20px: decks, brief headlines */
+  --text-xl: 1.625rem;    /* 26px: section heads, pull quotes on mobile */
+  --text-2xl: 2.25rem;    /* 36px: secondary headline; lead floor on mobile */
+  --text-3xl: 3.5rem;     /* 56px: lead headline floor on desktop */
+  --text-4xl: 4.5rem;     /* 72px: lead headline ceiling */
+
+  /* Role sizes. Fluid ranges stay inside the plan's limits:
+     lead 36–40px on mobile and 56–72px on desktop; body 17–18px. */
+  --size-body: clamp(var(--text-base), 1rem + 0.2vw, 1.125rem);
+  --size-deck: clamp(1.125rem, 1rem + 0.45vw, var(--text-lg));
+  --size-headline-lead: clamp(var(--text-2xl), 1.05rem + 3.9vw, var(--text-4xl));
+  --size-headline-secondary: clamp(1.75rem, 1.2rem + 1.4vw, var(--text-2xl));
+  --size-headline-brief: clamp(1.125rem, 1rem + 0.5vw, var(--text-lg));
+  --size-pull-quote: clamp(var(--text-xl), 1.1rem + 1.6vw, 2.25rem);
+  --size-section-head: clamp(var(--text-xl), 1.2rem + 1.2vw, 2rem);
+  --size-nameplate: clamp(2.5rem, 0.6rem + 9.4vw, 6.25rem);
+
+  /* Leading and tracking. */
+  --leading-display: 1.02;
+  --leading-headline: 1.1;
+  --leading-snug: 1.3;
+  --leading-body: 1.55;
+  --tracking-label: 0.08em;      /* Small caps: 0.06–0.1em. */
+  --tracking-label-wide: 0.1em;
+  --tracking-headline: -0.01em;
+
+  /* Spacing: a 4px-based scale. */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-9: 6rem;     /* 96px */
+
+  /* Rules. A double rule is two hairlines with a 3px gap. */
+  --rule-hairline: 1px;
+  --rule-medium: 2px;
+  --rule-heavy: 4px;
+  --rule-double-gap: 3px;
+  --rule-double: calc(var(--rule-hairline) * 2 + var(--rule-double-gap));
+
+  /* Grid: 12 columns at 1100px+, 6 at 700–1099px, 1 below 700px (see grid.css). */
+  --page-max: 80rem;                        /* 1280px sheet */
+  --page-gutter: clamp(1rem, 3.5vw, 2.5rem); /* sheet margin; 16px at phone width */
+  --grid-gap: var(--space-6);               /* column gutter; the column rule sits in its middle */
+  --grid-row-gap: var(--space-6);
+  --measure: 38rem;                         /* single-column reading width */
+
+  /* Interaction. */
+  --focus-ring: 2px solid var(--ink);
+  --focus-offset: 3px;
+  --target-min: 2.75rem;                    /* 44px touch targets */
+
+  /* Motion. */
+  --motion-draw: 400ms;
+  --motion-fade: 280ms;
+  --motion-stagger: 90ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Paper grain overlay strength (4–6%). */
+  --grain-opacity: 0.05;
+}

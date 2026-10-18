@@ -15,14 +15,14 @@
 
   /* Families. Each names its fallback stack for the swap period. */
   --font-nameplate: "UnifrakturMaguntia", "Old English Text MT", "Times New Roman", serif; /* Nameplate only. */
-  --font-headline: "Playfair Display", "Playfair", Georgia, "Times New Roman", serif;    /* Headlines, decks. */
-  --font-body: "Libre Caslon Text", "Iowan Old Style", Georgia, "Times New Roman", serif; /* Body copy. */
-  --font-label: "Libre Franklin", "Franklin Gothic Medium", "Helvetica Neue", Arial, sans-serif; /* Labels, bylines, edition bar. */
+  --font-headline: "Playfair Display", "Playfair Display Fallback", Georgia, "Times New Roman", serif;    /* Headlines, decks. */
+  --font-body: "Libre Caslon Text", "Libre Caslon Fallback", "Iowan Old Style", Georgia, "Times New Roman", serif; /* Body copy. */
+  --font-label: "Libre Franklin", "Libre Franklin Fallback", "Franklin Gothic Medium", "Helvetica Neue", Arial, sans-serif; /* Labels, bylines, edition bar. */
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; /* Metrics, code, stacks. */
   --font-display: "Noto Serif Display", "Bodoni 72 Oldstyle", "Didot", Georgia, serif; /* Name banner and intro display, condensed caps only. */
   --display-stretch: 62.5%;
 
-  /* Weights actually loaded: Playfair 700–900 (+400 italic), Caslon 400/700 (+400 italic), Franklin 500/600, Plex Mono 400/500. */
+  /* Weights actually loaded: Playfair 700–900 (+400 italic), Caslon 400/700 (+400 italic), Franklin 500/600, Plex Mono 400. */
   --weight-regular: 400;
   --weight-label: 500;
   --weight-label-strong: 600;

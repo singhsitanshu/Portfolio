@@ -86,3 +86,37 @@ Baseline findings for later tickets:
 - Homepage mobile LCP is the 646 KB portrait JPEG (`aansh-singh-trim.jpg`), loaded at full size on every viewport. The existing WebP variants are unused. T-09 and T-18 address this.
 - Lighthouse flags `label-content-name-mismatch` on the project buttons: the visible "Read case study" text is not contained in its `aria-label` "Read CodeGraph case study". It is advisory and does not affect the score.
 - The shared client entry is 400 KB raw (about 128 KB gzip), mostly React, React Router and Framer Motion.
+
+## After the redesign (T-18)
+
+Measured October 18, 2026 on `redesign/aansh-times` with the same local method as the baseline (production build, gzip static server, Lighthouse 12.8, Playwright Chromium). Production was not measured: the branch is not merged or deployed. Run PageSpeed Insights on aanshsingh.com after deploying to record field-comparable numbers.
+
+| Page | Profile | Performance | Accessibility | Best Practices | SEO | LCP | CLS |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `/` | Mobile | 79 → **91** | 100 → 100 | 100 → 100 | 100 → 100 | 5.3 s → 3.0 s | 0.001 → 0.001 |
+| `/projects/codegraph` | Mobile | 98 → **93** | 100 → 100 | 100 → 100 | 100 → 100 | 2.1 s → 2.7 s | 0 → 0.007 |
+| `/projects/taskforge` | Mobile | 98 → **93** | 100 → 100 | 100 → 100 | 100 → 100 | 2.1 s → 2.7 s | 0 → 0.002 |
+| `/` | Desktop | 99 → **100** | 100 → 100 | 100 → 100 | 100 → 100 | 1.0 s → 0.6 s | 0.001 → 0 |
+| `/projects/codegraph` | Desktop | 100 → **100** | 100 → 100 | 100 → 100 | 100 → 100 | 0.4 s → 0.6 s | 0 → 0.003 |
+| `/projects/taskforge` | Desktop | 100 → **100** | 100 → 100 | 100 → 100 | 100 → 100 | 0.5 s → 0.6 s | 0 → 0.022 |
+
+| Asset | Before | After |
+| --- | --- | --- |
+| Shared JS (`index-*.js`) | 400 KB raw, 128 KB gzip | 286 KB raw, 92 KB gzip (Framer Motion removed) |
+| CSS | 42 KB raw | 51 KB raw, 10 KB gzip |
+| Fonts | 22 KB (Space Grotesk) | 162 KB across 9 self-hosted Latin subsets; 2 preloaded on the front page |
+| Homepage portrait | 646 KB JPEG at every width | 19–85 KB AVIF (320/640/800/1200w), JPEG srcset fallback, original kept |
+
+### Targets not met
+
+The T-18 targets of mobile Performance 95+ and LCP under 2.0 s are **not met** for the simulated mobile profile: the home page scores 91 and the case studies 93, with LCP between 2.7 s and 3.0 s. Desktop scores 100 on every page, and CLS is near 0 everywhere.
+
+The gap is the type design. With the web fonts removed as an experiment, the CodeGraph case study's mobile LCP fell from 2.8 s to 1.9 s and first paint from 2.6 s to 1.4 s. Under Lighthouse's simulated slow 4G, every face the first screen uses counts against first paint, even with `font-display: swap` (switching body faces to `optional` changed the score by about 1 point). Already done:
+
+- Latin subsets only, self-hosted, with no third-party connection.
+- The nameplate cut to "The Aansh Times" (5 KB) and the banner to capitals (3.5 KB); both preloaded.
+- One IBM Plex Mono weight.
+- Metric-matched local fallbacks, so the swap does not shift the page.
+- The current page's code loaded before hydration, so the page never collapses to the loading fallback.
+
+Reaching 95+ would mean dropping or deferring a family (for example, labels in a system sans or body text in Georgia), which changes the locked design direction. That is the owner's call.

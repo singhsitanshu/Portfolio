@@ -11,6 +11,7 @@ function LegacyAnchor({ id }: { id: string }) {
 }
 
 const [codegraph, taskforge] = projects;
+const portraitSizes = '(min-width: 68.75em) 24rem, (min-width: 43.75em) 45vw, 92vw';
 
 // The front page opens on Aansh: a full-width name banner, the original hero
 // copy beside the portrait, and a ruled list of what he builds.
@@ -24,9 +25,10 @@ function Introduction() {
       <div className="intro-lede span-md-3 span-lg-4">
         <Kicker>{copy.kicker}</Kicker>
         <figure className="intro-photo">
-          <div className="halftone">
-            <img src={portrait.src} srcSet={portrait.srcSet} sizes="(min-width: 68.75em) 24rem, (min-width: 43.75em) 45vw, 92vw" alt={portrait.alt} width={portrait.width} height={portrait.height} fetchPriority="high" loading="eager" decoding="async" />
-          </div>
+          <picture className="halftone">
+            <source type="image/avif" srcSet={portrait.avifSrcSet} sizes={portraitSizes} />
+            <img src={portrait.src} srcSet={portrait.srcSet} sizes={portraitSizes} alt={portrait.alt} width={portrait.width} height={portrait.height} fetchPriority="high" loading="eager" decoding="async" />
+          </picture>
           <figcaption className="caption">{portrait.caption}</figcaption>
         </figure>
         <p className="deck intro-perspective">{profile.hero.perspective}</p>

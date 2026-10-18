@@ -112,7 +112,7 @@
 
 /* Halftone: grayscale photo under a multiplied dot screen; full color on
    hover or focus for pointer devices. Width/height attributes reserve space. */
-.halftone { position: relative; overflow: hidden; background: var(--paper-shade); border: var(--rule-hairline) solid var(--ink); }
+.halftone { display: block; position: relative; overflow: hidden; background: var(--paper-shade); border: var(--rule-hairline) solid var(--ink); }
 .halftone img { display: block; width: 100%; height: auto; filter: grayscale(1) contrast(1.12) brightness(1.04); }
 .halftone::after {
   content: '';
@@ -181,7 +181,7 @@
   display: inline-flex;
   align-items: center;
   min-height: var(--target-min);
-  font: var(--weight-label) var(--text-base) / 1.2 var(--font-mono);
+  font: var(--weight-regular) var(--text-base) / 1.2 var(--font-mono);
   color: var(--ink);
   overflow-wrap: anywhere;
   text-decoration: underline;

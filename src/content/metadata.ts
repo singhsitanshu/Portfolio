@@ -80,10 +80,17 @@ export const personSchema = {
   sameAs: [profile.links.github, profile.links.linkedin],
 } as const;
 
+// Self-hosted fonts (T-18, src/styles/fonts.css): preload each page's
+// above-the-fold display faces. Only the front page sets the name banner.
+export function fontPreloads(path: string) {
+  const fonts = ['/fonts/unifrakturmaguntia-400-nameplate.woff2', ...(path === '/' ? ['/fonts/noto-serif-display-condensed-900-caps.woff2'] : [])];
+  return fonts.map(href => `<link rel="preload" href="${href}" as="font" type="font/woff2" crossorigin />`).join('\n');
+}
+
 export function renderHead(path: string) {
   // JSON in a script element: escape "<" so no value can close the element.
   const jsonLd = JSON.stringify(personSchema).replace(/</g, '\\u003c');
-  return `<title>${escapeHtml(metadataFor(path).title)}</title>\n` + metadataTags(path).map(({ tag, attributes }) =>
+  return `${fontPreloads(path)}\n<title>${escapeHtml(metadataFor(path).title)}</title>\n` + metadataTags(path).map(({ tag, attributes }) =>
     `<${tag} data-portfolio-metadata ${Object.entries(attributes).map(([name, value]) => `${name}="${escapeHtml(value)}"`).join(' ')} />`,
   ).join('\n') + `\n<script type="application/ld+json">${jsonLd}</script>`;
 }

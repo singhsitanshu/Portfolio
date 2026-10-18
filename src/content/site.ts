@@ -35,6 +35,8 @@ export const profile = {
       src: '/images/aansh-singh-trim.jpg',
       // Resized copies keep the original's Display P3 profile and full proportions.
       srcSet: '/images/aansh-singh-trim-320.jpg 320w, /images/aansh-singh-trim-640.jpg 640w, /images/aansh-singh-trim.jpg 1277w',
+      // T-18: AVIF copies (same proportions and color profile) for browsers that support it.
+      avifSrcSet: '/images/aansh-singh-trim-320.avif 320w, /images/aansh-singh-trim-640.avif 640w, /images/aansh-singh-trim-800.avif 800w, /images/aansh-singh-trim-1200.avif 1200w',
       alt: 'Aansh Singh wearing a brown hoodie and backpack at Rockefeller Center.',
       width: 1277,
       height: 1804,

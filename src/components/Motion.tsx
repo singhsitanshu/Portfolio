@@ -24,21 +24,21 @@ const Settings = createContext({ reduced: false, systemReduced: false, toggle: (
 
 export function MotionProvider({ children }: { children: ReactNode }) {
   const systemReduced = useMedia(reducedQuery);
-  // Start with identical server/client markup; read the saved preference after hydration.
-  // null until read, so the pre-paint attribute is never cleared before the saved value loads.
-  const [requested, setRequested] = useState<boolean | null>(null);
+  // Start with identical server/client markup; read the saved preference after
+  // hydration. index.html has already applied a saved choice to <html>.
+  const [requested, setRequested] = useState(false);
   useEffect(() => {
     try { setRequested(window.localStorage.getItem(storageKey) === 'true'); }
-    catch { setRequested(false); /* The control still works when preference storage is unavailable. */ }
+    catch { /* The control still works when preference storage is unavailable. */ }
   }, []);
-  useEffect(() => { if (requested !== null) document.documentElement.toggleAttribute('data-reduce-motion', requested); }, [requested]);
   function toggle() {
     const next = !requested;
     setRequested(next);
+    document.documentElement.toggleAttribute('data-reduce-motion', next);
     try { window.localStorage.setItem(storageKey, String(next)); }
     catch { /* The control still works when preference storage is unavailable. */ }
   }
-  const reduced = systemReduced || requested === true;
+  const reduced = systemReduced || requested;
   return <Settings.Provider value={{ reduced, systemReduced, toggle }}>
     <div className="motion-root" data-motion={reduced ? 'reduced' : 'full'}>{children}</div>
   </Settings.Provider>;

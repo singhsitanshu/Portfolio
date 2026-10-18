@@ -188,7 +188,7 @@
 .taskforge-chart-scale { display: flex; justify-content: space-between; gap: var(--space-4); margin-block: var(--space-4) var(--space-3); font: var(--weight-regular) var(--text-2xs) / 1 var(--font-mono); color: var(--ink-muted); }
 .taskforge-benchmark-chart ol { display: grid; gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
 .taskforge-chart-label { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-2); font: var(--weight-label) var(--text-sm) / var(--leading-snug) var(--font-label); }
-.taskforge-chart-label strong { font: var(--weight-label) var(--text-sm) / 1 var(--font-mono); }
+.taskforge-chart-label strong { font: var(--weight-regular) var(--text-sm) / 1 var(--font-mono); }
 .taskforge-chart-track { height: var(--space-3); background: var(--paper-shade); border-inline: var(--rule-hairline) solid var(--ink); }
 .taskforge-chart-track > div { height: 100%; background: var(--ink); }
 .taskforge-chart-source { display: block; margin-top: var(--space-2); font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); overflow-wrap: anywhere; }

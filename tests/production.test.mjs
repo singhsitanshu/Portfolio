@@ -183,14 +183,18 @@ test('social image dimensions, MIME signature, and production asset sizes are ap
   assert.deepEqual(await readFile(resolve(root, 'aansh-singh-resume.pdf')), await readFile('public/aansh-singh-resume.pdf'));
 });
 
-test('author portrait keeps the original, offers resized copies, and redesign fonts load with swap', async () => {
+test('author portrait keeps the original with AVIF and JPEG copies, and self-hosted fonts stay under budget', async () => {
   const home = documents.get('/');
   const portrait = tags(home, 'img')[0];
   assert.equal(portrait.loading, 'eager');
   assert.equal(portrait.fetchPriority ?? portrait.fetchpriority, 'high');
   assert.ok(Number(portrait.width) > 0 && Number(portrait.height) > 0);
   assert.ok(portrait.alt.includes('Aansh Singh'));
-  assert.equal(tags(home, 'source').length, 0, 'portrait uses the original JPEG without converted variants');
+  const sources = tags(home, 'source');
+  assert.deepEqual(sources.map(source => source.type), ['image/avif'], 'portrait offers AVIF before the JPEG fallback');
+  for (const [url] of (sources[0].srcset ?? sources[0].srcSet).split(',').map(candidate => candidate.trim().split(' '))) {
+    assert.equal((await readFile(resolve(root, `.${url}`))).toString('ascii', 4, 12), 'ftypavif', `${url} is AVIF`);
+  }
   const portraitBytes = await readFile(resolve(root, `.${portrait.src}`));
   assert.equal(portraitBytes.readUInt16BE(0), 0xffd8);
   assert.deepEqual(portraitBytes, await readFile(resolve('public', `.${portrait.src}`)), 'build preserves the portrait file byte for byte');
@@ -200,10 +204,27 @@ test('author portrait keeps the original, offers resized copies, and redesign fo
     assert.match(width, /^\d+w$/);
     assert.equal((await readFile(resolve(root, `.${url}`))).readUInt16BE(0), 0xffd8, `${url} is a JPEG`);
   }
-  const fonts = tags(home, 'link').find(tag => tag.rel === 'stylesheet' && tag.href.startsWith('https://fonts.googleapis.com/css2'));
-  assert.ok(fonts, 'Google Fonts stylesheet is linked');
-  assert.match(fonts.href, /display=swap/);
-  for (const family of ['UnifrakturMaguntia', 'Playfair+Display', 'Libre+Caslon+Text', 'Libre+Franklin', 'IBM+Plex+Mono']) assert.ok(fonts.href.includes(family), family);
+  // T-18: self-hosted Latin subsets; the nameplate and banner faces are preloaded.
+  assert.ok(!home.includes('fonts.googleapis.com') && !home.includes('fonts.gstatic.com'), 'no third-party font requests');
+  const preloads = html => tags(html, 'link').filter(tag => tag.rel === 'preload' && tag.as === 'font').map(tag => tag.href);
+  assert.deepEqual(preloads(home), ['/fonts/unifrakturmaguntia-400-nameplate.woff2', '/fonts/noto-serif-display-condensed-900-caps.woff2']);
+  for (const path of ['/projects/codegraph', '/projects/taskforge', '/404']) assert.deepEqual(preloads(documents.get(path)), ['/fonts/unifrakturmaguntia-400-nameplate.woff2'], `${path} preloads only the faces it uses`);
+  for (const [link] of home.matchAll(/<link rel="preload"[^>]*>/g)) assert.match(link, /\bcrossorigin\b/, 'font preloads are CORS requests');
+  const stylesheet = await readFile(resolve(root, 'assets', (await readdir(resolve(root, 'assets'))).find(file => file.endsWith('.css'))), 'utf8');
+  const faces = [...stylesheet.matchAll(/@font-face\{[^}]*\}/g)].map(match => match[0]);
+  const fallbacks = faces.filter(face => face.includes('local(')).length;
+  assert.ok(fallbacks >= 7 && faces.filter(face => face.includes('local(')).every(face => face.includes('size-adjust')), 'metric-matched local fallbacks');
+  faces.splice(0, faces.length, ...faces.filter(face => face.includes('url(')));
+  assert.equal(faces.length, 9);
+  assert.ok(faces.every(face => face.includes('font-display:swap')), 'every face swaps');
+  let fontBytes = 0;
+  for (const [, url] of faces.map(face => face.match(/url\("?([^")]+)"?\)/))) {
+    const font = await readFile(resolve(root, `.${url}`));
+    assert.equal(font.toString('ascii', 0, 4), 'wOF2', url);
+    fontBytes += font.length;
+  }
+  assert.ok(fontBytes < 250000, `font payload ${fontBytes} bytes is under 250 KB`);
+  assert.match(await readFile(resolve(root, 'fonts/OFL-LICENSES.txt'), 'utf8'), /SIL OPEN FONT LICENSE/);
 });
 
 test('preview HTTP responses expose route metadata and a real 404 without executing JavaScript', { skip: !process.env.PREVIEW_URL }, async () => {

@@ -1,0 +1,91 @@
+/*
+ * Self-hosted fonts (T-18): Latin subsets from Google Fonts, unmodified, under
+ * the SIL OFL 1.1 (public/fonts/OFL-LICENSES.txt). One file per face; Libre
+ * Franklin and Playfair Display ship as variable weight ranges. Two display
+ * faces are cut to what they set: the blackletter to "The Aansh Times" (the
+ * nameplate only) and the condensed banner face to caps (A–Z, space . , & - ’ · /).
+ * IBM Plex Mono ships at 400 only.
+ * index.html preloads the two above-the-fold faces: the nameplate and banner.
+ */
+@font-face {
+  font-family: "UnifrakturMaguntia";
+  src: url("/fonts/unifrakturmaguntia-400-nameplate.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/playfair-display-700-900-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/playfair-display-400-italic-latin.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Libre Caslon Text";
+  src: url("/fonts/libre-caslon-text-400-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Libre Caslon Text";
+  src: url("/fonts/libre-caslon-text-400-italic-latin.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Libre Caslon Text";
+  src: url("/fonts/libre-caslon-text-700-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("/fonts/libre-franklin-500-600-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/ibm-plex-mono-400-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Noto Serif Display";
+  src: url("/fonts/noto-serif-display-condensed-900-caps.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: 62.5%;
+  font-display: swap;
+}
+
+/* Metric-matched fallbacks: local Georgia and Arial scaled (size-adjust,
+   measured against each web face in Chromium) so text wraps the same before
+   and after the swap, and the page does not shift when fonts arrive. */
+@font-face { font-family: "Playfair Display Fallback"; src: local("Georgia Bold"), local("Georgia-Bold"); font-style: normal; font-weight: 700 900; size-adjust: 90.3%; }
+@font-face { font-family: "Playfair Display Fallback"; src: local("Georgia Italic"), local("Georgia-Italic"); font-style: italic; font-weight: 400; size-adjust: 94.1%; }
+@font-face { font-family: "Libre Caslon Fallback"; src: local("Georgia"); font-style: normal; font-weight: 400; size-adjust: 106.9%; }
+@font-face { font-family: "Libre Caslon Fallback"; src: local("Georgia Italic"), local("Georgia-Italic"); font-style: italic; font-weight: 400; size-adjust: 105.2%; }
+@font-face { font-family: "Libre Caslon Fallback"; src: local("Georgia Bold"), local("Georgia-Bold"); font-style: normal; font-weight: 700; size-adjust: 100.2%; }
+@font-face { font-family: "Libre Franklin Fallback"; src: local("Arial"), local("ArialMT"); font-style: normal; font-weight: 500; size-adjust: 105.5%; }
+@font-face { font-family: "Libre Franklin Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"); font-style: normal; font-weight: 600; size-adjust: 98.9%; }

@@ -26,7 +26,7 @@ export function CaseStudyLayout({ project, introduction, resultSummary, overview
       <h1 id="case-study-title" className="headline-lead article-headline">{project.name}</h1>
       <Deck className="case-study-lede">{introduction}</Deck>
       <div className="article-credits">
-        <Byline className="byline-with-photo"><img className="byline-photo" src={profile.hero.portrait.srcSet.split(' ')[0]} alt="" width={profile.hero.portrait.width} height={profile.hero.portrait.height} decoding="async" />{project.story.byline}</Byline>
+        <Byline className="byline-with-photo"><img className="byline-photo" src={profile.hero.portrait.srcSet.split(' ')[0]} alt="" width={profile.hero.portrait.width} height={profile.hero.portrait.height} loading="lazy" decoding="async" />{project.story.byline}</Byline>
         <Dateline>{article.dateline(project.dates)}</Dateline>
       </div>
       <section className="case-study-result-summary" id={resultSummary.id} tabIndex={-1} aria-labelledby={`${resultSummary.id}-title`}>

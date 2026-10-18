@@ -53,7 +53,7 @@ export function App({ pages }: { pages: PageComponents }) {
       <IndexBar />
       <div className="np-sheet">
         <main id="main" ref={main} tabIndex={-1}>
-          <MotionRule key={pathname} className="route-motion" route />
+          <MotionRule key={pathname} className="route-motion" />
           <Suspense fallback={<p className="status" role="status">{ui.loading}</p>}><RoutedContent main={main} pages={pages} /></Suspense>
         </main>
         <footer className="colophon">

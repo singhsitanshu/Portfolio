@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { homepage, profile, type Project } from '../content/site';
 import { Byline, Deck, Headline, JumpLink, Kicker, PullQuote } from './print';
 
@@ -12,7 +13,7 @@ export function FrontStory({ project, size, className = '', children }: {
   return <article id={project.id} className={`front-story front-story-${size} ${className}`} aria-labelledby={`${project.id}-title`} tabIndex={-1}>
     <header className="story-head">
       <Kicker>{story.kicker}</Kicker>
-      <Headline as="h3" size={size} id={`${project.id}-title`}>{story.headline}</Headline>
+      <Headline as="h3" size={size} id={`${project.id}-title`}><Link className="headline-link" to={project.path}>{story.headline}</Link></Headline>
       <Deck>{story.deck}</Deck>
       <Byline className="byline-with-photo"><img className="byline-photo" src={profile.hero.portrait.srcSet.split(' ')[0]} alt="" width={profile.hero.portrait.width} height={profile.hero.portrait.height} loading="lazy" decoding="async" />{story.byline}</Byline>
     </header>

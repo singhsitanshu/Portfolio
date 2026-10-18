@@ -1,0 +1,43 @@
+/*
+ * Motion (T-16): print-flavoured and brief, CSS only.
+ * On load the nameplate and rules draw in over 400ms, then the front page's
+ * blocks fade up in sequence; everything settles within 1.2s. Content starts
+ * at half opacity and is clickable throughout. All of it is off under
+ * prefers-reduced-motion and when the Reduce motion toggle sets
+ * html[data-reduce-motion] (applied before first paint from localStorage).
+ */
+@keyframes print-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes print-ink { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes print-rise { from { opacity: 0.5; transform: translateY(var(--space-2)); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-reduce-motion]) .nameplate,
+  :root:not([data-reduce-motion]) .inside-nameplate { animation: print-ink var(--motion-draw) var(--motion-ease) both; }
+  :root:not([data-reduce-motion]) .masthead .rule,
+  :root:not([data-reduce-motion]) .inside-masthead .rule,
+  :root:not([data-reduce-motion]) .section-front,
+  :root:not([data-reduce-motion]) .route-motion { transform-origin: left; animation: print-draw var(--motion-draw) var(--motion-ease) both; }
+
+  /* Front-page blocks rise in reading order after the rules: 400ms + n × 90ms + 280ms. */
+  :root:not([data-reduce-motion]) .name-banner,
+  :root:not([data-reduce-motion]) .intro-lede,
+  :root:not([data-reduce-motion]) .intro-focus,
+  :root:not([data-reduce-motion]) .front-lead,
+  :root:not([data-reduce-motion]) .front-second,
+  :root:not([data-reduce-motion]) .case-study-header { animation: print-rise var(--motion-fade) var(--motion-ease) both; animation-delay: calc(var(--motion-draw) + var(--motion-order, 0) * var(--motion-stagger)); }
+  .intro-lede { --motion-order: 1; }
+  .intro-focus { --motion-order: 2; }
+  .front-lead { --motion-order: 3; }
+  .front-second { --motion-order: 4; }
+}
+
+/* Headline links: the underline draws in under the headline in accent. */
+.headline-link {
+  color: inherit;
+  text-decoration: none;
+  background: linear-gradient(var(--accent), var(--accent)) left bottom / 0 var(--rule-medium) no-repeat;
+}
+.headline-link:hover, .headline-link:focus-visible { background-size: 100% var(--rule-medium); }
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-reduce-motion]) .headline-link { transition: background-size var(--motion-fade) var(--motion-ease); }
+}

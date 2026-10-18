@@ -62,7 +62,9 @@ test('three generated pages expose distinct metadata and complete content withou
     assert.ok(html.length > 10000, `${page.path} must contain its content, not just a shell`);
     assert.ok(!html.includes('Loading page…') && !html.includes('<!--app-html-->'));
     assert.ok(!html.includes('www.aanshsingh.com') && !html.includes('/_test/'));
-    assert.equal(tags(html, 'script').length, 1, 'only the local client entry is shipped');
+    const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
+    assert.equal(scripts.filter(([, attributes]) => /\bsrc=/.test(attributes)).length, 1, 'only the local client entry is shipped');
+    assert.deepEqual(scripts.filter(([, attributes]) => !/\bsrc=/.test(attributes)).map(([, , body]) => body.includes('portfolio-reduce-motion')), [true], 'the only inline script applies the saved motion preference');
   }
   assert.equal(descriptions.size, 3);
 });
@@ -124,11 +126,12 @@ test('front-page stories expose headline, metric and jump links before their gra
       previous = position;
     }
     const links = tags(story, 'a');
-    assert.equal(links.length, 2);
+    assert.equal(links.length, 3, `${id}: headline, case study and GitHub links`);
     assert.equal(links[0].href, `/projects/${id}`);
-    assert.match(links[1].href, /^https:\/\/github\.com\/singhsitanshu\//);
+    assert.equal(links[1].href, `/projects/${id}`);
+    assert.match(links[2].href, /^https:\/\/github\.com\/singhsitanshu\//);
     const name = id === 'codegraph' ? 'CodeGraph' : 'TaskForge';
-    for (const link of story.match(/<a\b[\s\S]*?<\/a>/g)) assert.ok(link.replace(/<[^>]+>/g, '').includes(name), `${id}: link text names the project`);
+    for (const link of story.match(/<a\b[\s\S]*?<\/a>/g).slice(1)) assert.ok(link.replace(/<[^>]+>/g, '').includes(name), `${id}: jump link text names the project`);
   }
 });
 

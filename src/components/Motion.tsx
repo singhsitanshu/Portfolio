@@ -1,10 +1,12 @@
-import { createContext, useContext, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
-import { motion, MotionConfig, useInView } from 'framer-motion';
+import { createContext, useContext, useEffect, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ui } from '../content/site';
 
-const timing = { entrance: 0.32, step: 650, pulse: 0.4 };
+// Motion is CSS only (T-16, src/styles/motion.css). This module keeps the
+// reader's preference: the system setting always wins, and the Reduce motion
+// toggle persists in localStorage. index.html applies a saved preference as
+// html[data-reduce-motion] before first paint, so load animations never start.
 const reducedQuery = '(prefers-reduced-motion: reduce)';
-const mobileQuery = '(max-width: 60rem)';
+const storageKey = 'portfolio-reduce-motion';
 
 function useMedia(query: string, serverValue = false) {
   return useSyncExternalStore(
@@ -18,36 +20,27 @@ function useMedia(query: string, serverValue = false) {
   );
 }
 
-const Settings = createContext({ reduced: true, mobile: true, visible: true, enabled: false, systemReduced: false, requested: false, toggle: () => {} });
+const Settings = createContext({ reduced: false, systemReduced: false, toggle: () => {} });
 
 export function MotionProvider({ children }: { children: ReactNode }) {
   const systemReduced = useMedia(reducedQuery);
-  const mobile = useMedia(mobileQuery, true);
-  const visible = useSyncExternalStore(
-    (notify) => {
-      document.addEventListener('visibilitychange', notify);
-      return () => document.removeEventListener('visibilitychange', notify);
-    },
-    () => document.visibilityState !== 'hidden',
-    () => true,
-  );
-  // Start with identical server/client markup; read saved preferences after hydration.
-  const [requested, setRequested] = useState(false);
+  // Start with identical server/client markup; read the saved preference after hydration.
+  // null until read, so the pre-paint attribute is never cleared before the saved value loads.
+  const [requested, setRequested] = useState<boolean | null>(null);
   useEffect(() => {
-    try { setRequested(window.localStorage.getItem('portfolio-reduce-motion') === 'true'); }
-    catch { /* The control still works when preference storage is unavailable. */ }
+    try { setRequested(window.localStorage.getItem(storageKey) === 'true'); }
+    catch { setRequested(false); /* The control still works when preference storage is unavailable. */ }
   }, []);
+  useEffect(() => { if (requested !== null) document.documentElement.toggleAttribute('data-reduce-motion', requested); }, [requested]);
   function toggle() {
     const next = !requested;
     setRequested(next);
-    try { window.localStorage.setItem('portfolio-reduce-motion', String(next)); }
+    try { window.localStorage.setItem(storageKey, String(next)); }
     catch { /* The control still works when preference storage is unavailable. */ }
   }
-  const reduced = systemReduced || requested;
-  return <Settings.Provider value={{ reduced, mobile, visible, enabled: !reduced && !mobile && visible, systemReduced, requested, toggle }}>
-    <MotionConfig reducedMotion={reduced ? 'always' : 'never'}>
-      <div className="motion-root" data-motion={reduced ? 'reduced' : mobile ? 'mobile' : 'full'}>{children}</div>
-    </MotionConfig>
+  const reduced = systemReduced || requested === true;
+  return <Settings.Provider value={{ reduced, systemReduced, toggle }}>
+    <div className="motion-root" data-motion={reduced ? 'reduced' : 'full'}>{children}</div>
   </Settings.Provider>;
 }
 
@@ -56,49 +49,7 @@ export function MotionToggle() {
   return <button className="motion-toggle" type="button" aria-pressed={reduced} disabled={systemReduced} onClick={toggle}>{systemReduced ? ui.motion.system : ui.motion.toggle}</button>;
 }
 
-// Copy is opaque and interactive from its first render. Only a small offset enters.
-export function Entrance({ children, className = '' }: { children: ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const entered = useInView(ref, { once: true, amount: 0.1 });
-  const { enabled } = useContext(Settings);
-  return <motion.div ref={ref} className={`motion-entrance ${className}`} initial={false} animate={{ y: enabled && !entered ? 6 : 0 }} transition={{ duration: enabled ? timing.entrance : 0 }}>{children}</motion.div>;
-}
-
-export function MotionRule({ className = '', route = false }: { className?: string; route?: boolean }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const entered = useInView(ref, { once: true, amount: 0.1 });
-  const { enabled } = useContext(Settings);
-  return <motion.span ref={ref} className={`motion-rule ${className}`} aria-hidden="true" initial={route && enabled ? { scaleX: 0 } : false} animate={{ scaleX: !enabled || route || entered ? 1 : 0 }} transition={{ duration: enabled ? timing.entrance : 0 }} />;
-}
-
-// A finite illustrative sequence. Leaving the viewport or hiding the document
-// clears the sole pending timer; re-entry resumes at the same step, never loops.
-export function useDiagramSequence(count: number) {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { amount: 0.15 });
-  const { enabled, reduced, mobile } = useContext(Settings);
-  const [step, setStep] = useState(0);
-  const active = enabled && inView && step < count;
-  useEffect(() => {
-    if (!active) return;
-    const timer = window.setTimeout(() => setStep(value => Math.min(count, value + 1)), timing.step);
-    return () => window.clearTimeout(timer);
-  }, [active, step, count]);
-  const phase = reduced || mobile ? count : step;
-  return { ref, phase, active, state: reduced || mobile ? 'static' : step >= count ? 'complete' : active ? 'running' : 'paused' };
-}
-
-export function SequenceSymbol({ active, complete, className, heartbeat = false, children }: {
-  active: boolean; complete: boolean; className: string; heartbeat?: boolean; children: ReactNode;
-}) {
-  return <motion.span className={className} aria-hidden="true" data-complete={complete} data-active={active} initial={false}
-    animate={{ scale: active ? [1, 1.08, 1] : 1, rotate: active && heartbeat ? [0, -12, 12, 0] : 0 }} transition={{ duration: active ? timing.pulse : 0 }}>{children}</motion.span>;
-}
-
-export function SequencePulse({ active }: { active: boolean }) {
-  return <motion.span className="sequence-pulse" aria-hidden="true" initial={false} animate={{ opacity: active ? [0, 1, 0] : 0, x: active ? [0, 10, 0] : 0 }} transition={{ duration: active ? timing.pulse : 0 }} />;
-}
-
-export function QueueMarks({ active }: { active: boolean }) {
-  return <>{[0, 1, 2].map(index => <motion.i key={index} initial={false} animate={{ x: active ? [0, 3, 0] : 0 }} transition={{ duration: active ? 0.25 : 0, delay: active ? index * 0.04 : 0 }} />)}</>;
+// A thin accent rule under the index that draws in on each page change.
+export function MotionRule({ className = '' }: { className?: string }) {
+  return <span className={`motion-rule ${className}`} aria-hidden="true" />;
 }

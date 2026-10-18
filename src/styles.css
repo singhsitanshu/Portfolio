@@ -7,6 +7,7 @@
 @import "./styles/front-page.css";
 @import "./styles/infographics.css";
 @import "./styles/article.css";
+@import "./styles/motion.css";
 @import "./styles/styleguide.css";
 
 /* Base layer (T-13): resets, focus, links and shared states. Tailwind supplies
@@ -73,11 +74,10 @@ main { position: relative; }
 .not-found { display: grid; gap: var(--space-4); max-width: var(--measure); padding-block: var(--space-8); }
 .not-found-links { display: flex; flex-wrap: wrap; gap: 0 var(--space-5); }
 
-/* Motion hooks (Framer Motion); T-16 owns the motion pass. */
-.motion-rule { display: block; height: var(--rule-medium); background: var(--accent); transform-origin: left; pointer-events: none; }
+/* Route rule and reduced motion; load and hover motion live in styles/motion.css. */
+.motion-rule { display: block; height: var(--rule-medium); background: var(--accent); pointer-events: none; }
 .route-motion { position: absolute; top: 0; left: 0; width: 100%; opacity: 0.45; }
-.motion-root[data-motion="reduced"] *, .motion-root[data-motion="reduced"] *::before, .motion-root[data-motion="reduced"] *::after,
-.motion-root[data-motion="mobile"] *, .motion-root[data-motion="mobile"] *::before, .motion-root[data-motion="mobile"] *::after { animation: none !important; transition: none !important; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+:root[data-reduce-motion] *, :root[data-reduce-motion] *::before, :root[data-reduce-motion] *::after { animation: none !important; transition: none !important; }

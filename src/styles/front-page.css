@@ -136,3 +136,12 @@
 @media (min-width: 43.75em) {
   .briefs { columns: 2; column-gap: var(--grid-gap); column-rule: var(--rule-hairline) solid var(--rule); }
 }
+
+/* Education notice (T-11): a boxed notice beside the Business section. */
+.notice { display: grid; align-content: start; gap: var(--space-2); }
+.notice .section-head { text-transform: uppercase; letter-spacing: var(--tracking-label); }
+.notice .rule { margin-block: var(--space-1); }
+.notice-detail { margin: 0; font: var(--weight-regular) var(--text-md) / var(--leading-snug) var(--font-body); }
+@media (min-width: 68.75em) {
+  .notice { align-self: start; margin-top: calc(var(--rule-heavy) + var(--space-3)); }
+}

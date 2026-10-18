@@ -394,10 +394,6 @@ main { position: relative; }
 .site-footer { flex-wrap: wrap; }
 .projects-section { position: relative; padding-block: clamp(2rem, 4vw, 3rem) 2rem; }
 .anchor-alias { position: absolute; top: 0; left: 0; width: 1px; height: 1px; }
-.education-card { margin-top: 2rem; padding: clamp(20px, 3vw, 32px); border: var(--border-thin); border-radius: var(--radius-panel); background: var(--color-surface); }
-.education-card h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); line-height: 1.35; margin-bottom: .4rem; }
-.education-card p { font-size: .9375rem; }
-.education-graduation { margin-top: .5rem; color: var(--color-accent); }
 @media (max-width: 60rem) {
   .site-header { grid-template-columns: 1fr auto; gap: .75rem; }
   .primary-nav { grid-column: 1 / -1; grid-row: 2; justify-self: start; gap: .25rem 1.25rem; }

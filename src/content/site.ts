@@ -22,8 +22,6 @@ export const profile = {
     school: 'Henry Samueli School of Engineering',
     degree: 'Bachelor of Science in Computer Science',
     expectedGraduation: 'June 2029',
-    kicker: '',
-    headline: '',
   },
   resumeUrl: '/aansh-singh-resume.pdf',
   role: 'Software Engineer',
@@ -280,7 +278,8 @@ export const homepage = {
     dateline: (entry: { category: string; dates: string }) => `${entry.category}, ${entry.dates}`,
     headline: (entry: { role: string; organization: string }) => `${entry.role}, ${entry.organization}`,
   },
-  education: { eyebrow: '03 / College', title: 'Education', graduation: 'Expected graduation' },
+  // T-11: education as a boxed notice beside the Business section.
+  education: { kicker: 'Notice', title: 'Education', graduation: 'Expected graduation' },
   contact: {
     eyebrow: '04 / Contact',
     title: 'Let’s build something useful.',

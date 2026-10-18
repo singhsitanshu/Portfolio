@@ -1,10 +1,8 @@
-import { Heading } from '../components/ui';
 import { Contact } from '../components/Contact';
 import { CodeGraphFeature } from '../components/CodeGraphFeature';
 import { TaskForgeFeature } from '../components/TaskForgeFeature';
 import { homepage, profile, projects, experience } from '../content/site';
-import { Entrance } from '../components/Motion';
-import { Box, Dateline, JumpLink, Kicker, SectionFront } from '../components/print';
+import { Box, Dateline, JumpLink, Kicker, Rule, SectionFront } from '../components/print';
 
 // Native same-document fragment navigation can focus the alias after router effects.
 // Forward that focus to the containing, named section as well.
@@ -70,18 +68,16 @@ export function Home() {
           </li>)}
         </ol>
       </section>
+      <Box as="section" id="education" className="notice span-lg-4" aria-labelledby="education-title" tabIndex={-1}>
+        <p className="kicker">{homepage.education.kicker}</p>
+        <h2 className="section-head" id="education-title">{homepage.education.title}</h2>
+        <Rule />
+        <p className="headline-brief notice-institution">{profile.education.institution}</p>
+        <p className="notice-detail">{profile.education.school}</p>
+        <p className="notice-detail">{profile.education.degree}</p>
+        <p className="dateline">{homepage.education.graduation} · {profile.education.expectedGraduation}</p>
+      </Box>
     </div>
-    <section id="education" className="section education-section" aria-labelledby="education-title" tabIndex={-1}>
-      <Entrance><Heading id="education-title" eyebrow={homepage.education.eyebrow}>{homepage.education.title}</Heading></Entrance>
-      <div className="education-card">
-        <div>
-          <h3>{profile.education.institution}</h3>
-          <p className="muted">{profile.education.school}</p>
-          <p>{profile.education.degree}</p>
-          <p className="education-graduation">{homepage.education.graduation} · {profile.education.expectedGraduation}</p>
-        </div>
-      </div>
-    </section>
     <Contact />
   </>;
 }

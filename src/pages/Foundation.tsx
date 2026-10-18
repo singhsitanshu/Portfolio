@@ -1,4 +1,4 @@
-import { projects, contentReadiness } from '../content/portfolio';
+import { projects, contentReadiness } from '../content/site';
 import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Button, Heading, Metric, TextLink } from '../components/ui';

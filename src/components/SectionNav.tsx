@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { homeSections } from '../content/navigation';
-import { projects } from '../content/portfolio';
+import { projects, ui } from '../content/site';
 
 // Read actual section positions so scrolling, history restoration, and layout
 // changes all use the same definition of the current section.
@@ -59,7 +59,7 @@ export function SectionNav() {
     return () => resize.disconnect();
   }, [hovered]);
   useEffect(() => { setHovered(null); }, [pathname]);
-  return <nav ref={nav} className="primary-nav" aria-label="Primary" onPointerLeave={() => setHovered(null)}>
+  return <nav ref={nav} className="primary-nav" aria-label={ui.primaryNavLabel} onPointerLeave={() => setHovered(null)}>
     <span aria-hidden="true" className="nav-highlight" data-visible={hovered !== null} style={{ transform: `translate(${highlight.x}px, ${highlight.y}px)`, width: highlight.width, height: highlight.height }} />
     {homeSections.map(section => <Link key={section.id} to={`/#${section.id}`} data-section={section.id}
       aria-current={current === section.id ? 'location' : undefined}

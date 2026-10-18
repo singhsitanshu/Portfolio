@@ -1,4 +1,4 @@
-import { profile, projects } from './portfolio.ts';
+import { profile, projects } from './site.ts';
 
 // Production origin explicitly supplied by the user for Ticket 09.
 export const site = {

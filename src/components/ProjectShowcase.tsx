@@ -1,15 +1,10 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import type { Project } from '../content/portfolio';
+import { homepage, ui, type Project } from '../content/site';
 
-export function ProjectShowcase({ project, summary, result, highlights, technologies, children }: {
-  project: Project;
-  summary: string;
-  result: { headline: string; context: string };
-  highlights: readonly { title: string; body: string }[];
-  technologies: readonly string[];
-  children: ReactNode;
-}) {
+export function ProjectShowcase({ project, children }: { project: Project; children: ReactNode }) {
+  const { summary, result, highlights, technologies } = project.story;
+  const copy = homepage.projects;
   return <article id={project.id} className={`project-showcase ${project.id}-showcase`} aria-labelledby={`${project.id}-title`} tabIndex={-1}>
     <div className="showcase-copy showcase-intro">
       <header>
@@ -22,14 +17,14 @@ export function ProjectShowcase({ project, summary, result, highlights, technolo
         <p className="showcase-result-context">{result.context}</p>
       </div>
       <div className="showcase-actions">
-        <Link className="button" to={project.path} aria-label={`Read ${project.name} case study`}>Read case study <span aria-hidden="true">↗</span></Link>
-        <a className="text-link" href={project.repository} aria-label={`${project.name} on GitHub`}>GitHub <span aria-hidden="true">↗</span></a>
+        <Link className="button" to={project.path} aria-label={copy.caseStudyLabel(project.name)}>{copy.caseStudy} <span aria-hidden="true">{ui.external}</span></Link>
+        <a className="text-link" href={project.repository} aria-label={copy.githubLabel(project.name)}>{ui.github} <span aria-hidden="true">{ui.external}</span></a>
       </div>
     </div>
     {children}
     <div className="showcase-copy showcase-details">
       <ul className="showcase-highlights">{highlights.map(item => <li key={item.title}><h4>{item.title}</h4><p>{item.body}</p></li>)}</ul>
-      <ul className="showcase-technologies" aria-label={`${project.name} technologies`}>{technologies.map(technology => <li key={technology}>{technology}</li>)}</ul>
+      <ul className="showcase-technologies" aria-label={copy.technologiesLabel(project.name)}>{technologies.map(technology => <li key={technology}>{technology}</li>)}</ul>
     </div>
   </article>;
 }

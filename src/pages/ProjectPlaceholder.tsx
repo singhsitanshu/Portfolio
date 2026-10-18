@@ -1,4 +1,4 @@
-import { contentReadiness, type Project } from '../content/portfolio';
+import { contentReadiness, type Project } from '../content/site';
 import { Heading, TextLink } from '../components/ui';
 
 export function ProjectPlaceholder({ project }: { project: Project }) {

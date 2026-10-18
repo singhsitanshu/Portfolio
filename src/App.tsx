@@ -5,7 +5,7 @@ import { SectionNav } from './components/SectionNav';
 import { Container } from './components/ui';
 import { RouteMetadata } from './components/RouteMetadata';
 import { NotFound } from './pages/NotFound';
-import { projects, profile, type Project } from './content/portfolio';
+import { projects, profile, ui, type Project } from './content/site';
 import { anchorIdFor } from './content/navigation';
 
 export type PageComponents = { Home: ComponentType; CodeGraphCaseStudy: ComponentType<{ project: Project }>; TaskForgeCaseStudy: ComponentType<{ project: Project }> };
@@ -42,18 +42,18 @@ export function App({ pages }: { pages: PageComponents }) {
   const main = useRef<HTMLElement>(null);
   return <MotionProvider>
     <RouteMetadata />
-    <a className="skip-link" href="#main">Skip to content</a>
+    <a className="skip-link" href="#main">{ui.skipLink}</a>
     <Container>
       <header className="site-header">
-        <NavLink className="wordmark" to="/" aria-label={`${profile.name} home`}>A<span aria-hidden="true"> / </span>S</NavLink>
+        <NavLink className="wordmark" to="/" aria-label={ui.homeLink.label}>{ui.homeLink.initials[0]}<span aria-hidden="true">{ui.homeLink.separator}</span>{ui.homeLink.initials[1]}</NavLink>
         <SectionNav />
-        <a className="text-link header-resume" href={profile.resumeUrl}>Resume <span className="file-label">PDF</span></a>
+        <a className="text-link header-resume" href={profile.resumeUrl}>{ui.resume.label} <span className="file-label">{ui.resume.fileLabel}</span></a>
       </header>
       <main id="main" ref={main} tabIndex={-1}>
         <MotionRule key={pathname} className="route-motion" route />
-        <Suspense fallback={<p className="status" role="status">Loading page…</p>}><RoutedContent main={main} pages={pages} /></Suspense>
+        <Suspense fallback={<p className="status" role="status">{ui.loading}</p>}><RoutedContent main={main} pages={pages} /></Suspense>
       </main>
-      <footer className="site-footer"><span>{profile.name} / {profile.role}</span><nav aria-label="Footer social profiles"><a href={profile.links.github}>GitHub</a><a href={profile.links.linkedin}>LinkedIn</a></nav><MotionToggle /></footer>
+      <footer className="site-footer"><span>{profile.name} / {profile.role}</span><nav aria-label={ui.footerSocialLabel}><a href={profile.links.github}>{ui.github}</a><a href={profile.links.linkedin}>{ui.linkedin}</a></nav><MotionToggle /></footer>
     </Container>
   </MotionProvider>;
 }

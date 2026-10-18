@@ -2,7 +2,7 @@ import { CaseStudyLayout, CaseStudySection, sectionsById } from '../components/C
 import { TextLink } from '../components/ui';
 import { codegraphCaseStudy as content } from '../content/codegraph-case-study';
 import { codegraphFeature, codegraphResultSummary } from '../content/codegraph';
-import type { Project } from '../content/portfolio';
+import type { Project } from '../content/site';
 
 export function CodeGraphCaseStudy({ project }: { project: Project }) {
   const { problem, architecture, execution, challenges, decisions, correctness, results, lessons, repository } = sectionsById(content.sections);

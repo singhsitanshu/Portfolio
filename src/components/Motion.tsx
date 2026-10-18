@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { motion, MotionConfig, useInView } from 'framer-motion';
+import { ui } from '../content/site';
 
 const timing = { entrance: 0.32, step: 650, pulse: 0.4 };
 const reducedQuery = '(prefers-reduced-motion: reduce)';
@@ -52,7 +53,7 @@ export function MotionProvider({ children }: { children: ReactNode }) {
 
 export function MotionToggle() {
   const { reduced, systemReduced, toggle } = useContext(Settings);
-  return <button className="motion-toggle" type="button" aria-pressed={reduced} disabled={systemReduced} onClick={toggle}>{systemReduced ? 'Reduced motion (system)' : 'Reduce motion'}</button>;
+  return <button className="motion-toggle" type="button" aria-pressed={reduced} disabled={systemReduced} onClick={toggle}>{systemReduced ? ui.motion.system : ui.motion.toggle}</button>;
 }
 
 // Copy is opaque and interactive from its first render. Only a small offset enters.

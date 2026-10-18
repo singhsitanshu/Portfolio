@@ -2,7 +2,7 @@ import { CaseStudyLayout, CaseStudySection, sectionsById } from '../components/C
 import { TextLink } from '../components/ui';
 import { taskforgeCaseStudy as content } from '../content/taskforge-case-study';
 import { taskforgeFeature, taskforgeResultSummary } from '../content/taskforge';
-import type { Project } from '../content/portfolio';
+import type { Project } from '../content/site';
 
 export function TaskForgeCaseStudy({ project }: { project: Project }) {
   const { system, submission, claiming, execution, recovery, benchmarks, tradeoffs, repository } = sectionsById(content.sections);

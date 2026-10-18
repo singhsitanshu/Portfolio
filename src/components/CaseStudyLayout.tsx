@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { Project } from '../content/portfolio';
+import type { Project } from '../content/site';
 import type { CaseStudyResultSummary } from '../content/case-study';
 import { Heading, TextLink } from './ui';
 import { Entrance } from './Motion';

@@ -2,14 +2,8 @@
 // Metric wording: catalog/resume-bullets.json B0013/B0032/B0185.
 // Ticket 15: owner-verified metrics take precedence over older evidence caveats; see docs/ticket-15-verification.md.
 import type { CaseStudyResultSummary } from './case-study';
+// Homepage story copy lives in site.ts; this module keeps the shared measurement.
 export const codegraphFeature = {
-  showcase: {
-    summary: 'Explore codebases through interactive graphs and question-specific retrieval.',
-    highlights: [
-      { title: 'Structure & source', body: 'Inspect source on demand and trace direct callers and architectural communities.' },
-    ],
-    visualNote: 'Repository structure and retrieval flow.',
-  },
   question: 'What if an AI agent could understand a codebase before touching it?',
   positioning: 'Repository intelligence for AI-assisted software engineering.',
   problem: 'Understanding unfamiliar code means finding the relevant files, tracing their relationships, and choosing what an agent needs to see.',
@@ -44,7 +38,6 @@ export const codegraphFeature = {
     label: '7 repository-scoped tools',
     body: 'A LangGraph ReAct agent powered by Claude Sonnet 5 uses tools for structure, dependencies, blast radius, external calls, semantic search, and architecture analysis.',
   },
-  technologies: ['React / TypeScript', 'Python / FastAPI', 'Tree-sitter', 'Neo4j', 'LangGraph'],
   linkLabel: 'Explore CodeGraph',
 } as const;
 
@@ -61,7 +54,3 @@ export const codegraphResultSummary = {
   evidence: { id: 'results', label: 'Read context measurement and scope' },
 } as const satisfies CaseStudyResultSummary;
 
-export const codegraphProjectResult = {
-  headline: `${codegraphFeature.result.reduction} less LLM context`,
-  context: `${codegraphFeature.result.baseline} → ${codegraphFeature.result.focused} tokens/query; supported source vs. retrieved tool context`,
-} as const;

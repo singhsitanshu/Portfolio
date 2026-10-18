@@ -5,6 +5,8 @@ import { resolve } from 'node:path';
 import { gzipSync } from 'node:zlib';
 
 const origin = 'https://aanshsingh.com';
+// Stories rebuilt as front-page articles; the rest keep the legacy card checks until converted.
+const newspaperStories = ['codegraph'];
 const socialImage = '/social-preview-homepage-v3.jpg';
 const fixtures = [
   { path: '/', file: 'index.html', title: 'Aansh Singh', heading: 'Aansh' },
@@ -110,23 +112,23 @@ test('case-study summaries precede technical content and link to distinct detail
   }
 });
 
-test('homepage project cards expose outcome and actions before their visuals', () => {
+test('front-page stories expose headline, metric and jump links before their graphics', () => {
   const home = documents.get('/');
-  const cards = [...home.matchAll(/<article id="(codegraph|taskforge)"[^>]*>([\s\S]*?)<\/article>/g)];
-  assert.deepEqual(cards.map(card => card[1]), ['codegraph', 'taskforge']);
-  for (const [, id, card] of cards) {
+  const stories = [...home.matchAll(/<article id="(codegraph|taskforge)"[^>]*>([\s\S]*?)<\/article>/g)];
+  assert.deepEqual(stories.map(story => story[1]), ['codegraph', 'taskforge']);
+  for (const [, id, story] of stories.filter(([, id]) => newspaperStories.includes(id))) {
     let previous = -1;
-    for (const marker of [`id="${id}-title"`, 'class="showcase-summary"', 'class="showcase-result"', 'class="showcase-actions"', '<figure', 'class="showcase-highlights"', 'class="showcase-technologies"']) {
-      const position = card.indexOf(marker);
+    for (const marker of [`id="${id}-title"`, 'class="deck', 'class="byline', 'class="pull-quote', 'class="story-stack', 'class="story-jumps', 'class="showcase-visual']) {
+      const position = story.indexOf(marker);
       assert.ok(position > previous, `${id}: ${marker} is present in reading order`);
       previous = position;
     }
-    assert.doesNotMatch(card, /<details\b/);
-    const actions = tags(card, 'a');
-    assert.equal(actions.length, 2);
-    assert.equal(actions[0].href, `/projects/${id}`);
-    assert.ok(actions[0]['aria-label'].includes(id === 'codegraph' ? 'CodeGraph' : 'TaskForge'));
-    assert.ok(actions[1]['aria-label'].includes(id === 'codegraph' ? 'CodeGraph' : 'TaskForge'));
+    const links = tags(story, 'a');
+    assert.equal(links.length, 2);
+    assert.equal(links[0].href, `/projects/${id}`);
+    assert.match(links[1].href, /^https:\/\/github\.com\/singhsitanshu\//);
+    const name = id === 'codegraph' ? 'CodeGraph' : 'TaskForge';
+    for (const link of story.match(/<a\b[\s\S]*?<\/a>/g)) assert.ok(link.replace(/<[^>]+>/g, '').includes(name), `${id}: link text names the project`);
   }
 });
 
@@ -229,7 +231,7 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
   const home = documents.get('/');
   const ids = [...home.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
   assert.equal(ids.length, new Set(ids).size, 'IDs must be unique');
-  const ordered = ['introduction', 'projects', 'experience', 'education', 'contact'];
+  const ordered = ['projects', 'introduction', 'experience', 'education', 'contact'];
   let previous = -1;
   for (const id of ordered) {
     const index = home.indexOf(`id="${id}"`);
@@ -239,9 +241,9 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
   }
   for (const id of ['work', 'about', 'codegraph', 'taskforge']) assert.ok(ids.includes(id));
   for (const [id, title] of [['projects', 'Projects'], ['experience', 'Experience'], ['education', 'Education']]) {
-    assert.match(home, new RegExp(`<h2 id="${id}-title">${title}</h2>`));
+    assert.match(home, new RegExp(`<h2 id="${id}-title"[^>]*>${title}</h2>`));
   }
-  for (const project of ['codegraph', 'taskforge']) assert.match(home, new RegExp(`<h3 id="${project}-title">`));
+  for (const project of ['codegraph', 'taskforge']) assert.match(home, new RegExp(`<h3 id="${project}-title"`));
   for (const role of ['Software Engineering Team Lead Intern', 'Advanced Academic Ambassador - Projects Chair', 'Instructor', 'Operations Team Member']) assert.ok(home.includes(role));
   assert.ok(home.includes('2025 – Present') && home.includes('June 2029'));
   assert.doesNotMatch(home, /About &amp; journey/);

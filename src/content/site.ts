@@ -73,6 +73,16 @@ export const masthead = {
 const projectDates = 'Summer 2026';
 const projectOwnershipLabel = `Solo project · ${projectDates}`;
 const { result } = codegraphFeature;
+const profileName = profile.name;
+const codegraphOwnership = {
+  label: projectOwnershipLabel,
+  statement: 'I designed and built CodeGraph independently during summer 2026, before the school year began.',
+  scope: 'My work spans the full system: repository ingestion and parsing, the graph and retrieval pipeline, the API, and the interactive dashboard.',
+} as const;
+const codegraphStory = {
+  summary: 'Explore codebases through interactive graphs and question-specific retrieval.',
+  highlight: { title: 'Structure & source', body: 'Inspect source on demand and trace direct callers and architectural communities.' },
+} as const;
 const { syntheticWait } = taskforgeMeasurements;
 
 export const projects = [
@@ -82,19 +92,13 @@ export const projects = [
     path: '/projects/codegraph',
     repository: 'https://github.com/singhsitanshu/Codegraph',
     dates: projectDates,
-    ownership: {
-      label: projectOwnershipLabel,
-      statement: 'I designed and built CodeGraph independently during summer 2026, before the school year began.',
-      scope: 'My work spans the full system: repository ingestion and parsing, the graph and retrieval pipeline, the API, and the interactive dashboard.',
-    },
+    ownership: codegraphOwnership,
     summary: 'Repository intelligence through interactive code graphs, source inspection, and natural-language analysis.',
     source: 'projects/CODEGRAPH.md',
     // Homepage story. Authoritative bank: projects/CODEGRAPH.md; metric wording B0013/B0032/B0185.
     story: {
-      summary: 'Explore codebases through interactive graphs and question-specific retrieval.',
-      highlights: [
-        { title: 'Structure & source', body: 'Inspect source on demand and trace direct callers and architectural communities.' },
-      ],
+      summary: codegraphStory.summary,
+      highlights: [codegraphStory.highlight],
       result: {
         headline: `${result.reduction} less LLM context`,
         context: `${result.baseline} → ${result.focused} tokens/query; supported source vs. retrieved tool context`,
@@ -110,12 +114,22 @@ export const projects = [
         context: 'Focused context',
         retrieval: 'Graph + vector retrieval',
       },
-      kicker: '',
-      headline: '',
-      deck: '',
-      byline: '',
+      // T-07 front-page lead. Headline approved by the owner, Oct 18, 2026.
+      kicker: 'Developer Tools',
+      headline: 'Repository Tool Cuts LLM Context 97.5%',
+      deck: 'CodeGraph indexes a repository’s files, functions and calls so an AI agent retrieves only the context a question needs.',
+      byline: `By ${profileName} · ${projectOwnershipLabel}`,
       dateline: '',
-      pullQuote,
+      pullQuote: {
+        quote: `${result.reduction} less LLM context`,
+        attribution: `${result.baseline} → ${result.focused} tokens/query; supported source vs. retrieved tool context`,
+      },
+      // Body paragraphs are existing copy: the story summary, its highlight, and the ownership statement.
+      body: [
+        { runIn: '', text: codegraphStory.summary },
+        { runIn: `${codegraphStory.highlight.title}.`, text: codegraphStory.highlight.body },
+        { runIn: '', text: `${codegraphOwnership.statement} ${codegraphOwnership.scope}` },
+      ],
     },
   },
   {
@@ -225,6 +239,10 @@ export const homepage = {
     eyebrow: '01 / Selected projects',
     title: 'Projects',
     caseStudy: 'Read case study',
+    builtWith: 'Built with',
+    caseStudyJump: (name: string) => `${name} case study`,
+    sourceLabel: 'Source',
+    githubJump: (name: string) => `${name} on GitHub`,
     caseStudyLabel: (name: string) => `Read ${name} case study`,
     githubLabel: (name: string) => `${name} on GitHub`,
     technologiesLabel: (name: string) => `${name} technologies`,

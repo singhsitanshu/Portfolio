@@ -4,6 +4,7 @@
 @import "./styles/grid.css";
 @import "./styles/print.css";
 @import "./styles/masthead.css";
+@import "./styles/front-page.css";
 @import "./styles/styleguide.css";
 
 /* T-06 page frame: the legacy theme now resolves to the paper tokens, so

@@ -13,6 +13,11 @@ function LegacyAnchor({ id }: { id: string }) {
 
 export function Home() {
   return <>
+    <section id="projects" className="front-page np-grid" aria-labelledby="projects-title" tabIndex={-1}>
+      <LegacyAnchor id="work" />
+      <h2 id="projects-title" className="sr-only">{homepage.projects.title}</h2>
+      {projects.map((project) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <div key={project.id} className="span-lg-4 rule-lg front-second"><TaskForgeFeature project={project} /></div>)}
+    </section>
     <section id="introduction" className="hero" aria-label={profile.name} tabIndex={-1}>
       <LegacyAnchor id="about" />
       <Entrance className="hero-copy">
@@ -27,13 +32,6 @@ export function Home() {
         </div>
         <p className="portrait-caption"><span aria-hidden="true">{homepage.hero.portraitIndex}</span> {profile.educationLabel}</p>
       </Entrance>
-    </section>
-    <section id="projects" className="section projects-section" aria-labelledby="projects-title" tabIndex={-1}>
-      <LegacyAnchor id="work" />
-      <Entrance><Heading id="projects-title" eyebrow={homepage.projects.eyebrow}>{homepage.projects.title}</Heading></Entrance>
-      <div className="project-showcases">
-        {projects.map((project) => project.id === 'codegraph' ? <CodeGraphFeature key={project.id} project={project} /> : <TaskForgeFeature key={project.id} project={project} />)}
-      </div>
     </section>
     <section id="experience" className="section experience-section" aria-labelledby="experience-title" tabIndex={-1}>
       <Entrance><Heading id="experience-title" eyebrow={homepage.experience.eyebrow}>{homepage.experience.title}</Heading></Entrance>

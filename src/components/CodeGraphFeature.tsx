@@ -1,9 +1,9 @@
 import type { Project } from '../content/site';
-import { ProjectShowcase } from './ProjectShowcase';
+import { FrontStory } from './FrontStory';
 
 export function CodeGraphFeature({ project }: { project: Project & { id: 'codegraph' } }) {
   const visual = project.story.visual;
-  return <ProjectShowcase project={project}>
+  return <FrontStory project={project} size="lead" className="front-lead">
     <figure className="showcase-visual repository-visual" aria-labelledby="codegraph-concept-caption">
       <div className="repository-map">
         <div className="repository-tree">
@@ -27,5 +27,5 @@ export function CodeGraphFeature({ project }: { project: Project & { id: 'codegr
       </div>
       <figcaption id="codegraph-concept-caption"><strong>{visual.label}</strong><span>{visual.note}</span></figcaption>
     </figure>
-  </ProjectShowcase>;
+  </FrontStory>;
 }

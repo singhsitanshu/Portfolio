@@ -1,0 +1,31 @@
+/* Front page (T-07 onward): stories, photo, sections. Tokens only. */
+
+.front-page { padding-block: var(--space-5) var(--space-7); }
+
+/* Project stories. */
+.front-story { display: grid; align-content: start; gap: var(--space-4); min-width: 0; }
+.story-head { display: grid; gap: var(--space-3); }
+.story-head .byline { padding-top: var(--space-2); border-top: var(--rule-hairline) solid var(--rule); }
+.story-columns { display: grid; gap: var(--space-5); }
+.story-aside { display: grid; align-content: start; gap: var(--space-4); }
+.story-stack { display: grid; gap: var(--space-1); }
+.story-stack ul { display: flex; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; color: var(--ink); }
+.story-stack li:not(:last-child)::after { content: '·'; padding-inline: var(--space-2); color: var(--ink-muted); }
+.story-jumps { display: grid; justify-items: start; }
+
+/* Lead story: the headline runs the full eight columns; the body and the
+   pulled metric share them below. */
+@media (min-width: 43.75em) {
+  .front-story-lead .story-columns { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--grid-gap); }
+  .front-story-lead .story-aside { position: relative; }
+  .front-story-lead .story-aside::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    left: calc(var(--grid-gap) / -2);
+    border-left: var(--rule-hairline) solid var(--rule);
+  }
+}
+@media (min-width: 68.75em) {
+  .front-lead { grid-column: 1 / span 8; grid-row: 1 / span 2; }
+}

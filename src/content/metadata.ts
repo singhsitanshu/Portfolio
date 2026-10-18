@@ -1,17 +1,19 @@
-import { profile, projects } from './site.ts';
+import { masthead, profile, projects } from './site.ts';
 
 // Production origin explicitly supplied by the user for Ticket 09.
+// T-17: the share image is the newspaper front page (scripts/social-preview.mjs).
 export const site = {
   origin: 'https://aanshsingh.com',
-  image: '/social-preview-homepage-v3.jpg',
-  imageAlt: `${profile.name}'s homepage hero: his portrait, ${profile.role} / ${profile.educationLabel}, and “${profile.hero.perspective}”`,
+  name: masthead.nameplate,
+  image: '/social-preview-times-v1.jpg',
+  imageAlt: `The front page of ${masthead.nameplate}: the nameplate, the edition line “${profile.role} · ${profile.educationLabel}”, and ${profile.name}'s name in a banner headline.`,
 } as const;
 
 export const pages = [
   {
     path: '/',
-    title: profile.name,
-    description: `${profile.positioning} Software engineer and UCLA computer science student.`,
+    title: `${profile.name} | ${masthead.nameplate}`,
+    description: `${profile.name} is a software engineer and UCLA computer science student building developer tools, AI systems, and reliable backend software. Read about CodeGraph and TaskForge in ${masthead.nameplate}.`,
   },
   {
     path: projects[0].path,
@@ -41,7 +43,7 @@ export function metadataTags(path: string): HeadTag[] {
     { tag: 'meta', attributes: { name: 'description', content: page.description } },
     { tag: 'meta', attributes: { name: 'robots', content: page.index ? 'index, follow' : 'noindex, follow' } },
     { tag: 'meta', attributes: { property: 'og:type', content: 'website' } },
-    { tag: 'meta', attributes: { property: 'og:site_name', content: profile.name } },
+    { tag: 'meta', attributes: { property: 'og:site_name', content: site.name } },
     { tag: 'meta', attributes: { property: 'og:title', content: page.title } },
     { tag: 'meta', attributes: { property: 'og:description', content: page.description } },
     { tag: 'meta', attributes: { property: 'og:image', content: new URL(site.image, site.origin).href } },
@@ -66,8 +68,22 @@ export function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]!);
 }
 
+// Site-wide structured data: the person this site is about.
+export const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  url: `${site.origin}/`,
+  jobTitle: profile.role,
+  image: `${site.origin}/images/aansh-singh-trim-640.jpg`,
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of California, Los Angeles', alternateName: 'UCLA', url: 'https://www.ucla.edu/' },
+  sameAs: [profile.links.github, profile.links.linkedin],
+} as const;
+
 export function renderHead(path: string) {
+  // JSON in a script element: escape "<" so no value can close the element.
+  const jsonLd = JSON.stringify(personSchema).replace(/</g, '\\u003c');
   return `<title>${escapeHtml(metadataFor(path).title)}</title>\n` + metadataTags(path).map(({ tag, attributes }) =>
     `<${tag} data-portfolio-metadata ${Object.entries(attributes).map(([name, value]) => `${name}="${escapeHtml(value)}"`).join(' ')} />`,
-  ).join('\n');
+  ).join('\n') + `\n<script type="application/ld+json">${jsonLd}</script>`;
 }

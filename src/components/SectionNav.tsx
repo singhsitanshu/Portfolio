@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { homeSections } from '../content/navigation';
-import { projects, ui } from '../content/site';
+import { projects } from '../content/site';
 
 // Read actual section positions so scrolling, history restoration, and layout
 // changes all use the same definition of the current section.
@@ -44,10 +44,11 @@ function useCurrentSection(pathname: string) {
 export function SectionNav({ label }: { label?: string }) {
   const { pathname } = useLocation();
   const current = useCurrentSection(pathname);
-  return <nav className="primary-nav" aria-label={ui.primaryNavLabel}>
+  // Rendered inside the index bar's "Inside today" nav landmark.
+  return <div className="primary-nav">
     {label && <p className="index-label" aria-hidden="true">{label}</p>}
     <ul className="index-links">
       {homeSections.map(section => <li key={section.id}><Link to={`/#${section.id}`} aria-current={current === section.id ? 'location' : undefined}>{section.label}</Link></li>)}
     </ul>
-  </nav>;
+  </div>;
 }

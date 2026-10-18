@@ -59,10 +59,10 @@ export function InsideMasthead({ section }: { section?: string }) {
 
 // The "Inside Today" index: a thin bar under the nameplate that sticks on desktop.
 export function IndexBar() {
-  return <div className="index-bar">
+  return <nav className="index-bar" aria-label={ui.primaryNavLabel}>
     <div className="index-bar-inner np-sheet">
       <NavLink className="index-home" to="/" aria-label={ui.homeLink.label}>{ui.homeLink.initials[0]}<span aria-hidden="true">{ui.homeLink.separator}</span>{ui.homeLink.initials[1]}</NavLink>
       <SectionNav label={masthead.indexLabel} />
     </div>
-  </div>;
+  </nav>;
 }

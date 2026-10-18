@@ -7,9 +7,9 @@ import { gzipSync } from 'node:zlib';
 const origin = 'https://aanshsingh.com';
 // Stories rebuilt as front-page articles; the rest keep the legacy card checks until converted.
 const newspaperStories = ['codegraph', 'taskforge'];
-const socialImage = '/social-preview-homepage-v3.jpg';
+const socialImage = '/social-preview-times-v1.jpg';
 const fixtures = [
-  { path: '/', file: 'index.html', title: 'Aansh Singh', heading: 'Aansh' },
+  { path: '/', file: 'index.html', title: 'Aansh Singh | The Aansh Times', heading: 'Aansh' },
   { path: '/projects/codegraph', file: 'projects/codegraph.html', title: 'CodeGraph Case Study | Aansh Singh', heading: 'CodeGraph' },
   { path: '/projects/taskforge', file: 'projects/taskforge.html', title: 'TaskForge Case Study | Aansh Singh', heading: 'TaskForge' },
 ];
@@ -54,7 +54,7 @@ test('three generated pages expose distinct metadata and complete content withou
     assert.equal(meta(head, 'twitter:card')[0].content, 'summary_large_image');
     assert.equal(meta(head, 'twitter:image')[0].content, origin + socialImage);
     assert.equal(meta(head, 'og:image:alt')[0].content, meta(head, 'twitter:image:alt')[0].content);
-    for (const description of ['Aansh Singh', 'homepage hero', 'portrait', 'Software Engineer', 'UCLA Computer Science']) {
+    for (const description of ['Aansh Singh', 'The Aansh Times', 'Software Engineer', 'UCLA Computer Science']) {
       assert.ok(meta(head, 'og:image:alt')[0].content.includes(description));
     }
     assert.equal(meta(head, 'robots')[0].content, 'index, follow');
@@ -64,7 +64,15 @@ test('three generated pages expose distinct metadata and complete content withou
     assert.ok(!html.includes('www.aanshsingh.com') && !html.includes('/_test/'));
     const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
     assert.equal(scripts.filter(([, attributes]) => /\bsrc=/.test(attributes)).length, 1, 'only the local client entry is shipped');
-    assert.deepEqual(scripts.filter(([, attributes]) => !/\bsrc=/.test(attributes)).map(([, , body]) => body.includes('portfolio-reduce-motion')), [true], 'the only inline script applies the saved motion preference');
+    const inline = scripts.filter(([, attributes]) => !/\bsrc=/.test(attributes) && !attributes.includes('application/ld+json'));
+    assert.deepEqual(inline.map(([, , body]) => body.includes('portfolio-reduce-motion')), [true], 'the only inline script applies the saved motion preference');
+    const jsonLd = scripts.filter(([, attributes]) => attributes.includes('application/ld+json'));
+    assert.equal(jsonLd.length, 1, `${page.path}: one JSON-LD block`);
+    const person = JSON.parse(jsonLd[0][2]);
+    assert.equal(person['@type'], 'Person');
+    assert.equal(person.name, 'Aansh Singh');
+    assert.match(person.alumniOf.name, /University of California, Los Angeles/);
+    assert.deepEqual(person.sameAs, ['https://github.com/singhsitanshu', 'https://www.linkedin.com/in/aansh-singh/']);
   }
   assert.equal(descriptions.size, 3);
 });
@@ -258,7 +266,7 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
   assert.doesNotMatch(home, /About &amp; journey/);
   for (const html of documents.values()) {
     const nav = html.match(/<nav[^>]*aria-label="Inside today"[^>]*>([\s\S]*?)<\/nav>/)[1];
-    assert.deepEqual(tags(nav, 'a').map(a => a.href), ['/#projects', '/#experience', '/#education', '/#contact']);
+    assert.deepEqual(tags(nav, 'a').map(a => a.href), ['/', '/#projects', '/#experience', '/#education', '/#contact']);
     assert.ok(tags(html, 'a').some(a => a.href === '/aansh-singh-resume.pdf'));
   }
 });

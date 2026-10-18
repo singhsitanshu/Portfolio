@@ -4,7 +4,7 @@ import { CodeGraphFeature } from '../components/CodeGraphFeature';
 import { TaskForgeFeature } from '../components/TaskForgeFeature';
 import { homepage, profile, projects, experience } from '../content/site';
 import { Entrance } from '../components/Motion';
-import { Box, JumpLink, Kicker, SectionFront } from '../components/print';
+import { Box, Dateline, JumpLink, Kicker, SectionFront } from '../components/print';
 
 // Native same-document fragment navigation can focus the alias after router effects.
 // Forward that focus to the containing, named section as well.
@@ -59,19 +59,18 @@ export function Home() {
         <TaskForgeFeature project={taskforge} />
       </div>
     </section>
-    <section id="experience" className="section experience-section" aria-labelledby="experience-title" tabIndex={-1}>
-      <Entrance><Heading id="experience-title" eyebrow={homepage.experience.eyebrow}>{homepage.experience.title}</Heading></Entrance>
-      <ol className="experience-timeline">
-        {experience.map(entry => <li key={entry.organization}>
-          <div className="experience-dates">{entry.dates && <p>{entry.dates}</p>}{entry.category && <span>{entry.category}</span>}</div>
-          <div className="experience-entry">
-            <h3>{entry.organization}</h3>
-            <p className="experience-role">{entry.role}</p>
-            <ul>{entry.contributions.map(contribution => <li key={contribution}>{contribution}</li>)}</ul>
-          </div>
-        </li>)}
-      </ol>
-    </section>
+    <div className="np-grid front-sections">
+      <section id="experience" className="business span-lg-8" aria-labelledby="experience-title" tabIndex={-1}>
+        <SectionFront id="experience-title" aside={homepage.experience.title}>{homepage.experience.section}</SectionFront>
+        <ol className="briefs">
+          {experience.map(entry => <li key={entry.organization} className="brief">
+            <Dateline>{homepage.experience.dateline(entry)}</Dateline>
+            <h3 className="headline-brief">{homepage.experience.headline(entry)}</h3>
+            <ul className="brief-body">{entry.contributions.map(contribution => <li key={contribution}>{contribution}</li>)}</ul>
+          </li>)}
+        </ol>
+      </section>
+    </div>
     <section id="education" className="section education-section" aria-labelledby="education-title" tabIndex={-1}>
       <Entrance><Heading id="education-title" eyebrow={homepage.education.eyebrow}>{homepage.education.title}</Heading></Entrance>
       <div className="education-card">

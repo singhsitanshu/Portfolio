@@ -125,3 +125,14 @@
 }
 
 
+
+/* Business & Campus (T-10): experience as dated briefs, two newspaper columns. */
+.front-sections { padding-bottom: var(--space-7); }
+.briefs { margin: 0; padding: 0; list-style: none; }
+.brief { display: grid; gap: var(--space-2); padding-bottom: var(--space-4); margin-bottom: var(--space-4); border-bottom: var(--rule-hairline) solid var(--rule); break-inside: avoid; }
+.brief:last-child { border-bottom: 0; margin-bottom: 0; }
+.brief-body { margin: 0; padding-left: var(--space-4); font: var(--weight-regular) var(--text-md) / var(--leading-body) var(--font-body); }
+.brief-body li + li { margin-top: var(--space-1); }
+@media (min-width: 43.75em) {
+  .briefs { columns: 2; column-gap: var(--grid-gap); column-rule: var(--rule-hairline) solid var(--rule); }
+}

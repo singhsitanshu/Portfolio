@@ -394,17 +394,6 @@ main { position: relative; }
 .site-footer { flex-wrap: wrap; }
 .projects-section { position: relative; padding-block: clamp(2rem, 4vw, 3rem) 2rem; }
 .anchor-alias { position: absolute; top: 0; left: 0; width: 1px; height: 1px; }
-.experience-section { container-type: inline-size; }
-.experience-timeline { list-style: none; padding: 0; margin: 2.5rem 0 0; }
-.experience-timeline > li { position: relative; display: grid; grid-template-columns: minmax(10rem, 1fr) minmax(0, 3fr); gap: 2rem; padding: 0 0 2.5rem 1.5rem; border-left: var(--border-thin); }
-.experience-timeline > li::before { content: ''; position: absolute; left: -.3rem; top: .45rem; width: .55rem; height: .55rem; border-radius: 50%; background: var(--color-accent); }
-.experience-timeline > li:last-child { padding-bottom: 0; }
-.experience-dates { color: var(--color-muted); font-size: .875rem; }
-.experience-dates span { display: block; font-size: .75rem; margin-top: .5rem; color: var(--color-accent); }
-.experience-entry h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); line-height: 1.35; }
-.experience-role { margin-top: .35rem; font-weight: 600; }
-.experience-entry ul { padding-left: 1.15rem; margin: .85rem 0 0; list-style: disc; color: var(--color-muted); font-size: .9375rem; line-height: 1.65; }
-.experience-entry li + li { margin-top: .4rem; }
 .education-card { margin-top: 2rem; padding: clamp(20px, 3vw, 32px); border: var(--border-thin); border-radius: var(--radius-panel); background: var(--color-surface); }
 .education-card h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); line-height: 1.35; margin-bottom: .4rem; }
 .education-card p { font-size: .9375rem; }
@@ -415,11 +404,7 @@ main { position: relative; }
   .header-resume { grid-column: 2; grid-row: 1; }
 }
 @media (max-width: 40rem) {
-  .experience-timeline > li { grid-template-columns: minmax(0, 1fr); gap: .75rem; padding-left: 1rem; }
-  .experience-dates span { display: inline; margin-left: .5rem; }
-  .experience-dates p { display: inline; }
 }
 
 @container (max-width: 44rem) {
-  .experience-timeline > li { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
 }

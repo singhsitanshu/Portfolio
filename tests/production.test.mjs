@@ -246,7 +246,7 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
     assert.match(home, new RegExp(`<section[^>]*id="${id}"[^>]*tabindex="-1"`));
   }
   for (const id of ['work', 'about', 'codegraph', 'taskforge']) assert.ok(ids.includes(id));
-  for (const [id, title] of [['projects', 'Projects'], ['experience', 'Experience'], ['education', 'Education']]) {
+  for (const [id, title] of [['projects', 'Projects'], ['experience', 'Business &amp; Campus'], ['education', 'Education']]) {
     assert.match(home, new RegExp(`<h2[^>]*id="${id}-title"[^>]*>${title}</h2>`));
   }
   for (const project of ['codegraph', 'taskforge']) assert.match(home, new RegExp(`<h3 id="${project}-title"`));

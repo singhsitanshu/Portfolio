@@ -207,14 +207,14 @@ export const contentReadiness = {
 export const experience = [
   {
     organization: 'Bruin Underwater Robotics (BUR) @ UCLA', role: 'Software Engineer',
-    dates: '2025 – Present', category: 'Engineering', dateline: '', headline: '',
+    dates: '2025 – Present', category: 'Engineering',
     contributions: [
       'Developed Python/YOLOv11 perception models for autonomous RoboSub and automated a Unity pipeline generating 3,000+ labeled training images.',
     ],
   },
   {
     organization: 'exploretech.la', role: 'Operations Team Member',
-    dates: 'Sept 2025 – Present', category: 'Operations', dateline: '', headline: '',
+    dates: 'Sept 2025 – Present', category: 'Operations',
     contributions: [
       'Coordinated event logistics and procurement for an annual STEM outreach event serving ~500 high school students across Greater Los Angeles.',
       'Partnered with ASUCLA Catering and external vendors to source catering, event supplies, and custom merchandise, ensuring materials were ready for event.',
@@ -222,7 +222,7 @@ export const experience = [
   },
   {
     organization: 'D-Tech', role: 'Software Engineering Team Lead Intern',
-    dates: 'May 2024 – Sept 2025', category: 'Internship', dateline: '', headline: '',
+    dates: 'May 2024 – Sept 2025', category: 'Internship',
     contributions: [
       'Led 5 interns designing Flippper, an ePaper education platform, translating requirements into user flows and functional specifications.',
       'Directed UI/UX prototypes and visualizations to validate workflows and explain system behavior.',
@@ -230,7 +230,7 @@ export const experience = [
   },
   {
     organization: 'Round Rock Independent School District (RRISD)', role: 'Advanced Academic Ambassador - Projects Chair',
-    dates: 'August 2023 – May 2025', category: 'Student leadership', dateline: '', headline: '',
+    dates: 'August 2023 – May 2025', category: 'Student leadership',
     contributions: [
       'Led and mentored 30 ambassadors developing projects and educational presentations for the student body.',
       'Represented over 34,000 students, delivering presentations and answering questions at conferences and college fairs.',
@@ -238,7 +238,7 @@ export const experience = [
   },
   {
     organization: 'CompuChild', role: 'Instructor',
-    dates: 'May 2024 – Jan 2025', category: 'Teaching', dateline: '', headline: '',
+    dates: 'May 2024 – Jan 2025', category: 'Teaching',
     contributions: [
       'Taught Python and Scratch to middle school students through hands-on coding projects.',
       'Guided line-following robot and solar-car projects, helping students debug code and devices.',
@@ -272,7 +272,14 @@ export const homepage = {
     githubLabel: (name: string) => `${name} on GitHub`,
     technologiesLabel: (name: string) => `${name} technologies`,
   },
-  experience: { eyebrow: '02 / Career & leadership', title: 'Experience', kicker: '' },
+  // T-10: experience as the Business section's dated briefs. Datelines use the
+  // entry's category rather than a city, since not every location is on record.
+  experience: {
+    title: 'Experience',
+    section: 'Business & Campus',
+    dateline: (entry: { category: string; dates: string }) => `${entry.category}, ${entry.dates}`,
+    headline: (entry: { role: string; organization: string }) => `${entry.role}, ${entry.organization}`,
+  },
   education: { eyebrow: '03 / College', title: 'Education', graduation: 'Expected graduation' },
   contact: {
     eyebrow: '04 / Contact',

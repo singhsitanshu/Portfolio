@@ -1,0 +1,149 @@
+/* Masthead, edition bar, ears and the "Inside Today" index (T-06). */
+
+/* Page frame: ink on paper under the grain. */
+html { background: var(--paper); }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); }
+
+/* Anchored sections clear the sticky index bar. */
+:root { --index-bar-height: var(--target-min); }
+[id] { scroll-margin-top: var(--space-4); }
+
+.masthead { padding-top: var(--space-5); }
+.masthead-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-5);
+  padding-bottom: var(--space-3);
+}
+.masthead-title { margin: 0; text-align: center; font-weight: var(--weight-regular); }
+.masthead-name {
+  display: block;
+  font: var(--weight-bold) var(--text-lg) / var(--leading-snug) var(--font-headline);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label-wide);
+}
+.nameplate {
+  display: block;
+  margin-top: var(--space-1);
+  font: var(--weight-regular) var(--size-nameplate) / 1 var(--font-nameplate);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+/* Ears: framed boxes either side of the nameplate. */
+.masthead-ear {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 13rem;
+  padding: var(--space-3) var(--space-4);
+  border: var(--rule-hairline) solid var(--ink);
+}
+.masthead-ear-left { justify-self: start; align-items: flex-start; }
+.masthead-ear-right { justify-self: end; align-items: flex-end; flex-direction: column; gap: 0; }
+.masthead-motto {
+  margin: 0;
+  font: italic var(--weight-regular) var(--text-md) / var(--leading-snug) var(--font-headline);
+  text-wrap: balance;
+}
+.ear-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label-wide);
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: var(--rule-hairline);
+  text-underline-offset: 0.35em;
+}
+.ear-link:hover { text-decoration-thickness: var(--rule-medium); }
+.ear-file {
+  padding: var(--space-1) var(--space-1);
+  border: var(--rule-hairline) solid var(--ink);
+  font: var(--weight-regular) var(--text-2xs) / 1 var(--font-mono);
+  text-decoration: none;
+}
+
+/* Edition bar: small caps separated by middots. */
+.edition-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1) 0;
+  margin: 0;
+  padding-block: var(--space-2);
+  font: var(--weight-label) var(--text-xs) / var(--leading-snug) var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  text-align: center;
+}
+.edition-bar > * { white-space: nowrap; }
+.edition-bar > :not(:last-child)::after { content: '·'; padding-inline: var(--space-2); }
+
+/* Index bar: a thin rule-bounded bar; sticky once scrolled past on desktop. */
+.index-bar { z-index: 20; background: var(--paper); border-bottom: var(--rule-hairline) solid var(--ink); }
+.index-bar-inner { display: flex; align-items: center; gap: var(--space-5); min-height: var(--index-bar-height); }
+.index-home {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  font: var(--weight-headline-heavy) var(--text-lg) / 1 var(--font-headline);
+  color: var(--ink);
+  text-decoration: none;
+  white-space: pre;
+}
+.index-home span { color: var(--accent); }
+.primary-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 0 var(--space-4); }
+.index-label {
+  margin: 0;
+  font: var(--weight-label-strong) var(--text-2xs) / 1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label-wide);
+  color: var(--accent);
+}
+.index-links { display: flex; flex-wrap: wrap; gap: 0 var(--space-4); margin: 0; padding: 0; list-style: none; }
+.index-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--ink);
+  text-decoration: none;
+  text-underline-offset: 0.35em;
+}
+.index-links a:hover, .index-links a[aria-current="location"] { text-decoration: underline; text-decoration-thickness: var(--rule-medium); }
+
+/* Below 1100px the nameplate leads and the ears sit side by side under it. */
+@media (max-width: 68.6875em) {
+  .masthead-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; gap: var(--space-3); }
+  .masthead-title { grid-column: 1 / -1; }
+  .masthead-ear { max-width: none; padding: var(--space-1) var(--space-3); }
+  .masthead-ear-left { grid-row: 2; }
+  .masthead-ear-right { grid-row: 2; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0 var(--space-3); }
+}
+
+/* Phones. */
+@media (max-width: 43.6875em) {
+  .masthead { padding-top: var(--space-4); }
+  .masthead-name { font-size: var(--text-md); }
+  .masthead-motto { font-size: var(--text-sm); }
+  /* The home link duplicates the front page itself; the index needs the width. */
+  .index-home, .index-label { display: none; }
+  .index-links { gap: 0 var(--space-4); }
+}
+
+@media (max-width: 24.5em) {
+  .index-links { gap: 0 var(--space-3); }
+  .index-links a { letter-spacing: var(--tracking-label-tight); }
+}
+
+@media (min-width: 68.75em) {
+  .index-bar { position: sticky; top: 0; }
+  [id] { scroll-margin-top: calc(var(--index-bar-height) + var(--space-4)); }
+}

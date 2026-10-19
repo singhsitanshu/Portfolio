@@ -1,0 +1,10 @@
+/* Development-only styleguide layout (T-03). Ships as a few unused rules. */
+.styleguide { padding: var(--space-6) var(--page-gutter) var(--space-9); }
+.styleguide > .deck { margin-top: var(--space-3); max-width: var(--measure); }
+.styleguide-section { margin-top: var(--space-8); padding-top: var(--space-5); border-top: var(--rule-heavy) solid var(--ink); }
+.styleguide-section > .section-head { margin-bottom: var(--space-5); }
+.styleguide-specimen { display: grid; gap: var(--space-2); padding-block: var(--space-4); border-bottom: var(--rule-hairline) solid var(--rule); }
+.styleguide-specimen .body-copy { max-width: var(--measure); }
+.styleguide-grid { margin-top: var(--space-5); }
+.styleguide-grid > article { display: grid; align-content: start; gap: var(--space-3); padding-block: var(--space-4); border-top: var(--rule-hairline) solid var(--rule); }
+.styleguide-figure-well { aspect-ratio: 16 / 7; background: var(--paper-shade); }

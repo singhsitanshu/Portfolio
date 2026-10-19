@@ -1,0 +1,234 @@
+/* Front page (T-07 onward): stories, photo, sections. Tokens only. */
+
+.front-page { padding-bottom: var(--space-7); }
+
+/* Section front: a heavy rule over the section name, like a newspaper section page. */
+.section-front {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-5);
+  margin-bottom: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: var(--rule-heavy) solid var(--ink);
+}
+.section-front .section-head { text-transform: uppercase; letter-spacing: var(--tracking-label); }
+
+/* Introduction (T-09): the name banner opens the paper. */
+.front-intro { padding-block: var(--space-5) var(--space-7); }
+.name-banner {
+  container-type: inline-size;
+  margin: 0 0 var(--space-5);
+  padding: var(--space-2) var(--space-4) var(--space-1);
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+  overflow: hidden;
+}
+.name-banner > [aria-hidden] {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-headline-heavy);
+  font-stretch: var(--display-stretch);
+  font-variation-settings: 'wdth' 62.5;
+  /* AANSH sets 3.19em wide in this face; 29cqi fills about 92% of the banner. */
+  font-size: 29cqi;
+  line-height: 0.92;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.intro-grid { row-gap: var(--space-6); }
+.intro-lede { display: grid; align-content: start; gap: var(--space-4); }
+.intro-photo { margin: 0; display: grid; gap: var(--space-2); }
+.intro-perspective { font-size: var(--size-deck); }
+.intro-focus { container-type: inline-size; display: grid; align-content: start; gap: var(--space-6); }
+
+/* Ruled display type: a hairline under each line, as on a ruled sheet. */
+.display-ruled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: var(--weight-headline-heavy);
+  font-stretch: var(--display-stretch);
+  font-variation-settings: 'wdth' 62.5;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+/* Sized to its column (T-15): the longest item takes at most two lines. */
+.intro-focus-list { font-size: clamp(1.75rem, 9.5cqi, 4.75rem); line-height: 1.02; }
+/* Each line box gets its own hairline, so wrapped items stay ruled. */
+.intro-focus-list li {
+  background: linear-gradient(transparent calc(100% - var(--rule-hairline)), var(--rule) 0) 0 0 / 100% 1lh;
+  text-wrap: balance;
+}
+
+/* "In this edition": the two stories as an index box. */
+.intro-edition { display: grid; gap: var(--space-3); }
+.intro-edition ol { display: grid; gap: var(--space-3); margin: 0; padding: 0; list-style: none; }
+.intro-edition li { display: grid; gap: var(--space-1); padding-top: var(--space-3); border-top: var(--rule-hairline) solid var(--rule); }
+.intro-edition .jump-link { font: var(--weight-bold) var(--size-headline-brief) / var(--leading-snug) var(--font-headline); text-transform: none; letter-spacing: var(--tracking-headline); }
+.intro-edition .jump-link-label { font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); }
+
+/* Byline headshot: the author photo at mugshot size. */
+.byline-with-photo { display: flex; align-items: center; gap: var(--space-2); }
+.byline-photo { flex: none; width: var(--byline-photo-width); height: auto; border: var(--rule-hairline) solid var(--ink); filter: grayscale(1); }
+
+/* Project stories. */
+.front-story { display: grid; align-content: start; gap: var(--space-4); min-width: 0; }
+.story-head { display: grid; gap: var(--space-3); }
+.story-head .byline { padding-top: var(--space-2); border-top: var(--rule-hairline) solid var(--rule); }
+.story-columns { display: grid; gap: var(--space-5); }
+.story-aside { display: grid; align-content: start; gap: var(--space-4); }
+.story-stack { display: grid; gap: var(--space-1); }
+.story-stack ul { display: flex; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; color: var(--ink); }
+.story-stack li:not(:last-child)::after { content: '·'; padding-inline: var(--space-2); color: var(--ink-muted); }
+.story-jumps { display: grid; justify-items: start; }
+
+/* Lead story: the headline runs the full eight columns; the body and the
+   pulled metric share them below. */
+@media (min-width: 43.75em) and (max-width: 68.6875em) {
+  /* Tablets: the second story runs full width under the lead, so it borrows the lead's split. */
+  .front-story-secondary .story-columns { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--grid-gap); }
+}
+@media (min-width: 43.75em) {
+  .front-story-lead .story-columns { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--grid-gap); }
+  .front-story-lead .story-aside { position: relative; }
+  .front-story-lead .story-aside::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    left: calc(var(--grid-gap) / -2);
+    border-left: var(--rule-hairline) solid var(--rule);
+  }
+}
+
+/* Second story: one narrow column beside the lead (rule-md draws its column rule). */
+@media (min-width: 68.75em) {
+  .front-lead { grid-column: 1 / span 8; }
+  .front-second { grid-column: 9 / span 4; }
+}
+
+/* Halftone: grayscale photo under a multiplied dot screen. The intro photo is
+   a toggle button: hovering previews the opposite state (color over halftone,
+   halftone over color) and a click commits it. After a click the preview
+   rests (no data-preview) until the pointer leaves. Width/height attributes
+   reserve space. */
+.halftone { display: block; position: relative; overflow: hidden; background: var(--paper-shade); border: var(--rule-hairline) solid var(--ink); }
+.halftone img { display: block; width: 100%; height: auto; filter: var(--halftone-filter); }
+.halftone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(circle, var(--halftone-ink) 30%, transparent 32%);
+  background-size: var(--halftone-pitch) var(--halftone-pitch);
+}
+.photo-toggle { display: block; width: 100%; margin: 0; padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
+.photo-toggle[aria-pressed="true"] .halftone img { filter: none; }
+.photo-toggle[aria-pressed="true"] .halftone::after { opacity: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .photo-toggle[data-preview]:hover[aria-pressed="false"] .halftone img { filter: none; }
+  .photo-toggle[data-preview]:hover[aria-pressed="false"] .halftone::after { opacity: 0; }
+  .photo-toggle[data-preview]:hover[aria-pressed="true"] .halftone img { filter: var(--halftone-filter); }
+  .photo-toggle[data-preview]:hover[aria-pressed="true"] .halftone::after { opacity: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-reduce-motion]) .halftone img, :root:not([data-reduce-motion]) .halftone::after { transition: filter var(--motion-fade) var(--motion-ease), opacity var(--motion-fade) var(--motion-ease); }
+}
+
+
+
+/* Business & Campus (T-10): experience as dated briefs, two newspaper columns. */
+.front-sections { padding-bottom: var(--space-7); }
+.briefs { margin: 0; padding: 0; list-style: none; }
+.brief { display: grid; gap: var(--space-2); padding-bottom: var(--space-4); margin-bottom: var(--space-4); border-bottom: var(--rule-hairline) solid var(--rule); break-inside: avoid; }
+.brief:last-child { border-bottom: 0; margin-bottom: 0; }
+.brief-body { margin: 0; padding-left: var(--space-4); font: var(--weight-regular) var(--text-md) / var(--leading-body) var(--font-body); }
+.brief-body li + li { margin-top: var(--space-1); }
+@media (min-width: 43.75em) {
+  .briefs { columns: 2; column-gap: var(--grid-gap); column-rule: var(--rule-hairline) solid var(--rule); }
+}
+
+/* Education notice (T-11): a boxed notice beside the Business section. */
+.notice { display: grid; align-content: start; gap: var(--space-2); }
+.notice .section-head { text-transform: uppercase; letter-spacing: var(--tracking-label); }
+.notice .rule { margin-block: var(--space-1); }
+.notice-detail { margin: 0; font: var(--weight-regular) var(--text-md) / var(--leading-snug) var(--font-body); }
+@media (min-width: 68.75em) {
+  .notice { align-self: start; margin-top: calc(var(--rule-heavy) + var(--space-3)); }
+}
+
+/* Classifieds (T-12): contact as a "Wanted" ad. */
+.classifieds { padding-bottom: var(--space-7); }
+.classified {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  container-type: inline-size;
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: var(--space-5) clamp(var(--space-3), 4vw, var(--space-5)) var(--space-4);
+  border: var(--rule-hairline) dashed var(--ink);
+  text-align: center;
+}
+.classified-head {
+  margin: 0;
+  width: 100%;
+  padding-block: var(--space-1) 0;
+  background: var(--ink);
+  color: var(--paper);
+  font: var(--weight-headline-heavy) clamp(var(--text-2xl), 22cqi, var(--text-4xl)) / 1 var(--font-display);
+  font-stretch: var(--display-stretch);
+  font-variation-settings: 'wdth' 62.5;
+  text-transform: uppercase;
+}
+.classified-lede { margin: 0; font: var(--weight-regular) var(--size-body) / var(--leading-body) var(--font-body); }
+.classified-reply { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: var(--space-1) var(--space-2); margin: 0; }
+.classified-email {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  font: var(--weight-regular) var(--text-base) / 1.2 var(--font-mono);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: var(--rule-hairline);
+  text-underline-offset: 0.3em;
+}
+.print-button {
+  min-height: var(--target-min);
+  padding: var(--space-2) var(--space-5);
+  font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label-wide);
+  color: var(--paper);
+  background: var(--ink);
+  border: var(--rule-hairline) solid var(--ink);
+  cursor: pointer;
+}
+.print-button:hover { color: var(--ink); background: var(--paper); }
+.print-button:disabled { cursor: progress; }
+.copy-feedback { min-height: calc(var(--text-sm) * var(--leading-snug) * 2); margin: 0; font: var(--weight-label) var(--text-sm) / var(--leading-snug) var(--font-label); color: var(--ink); }
+
+/* Colophon (T-12): the footer that closes the paper on every page. */
+.colophon { padding-bottom: var(--space-7); }
+.colophon-inner { display: grid; justify-items: center; gap: var(--space-2); padding-top: var(--space-5); text-align: center; }
+.colophon-nameplate { margin: 0; font: var(--weight-regular) var(--text-2xl) / 1 var(--font-nameplate); }
+.colophon-text { margin: 0; max-width: var(--measure); font: italic var(--weight-regular) var(--text-md) / var(--leading-snug) var(--font-headline); }
+.colophon-links { display: flex; gap: var(--space-5); }
+.colophon-links a { text-decoration: underline; text-decoration-thickness: var(--rule-hairline); text-underline-offset: 0.35em; }
+.colophon-links a, .motion-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--ink);
+}
+.motion-toggle { padding: 0 var(--space-3); background: transparent; border: var(--rule-hairline) solid var(--ink); cursor: pointer; }
+.motion-toggle[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
+.motion-toggle:disabled { cursor: default; color: var(--ink-muted); border-color: var(--rule); background: transparent; }

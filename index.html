@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f4f3ee" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- T-16: apply a saved Reduce motion choice before first paint, so load animations never start. -->
+    <script>try{if(localStorage.getItem('portfolio-reduce-motion')==='true')document.documentElement.setAttribute('data-reduce-motion','')}catch(e){}</script>
     <!--metadata:start--><!--metadata:end-->
   </head>
   <body>

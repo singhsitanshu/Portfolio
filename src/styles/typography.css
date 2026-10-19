@@ -1,0 +1,106 @@
+/*
+ * Base print typography (T-03). Every value comes from tokens.css.
+ * Small caps are set as uppercase at label size: the label face has no true
+ * small caps, and :root disables synthesized ones.
+ */
+.paper {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-body);
+}
+
+/* Headlines: lead story, secondary story, brief. */
+.headline-lead,
+.headline-secondary,
+.headline-brief,
+.section-head {
+  margin: 0;
+  font-family: var(--font-headline);
+  letter-spacing: var(--tracking-headline);
+  text-wrap: balance;
+  overflow-wrap: normal;
+  hyphens: manual;
+}
+.headline-lead { font-size: var(--size-headline-lead); font-weight: var(--weight-headline-heavy); line-height: var(--leading-display); }
+.headline-secondary { font-size: var(--size-headline-secondary); font-weight: var(--weight-headline); line-height: var(--leading-headline); }
+.headline-brief { font-size: var(--size-headline-brief); font-weight: var(--weight-bold); line-height: var(--leading-snug); }
+.section-head { font-size: var(--size-section-head); font-weight: var(--weight-headline-heavy); line-height: var(--leading-headline); }
+
+/* Deck: the one italic sentence under a headline. */
+.deck {
+  margin: 0;
+  font: italic var(--weight-regular) var(--size-deck) / var(--leading-snug) var(--font-headline);
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+/* Small-caps family: kicker (accent), byline, dateline, label. */
+.kicker,
+.byline,
+.dateline,
+.label {
+  margin: 0;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+}
+.kicker { font-weight: var(--weight-label-strong); letter-spacing: var(--tracking-label-wide); color: var(--accent); }
+.byline { font-weight: var(--weight-label); color: var(--ink); }
+.dateline { font-weight: var(--weight-label); color: var(--ink-muted); }
+.label { font-weight: var(--weight-label-strong); color: var(--ink); }
+
+/* Body copy: justified and hyphenated; paragraphs after the first indent. */
+.body-copy {
+  font: var(--weight-regular) var(--size-body) / var(--leading-body) var(--font-body);
+  color: var(--ink);
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+.body-copy p { margin: 0; }
+.body-copy p + p { text-indent: var(--space-5); }
+.body-copy strong { font-weight: var(--weight-bold); }
+
+/* Captions and credits sit under figures. */
+.caption {
+  margin: 0;
+  font: var(--weight-label) var(--text-sm) / var(--leading-snug) var(--font-label);
+  color: var(--ink-muted);
+  text-wrap: pretty;
+}
+.credit {
+  font: var(--weight-label) var(--text-2xs) / var(--leading-snug) var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--ink-muted);
+}
+
+/* Metrics, code and stacks. */
+.mono { font-family: var(--font-mono); font-size: var(--text-sm); letter-spacing: 0; }
+
+/* Drop cap on the first paragraph of a story: three lines deep. */
+.drop-cap > p:first-of-type::first-letter,
+p.drop-cap::first-letter {
+  float: left;
+  margin: 0.06em var(--space-2) 0 0;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-headline-heavy);
+  font-size: calc(var(--size-body) * var(--leading-body) * 3);
+  line-height: 0.82;
+  color: var(--ink);
+}
+@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+  .drop-cap > p:first-of-type::first-letter,
+  p.drop-cap::first-letter {
+    float: none;
+    margin: 0 var(--space-2) 0 0;
+    font-size: inherit;
+    line-height: inherit;
+    -webkit-initial-letter: 3;
+    initial-letter: 3;
+  }
+}

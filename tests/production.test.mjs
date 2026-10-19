@@ -5,9 +5,11 @@ import { resolve } from 'node:path';
 import { gzipSync } from 'node:zlib';
 
 const origin = 'https://aanshsingh.com';
-const socialImage = '/social-preview-homepage-v3.jpg';
+// Stories rebuilt as front-page articles; the rest keep the legacy card checks until converted.
+const newspaperStories = ['codegraph', 'taskforge'];
+const socialImage = '/social-preview-times-v1.jpg';
 const fixtures = [
-  { path: '/', file: 'index.html', title: 'Aansh Singh', heading: 'Aansh' },
+  { path: '/', file: 'index.html', title: 'Aansh Singh | The Aansh Times', heading: 'Aansh' },
   { path: '/projects/codegraph', file: 'projects/codegraph.html', title: 'CodeGraph Case Study | Aansh Singh', heading: 'CodeGraph' },
   { path: '/projects/taskforge', file: 'projects/taskforge.html', title: 'TaskForge Case Study | Aansh Singh', heading: 'TaskForge' },
 ];
@@ -17,6 +19,7 @@ const decode = value => value.replace(/&amp;/g, '&').replace(/&#39;/g, "'").repl
 const attributes = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(match => [match[1], decode(match[2])]));
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map(match => attributes(match[0]));
 const meta = (html, key) => tags(html, 'meta').filter(tag => tag.name === key || tag.property === key);
+const headingText = html => decode(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)[1].replace(/<[^>]+>/g, ''));
 const outputFiles = (await readdir(root, { recursive: true, withFileTypes: true }))
   .filter(entry => entry.isFile()).map(entry => resolve(entry.parentPath, entry.name));
 
@@ -51,15 +54,25 @@ test('three generated pages expose distinct metadata and complete content withou
     assert.equal(meta(head, 'twitter:card')[0].content, 'summary_large_image');
     assert.equal(meta(head, 'twitter:image')[0].content, origin + socialImage);
     assert.equal(meta(head, 'og:image:alt')[0].content, meta(head, 'twitter:image:alt')[0].content);
-    for (const description of ['Aansh Singh', 'homepage hero', 'portrait', 'Software Engineer', 'UCLA Computer Science']) {
+    for (const description of ['Aansh Singh', 'The Aansh Times', 'Software Engineer', 'UCLA Computer Science']) {
       assert.ok(meta(head, 'og:image:alt')[0].content.includes(description));
     }
     assert.equal(meta(head, 'robots')[0].content, 'index, follow');
-    assert.match(html, new RegExp(`<h1[^>]*>${page.heading}`));
+    assert.ok(headingText(html).startsWith(page.heading), `${page.path}: h1 starts with ${page.heading}`);
     assert.ok(html.length > 10000, `${page.path} must contain its content, not just a shell`);
     assert.ok(!html.includes('Loading page…') && !html.includes('<!--app-html-->'));
     assert.ok(!html.includes('www.aanshsingh.com') && !html.includes('/_test/'));
-    assert.equal(tags(html, 'script').length, 1, 'only the local client entry is shipped');
+    const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
+    assert.equal(scripts.filter(([, attributes]) => /\bsrc=/.test(attributes)).length, 1, 'only the local client entry is shipped');
+    const inline = scripts.filter(([, attributes]) => !/\bsrc=/.test(attributes) && !attributes.includes('application/ld+json'));
+    assert.deepEqual(inline.map(([, , body]) => body.includes('portfolio-reduce-motion')), [true], 'the only inline script applies the saved motion preference');
+    const jsonLd = scripts.filter(([, attributes]) => attributes.includes('application/ld+json'));
+    assert.equal(jsonLd.length, 1, `${page.path}: one JSON-LD block`);
+    const person = JSON.parse(jsonLd[0][2]);
+    assert.equal(person['@type'], 'Person');
+    assert.equal(person.name, 'Aansh Singh');
+    assert.match(person.alumniOf.name, /University of California, Los Angeles/);
+    assert.deepEqual(person.sameAs, ['https://github.com/singhsitanshu', 'https://www.linkedin.com/in/aansh-singh/']);
   }
   assert.equal(descriptions.size, 3);
 });
@@ -94,7 +107,7 @@ test('case-study summaries precede technical content and link to distinct detail
     const summary = header.match(/<section class="case-study-result-summary"[^>]*>([\s\S]*?)<\/section>/)[1];
     assert.ok(header.indexOf('case-study-lede') < header.indexOf('case-study-result-summary'));
     assert.ok(header.indexOf('case-study-result-summary') < header.indexOf('case-study-overview'));
-    assert.match(summary, /<h2 id="result-summary-title">/);
+    assert.match(summary, /<h2 id="result-summary-title"/);
     assert.ok(tags(summary, 'a').some(a => a.href === `${path}#${evidenceId}`));
     assert.ok(tags(html, 'section').some(section => section.id === evidenceId && section.tabindex === '-1'));
     const decisionId = path.endsWith('codegraph') ? 'decisions' : 'tradeoffs';
@@ -109,23 +122,24 @@ test('case-study summaries precede technical content and link to distinct detail
   }
 });
 
-test('homepage project cards expose outcome and actions before their visuals', () => {
+test('front-page stories expose headline, metric and jump links before their graphics', () => {
   const home = documents.get('/');
-  const cards = [...home.matchAll(/<article id="(codegraph|taskforge)"[^>]*>([\s\S]*?)<\/article>/g)];
-  assert.deepEqual(cards.map(card => card[1]), ['codegraph', 'taskforge']);
-  for (const [, id, card] of cards) {
+  const stories = [...home.matchAll(/<article id="(codegraph|taskforge)"[^>]*>([\s\S]*?)<\/article>/g)];
+  assert.deepEqual(stories.map(story => story[1]), ['codegraph', 'taskforge']);
+  for (const [, id, story] of stories.filter(([, id]) => newspaperStories.includes(id))) {
     let previous = -1;
-    for (const marker of [`id="${id}-title"`, 'class="showcase-summary"', 'class="showcase-result"', 'class="showcase-actions"', '<figure', 'class="showcase-highlights"', 'class="showcase-technologies"']) {
-      const position = card.indexOf(marker);
+    for (const marker of [`id="${id}-title"`, 'class="deck', 'class="byline', 'class="pull-quote', 'class="story-stack', 'class="story-jumps', 'class="np-figure infographic']) {
+      const position = story.indexOf(marker);
       assert.ok(position > previous, `${id}: ${marker} is present in reading order`);
       previous = position;
     }
-    assert.doesNotMatch(card, /<details\b/);
-    const actions = tags(card, 'a');
-    assert.equal(actions.length, 2);
-    assert.equal(actions[0].href, `/projects/${id}`);
-    assert.ok(actions[0]['aria-label'].includes(id === 'codegraph' ? 'CodeGraph' : 'TaskForge'));
-    assert.ok(actions[1]['aria-label'].includes(id === 'codegraph' ? 'CodeGraph' : 'TaskForge'));
+    const links = tags(story, 'a');
+    assert.equal(links.length, 3, `${id}: headline, case study and GitHub links`);
+    assert.equal(links[0].href, `/projects/${id}`);
+    assert.equal(links[1].href, `/projects/${id}`);
+    assert.match(links[2].href, /^https:\/\/github\.com\/singhsitanshu\//);
+    const name = id === 'codegraph' ? 'CodeGraph' : 'TaskForge';
+    for (const link of story.match(/<a\b[\s\S]*?<\/a>/g).slice(1)) assert.ok(link.replace(/<[^>]+>/g, '').includes(name), `${id}: jump link text names the project`);
   }
 });
 
@@ -169,21 +183,49 @@ test('social image dimensions, MIME signature, and production asset sizes are ap
   assert.deepEqual(await readFile(resolve(root, 'aansh-singh-resume.pdf')), await readFile('public/aansh-singh-resume.pdf'));
 });
 
-test('original portrait is preserved and self-hosted display font is present and bounded', async () => {
+test('author portrait keeps the original with WebP and JPEG copies, and self-hosted fonts stay under budget', async () => {
   const home = documents.get('/');
   const portrait = tags(home, 'img')[0];
   assert.equal(portrait.loading, 'eager');
   assert.equal(portrait.fetchPriority ?? portrait.fetchpriority, 'high');
   assert.ok(Number(portrait.width) > 0 && Number(portrait.height) > 0);
   assert.ok(portrait.alt.includes('Aansh Singh'));
-  assert.equal(tags(home, 'source').length, 0, 'portrait uses the original JPEG without converted variants');
+  const sources = tags(home, 'source');
+  assert.deepEqual(sources.map(source => source.type), ['image/webp'], 'portrait offers WebP before the JPEG fallback');
+  for (const [url] of (sources[0].srcset ?? sources[0].srcSet).split(',').map(candidate => candidate.trim().split(' '))) {
+    const webp = await readFile(resolve(root, `.${url}`));
+    assert.ok(webp.toString('ascii', 0, 4) === 'RIFF' && webp.toString('ascii', 8, 12) === 'WEBP', `${url} is WebP`);
+  }
   const portraitBytes = await readFile(resolve(root, `.${portrait.src}`));
   assert.equal(portraitBytes.readUInt16BE(0), 0xffd8);
   assert.deepEqual(portraitBytes, await readFile(resolve('public', `.${portrait.src}`)), 'build preserves the portrait file byte for byte');
-  const font = await readFile(resolve(root, 'fonts/space-grotesk-latin-wght.woff2'));
-  assert.equal(font.toString('ascii', 0, 4), 'wOF2');
-  assert.ok(font.length < 30000);
-  assert.match(await readFile(resolve(root, 'fonts/space-grotesk-LICENSE.txt'), 'utf8'), /SIL OPEN FONT LICENSE/);
+  const candidates = (portrait.srcset ?? portrait.srcSet).split(',').map(candidate => candidate.trim().split(' '));
+  assert.ok(candidates.length >= 3 && candidates.some(([url]) => url === portrait.src), 'srcset offers resized copies and the original');
+  for (const [url, width] of candidates) {
+    assert.match(width, /^\d+w$/);
+    assert.equal((await readFile(resolve(root, `.${url}`))).readUInt16BE(0), 0xffd8, `${url} is a JPEG`);
+  }
+  // T-18: self-hosted Latin subsets; the nameplate and banner faces are preloaded.
+  assert.ok(!home.includes('fonts.googleapis.com') && !home.includes('fonts.gstatic.com'), 'no third-party font requests');
+  const preloads = html => tags(html, 'link').filter(tag => tag.rel === 'preload' && tag.as === 'font').map(tag => tag.href);
+  assert.deepEqual(preloads(home), ['/fonts/unifrakturmaguntia-400-nameplate.woff2', '/fonts/noto-serif-display-condensed-900-caps.woff2']);
+  for (const path of ['/projects/codegraph', '/projects/taskforge', '/404']) assert.deepEqual(preloads(documents.get(path)), ['/fonts/unifrakturmaguntia-400-nameplate.woff2'], `${path} preloads only the faces it uses`);
+  for (const [link] of home.matchAll(/<link rel="preload"[^>]*>/g)) assert.match(link, /\bcrossorigin\b/, 'font preloads are CORS requests');
+  const stylesheet = await readFile(resolve(root, 'assets', (await readdir(resolve(root, 'assets'))).find(file => file.endsWith('.css'))), 'utf8');
+  const faces = [...stylesheet.matchAll(/@font-face\{[^}]*\}/g)].map(match => match[0]);
+  const fallbacks = faces.filter(face => face.includes('local(')).length;
+  assert.ok(fallbacks >= 7 && faces.filter(face => face.includes('local(')).every(face => face.includes('size-adjust')), 'metric-matched local fallbacks');
+  faces.splice(0, faces.length, ...faces.filter(face => face.includes('url(')));
+  assert.equal(faces.length, 9);
+  assert.ok(faces.every(face => face.includes('font-display:swap')), 'every face swaps');
+  let fontBytes = 0;
+  for (const [, url] of faces.map(face => face.match(/url\("?([^")]+)"?\)/))) {
+    const font = await readFile(resolve(root, `.${url}`));
+    assert.equal(font.toString('ascii', 0, 4), 'wOF2', url);
+    fontBytes += font.length;
+  }
+  assert.ok(fontBytes < 250000, `font payload ${fontBytes} bytes is under 250 KB`);
+  assert.match(await readFile(resolve(root, 'fonts/OFL-LICENSES.txt'), 'utf8'), /SIL OPEN FONT LICENSE/);
 });
 
 test('preview HTTP responses expose route metadata and a real 404 without executing JavaScript', { skip: !process.env.PREVIEW_URL }, async () => {
@@ -193,7 +235,7 @@ test('preview HTTP responses expose route metadata and a real 404 without execut
     assert.equal(response.status, 200);
     const body = await response.text();
     assert.equal(meta(body, 'og:url')[0].content, origin + page.path);
-    assert.match(body, new RegExp(`<h1[^>]*>${page.heading}`));
+    assert.ok(headingText(body).startsWith(page.heading));
     assert.equal((await fetch(new URL(page.path, base), { method: 'HEAD' })).status, 200);
   }
   for (const path of ['/missing-page', '/projects/missing', '/missing.js']) {
@@ -237,16 +279,16 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
     assert.match(home, new RegExp(`<section[^>]*id="${id}"[^>]*tabindex="-1"`));
   }
   for (const id of ['work', 'about', 'codegraph', 'taskforge']) assert.ok(ids.includes(id));
-  for (const [id, title] of [['projects', 'Projects'], ['experience', 'Experience'], ['education', 'Education']]) {
-    assert.match(home, new RegExp(`<h2 id="${id}-title">${title}</h2>`));
+  for (const [id, title] of [['projects', 'Projects'], ['experience', 'Business &amp; Campus'], ['education', 'Education']]) {
+    assert.match(home, new RegExp(`<h2[^>]*id="${id}-title"[^>]*>${title}</h2>`));
   }
-  for (const project of ['codegraph', 'taskforge']) assert.match(home, new RegExp(`<h3 id="${project}-title">`));
+  for (const project of ['codegraph', 'taskforge']) assert.match(home, new RegExp(`<h3 id="${project}-title"`));
   for (const role of ['Software Engineering Team Lead Intern', 'Advanced Academic Ambassador - Projects Chair', 'Instructor', 'Operations Team Member']) assert.ok(home.includes(role));
   assert.ok(home.includes('2025 – Present') && home.includes('June 2029'));
   assert.doesNotMatch(home, /About &amp; journey/);
   for (const html of documents.values()) {
-    const nav = html.match(/<nav[^>]*aria-label="Primary"[^>]*>([\s\S]*?)<\/nav>/)[1];
-    assert.deepEqual(tags(nav, 'a').map(a => a.href), ['/#projects', '/#experience', '/#education', '/#contact']);
+    const nav = html.match(/<nav[^>]*aria-label="Inside today"[^>]*>([\s\S]*?)<\/nav>/)[1];
+    assert.deepEqual(tags(nav, 'a').map(a => a.href), ['/', '/#projects', '/#experience', '/#education', '/#contact']);
     assert.ok(tags(html, 'a').some(a => a.href === '/aansh-singh-resume.pdf'));
   }
 });

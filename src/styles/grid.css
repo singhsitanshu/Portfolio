@@ -1,0 +1,67 @@
+/*
+ * Newspaper grid (T-04): 1 column below 700px, 6 columns at 700–1099px,
+ * 12 at 1100px and up. Breakpoints are em-based (43.75em / 68.75em) so
+ * enlarged text collapses columns sooner. Items collapse in source order and
+ * nothing is hidden at any width.
+ *
+ * .np-sheet            the page frame: max width plus side gutters
+ * .np-grid             the column grid; children span all columns by default
+ * .span-md-N (1–6)     columns spanned at 700–1099px
+ * .span-lg-N (1–12)    columns spanned at 1100px+
+ * .rule-md / .rule-lg  a hairline column rule before the item, from 700px / 1100px.
+ *                      Only add it to items that have a left neighbor at that width.
+ */
+.np-sheet {
+  width: min(100% - var(--page-gutter) * 2, var(--page-max));
+  margin-inline: auto;
+}
+
+.np-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: var(--grid-gap);
+  row-gap: var(--grid-row-gap);
+}
+.np-grid > * {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.rule-md, .rule-lg { position: relative; }
+.rule-md::before, .rule-lg::before {
+  content: '';
+  display: none;
+  position: absolute;
+  inset-block: 0;
+  left: calc(var(--grid-gap) / -2);
+  border-left: var(--rule-hairline) solid var(--rule);
+  pointer-events: none;
+}
+
+@media (min-width: 43.75em) {
+  .np-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .span-md-1 { grid-column: span 1; }
+  .span-md-2 { grid-column: span 2; }
+  .span-md-3 { grid-column: span 3; }
+  .span-md-4 { grid-column: span 4; }
+  .span-md-5 { grid-column: span 5; }
+  .span-md-6 { grid-column: span 6; }
+  .rule-md::before { display: block; }
+}
+
+@media (min-width: 68.75em) {
+  .np-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .span-lg-1 { grid-column: span 1; }
+  .span-lg-2 { grid-column: span 2; }
+  .span-lg-3 { grid-column: span 3; }
+  .span-lg-4 { grid-column: span 4; }
+  .span-lg-5 { grid-column: span 5; }
+  .span-lg-6 { grid-column: span 6; }
+  .span-lg-7 { grid-column: span 7; }
+  .span-lg-8 { grid-column: span 8; }
+  .span-lg-9 { grid-column: span 9; }
+  .span-lg-10 { grid-column: span 10; }
+  .span-lg-11 { grid-column: span 11; }
+  .span-lg-12 { grid-column: span 12; }
+  .rule-lg::before { display: block; }
+}

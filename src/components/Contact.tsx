@@ -1,25 +1,29 @@
 import { copyEmailAddress } from './copyEmail';
 import { useState } from 'react';
-import { profile } from '../content/portfolio';
-import { Button, Heading } from './ui';
-import { Entrance } from './Motion';
+import { homepage, profile } from '../content/site';
+import { SectionFront } from './print';
 
+// Contact as a classified ad (T-12): "Wanted", the existing invitation, the
+// email address, and Copy email with spoken feedback.
 export function Contact() {
   const [feedback, setFeedback] = useState('');
   const [copying, setCopying] = useState(false);
+  const copy = homepage.contact;
   async function copyEmail() {
     setCopying(true);
-    setFeedback('Copying email…');
+    setFeedback(copy.copying);
     setFeedback(await copyEmailAddress(profile.email, navigator.clipboard));
     setCopying(false);
   }
-  return <section id="contact" className="section contact-section" aria-labelledby="contact-title" tabIndex={-1}>
-    <Entrance><Heading id="contact-title" eyebrow="04 / Contact">Let’s build something useful.</Heading></Entrance>
-    <p className="lede">Have a project or an idea to discuss? Get in touch.</p>
-    <div className="actions">
-      <a className="text-link email-link" href={`mailto:${profile.email}`}>{profile.email} <span aria-hidden="true">↗</span></a>
-      <Button onClick={copyEmail} disabled={copying}>Copy email</Button>
+  return <section id="contact" className="classifieds" aria-labelledby="contact-title" tabIndex={-1}>
+    <SectionFront id="classifieds-title" aside={copy.sectionAside}>{copy.section}</SectionFront>
+    <div className="classified">
+      <h3 className="classified-head" id="contact-title">{copy.heading}</h3>
+      <p className="headline-secondary">{copy.title}</p>
+      <p className="classified-lede">{copy.lede}</p>
+      <p className="classified-reply"><span className="label">{copy.replyLabel}</span> <a className="classified-email" href={`mailto:${profile.email}`}>{profile.email}</a></p>
+      <button type="button" className="print-button" onClick={copyEmail} disabled={copying}>{copy.copyButton}</button>
+      <p className="copy-feedback" role="status" aria-live="polite" aria-atomic="true">{feedback}</p>
     </div>
-    <p className="copy-feedback" role="status" aria-live="polite" aria-atomic="true">{feedback}</p>
   </section>;
 }

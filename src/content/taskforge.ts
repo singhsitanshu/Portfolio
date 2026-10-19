@@ -8,14 +8,8 @@ export const taskforgeMeasurements = {
   syntheticWait: { milliseconds: 50, baselineWorkers: 1, workers: 16, speedup: 15.842 },
 } as const;
 
+// Homepage story copy lives in site.ts; this module keeps measurements and case-study evidence.
 export const taskforgeFeature = {
-  showcase: {
-    summary: 'Coordinate durable background work with concurrent Go workers, atomic claims, retries, and crash recovery.',
-    highlights: [
-      { title: 'Recovery with history', body: 'Keep numbered attempts for completion, retry, and crash recovery.' },
-    ],
-    visualNote: 'Task coordination and retry flow.',
-  },
   question: 'What happens when thousands of tasks compete for the same workers?',
   positioning: 'Distributed task execution built around correctness, reliability, and concurrency.',
   introduction: 'TaskForge coordinates durable task admission, concurrent Go workers, retries, and crash recovery through PostgreSQL.',
@@ -49,7 +43,6 @@ export const taskforgeFeature = {
     host: 'Recorded environment: Apple M4 Pro · 12 logical CPUs · 24 GiB RAM · local Docker.',
     qualification: 'These are controlled local results. Throughput and efficiency depend on the workload and resources; they are not production capacity guarantees.',
   },
-  technologies: ['Go', 'PostgreSQL', 'Docker Compose', 'Prometheus', 'Grafana'],
   linkLabel: 'Explore TaskForge',
 } as const;
 
@@ -72,7 +65,3 @@ export const taskforgeResultSummary = {
   evidence: { id: 'benchmarks', label: 'Read benchmark methodology and detailed results' },
 } as const satisfies CaseStudyResultSummary;
 
-export const taskforgeProjectResult = {
-  headline: `${taskforgeMeasurements.syntheticWait.speedup.toFixed(2)}× worker scaling`,
-  context: `${taskforgeMeasurements.syntheticWait.baselineWorkers} → ${taskforgeMeasurements.syntheticWait.workers} workers on synthetic ${taskforgeMeasurements.syntheticWait.milliseconds} ms waits; local Docker benchmark`,
-} as const;

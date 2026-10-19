@@ -1,12 +1,15 @@
-import { Suspense, useEffect, useRef, type ComponentType, type RefObject } from 'react';
-import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
+import { lazy, Suspense, useEffect, useRef, type ComponentType, type RefObject } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { MotionProvider, MotionRule, MotionToggle } from './components/Motion';
-import { SectionNav } from './components/SectionNav';
-import { Container } from './components/ui';
+import { FrontMasthead, IndexBar, InsideMasthead } from './components/Masthead';
 import { RouteMetadata } from './components/RouteMetadata';
 import { NotFound } from './pages/NotFound';
-import { projects, profile, type Project } from './content/portfolio';
+import { colophon, masthead, projects, profile, ui, type Project } from './content/site';
+import { Rule } from './components/print';
 import { anchorIdFor } from './content/navigation';
+
+// Development-only print reference; the production build drops this route and chunk.
+const Styleguide = import.meta.env.DEV ? lazy(() => import('./pages/Styleguide').then(module => ({ default: module.Styleguide }))) : null;
 
 export type PageComponents = { Home: ComponentType; CodeGraphCaseStudy: ComponentType<{ project: Project }>; TaskForgeCaseStudy: ComponentType<{ project: Project }> };
 
@@ -33,6 +36,7 @@ function RoutedContent({ main, pages }: { main: RefObject<HTMLElement | null>; p
   return <Routes>
     <Route path="/" element={<Home />} />
     {projects.map((project) => <Route key={project.id} path={project.path} element={project.id === 'codegraph' ? <CodeGraphCaseStudy project={project} /> : <TaskForgeCaseStudy project={project} />} />)}
+    {Styleguide && <Route path="/styleguide" element={<Styleguide />} />}
     <Route path="*" element={<NotFound />} />
   </Routes>;
 }
@@ -40,20 +44,29 @@ function RoutedContent({ main, pages }: { main: RefObject<HTMLElement | null>; p
 export function App({ pages }: { pages: PageComponents }) {
   const { pathname } = useLocation();
   const main = useRef<HTMLElement>(null);
+  const front = pathname === '/';
   return <MotionProvider>
     <RouteMetadata />
-    <a className="skip-link" href="#main">Skip to content</a>
-    <Container>
-      <header className="site-header">
-        <NavLink className="wordmark" to="/" aria-label={`${profile.name} home`}>A<span aria-hidden="true"> / </span>S</NavLink>
-        <SectionNav />
-        <a className="text-link header-resume" href={profile.resumeUrl}>Resume <span className="file-label">PDF</span></a>
-      </header>
-      <main id="main" ref={main} tabIndex={-1}>
-        <MotionRule key={pathname} className="route-motion" route />
-        <Suspense fallback={<p className="status" role="status">Loading page…</p>}><RoutedContent main={main} pages={pages} /></Suspense>
-      </main>
-      <footer className="site-footer"><span>{profile.name} / {profile.role}</span><nav aria-label="Footer social profiles"><a href={profile.links.github}>GitHub</a><a href={profile.links.linkedin}>LinkedIn</a></nav><MotionToggle /></footer>
-    </Container>
+    <a className="skip-link" href="#main">{ui.skipLink}</a>
+    <div className="paper-grain">
+      {front ? <FrontMasthead /> : <InsideMasthead section={projects.some(project => project.path === pathname) ? masthead.sections.projects : undefined} />}
+      <IndexBar />
+      <div className="np-sheet">
+        <main id="main" ref={main} tabIndex={-1}>
+          <MotionRule key={pathname} className="route-motion" />
+          <Suspense fallback={<p className="status" role="status">{ui.loading}</p>}><RoutedContent main={main} pages={pages} /></Suspense>
+        </main>
+        <footer className="colophon">
+          <Rule variant="double" />
+          <div className="colophon-inner">
+            <p className="colophon-nameplate">{masthead.nameplate}</p>
+            <p className="colophon-text">{colophon.text}</p>
+            <p className="credit">{colophon.signature}</p>
+            <nav className="colophon-links" aria-label={ui.footerSocialLabel}><a href={profile.links.github}>{ui.github}</a><a href={profile.links.linkedin}>{ui.linkedin}</a></nav>
+            <MotionToggle />
+          </div>
+        </footer>
+      </div>
+    </div>
   </MotionProvider>;
 }

@@ -1,6 +1,6 @@
 // Authoritative bank: projects/CODEGRAPH.md; 04_METRICS.md M09, M11–M12.
 // Metric wording: catalog/resume-bullets.json B0013/B0032/B0185.
-// Ticket 15: owner-verified metrics take precedence over older evidence caveats; see docs/ticket-15-verification.md.
+// Owner-verified metrics take precedence over older evidence caveats.
 import type { CaseStudyResultSummary } from './case-study';
 // Homepage story copy lives in site.ts; this module keeps the shared measurement.
 export const codegraphFeature = {

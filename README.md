@@ -11,8 +11,6 @@ npm run preview
 
 The routes are `/`, `/projects/codegraph` and `/projects/taskforge`. The front page opens with the masthead and an "AANSH" name banner, then the introduction and portrait, the CodeGraph and TaskForge stories, Business & Campus (experience), the Education notice, and Classifieds (contact). Each case study is an inside-page feature article. `/styleguide` (development only) shows every print style, the grid and the primitives.
 
-The redesign plan was delivered as tickets T-00 to T-18. The stack and baseline are in [AUDIT.md](AUDIT.md), and the verification record is in [docs/redesign/README.md](docs/redesign/README.md).
-
 ## Structure
 
 - `src/content/site.ts`: every user-facing homepage string, plus the facts shared with case studies and metadata. Layout components never hold copy.
@@ -33,7 +31,9 @@ The redesign plan was delivered as tickets T-00 to T-18. The stack and baseline 
 
 `npm run build` emits `dist/index.html`, `dist/projects/codegraph.html`, `dist/projects/taskforge.html` and `dist/404.html`, with complete rendered content and route-specific head metadata. It also generates `sitemap.xml` and `robots.txt`. The client loads the current page's code before hydrating, then lazy-loads other pages. The temporary `.prerender/` server bundle is removed after generation.
 
-There is no production server runtime, CMS, authentication or form service. `wrangler.jsonc` configures **Cloudflare Workers Static Assets** to serve `dist/`, drop trailing slashes on project URLs, and serve the generated `404.html` with HTTP 404 for unknown paths ([static routing documentation](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/)). Run `npm run preview:cloudflare` after building to verify these rules locally. Deployment and domain setup are manual owner actions; see [the deployment handoff](docs/ticket-10-deployment-readiness.md).
+There is no production server runtime, CMS, authentication or form service. `wrangler.jsonc` configures **Cloudflare Workers Static Assets** to serve `dist/`, drop trailing slashes on project URLs, and serve the generated `404.html` with HTTP 404 for unknown paths ([static routing documentation](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/)). Run `npm run preview:cloudflare` after building to verify these rules locally.
+
+To deploy, run `npm ci` and `npm run build`, then `npx wrangler login` and `npx wrangler deploy`. This publishes `dist/` as the assets-only Worker `aansh-singh-portfolio`. Production needs no server, secrets or environment variables.
 
 The canonical URLs are `https://aanshsingh.com/`, `https://aanshsingh.com/projects/codegraph` and `https://aanshsingh.com/projects/taskforge`. Unknown pages are `noindex` and have no canonical tag.
 

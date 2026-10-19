@@ -110,8 +110,9 @@
   .front-second { grid-column: 9 / span 4; }
 }
 
-/* Halftone: grayscale photo under a multiplied dot screen; full color on
-   hover or focus for pointer devices. Width/height attributes reserve space. */
+/* Halftone: grayscale photo under a multiplied dot screen. The intro photo is
+   a toggle button: each click switches it between halftone and full color.
+   Width/height attributes reserve space. */
 .halftone { display: block; position: relative; overflow: hidden; background: var(--paper-shade); border: var(--rule-hairline) solid var(--ink); }
 .halftone img { display: block; width: 100%; height: auto; filter: grayscale(1) contrast(1.12) brightness(1.04); }
 .halftone::after {
@@ -123,10 +124,11 @@
   background-image: radial-gradient(circle, var(--halftone-ink) 30%, transparent 32%);
   background-size: var(--halftone-pitch) var(--halftone-pitch);
 }
-@media (hover: hover) and (pointer: fine) {
-  .halftone img, .halftone::after { transition: filter var(--motion-fade) var(--motion-ease), opacity var(--motion-fade) var(--motion-ease); }
-  .intro-photo:hover .halftone img, .front-intro:focus-within .halftone img { filter: none; }
-  .intro-photo:hover .halftone::after, .front-intro:focus-within .halftone::after { opacity: 0; }
+.photo-toggle { display: block; width: 100%; margin: 0; padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
+.photo-toggle[aria-pressed="true"] .halftone img { filter: none; }
+.photo-toggle[aria-pressed="true"] .halftone::after { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-reduce-motion]) .halftone img, :root:not([data-reduce-motion]) .halftone::after { transition: filter var(--motion-fade) var(--motion-ease), opacity var(--motion-fade) var(--motion-ease); }
 }
 
 

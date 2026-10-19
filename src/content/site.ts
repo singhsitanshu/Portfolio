@@ -283,6 +283,8 @@ export const homepage = {
     focus: [profile.role, 'Developer Tools', 'AI Systems', 'Reliable Backend Software', 'UCLA · Los Angeles, CA.'],
     focusLabel: 'What Aansh builds',
     editionLabel: 'In this edition',
+    // The portrait is a toggle button; aria-pressed reports whether color is on.
+    photoToggle: 'Show photo in color',
     editionPage: (index: number) => `Page A${index + 2}`,
   },
   sections: { projects: 'Projects' },

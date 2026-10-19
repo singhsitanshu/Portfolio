@@ -11,6 +11,7 @@
     "check:production": "node --test tests/production.test.mjs"
   },
   "dependencies": {
+    "playright": "^0.0.22",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.9.0"
@@ -24,6 +25,6 @@
     "tailwindcss": "^4.1.0",
     "typescript": "~5.9.2",
     "vite": "^7.1.0",
-    "wrangler": "4.145.0"
+    "wrangler": "^4.151.1"
   }
 }

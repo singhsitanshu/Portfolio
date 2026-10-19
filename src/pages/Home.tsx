@@ -26,7 +26,7 @@ function Introduction() {
         <Kicker>{copy.kicker}</Kicker>
         <figure className="intro-photo">
           <picture className="halftone">
-            <source type="image/avif" srcSet={portrait.avifSrcSet} sizes={portraitSizes} />
+            <source type="image/webp" srcSet={portrait.webpSrcSet} sizes={portraitSizes} />
             <img src={portrait.src} srcSet={portrait.srcSet} sizes={portraitSizes} alt={portrait.alt} width={portrait.width} height={portrait.height} fetchPriority="high" loading="eager" decoding="async" />
           </picture>
           <figcaption className="caption">{portrait.caption}</figcaption>

@@ -35,10 +35,10 @@ export const profile = {
       src: '/images/aansh-singh-trim.jpg',
       // Resized copies keep the original's Display P3 profile and full proportions.
       srcSet: '/images/aansh-singh-trim-320.jpg 320w, /images/aansh-singh-trim-640.jpg 640w, /images/aansh-singh-trim.jpg 1277w',
-      // T-18: AVIF copies (same proportions and color profile) for browsers that support it.
-      // Kept at or under 1024px on the long side: macOS sips tiles larger AVIFs into
-      // grids, and Chrome decoded the tiled 1200w copy as blank.
-      avifSrcSet: '/images/aansh-singh-trim-320.avif 320w, /images/aansh-singh-trim-640.avif 640w, /images/aansh-singh-trim-720.avif 720w',
+      // T-18: WebP copies (same proportions), encoded color-managed into sRGB by
+      // Chromium. WebP rather than AVIF: macOS sips AVIFs carry clap/irot
+      // properties Firefox refuses, and tile into grids Chrome drew blank.
+      webpSrcSet: '/images/aansh-singh-trim-320.webp 320w, /images/aansh-singh-trim-640.webp 640w, /images/aansh-singh-trim-960.webp 960w',
       alt: 'Aansh Singh wearing a brown hoodie and backpack at Rockefeller Center.',
       width: 1277,
       height: 1804,

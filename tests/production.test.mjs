@@ -183,7 +183,7 @@ test('social image dimensions, MIME signature, and production asset sizes are ap
   assert.deepEqual(await readFile(resolve(root, 'aansh-singh-resume.pdf')), await readFile('public/aansh-singh-resume.pdf'));
 });
 
-test('author portrait keeps the original with AVIF and JPEG copies, and self-hosted fonts stay under budget', async () => {
+test('author portrait keeps the original with WebP and JPEG copies, and self-hosted fonts stay under budget', async () => {
   const home = documents.get('/');
   const portrait = tags(home, 'img')[0];
   assert.equal(portrait.loading, 'eager');
@@ -191,13 +191,10 @@ test('author portrait keeps the original with AVIF and JPEG copies, and self-hos
   assert.ok(Number(portrait.width) > 0 && Number(portrait.height) > 0);
   assert.ok(portrait.alt.includes('Aansh Singh'));
   const sources = tags(home, 'source');
-  assert.deepEqual(sources.map(source => source.type), ['image/avif'], 'portrait offers AVIF before the JPEG fallback');
+  assert.deepEqual(sources.map(source => source.type), ['image/webp'], 'portrait offers WebP before the JPEG fallback');
   for (const [url] of (sources[0].srcset ?? sources[0].srcSet).split(',').map(candidate => candidate.trim().split(' '))) {
-    const avif = await readFile(resolve(root, `.${url}`));
-    assert.equal(avif.toString('ascii', 4, 12), 'ftypavif', `${url} is AVIF`);
-    // A tiled (grid) AVIF decoded as a blank image in Chrome; ship single-image AVIFs only.
-    assert.ok(!avif.subarray(0, 4096).includes('grid'), `${url} is a single image, not a tiled grid`);
-    assert.equal(avif.subarray(0, 4096).toString('latin1').split('av01').length - 1, 1, `${url} has exactly one coded image`);
+    const webp = await readFile(resolve(root, `.${url}`));
+    assert.ok(webp.toString('ascii', 0, 4) === 'RIFF' && webp.toString('ascii', 8, 12) === 'WEBP', `${url} is WebP`);
   }
   const portraitBytes = await readFile(resolve(root, `.${portrait.src}`));
   assert.equal(portraitBytes.readUInt16BE(0), 0xffd8);

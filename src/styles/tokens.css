@@ -87,6 +87,7 @@
   --grid-gap: var(--space-6);               /* column gutter; the column rule sits in its middle */
   --grid-row-gap: var(--space-6);
   --measure: 38rem;                         /* single-column reading width */
+  --ear-width: 12rem;                       /* both masthead ears, so they mirror each other */
 
   /* Interaction. */
   --focus-ring: 2px solid var(--ink);

@@ -1,6 +1,6 @@
 // The homepage content file: every user-facing homepage string, plus the facts
 // shared with case studies and metadata. Layout components never hold copy.
-// Selected facts only. Source index and editorial constraints: docs/content-sources.md.
+// Selected facts only, from the owner's project notes and résumé.
 // Explicit user updates take precedence over historical résumé variants.
 // Imports keep explicit .ts extensions: Node scripts load this module directly.
 import { codegraphFeature } from './codegraph.ts';
@@ -16,7 +16,7 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/aansh-singh/',
     github: 'https://github.com/singhsitanshu',
   },
-  // Ticket 14 attached résumé, p. 1 Education; see content map.
+  // From the owner's résumé, p. 1 Education.
   education: {
     institution: 'University of California, Los Angeles (UCLA)',
     school: 'Henry Samueli School of Engineering',
@@ -228,7 +228,7 @@ export const projects = [
 
 export type Project = (typeof projects)[number];
 
-// Ticket 14 attached résumé, p. 1 Experience. See docs/ticket-14-content-map.md.
+// From the owner's résumé, p. 1 Experience.
 // Dates retain source precision. User requested BUR first; exploretech.la dates are owner-confirmed.
 export const experience = [
   {

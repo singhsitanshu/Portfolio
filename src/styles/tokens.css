@@ -102,6 +102,7 @@
   /* Photo halftone: dot pitch and ink strength. */
   --halftone-pitch: 3px;
   --halftone-ink: color-mix(in srgb, var(--ink) 38%, transparent);
+  --halftone-filter: grayscale(1) contrast(1.12) brightness(1.04);
   --byline-photo-width: 1.75rem;
 
   /* Paper grain overlay strength (4–6%). */

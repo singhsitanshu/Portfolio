@@ -20,6 +20,9 @@ function Introduction() {
   const { portrait } = profile.hero;
   const copy = homepage.intro;
   const [inColor, setInColor] = useState(false);
+  // Hovering previews the opposite state. A click commits it, and the preview
+  // rests until the pointer leaves, so the committed state stays visible.
+  const [previewing, setPreviewing] = useState(true);
   return <section id="introduction" className="front-intro" aria-labelledby="introduction-title" tabIndex={-1}>
     <LegacyAnchor id="about" />
     <h1 id="introduction-title" className="name-banner"><span aria-hidden="true">{copy.banner}</span><span className="sr-only">{profile.name}</span></h1>
@@ -27,7 +30,8 @@ function Introduction() {
       <div className="intro-lede span-md-3 span-lg-4">
         <Kicker>{copy.kicker}</Kicker>
         <figure className="intro-photo">
-          <button type="button" className="photo-toggle" aria-pressed={inColor} aria-label={copy.photoToggle} onClick={() => setInColor(value => !value)}><picture className="halftone">
+          <button type="button" className="photo-toggle" aria-pressed={inColor} aria-label={copy.photoToggle} data-preview={previewing ? '' : undefined}
+            onClick={() => { setInColor(value => !value); setPreviewing(false); }} onPointerLeave={() => setPreviewing(true)}><picture className="halftone">
             <source type="image/webp" srcSet={portrait.webpSrcSet} sizes={portraitSizes} />
             <img src={portrait.src} srcSet={portrait.srcSet} sizes={portraitSizes} alt={portrait.alt} width={portrait.width} height={portrait.height} fetchPriority="high" loading="eager" decoding="async" />
           </picture></button>

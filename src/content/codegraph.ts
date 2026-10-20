@@ -29,6 +29,9 @@ export const codegraphFeature = {
     label: 'LLM context / per query',
     baseline: '≈737K',
     focused: '≈18K',
+    // The same figures as numbers, for drawing them to scale.
+    baselineTokens: 737_000,
+    focusedTokens: 18_000,
     unit: 'tokens per query',
     reduction: '97.5%',
     reductionLabel: 'LLM context reduction',

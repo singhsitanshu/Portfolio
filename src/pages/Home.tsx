@@ -19,7 +19,7 @@ const portraitSizes = '(min-width: 68.75em) 24rem, (min-width: 43.75em) 45vw, 92
 function Introduction() {
   const { portrait } = profile.hero;
   const copy = homepage.intro;
-  const [inColor, setInColor] = useState(false);
+  const [inColor, setInColor] = useState(true);
   // Hovering previews the opposite state. A click commits it, and the preview
   // rests until the pointer leaves, so the committed state stays visible.
   const [previewing, setPreviewing] = useState(true);

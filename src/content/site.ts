@@ -147,16 +147,96 @@ export const projects = [
         context: `${result.baseline} → ${result.focused} tokens/query; supported source vs. retrieved tool context`,
       },
       technologies: ['React / TypeScript', 'Python / FastAPI', 'Tree-sitter', 'Neo4j', 'LangGraph'],
+      // The pipeline graphic: ingest, parse, graph, answer, then the context
+      // payoff. The example is tiangolo/fastapi, the repository behind the
+      // measured token figures. File paths, functions and every drawn call are
+      // FastAPI's own (release 0.143.3, bb7f314); subsystem names are illustrative.
       visual: {
         label: 'Conceptual view',
-        note: 'Repository structure and retrieval flow.',
+        note: 'Calls excerpted from tiangolo/fastapi; subsystem names illustrative; bars to scale.',
         credit: 'Graphic',
-        repository: 'Repository',
-        files: 'Files',
-        children: ['Functions', 'Calls'],
-        relationships: 'Relationships',
-        context: 'Focused context',
-        retrieval: 'Graph + vector retrieval',
+        stages: {
+          ingest: { title: 'Ingest', detail: 'Full repo or per-commit', output: 'source files' },
+          parse: { title: 'Parse', detail: 'Tree-sitter', output: 'files · functions · calls' },
+          graph: { title: 'Graph', detail: 'Typed · embedded · clustered', output: 'focused subgraph' },
+          answer: { title: 'Answer', detail: 'Claude agent · 7 graph tools' },
+        },
+        sources: [
+          { name: 'github.com/tiangolo/fastapi', tag: 'Full · default branch' },
+          { name: 'push / pull_request', tag: 'Webhook · changed files @ commit' },
+        ],
+        tree: {
+          root: 'tiangolo/fastapi/',
+          entries: [
+            { name: 'fastapi/', children: ['routing.py · utils.py', 'dependencies/utils.py', 'openapi/utils.py'] },
+            { name: 'tests/ · docs_src/' },
+            { name: 'docs/…/termynal.js' },
+          ],
+          // Not a supported source type, so never parsed or counted.
+          skipped: ['README.md', 'uv.lock'],
+          tokens: `${result.baseline} tokens`,
+        },
+        // An excerpt of analyze_param: each line is plain text around the one
+        // span the parser extracts; an ellipsis line stands for skipped code.
+        code: {
+          file: 'fastapi/dependencies/utils.py',
+          lines: [
+            { before: 'def ', mark: 'analyze_param', after: '(…):', kind: 'fn' },
+            { before: '    if ', mark: 'is_typealiastype', after: '(…):', kind: 'external' },
+            { before: '    …' },
+            { before: '        field = ', mark: 'create_model_field', after: '(…)', kind: 'call' },
+          ],
+          kinds: { fn: 'fn', call: '→ calls', external: '→ calls' },
+          languages: ['Python', 'JavaScript', 'TypeScript', 'Go', 'Java'],
+        },
+        graph: {
+          repository: 'tiangolo/fastapi',
+          communities: {
+            routing: { name: 'Request Routing', description: 'Builds routes and handles requests' },
+            dependencies: { name: 'Dependency Injection' },
+            openapi: { name: 'OpenAPI Schema' },
+          },
+          files: { routing: 'routing.py', utils: 'utils.py', dependencies: 'dependencies/utils.py', openapi: 'openapi/utils.py' },
+          functions: {
+            populateRouteState: '_populate_api_route_state', createModelField: 'create_model_field', analyzeParam: 'analyze_param',
+            getBodyField: '_get_body_field', runInThreadpool: 'run_in_threadpool', deepcopy: 'deepcopy',
+          },
+          legend: { file: 'File', function: 'Function', external: 'External', defines: 'Defines', calls: 'Calls', vector: 'Embedding' },
+        },
+        answer: {
+          question: 'What breaks if I change create_model_field?',
+          questionLabel: 'Q.',
+          trace: [
+            { tool: 'semantic_code_search', result: 'create_model_field' },
+            { tool: 'query_graph_blast_radius', result: '3 callers' },
+            { tool: 'analyze_architectural_subsystems', result: 'Dependency Injection' },
+          ],
+          loop: 'Repeats until it has enough context',
+          contextLabel: 'Focused context',
+          context: [
+            { name: 'create_model_field', file: 'utils.py' },
+            { name: '← analyze_param', file: 'dependencies/utils.py' },
+            { name: '← _get_body_field', file: 'dependencies/utils.py' },
+            { name: '← _populate_api_route_state', file: 'routing.py' },
+            { name: 'subsystem: Dependency Injection' },
+          ],
+          contextTokens: `${result.focused} tokens`,
+          stub: '3 call sites across 2 subsystems…',
+        },
+        payoff: {
+          title: 'Context sent to the model',
+          full: { label: 'Full repository', value: `${result.baseline} tokens`, tokens: result.baselineTokens },
+          focused: { label: 'Retrieved context', value: `${result.focused} tokens`, tokens: result.focusedTokens },
+          result: `${result.reduction} fewer tokens`,
+        },
+        // The long description read in place of the drawing.
+        description: [
+          'Ingest: the tiangolo/fastapi repository, in full from its default branch or as the files a push or pull request changed at that commit, merges into one stream of supported source files: the fastapi package, its tests and documentation examples, and the documentation’s JavaScript. Files such as README.md and uv.lock are skipped, and every source file is token-counted.',
+          'Parse: Tree-sitter reads Python, JavaScript, TypeScript, Go and Java. In fastapi/dependencies/utils.py it extracts the function analyze_param, its call to the external is_typealiastype, and its call to create_model_field.',
+          'Graph: inside the tiangolo/fastapi boundary, files define functions and functions call functions; calls to code outside the repository, such as run_in_threadpool and deepcopy, are marked external. Every function carries an embedding, and clustering groups functions into labeled subsystems, shown here as Request Routing, Dependency Injection and OpenAPI Schema.',
+          'Answer: asked “What breaks if I change create_model_field?”, a Claude agent finds create_model_field by semantic search, walks to its 3 callers (analyze_param and _get_body_field, and _populate_api_route_state in the routing subsystem), and reads the Dependency Injection subsystem, repeating until it has enough context.',
+          `Context sent to the model: ${result.baseline} tokens for the full repository against ${result.focused} tokens of retrieved context, ${result.reduction} fewer.`,
+        ],
       },
       // T-07 front-page lead. Headline approved by the owner, Oct 18, 2026.
       kicker: 'Developer Tools',

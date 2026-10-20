@@ -7,47 +7,49 @@ type Visual = (Project & { id: 'codegraph' })['story']['visual'];
 type Point = { x: number; y: number };
 
 // The graph drawing's geometry. Labels come from site.ts; positions live here.
-// Three communities of functions, two external calls outside every hull, and
-// four files; CALLS edges are dense inside each hull and sparse between them.
+// Every function and CALLS edge is FastAPI's own (fastapi/routing.py,
+// dependencies/utils.py, utils.py and openapi/utils.py): three communities,
+// two external calls outside every hull, and the four defining files.
 const node = {
-  sendRequest: { x: 145, y: 127 }, buildHeaders: { x: 95, y: 83 }, retrySend: { x: 45, y: 118 }, openSession: { x: 62, y: 172 }, setTimeout: { x: 128, y: 187 },
-  verifySignature: { x: 280, y: 95 }, handleWebhook: { x: 345, y: 118 }, refreshToken: { x: 262, y: 45 }, computeDigest: { x: 340, y: 54 },
-  parseBody: { x: 270, y: 179 }, decodeFields: { x: 340, y: 190 }, readError: { x: 296, y: 215 },
-  jsonLoads: { x: 40, y: 237 }, hmacNew: { x: 402, y: 64 },
+  routeInit: { x: 95, y: 83 }, populateRouteState: { x: 145, y: 127 }, getRouteHandler: { x: 45, y: 118 }, getRequestHandler: { x: 128, y: 187 }, serializeResponse: { x: 62, y: 172 },
+  createModelField: { x: 300, y: 100 }, getBodyField: { x: 240, y: 140 }, analyzeParam: { x: 352, y: 128 }, getDependant: { x: 382, y: 80 }, solveDependencies: { x: 330, y: 42 },
+  getOpenapi: { x: 268, y: 190 }, getOpenapiPath: { x: 330, y: 186 }, getRequestBody: { x: 300, y: 222 },
+  runInThreadpool: { x: 40, y: 237 }, deepcopy: { x: 404, y: 200 },
 } satisfies Record<string, Point>;
 type NodeId = keyof typeof node;
 
-const file = { session: { x: 95, y: 135 }, signing: { x: 294, y: 64 }, webhooks: { x: 392, y: 135 }, decode: { x: 302, y: 194 } } satisfies Record<string, Point>;
+const file = { routing: { x: 95, y: 135 }, utils: { x: 318, y: 78 }, dependencies: { x: 285, y: 62 }, openapi: { x: 300, y: 200 } } satisfies Record<string, Point>;
 const defines: [keyof typeof file, NodeId][] = [
-  ['session', 'sendRequest'], ['session', 'buildHeaders'], ['session', 'retrySend'], ['session', 'openSession'], ['session', 'setTimeout'],
-  ['signing', 'verifySignature'], ['signing', 'refreshToken'], ['signing', 'computeDigest'], ['webhooks', 'handleWebhook'],
-  ['decode', 'parseBody'], ['decode', 'decodeFields'], ['decode', 'readError'],
+  ['routing', 'routeInit'], ['routing', 'populateRouteState'], ['routing', 'getRouteHandler'], ['routing', 'getRequestHandler'], ['routing', 'serializeResponse'],
+  ['utils', 'createModelField'],
+  ['dependencies', 'getBodyField'], ['dependencies', 'analyzeParam'], ['dependencies', 'getDependant'], ['dependencies', 'solveDependencies'],
+  ['openapi', 'getOpenapi'], ['openapi', 'getOpenapiPath'], ['openapi', 'getRequestBody'],
 ];
 // [caller, callee, part of the retrieval slice]
 const calls: [NodeId, NodeId, boolean?][] = [
-  ['retrySend', 'sendRequest'], ['sendRequest', 'buildHeaders'], ['sendRequest', 'setTimeout'], ['openSession', 'setTimeout'], ['retrySend', 'openSession'],
-  ['handleWebhook', 'verifySignature', true], ['refreshToken', 'verifySignature', true], ['verifySignature', 'computeDigest'], ['refreshToken', 'computeDigest'],
-  ['parseBody', 'decodeFields'], ['parseBody', 'readError'], ['readError', 'decodeFields'],
-  ['sendRequest', 'verifySignature', true], ['sendRequest', 'parseBody'], ['handleWebhook', 'parseBody'],
-  ['sendRequest', 'jsonLoads'], ['computeDigest', 'hmacNew'],
+  ['routeInit', 'populateRouteState'], ['routeInit', 'getRouteHandler'], ['getRouteHandler', 'getRequestHandler'], ['getRequestHandler', 'serializeResponse'],
+  ['analyzeParam', 'createModelField', true], ['getBodyField', 'createModelField', true], ['getDependant', 'analyzeParam'], ['solveDependencies', 'getDependant'],
+  ['getOpenapi', 'getOpenapiPath'], ['getOpenapiPath', 'getRequestBody'],
+  ['populateRouteState', 'createModelField', true], ['populateRouteState', 'getBodyField'],
+  ['serializeResponse', 'runInThreadpool'], ['getOpenapiPath', 'deepcopy'],
 ];
 const hulls = {
-  transport: ['buildHeaders', 'sendRequest', 'setTimeout', 'openSession', 'retrySend'],
-  auth: ['refreshToken', 'computeDigest', 'handleWebhook', 'verifySignature'],
-  parsing: ['parseBody', 'decodeFields', 'readError'],
+  routing: ['routeInit', 'populateRouteState', 'getRequestHandler', 'serializeResponse', 'getRouteHandler'],
+  dependencies: ['solveDependencies', 'getDependant', 'analyzeParam', 'getBodyField'],
+  openapi: ['getOpenapi', 'getOpenapiPath', 'getRequestBody'],
 } satisfies Record<string, NodeId[]>;
-const externals: NodeId[] = ['jsonLoads', 'hmacNew'];
-const entry: NodeId = 'verifySignature';
-const callers: NodeId[] = ['sendRequest', 'handleWebhook', 'refreshToken'];
+const externals: NodeId[] = ['runInThreadpool', 'deepcopy'];
+const entry: NodeId = 'createModelField';
+const callers: NodeId[] = ['analyzeParam', 'getBodyField', 'populateRouteState'];
 const radius = { function: 4.5, entry: 6.5 };
 
 // Name labels: [node, x offset, y offset, anchor]. Unlabeled functions read as texture.
 const labels: [keyof Visual['graph']['functions'], number, number, 'start' | 'middle' | 'end'][] = [
-  ['sendRequest', -10, -13, 'end'], ['verifySignature', -10, -11, 'end'], ['handleWebhook', -8, 14, 'end'],
-  ['refreshToken', -9, 16, 'end'], ['jsonLoads', 9, 3, 'start'], ['hmacNew', 12, 17, 'end'],
+  ['createModelField', -7, -12, 'end'], ['analyzeParam', 0, 18, 'middle'], ['getBodyField', 0, 18, 'middle'],
+  ['populateRouteState', 0, -15, 'middle'], ['runInThreadpool', 9, 3, 'start'], ['deepcopy', 10, -10, 'end'],
 ];
 const fileLabels: [keyof typeof file, number, number, 'start' | 'middle' | 'end'][] = [
-  ['session', 0, 19, 'middle'], ['signing', 8, 3, 'start'], ['webhooks', 0, 19, 'middle'], ['decode', 8, 12, 'start'],
+  ['routing', 0, 19, 'middle'], ['utils', 8, 3, 'start'], ['dependencies', -8, 3, 'end'], ['openapi', 8, 12, 'start'],
 ];
 
 // Each function's embedding: five ticks of varying height, like a fingerprint.
@@ -86,18 +88,18 @@ function GraphDrawing({ graph }: { graph: Visual['graph'] }) {
     <rect className="graph-frame" x="0.5" y="8.5" width="419" height="243" />
     <text className="graph-frame-label" x="12" y="12">{graph.repository}</text>
 
-    {/* Layer 2: communities, as soft hulls. Auth & Signing is the retrieved subsystem. */}
+    {/* Layer 2: communities, as soft hulls. Dependency Injection is the retrieved subsystem. */}
     <g className="graph-hulls">
-      {Object.entries(hulls).map(([id, ids]) => <g key={id} className={id === 'auth' ? 'is-slice' : undefined}>
-        {id === 'auth' && <polygon className="graph-hull-edge" points={hullPoints(ids)} />}
+      {Object.entries(hulls).map(([id, ids]) => <g key={id} className={id === 'dependencies' ? 'is-slice' : undefined}>
+        {id === 'dependencies' && <polygon className="graph-hull-edge" points={hullPoints(ids)} />}
         <polygon className="graph-hull" points={hullPoints(ids)} />
       </g>)}
     </g>
     <g className="graph-community-labels">
-      <text className="graph-community" x="20" y="44">{graph.communities.transport.name}</text>
-      <text className="graph-community-note" x="20" y="56">{graph.communities.transport.description}</text>
-      <text className="graph-community is-slice" x="244" y="24">{graph.communities.auth.name}</text>
-      <text className="graph-community" x="305" y="246" textAnchor="middle">{graph.communities.parsing.name}</text>
+      <text className="graph-community" x="20" y="44">{graph.communities.routing.name}</text>
+      <text className="graph-community-note" x="20" y="56">{graph.communities.routing.description}</text>
+      <text className="graph-community is-slice" x="244" y="20">{graph.communities.dependencies.name}</text>
+      <text className="graph-community" x="305" y="248" textAnchor="middle">{graph.communities.openapi.name}</text>
     </g>
 
     {/* Layer 1: structure. DEFINES is dotted and unarrowed; CALLS is a directed line. */}
@@ -121,9 +123,9 @@ function GraphDrawing({ graph }: { graph: Visual['graph'] }) {
     </g>
 
     {/* The retrieval slice, numbered to match the agent's trace. */}
-    <Numeral at={{ x: node.verifySignature.x, y: node.verifySignature.y + 17 }}>1</Numeral>
-    <Numeral at={{ x: 205, y: 102 }}>2</Numeral>
-    <Numeral at={{ x: 235, y: 21 }}>3</Numeral>
+    <Numeral at={{ x: node.createModelField.x, y: node.createModelField.y + 17 }}>1</Numeral>
+    <Numeral at={{ x: 192, y: 119 }}>2</Numeral>
+    <Numeral at={{ x: 235, y: 17 }}>3</Numeral>
   </svg>;
 }
 
@@ -158,7 +160,7 @@ export function CodeGraphFeature({ project }: { project: Project & { id: 'codegr
               <div className="ingest-files">
                 <p className="ingest-root">{visual.tree.root}</p>
                 <ul className="ingest-tree">
-                  {visual.tree.files.map(name => <li key={name}>{name}</li>)}
+                  {visual.tree.entries.map(entry => <li key={entry.name}>{entry.name}{'children' in entry && <ul>{entry.children.map(child => <li key={child}>{child}</li>)}</ul>}</li>)}
                   <li className="is-skipped">{visual.tree.skipped.map((name, index) => <span key={name}>{index > 0 && ' · '}<s>{name}</s></span>)}</li>
                 </ul>
                 <p className="token-tag"><span className="token-swatch is-full" />{visual.tree.tokens}</p>
@@ -167,16 +169,14 @@ export function CodeGraphFeature({ project }: { project: Project & { id: 'codegr
             <p className="pipeline-output">→ {stages.ingest.output}</p>
           </li>
           <li className="pipeline-stage pipeline-parse">
-            <p className="pipeline-head"><span className="pipeline-step">02</span> {stages.parse.title} <span className="pipeline-detail">{stages.parse.detail}</span></p>
+            <p className="pipeline-head"><span className="pipeline-step">02</span> {stages.parse.title} <span className="pipeline-detail">{stages.parse.detail} · {code.languages.join(' · ')}</span></p>
             <div className="parse-body">
               <p className="parse-file">{code.file}</p>
-              {code.lines.map(line => <div key={line.mark} className="parse-row">
-                <code className="parse-line">{line.before}<span className={`parse-mark is-${line.kind}`}>{line.mark}</span>{line.after}</code>
-                <span className="parse-leader" />
-                <span className="parse-record"><span className="parse-kind">{code.kinds[line.kind]}</span> {line.mark}{line.kind === 'external' && <> <span className="external-glyph" /></>}</span>
-              </div>)}
+              <code className="parse-code">{code.lines.map(line => <span key={line.before} className="parse-line">{line.before}{'mark' in line && <><span className={`parse-mark is-${line.kind}`}>{line.mark}</span>{line.after}</>}</span>)}</code>
+              <ul className="parse-records">{code.lines.flatMap(line => 'mark' in line ? [<li key={line.mark}>
+                <span className="parse-kind">{code.kinds[line.kind]}</span> {line.mark}{line.kind === 'external' && <> <span className="external-glyph" /></>}
+              </li>] : [])}</ul>
             </div>
-            <p className="pipeline-languages">{code.languages.join(' · ')}</p>
             <p className="pipeline-output">→ {stages.parse.output}</p>
           </li>
           <li className="pipeline-stage pipeline-graph-stage">

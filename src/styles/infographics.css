@@ -177,25 +177,23 @@
     border-right: 0;
   }
 }
-.ingest-files { display: grid; align-content: start; gap: var(--space-1); }
+.ingest-files { display: grid; align-content: start; gap: var(--rule-medium); }
 .ingest-root { margin: 0; font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); }
-.ingest-tree { margin: 0 0 0 var(--space-1); padding: 0 0 0 var(--space-3); list-style: none; border-left: var(--rule-hairline) solid var(--ink); font: var(--weight-regular) var(--text-2xs) / 1.5 var(--font-mono); }
+.ingest-tree { margin: 0 0 0 var(--space-1); padding: 0 0 0 var(--space-3); list-style: none; border-left: var(--rule-hairline) solid var(--ink); font: var(--weight-regular) var(--text-2xs) / 1.4 var(--font-mono); }
 .ingest-tree li { position: relative; overflow-wrap: anywhere; }
 .ingest-tree li::before { content: ''; position: absolute; top: 0.8em; left: calc(var(--space-3) * -1); width: var(--space-2); border-top: var(--rule-hairline) solid var(--ink); }
+.ingest-tree ul { margin: 0 0 0 var(--space-1); padding: 0 0 0 var(--space-3); list-style: none; border-left: var(--rule-hairline) solid var(--ink); }
 .ingest-tree .is-skipped { color: var(--ink-muted); }
-.token-tag { display: flex; align-items: center; gap: var(--space-2); margin: var(--space-1) 0 0; font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); }
+.token-tag { display: flex; align-items: center; gap: var(--space-2); margin: 0; font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); }
 .token-swatch { flex: none; height: var(--space-3); border: var(--rule-hairline) solid var(--ink); }
 .token-swatch.is-full, .payoff-bar.is-full { background: repeating-linear-gradient(135deg, var(--ink-muted) 0 var(--rule-hairline), transparent 0 var(--space-1)); }
 .token-swatch.is-full { width: var(--space-7); }
 .token-swatch.is-focused { width: var(--space-1); background: var(--ink); }
 
-/* 02 Parse: a code fragment whose marks lead to the records extracted from it. */
-.pipeline-parse { container: parse / inline-size; }
-.parse-body { display: grid; grid-template-columns: minmax(0, 1fr); }
-.parse-row { display: contents; }
+/* 02 Parse: a code excerpt with its extracted spans marked, then the records
+   the parser takes from it, hung on a dotted leader from the code. */
+.parse-body { display: grid; justify-items: start; }
 .parse-file {
-  grid-column: 1 / -1;
-  justify-self: start;
   margin: 0;
   padding: var(--rule-medium) var(--space-2);
   border: var(--rule-hairline) solid var(--ink);
@@ -203,38 +201,32 @@
   background: var(--paper-shade);
   font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono);
 }
-.parse-line {
-  padding-inline: var(--space-2);
-  border-inline: var(--rule-hairline) solid var(--ink);
+.parse-code {
+  display: grid;
+  max-width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: var(--rule-hairline) solid var(--ink);
   background: var(--paper-shade);
-  font: var(--weight-regular) var(--text-2xs) / 1.6 var(--font-mono);
+  font: var(--weight-regular) var(--text-2xs) / 1.5 var(--font-mono);
   white-space: pre;
+  overflow-x: auto;
 }
-.parse-row:nth-child(2) .parse-line { padding-top: var(--space-1); border-top: var(--rule-hairline) solid var(--ink); }
-.parse-row:last-child .parse-line { padding-bottom: var(--space-1); border-bottom: var(--rule-hairline) solid var(--ink); }
 .parse-mark.is-fn { outline: var(--rule-hairline) solid var(--ink); outline-offset: 1px; }
 .parse-mark.is-call, .parse-mark.is-external { text-decoration: underline; text-decoration-thickness: var(--rule-hairline); text-underline-offset: 0.25em; }
 .parse-mark.is-external { text-decoration-style: dashed; }
-.parse-leader { display: none; }
-/* Stacked: the records follow the code on a dotted rail. */
-.parse-record { order: 1; padding-left: var(--space-3); border-left: var(--rule-hairline) dotted var(--ink); font: var(--weight-regular) var(--text-2xs) / 1.6 var(--font-mono); white-space: nowrap; }
-.parse-row:nth-child(2) .parse-record { margin-top: var(--space-2); }
+.parse-records {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-4);
+  margin: 0 0 0 var(--space-3);
+  padding: var(--space-1) 0 0 var(--space-3);
+  border-left: var(--rule-hairline) dotted var(--ink);
+  list-style: none;
+  font: var(--weight-regular) var(--text-2xs) / 1.6 var(--font-mono);
+}
+.parse-records li { white-space: nowrap; }
 .parse-kind { color: var(--ink-muted); }
 .external-glyph { display: inline-block; flex: none; vertical-align: middle; width: 0.5625rem; height: 0.5625rem; border: var(--rule-hairline) dashed var(--ink); border-radius: 50%; }
-@container parse (min-width: 20.5rem) {
-  /* Side by side: each marked line leads straight to its record. */
-  .parse-body { grid-template-columns: max-content minmax(var(--space-4), 1fr) max-content; align-items: center; }
-  .parse-file { grid-column: 1 / -1; }
-  .parse-line, .parse-record { align-self: stretch; display: flex; align-items: center; }
-  .parse-record { gap: 1ch; }
-  .parse-leader { display: block; border-top: var(--rule-hairline) dotted var(--ink); }
-  .parse-record { order: 0; padding-left: var(--space-1); border-left: 0; }
-  .parse-row:nth-child(2) .parse-record { margin-top: 0; padding-top: var(--space-1); }
-  .parse-row:last-child .parse-record { padding-bottom: var(--space-1); }
-  .parse-row:nth-child(2) .parse-leader { margin-top: var(--space-1); }
-  .parse-row:last-child .parse-leader { margin-bottom: var(--space-1); }
-}
-.pipeline-languages { margin: 0; font: var(--weight-label) var(--text-2xs) / var(--leading-snug) var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--ink-muted); }
 
 /* 03 Graph: structure, communities and embeddings in one drawing. SVG text
    sizes are user units, so they scale with the drawing. */
@@ -312,7 +304,10 @@
 .answer-context-label { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 var(--space-3); margin: 0; font: var(--weight-label-strong) var(--text-xs) / var(--leading-snug) var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); }
 .answer-context ul { margin: 0; padding: 0; list-style: none; font: var(--weight-regular) var(--text-2xs) / 1.6 var(--font-mono); }
 .answer-context li span { color: var(--ink-muted); }
-.answer-context .token-tag { margin: 0; text-transform: none; letter-spacing: 0; font-weight: var(--weight-regular); }
+/* A narrow answer column keeps the names and drops the paths rather than wrap every record. */
+.pipeline-answer { container: answer / inline-size; }
+@container answer (max-width: 19rem) { .answer-context li span { display: none; } }
+.answer-context .token-tag { text-transform: none; letter-spacing: 0; font-weight: var(--weight-regular); }
 .answer-stub { margin: 0; font: italic var(--weight-regular) var(--text-sm) / var(--leading-snug) var(--font-body); color: var(--ink-muted); }
 
 /* Payoff: the context sent to the model, both bars on one linear scale. */

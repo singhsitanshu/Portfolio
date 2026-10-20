@@ -148,69 +148,77 @@ export const projects = [
       },
       technologies: ['React / TypeScript', 'Python / FastAPI', 'Tree-sitter', 'Neo4j', 'LangGraph'],
       // The pipeline graphic: ingest, parse, graph, answer, then the context
-      // payoff. The repository is an example; token bars use the measured figures.
+      // payoff. The example is tiangolo/fastapi, the repository behind the
+      // measured token figures. File paths, functions and every drawn call are
+      // FastAPI's own (release 0.143.3, bb7f314); subsystem names are illustrative.
       visual: {
         label: 'Conceptual view',
-        note: 'Questions are answered from a small slice of the call graph. Example repository; bars to scale.',
+        note: 'Calls excerpted from tiangolo/fastapi; subsystem names illustrative; bars to scale.',
         credit: 'Graphic',
         stages: {
           ingest: { title: 'Ingest', detail: 'Full repo or per-commit', output: 'source files' },
-          parse: { title: 'Parse', detail: 'Tree-sitter · 5 languages', output: 'files · functions · calls' },
+          parse: { title: 'Parse', detail: 'Tree-sitter', output: 'files · functions · calls' },
           graph: { title: 'Graph', detail: 'Typed · embedded · clustered', output: 'focused subgraph' },
           answer: { title: 'Answer', detail: 'Claude agent · 7 graph tools' },
         },
         sources: [
-          { name: 'github.com/owner/repo', tag: 'Full · default branch' },
+          { name: 'github.com/tiangolo/fastapi', tag: 'Full · default branch' },
           { name: 'push / pull_request', tag: 'Webhook · changed files @ commit' },
         ],
         tree: {
-          root: 'owner/repo/',
-          files: ['transport/session.py', 'auth/signing.py', 'web/client.ts · retry.js', 'cmd/main.go', 'sdk/Api.java'],
-          skipped: ['node_modules/', 'dist/'],
+          root: 'tiangolo/fastapi/',
+          entries: [
+            { name: 'fastapi/', children: ['routing.py · utils.py', 'dependencies/utils.py', 'openapi/utils.py'] },
+            { name: 'tests/ · docs_src/' },
+            { name: 'docs/…/termynal.js' },
+          ],
+          // Not a supported source type, so never parsed or counted.
+          skipped: ['README.md', 'uv.lock'],
           tokens: `${result.baseline} tokens`,
         },
-        // Each code line is split into plain text and the one span the parser extracts.
+        // An excerpt of analyze_param: each line is plain text around the one
+        // span the parser extracts; an ellipsis line stands for skipped code.
         code: {
-          file: 'transport/session.py',
+          file: 'fastapi/dependencies/utils.py',
           lines: [
-            { before: 'def ', mark: 'send_request', after: '(raw):', kind: 'fn' },
-            { before: '  h = ', mark: 'build_headers', after: '(raw)', kind: 'call' },
-            { before: '  ', mark: 'verify_signature', after: '(h)', kind: 'call' },
-            { before: '  return ', mark: 'json.loads', after: '(raw)', kind: 'external' },
+            { before: 'def ', mark: 'analyze_param', after: '(…):', kind: 'fn' },
+            { before: '    if ', mark: 'is_typealiastype', after: '(…):', kind: 'external' },
+            { before: '    …' },
+            { before: '        field = ', mark: 'create_model_field', after: '(…)', kind: 'call' },
           ],
           kinds: { fn: 'fn', call: '→ calls', external: '→ calls' },
           languages: ['Python', 'JavaScript', 'TypeScript', 'Go', 'Java'],
         },
         graph: {
-          repository: 'owner/repo',
+          repository: 'tiangolo/fastapi',
           communities: {
-            transport: { name: 'Request Transport', description: 'Sends and retries requests' },
-            auth: { name: 'Auth & Signing' },
-            parsing: { name: 'Response Parsing' },
+            routing: { name: 'Request Routing', description: 'Builds routes and handles requests' },
+            dependencies: { name: 'Dependency Injection' },
+            openapi: { name: 'OpenAPI Schema' },
           },
-          files: { session: 'session.py', signing: 'signing.py', webhooks: 'webhooks.py', decode: 'decode.py' },
+          files: { routing: 'routing.py', utils: 'utils.py', dependencies: 'dependencies/utils.py', openapi: 'openapi/utils.py' },
           functions: {
-            sendRequest: 'send_request', verifySignature: 'verify_signature', handleWebhook: 'handle_webhook',
-            refreshToken: 'refresh_token', jsonLoads: 'json.loads', hmacNew: 'hmac.new',
+            populateRouteState: '_populate_api_route_state', createModelField: 'create_model_field', analyzeParam: 'analyze_param',
+            getBodyField: '_get_body_field', runInThreadpool: 'run_in_threadpool', deepcopy: 'deepcopy',
           },
           legend: { file: 'File', function: 'Function', external: 'External', defines: 'Defines', calls: 'Calls', vector: 'Embedding' },
         },
         answer: {
-          question: 'What breaks if I change verify_signature?',
+          question: 'What breaks if I change create_model_field?',
           questionLabel: 'Q.',
           trace: [
-            { tool: 'semantic_code_search', result: 'verify_signature' },
+            { tool: 'semantic_code_search', result: 'create_model_field' },
             { tool: 'query_graph_blast_radius', result: '3 callers' },
-            { tool: 'analyze_architectural_subsystems', result: 'Auth & Signing' },
+            { tool: 'analyze_architectural_subsystems', result: 'Dependency Injection' },
           ],
           loop: 'Repeats until it has enough context',
           contextLabel: 'Focused context',
           context: [
-            { name: 'verify_signature', file: 'auth/signing.py' },
-            { name: '← handle_webhook', file: 'api/webhooks.py' },
-            { name: '← refresh_token', file: 'auth/signing.py' },
-            { name: '← send_request', file: 'transport/session.py' },
-            { name: 'subsystem: Auth & Signing' },
+            { name: 'create_model_field', file: 'utils.py' },
+            { name: '← analyze_param', file: 'dependencies/utils.py' },
+            { name: '← _get_body_field', file: 'dependencies/utils.py' },
+            { name: '← _populate_api_route_state', file: 'routing.py' },
+            { name: 'subsystem: Dependency Injection' },
           ],
           contextTokens: `${result.focused} tokens`,
           stub: '3 call sites across 2 subsystems…',
@@ -223,10 +231,10 @@ export const projects = [
         },
         // The long description read in place of the drawing.
         description: [
-          'Ingest: a full GitHub repository on its default branch, or the files a push or pull request changed at that commit, merge into one stream of supported source files; node_modules and dist are skipped, and every file is token-counted.',
-          'Parse: Tree-sitter reads Python, JavaScript, TypeScript, Go and Java. In transport/session.py it extracts the function send_request and its calls to build_headers, verify_signature and the external json.loads.',
-          'Graph: inside the owner/repo boundary, files define functions and functions call functions; calls to code outside the repository, such as json.loads and hmac.new, are marked external. Every function carries an embedding, and clustering groups functions into three labeled subsystems: Request Transport, Auth & Signing, and Response Parsing.',
-          'Answer: asked “What breaks if I change verify_signature?”, a Claude agent finds verify_signature by semantic search, walks to its 3 callers (handle_webhook, refresh_token and send_request, which sits in another subsystem), and reads the Auth & Signing subsystem, repeating until it has enough context.',
+          'Ingest: the tiangolo/fastapi repository, in full from its default branch or as the files a push or pull request changed at that commit, merges into one stream of supported source files: the fastapi package, its tests and documentation examples, and the documentation’s JavaScript. Files such as README.md and uv.lock are skipped, and every source file is token-counted.',
+          'Parse: Tree-sitter reads Python, JavaScript, TypeScript, Go and Java. In fastapi/dependencies/utils.py it extracts the function analyze_param, its call to the external is_typealiastype, and its call to create_model_field.',
+          'Graph: inside the tiangolo/fastapi boundary, files define functions and functions call functions; calls to code outside the repository, such as run_in_threadpool and deepcopy, are marked external. Every function carries an embedding, and clustering groups functions into labeled subsystems, shown here as Request Routing, Dependency Injection and OpenAPI Schema.',
+          'Answer: asked “What breaks if I change create_model_field?”, a Claude agent finds create_model_field by semantic search, walks to its 3 callers (analyze_param and _get_body_field, and _populate_api_route_state in the routing subsystem), and reads the Dependency Injection subsystem, repeating until it has enough context.',
           `Context sent to the model: ${result.baseline} tokens for the full repository against ${result.focused} tokens of retrieved context, ${result.reduction} fewer.`,
         ],
       },

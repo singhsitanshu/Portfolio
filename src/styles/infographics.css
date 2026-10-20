@@ -41,20 +41,6 @@
   .infographic-stage + .infographic-stage::after { top: calc(var(--space-6) - var(--space-1) + var(--rule-hairline) / 2); left: calc(var(--space-2) * -1 - var(--space-1)); border: var(--space-1) solid transparent; border-left: var(--space-2) solid var(--ink); border-right: 0; }
 }
 
-/* CodeGraph: tree, relationship graph, focused context. */
-.infographic-tree, .infographic-tree ul { margin: 0; padding: 0; list-style: none; font: var(--weight-regular) var(--text-sm) / 1.8 var(--font-mono); }
-.infographic-tree ul { margin-left: var(--space-1); padding-left: var(--space-4); border-left: var(--rule-hairline) solid var(--ink); }
-.infographic-file { display: inline-block; width: var(--space-3); height: var(--space-4); margin-right: var(--space-2); vertical-align: middle; border: var(--rule-hairline) solid var(--ink); }
-.infographic-graph { display: block; width: 100%; max-width: 13.75rem; height: auto; }
-.graph-edges { fill: none; stroke: var(--ink); stroke-width: 1; }
-.graph-nodes { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
-.graph-center { fill: var(--ink); }
-.graph-focus { fill: none; stroke: var(--paper); stroke-width: 3; }
-.infographic-lines { display: flex; gap: var(--space-1); }
-.infographic-lines i { height: var(--rule-medium); width: 30%; background: var(--ink); }
-.infographic-lines i:nth-child(2) { width: 20%; }
-.infographic-lines i:last-child { width: 10%; }
-
 /* TaskForge: queue, workers, outcomes, and the written-out retry path. */
 .infographic-queue { display: grid; gap: var(--space-1); }
 .infographic-queue i { display: block; height: var(--space-3); border: var(--rule-hairline) solid var(--ink); }
@@ -66,3 +52,284 @@
 .infographic-outcomes { display: grid; gap: var(--space-2); margin: 0; padding: 0; list-style: none; font: var(--weight-regular) var(--text-sm) / var(--leading-snug) var(--font-mono); }
 .infographic-outcomes li { padding: var(--space-1) var(--space-2); border: var(--rule-hairline) solid var(--ink); }
 .infographic-return { margin: var(--space-4) 0 0; padding-top: var(--space-2); border-top: var(--rule-hairline) dashed var(--ink); font: var(--weight-regular) var(--text-sm) / var(--leading-snug) var(--font-mono); }
+
+/*
+ * CodeGraph: the four-stage pipeline (ingest, parse, graph, answer) and the
+ * payoff band. Stages stack with down arrows when the figure is narrow; from
+ * 36rem, ingest and parse share the top tier and the graph (the hero) and the
+ * answer share the second. Arrows are drawn by the stage they leave.
+ */
+.infographic-pipeline { container-name: pipeline; --pipeline-gap: var(--space-6); --arrow-head: var(--space-2); }
+.pipeline-diagram { display: grid; gap: var(--space-4); }
+.pipeline { display: grid; gap: var(--pipeline-gap); margin: 0; padding: 0; list-style: none; }
+.pipeline-stage { position: relative; display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+.pipeline-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--space-2);
+  margin: 0;
+  padding-bottom: var(--space-1);
+  border-bottom: var(--rule-hairline) solid var(--ink);
+  font: var(--weight-label-strong) var(--text-xs) / var(--leading-snug) var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+}
+.pipeline-step { font: var(--weight-regular) var(--text-2xs) / 1 var(--font-mono); letter-spacing: 0; color: var(--ink-muted); }
+.pipeline-detail { margin-left: auto; font-weight: var(--weight-label); font-size: var(--text-2xs); text-transform: none; letter-spacing: 0; color: var(--ink-muted); }
+.pipeline-output { margin: auto 0 0; font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); color: var(--ink-muted); }
+
+/* Outgoing arrows: down below the stage when stacked. */
+.pipeline-stage:not(.pipeline-answer)::before {
+  content: '';
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  left: var(--space-4);
+  height: calc(var(--pipeline-gap) - var(--space-2) - var(--arrow-head));
+  border-left: var(--rule-hairline) solid var(--ink);
+}
+.pipeline-stage:not(.pipeline-answer)::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + var(--pipeline-gap) - var(--space-1) - var(--arrow-head));
+  left: calc(var(--space-4) - var(--space-1) + var(--rule-hairline) / 2);
+  border: var(--space-1) solid transparent;
+  border-top: var(--arrow-head) solid var(--ink);
+  border-bottom: 0;
+}
+
+/* Queried by name: a stage that is itself a container would otherwise answer for its own arrows. */
+@container pipeline (min-width: 36rem) {
+  .pipeline { grid-template-columns: minmax(0, 1fr) minmax(0, 0.1fr) minmax(0, 0.9fr); }
+  .pipeline-ingest { grid-column: 1; }
+  .pipeline-parse { grid-column: 2 / -1; }
+  .pipeline-graph-stage { grid-column: 1 / 3; }
+  .pipeline-answer { grid-column: 3; }
+  /* Ingest and graph hand off to the right, level with the stage heads. */
+  .pipeline-stage.pipeline-ingest::before, .pipeline-stage.pipeline-graph-stage::before {
+    top: var(--space-2);
+    left: calc(100% + var(--space-1));
+    width: calc(var(--space-6) - var(--space-2) - var(--arrow-head));
+    height: 0;
+    border-left: 0;
+    border-top: var(--rule-hairline) solid var(--ink);
+  }
+  .pipeline-stage.pipeline-ingest::after, .pipeline-stage.pipeline-graph-stage::after {
+    top: calc(var(--space-2) - var(--space-1) + var(--rule-hairline) / 2);
+    left: calc(100% + var(--space-6) - var(--space-1) - var(--arrow-head));
+    border: var(--space-1) solid transparent;
+    border-left: var(--arrow-head) solid var(--ink);
+    border-right: 0;
+  }
+}
+
+/* 01 Ingest: two sources merge into one stream, then the file tree. Narrow,
+   the sources sit side by side and merge downward in a Y; wide, they stack
+   beside the tree and merge to the right. */
+.pipeline-ingest { container: ingest / inline-size; }
+.ingest-body { display: grid; gap: var(--space-6); }
+.ingest-sources { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.ingest-sources li { position: relative; display: grid; align-content: start; gap: var(--rule-medium); padding: var(--space-1) var(--space-2); border: var(--rule-hairline) solid var(--ink); }
+.ingest-sources li::after { content: ''; position: absolute; top: 100%; left: 50%; height: var(--space-2); border-left: var(--rule-hairline) solid var(--ink); }
+.ingest-source { font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); }
+.ingest-tag { font: var(--weight-label) var(--text-2xs) / var(--leading-snug) var(--font-label); color: var(--ink-muted); }
+/* The merge: a bar joining both sources, then one stream on to the tree. */
+.ingest-sources::before {
+  content: '';
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: calc(25% - var(--space-2) / 4);
+  right: calc(25% - var(--space-2) / 4);
+  height: calc(var(--space-6) - var(--space-2) - var(--space-1) - var(--arrow-head));
+  border-top: var(--rule-hairline) solid var(--ink);
+  background: linear-gradient(var(--ink), var(--ink)) 50% 0 / var(--rule-hairline) 100% no-repeat;
+}
+.ingest-sources::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + var(--space-6) - var(--space-1) - var(--arrow-head));
+  left: calc(50% - var(--space-1));
+  border: var(--space-1) solid transparent;
+  border-top: var(--arrow-head) solid var(--ink);
+  border-bottom: 0;
+}
+@container ingest (min-width: 21rem) {
+  .ingest-body { grid-template-columns: minmax(0, 1fr) max-content; column-gap: var(--space-5); }
+  .ingest-sources { grid-template-columns: minmax(0, 1fr); align-content: center; padding-right: var(--space-4); }
+  .ingest-sources li::after { top: 50%; left: 100%; width: var(--space-2); height: 0; border-left: 0; border-top: var(--rule-hairline) solid var(--ink); }
+  .ingest-sources::before {
+    top: calc(25% - var(--space-2) / 4);
+    bottom: calc(25% - var(--space-2) / 4);
+    left: calc(100% - var(--space-2));
+    right: auto;
+    width: calc(var(--space-5) + var(--space-2) - var(--space-1) - var(--arrow-head));
+    height: auto;
+    border-top: 0;
+    border-left: var(--rule-hairline) solid var(--ink);
+    background-position: 0 50%;
+    background-size: 100% var(--rule-hairline);
+  }
+  .ingest-sources::after {
+    top: calc(50% - var(--space-1));
+    left: calc(100% + var(--space-5) - var(--space-1) - var(--arrow-head));
+    border: var(--space-1) solid transparent;
+    border-left: var(--arrow-head) solid var(--ink);
+    border-right: 0;
+  }
+}
+.ingest-files { display: grid; align-content: start; gap: var(--space-1); }
+.ingest-root { margin: 0; font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); }
+.ingest-tree { margin: 0 0 0 var(--space-1); padding: 0 0 0 var(--space-3); list-style: none; border-left: var(--rule-hairline) solid var(--ink); font: var(--weight-regular) var(--text-2xs) / 1.5 var(--font-mono); }
+.ingest-tree li { position: relative; overflow-wrap: anywhere; }
+.ingest-tree li::before { content: ''; position: absolute; top: 0.8em; left: calc(var(--space-3) * -1); width: var(--space-2); border-top: var(--rule-hairline) solid var(--ink); }
+.ingest-tree .is-skipped { color: var(--ink-muted); }
+.token-tag { display: flex; align-items: center; gap: var(--space-2); margin: var(--space-1) 0 0; font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); }
+.token-swatch { flex: none; height: var(--space-3); border: var(--rule-hairline) solid var(--ink); }
+.token-swatch.is-full, .payoff-bar.is-full { background: repeating-linear-gradient(135deg, var(--ink-muted) 0 var(--rule-hairline), transparent 0 var(--space-1)); }
+.token-swatch.is-full { width: var(--space-7); }
+.token-swatch.is-focused { width: var(--space-1); background: var(--ink); }
+
+/* 02 Parse: a code fragment whose marks lead to the records extracted from it. */
+.pipeline-parse { container: parse / inline-size; }
+.parse-body { display: grid; grid-template-columns: minmax(0, 1fr); }
+.parse-row { display: contents; }
+.parse-file {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin: 0;
+  padding: var(--rule-medium) var(--space-2);
+  border: var(--rule-hairline) solid var(--ink);
+  border-bottom: 0;
+  background: var(--paper-shade);
+  font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono);
+}
+.parse-line {
+  padding-inline: var(--space-2);
+  border-inline: var(--rule-hairline) solid var(--ink);
+  background: var(--paper-shade);
+  font: var(--weight-regular) var(--text-2xs) / 1.6 var(--font-mono);
+  white-space: pre;
+}
+.parse-row:nth-child(2) .parse-line { padding-top: var(--space-1); border-top: var(--rule-hairline) solid var(--ink); }
+.parse-row:last-child .parse-line { padding-bottom: var(--space-1); border-bottom: var(--rule-hairline) solid var(--ink); }
+.parse-mark.is-fn { outline: var(--rule-hairline) solid var(--ink); outline-offset: 1px; }
+.parse-mark.is-call, .parse-mark.is-external { text-decoration: underline; text-decoration-thickness: var(--rule-hairline); text-underline-offset: 0.25em; }
+.parse-mark.is-external { text-decoration-style: dashed; }
+.parse-leader { display: none; }
+/* Stacked: the records follow the code on a dotted rail. */
+.parse-record { order: 1; padding-left: var(--space-3); border-left: var(--rule-hairline) dotted var(--ink); font: var(--weight-regular) var(--text-2xs) / 1.6 var(--font-mono); white-space: nowrap; }
+.parse-row:nth-child(2) .parse-record { margin-top: var(--space-2); }
+.parse-kind { color: var(--ink-muted); }
+.external-glyph { display: inline-block; flex: none; vertical-align: middle; width: 0.5625rem; height: 0.5625rem; border: var(--rule-hairline) dashed var(--ink); border-radius: 50%; }
+@container parse (min-width: 20.5rem) {
+  /* Side by side: each marked line leads straight to its record. */
+  .parse-body { grid-template-columns: max-content minmax(var(--space-4), 1fr) max-content; align-items: center; }
+  .parse-file { grid-column: 1 / -1; }
+  .parse-line, .parse-record { align-self: stretch; display: flex; align-items: center; }
+  .parse-record { gap: 1ch; }
+  .parse-leader { display: block; border-top: var(--rule-hairline) dotted var(--ink); }
+  .parse-record { order: 0; padding-left: var(--space-1); border-left: 0; }
+  .parse-row:nth-child(2) .parse-record { margin-top: 0; padding-top: var(--space-1); }
+  .parse-row:last-child .parse-record { padding-bottom: var(--space-1); }
+  .parse-row:nth-child(2) .parse-leader { margin-top: var(--space-1); }
+  .parse-row:last-child .parse-leader { margin-bottom: var(--space-1); }
+}
+.pipeline-languages { margin: 0; font: var(--weight-label) var(--text-2xs) / var(--leading-snug) var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--ink-muted); }
+
+/* 03 Graph: structure, communities and embeddings in one drawing. SVG text
+   sizes are user units, so they scale with the drawing. */
+.pipeline-graph-stage { container: graph / inline-size; }
+.pipeline-graph { display: block; width: 100%; height: auto; overflow: visible; }
+.graph-frame { fill: none; stroke: var(--ink); stroke-width: 1; }
+/* The repository label breaks the frame line with a paper halo. */
+.graph-frame-label { font: 10px var(--font-mono); fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 6; stroke-linejoin: round; }
+.graph-hull { fill: var(--paper-shade); stroke: var(--paper-shade); stroke-width: 36; stroke-linejoin: round; }
+.graph-hull-edge { fill: var(--ink); stroke: var(--ink); stroke-width: 38; stroke-linejoin: round; }
+.graph-community { font: var(--weight-label-strong) 8.5px var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; fill: var(--ink-muted); }
+.graph-community.is-slice { fill: var(--ink); }
+.graph-community-note { font: italic 9.5px var(--font-headline); fill: var(--ink-muted); }
+.graph-defines path { fill: none; stroke: var(--ink-muted); stroke-width: 0.75; stroke-dasharray: 1 2; }
+.graph-calls path { fill: none; stroke: var(--ink-muted); stroke-width: 0.9; }
+.graph-calls.is-slice path { stroke: var(--ink); stroke-width: 2; }
+.graph-arrow path { fill: var(--ink-muted); }
+.graph-arrow.is-slice path { fill: var(--ink); }
+.graph-files path { fill: var(--paper); stroke: var(--ink-muted); stroke-width: 0.9; stroke-linejoin: round; }
+.graph-functions circle { fill: var(--paper); stroke: var(--ink); stroke-width: 1; }
+.graph-functions .is-slice circle { stroke-width: 2; }
+.graph-functions .is-entry circle { fill: var(--ink); stroke: var(--ink); }
+.graph-vector { fill: none; stroke: var(--ink-muted); stroke-width: 0.8; }
+.graph-vector.is-slice { stroke: var(--ink); stroke-width: 1.3; }
+.graph-externals circle { fill: var(--paper); stroke: var(--ink); stroke-width: 1; stroke-dasharray: 2 1.5; }
+.graph-labels text { font: 9.5px var(--font-mono); fill: var(--ink-muted); paint-order: stroke; stroke: var(--paper); stroke-width: 3; stroke-linejoin: round; }
+.graph-labels .graph-file-label { font-size: 8.5px; }
+.graph-labels .is-slice, .graph-labels .is-entry { fill: var(--ink); }
+.graph-labels .is-entry { text-decoration: underline; }
+.graph-numeral circle { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; }
+.graph-numeral text { font: var(--weight-label-strong) 8.5px var(--font-label); fill: var(--paper); text-anchor: middle; }
+/* On narrow figures the drawing shrinks, so its words grow to stay legible. */
+@container graph (max-width: 26rem) {
+  .graph-labels text, .graph-frame-label { font-size: 11px; }
+  .graph-labels .graph-file-label { font-size: 10px; }
+  .graph-community { font-size: 10px; }
+  .graph-community-note { font-size: 11px; }
+}
+@container graph (max-width: 22rem) {
+  /* Phones: the larger words leave no room for file names or the subsystem note. */
+  .graph-labels text, .graph-frame-label { font-size: 12.5px; }
+  .graph-labels .graph-file-label, .graph-community-note { display: none; }
+  .graph-community { font-size: 11.5px; }
+}
+/* Legend entries and the stage's output share one wrapping row. */
+.graph-key { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); }
+.graph-key .pipeline-output { margin: 0 0 0 auto; }
+.graph-legend { display: contents; margin: 0; padding: 0; list-style: none; }
+.graph-legend li { display: inline-flex; align-items: center; gap: var(--space-1); font: var(--weight-label) var(--text-2xs) / 1 var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--ink-muted); }
+.graph-legend svg { flex: none; fill: var(--paper); stroke: var(--ink); stroke-width: 1; }
+.graph-legend .is-external { stroke-dasharray: 2 1.5; }
+.graph-legend .is-defines { stroke: var(--ink-muted); stroke-width: 0.75; stroke-dasharray: 1 2; }
+.graph-legend .is-calls { stroke: var(--ink-muted); }
+.graph-legend .is-head { fill: var(--ink-muted); stroke: none; }
+.graph-legend .is-vector { fill: none; stroke: var(--ink-muted); }
+
+/* 04 Answer: the question, the agent's numbered trace, and what it retrieved. */
+.answer-question { position: relative; margin: 0 0 var(--space-2); padding: var(--space-1) var(--space-3); border: var(--rule-hairline) solid var(--ink); font: italic var(--weight-regular) var(--text-sm) / var(--leading-snug) var(--font-headline); }
+.answer-question::before, .answer-question::after { content: ''; position: absolute; top: 100%; left: var(--space-4); border: var(--space-2) solid transparent; border-bottom: 0; border-left: 0; }
+.answer-question::before { border-top-color: var(--ink); }
+.answer-question::after { margin-top: -1.5px; left: calc(var(--space-4) + var(--rule-hairline)); border-width: calc(var(--space-2) - var(--rule-hairline) * 1.5); border-bottom: 0; border-left: 0; border-top-color: var(--paper); }
+.answer-q { font: var(--weight-label-strong) var(--text-xs) / 1 var(--font-label); font-style: normal; letter-spacing: var(--tracking-label); }
+.answer-trace { position: relative; display: grid; gap: var(--space-2); padding-right: var(--space-5); }
+.answer-trace ol { position: relative; display: grid; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.answer-trace li { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-2); }
+.answer-trace li:not(:last-child)::before { content: ''; position: absolute; top: 1.125rem; bottom: calc(var(--space-2) * -1); left: calc(0.5625rem - var(--rule-hairline) / 2); border-left: var(--rule-hairline) solid var(--ink); }
+.answer-numeral { display: grid; place-items: center; width: 1.125rem; height: 1.125rem; border-radius: 50%; background: var(--ink); color: var(--paper); font: var(--weight-label-strong) var(--text-2xs) / 1 var(--font-label); }
+.answer-step { align-self: center; font: var(--weight-regular) var(--text-2xs) / var(--leading-snug) var(--font-mono); overflow-wrap: anywhere; }
+.answer-result { color: var(--ink-muted); }
+/* The ReAct loop: a return arrow beside the steps, not a full loop diagram. */
+.answer-trace ol::before { content: ''; position: absolute; inset-block: 0.5625rem; right: calc(var(--space-5) * -1 + var(--space-1)); width: var(--space-3); border: var(--rule-hairline) solid var(--ink-muted); border-left: 0; border-radius: 0 var(--space-2) var(--space-2) 0; }
+.answer-trace ol::after { content: ''; position: absolute; top: calc(0.5625rem - var(--space-1) + var(--rule-hairline) / 2); right: calc(var(--space-5) * -1 + var(--space-4) - var(--rule-hairline)); border: var(--space-1) solid transparent; border-right: var(--arrow-head) solid var(--ink-muted); border-left: 0; }
+.answer-loop { margin: 0; text-align: right; font: var(--weight-label) var(--text-2xs) / var(--leading-snug) var(--font-label); color: var(--ink-muted); }
+.answer-context { display: grid; gap: var(--space-1); padding: var(--space-2) var(--space-3); border: var(--rule-medium) solid var(--ink); }
+.answer-context-label { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 var(--space-3); margin: 0; font: var(--weight-label-strong) var(--text-xs) / var(--leading-snug) var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); }
+.answer-context ul { margin: 0; padding: 0; list-style: none; font: var(--weight-regular) var(--text-2xs) / 1.6 var(--font-mono); }
+.answer-context li span { color: var(--ink-muted); }
+.answer-context .token-tag { margin: 0; text-transform: none; letter-spacing: 0; font-weight: var(--weight-regular); }
+.answer-stub { margin: 0; font: italic var(--weight-regular) var(--text-sm) / var(--leading-snug) var(--font-body); color: var(--ink-muted); }
+
+/* Payoff: the context sent to the model, both bars on one linear scale. */
+.pipeline-payoff { display: grid; gap: var(--space-2); padding-top: var(--space-2); border-top: var(--rule-medium) solid var(--ink); }
+.payoff-title { margin: 0; font: var(--weight-label-strong) var(--text-xs) / var(--leading-snug) var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); }
+.payoff-result { order: 1; margin: 0; font: var(--weight-headline-heavy) var(--text-xl) / var(--leading-headline) var(--font-headline); letter-spacing: var(--tracking-headline); }
+.payoff-row { display: grid; gap: var(--space-1); }
+.payoff-label { font: var(--weight-label) var(--text-2xs) / var(--leading-snug) var(--font-label); text-transform: uppercase; letter-spacing: var(--tracking-label); }
+/* Bars share the track's width less room for the value; the value always sits outside. */
+.payoff-track { --value-room: 6rem; display: flex; align-items: center; gap: var(--space-2); }
+.payoff-bar { flex: none; width: calc((100% - var(--value-room)) * var(--share)); min-width: var(--rule-hairline); height: var(--space-3); }
+.payoff-bar.is-full { border: var(--rule-hairline) solid var(--ink); }
+.payoff-bar.is-focused { background: var(--ink); }
+.payoff-value { font: var(--weight-regular) var(--text-2xs) / 1 var(--font-mono); white-space: nowrap; }
+@container pipeline (min-width: 34rem) {
+  .pipeline-payoff { grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-5); }
+  .pipeline-payoff > :not(.payoff-result) { grid-column: 1; }
+  .payoff-result { order: 0; grid-column: 2; grid-row: 1 / span 3; align-self: center; max-width: 7em; text-align: right; }
+  .payoff-row { grid-template-columns: 8.5rem minmax(0, 1fr); align-items: center; column-gap: var(--space-3); }
+}

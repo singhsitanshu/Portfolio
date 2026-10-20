@@ -147,16 +147,88 @@ export const projects = [
         context: `${result.baseline} → ${result.focused} tokens/query; supported source vs. retrieved tool context`,
       },
       technologies: ['React / TypeScript', 'Python / FastAPI', 'Tree-sitter', 'Neo4j', 'LangGraph'],
+      // The pipeline graphic: ingest, parse, graph, answer, then the context
+      // payoff. The repository is an example; token bars use the measured figures.
       visual: {
         label: 'Conceptual view',
-        note: 'Repository structure and retrieval flow.',
+        note: 'Questions are answered from a small slice of the call graph. Example repository; bars to scale.',
         credit: 'Graphic',
-        repository: 'Repository',
-        files: 'Files',
-        children: ['Functions', 'Calls'],
-        relationships: 'Relationships',
-        context: 'Focused context',
-        retrieval: 'Graph + vector retrieval',
+        stages: {
+          ingest: { title: 'Ingest', detail: 'Full repo or per-commit', output: 'source files' },
+          parse: { title: 'Parse', detail: 'Tree-sitter · 5 languages', output: 'files · functions · calls' },
+          graph: { title: 'Graph', detail: 'Typed · embedded · clustered', output: 'focused subgraph' },
+          answer: { title: 'Answer', detail: 'Claude agent · 7 graph tools' },
+        },
+        sources: [
+          { name: 'github.com/owner/repo', tag: 'Full · default branch' },
+          { name: 'push / pull_request', tag: 'Webhook · changed files @ commit' },
+        ],
+        tree: {
+          root: 'owner/repo/',
+          files: ['transport/session.py', 'auth/signing.py', 'web/client.ts · retry.js', 'cmd/main.go', 'sdk/Api.java'],
+          skipped: ['node_modules/', 'dist/'],
+          tokens: `${result.baseline} tokens`,
+        },
+        // Each code line is split into plain text and the one span the parser extracts.
+        code: {
+          file: 'transport/session.py',
+          lines: [
+            { before: 'def ', mark: 'send_request', after: '(raw):', kind: 'fn' },
+            { before: '  h = ', mark: 'build_headers', after: '(raw)', kind: 'call' },
+            { before: '  ', mark: 'verify_signature', after: '(h)', kind: 'call' },
+            { before: '  return ', mark: 'json.loads', after: '(raw)', kind: 'external' },
+          ],
+          kinds: { fn: 'fn', call: '→ calls', external: '→ calls' },
+          languages: ['Python', 'JavaScript', 'TypeScript', 'Go', 'Java'],
+        },
+        graph: {
+          repository: 'owner/repo',
+          communities: {
+            transport: { name: 'Request Transport', description: 'Sends and retries requests' },
+            auth: { name: 'Auth & Signing' },
+            parsing: { name: 'Response Parsing' },
+          },
+          files: { session: 'session.py', signing: 'signing.py', webhooks: 'webhooks.py', decode: 'decode.py' },
+          functions: {
+            sendRequest: 'send_request', verifySignature: 'verify_signature', handleWebhook: 'handle_webhook',
+            refreshToken: 'refresh_token', jsonLoads: 'json.loads', hmacNew: 'hmac.new',
+          },
+          legend: { file: 'File', function: 'Function', external: 'External', defines: 'Defines', calls: 'Calls', vector: 'Embedding' },
+        },
+        answer: {
+          question: 'What breaks if I change verify_signature?',
+          questionLabel: 'Q.',
+          trace: [
+            { tool: 'semantic_code_search', result: 'verify_signature' },
+            { tool: 'query_graph_blast_radius', result: '3 callers' },
+            { tool: 'analyze_architectural_subsystems', result: 'Auth & Signing' },
+          ],
+          loop: 'Repeats until it has enough context',
+          contextLabel: 'Focused context',
+          context: [
+            { name: 'verify_signature', file: 'auth/signing.py' },
+            { name: '← handle_webhook', file: 'api/webhooks.py' },
+            { name: '← refresh_token', file: 'auth/signing.py' },
+            { name: '← send_request', file: 'transport/session.py' },
+            { name: 'subsystem: Auth & Signing' },
+          ],
+          contextTokens: `${result.focused} tokens`,
+          stub: '3 call sites across 2 subsystems…',
+        },
+        payoff: {
+          title: 'Context sent to the model',
+          full: { label: 'Full repository', value: `${result.baseline} tokens`, tokens: result.baselineTokens },
+          focused: { label: 'Retrieved context', value: `${result.focused} tokens`, tokens: result.focusedTokens },
+          result: `${result.reduction} fewer tokens`,
+        },
+        // The long description read in place of the drawing.
+        description: [
+          'Ingest: a full GitHub repository on its default branch, or the files a push or pull request changed at that commit, merge into one stream of supported source files; node_modules and dist are skipped, and every file is token-counted.',
+          'Parse: Tree-sitter reads Python, JavaScript, TypeScript, Go and Java. In transport/session.py it extracts the function send_request and its calls to build_headers, verify_signature and the external json.loads.',
+          'Graph: inside the owner/repo boundary, files define functions and functions call functions; calls to code outside the repository, such as json.loads and hmac.new, are marked external. Every function carries an embedding, and clustering groups functions into three labeled subsystems: Request Transport, Auth & Signing, and Response Parsing.',
+          'Answer: asked “What breaks if I change verify_signature?”, a Claude agent finds verify_signature by semantic search, walks to its 3 callers (handle_webhook, refresh_token and send_request, which sits in another subsystem), and reads the Auth & Signing subsystem, repeating until it has enough context.',
+          `Context sent to the model: ${result.baseline} tokens for the full repository against ${result.focused} tokens of retrieved context, ${result.reduction} fewer.`,
+        ],
       },
       // T-07 front-page lead. Headline approved by the owner, Oct 18, 2026.
       kicker: 'Developer Tools',

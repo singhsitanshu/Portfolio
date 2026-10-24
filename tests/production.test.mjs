@@ -171,6 +171,8 @@ test('social image dimensions, MIME signature, and production asset sizes are ap
   assert.deepEqual(dimensions, [1200, 630]);
   assert.ok(image.length < 150000, 'social preview should remain lightweight');
   assert.match(await readFile(resolve(root, 'favicon.svg'), 'utf8'), /viewBox="0 0 64 64"/);
+  assert.deepEqual([...(await readFile(resolve(root, 'favicon.ico'))).subarray(0, 4)], [0, 0, 1, 0]);
+  assert.deepEqual([...(await readFile(resolve(root, 'apple-touch-icon.png'))).subarray(0, 4)], [0x89, 0x50, 0x4e, 0x47]);
   const files = await readdir(resolve(root, 'assets'));
   assert.ok(files.some(file => file.startsWith('Home-')) && files.some(file => file.startsWith('CodeGraphCaseStudy-')) && files.some(file => file.startsWith('TaskForgeCaseStudy-')));
   for (const file of files) {

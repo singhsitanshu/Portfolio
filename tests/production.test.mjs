@@ -286,7 +286,7 @@ test('homepage sections, legacy anchors, and navigation are accessible in preren
   }
   for (const project of ['codegraph', 'taskforge']) assert.match(home, new RegExp(`<h3 id="${project}-title"`));
   for (const role of ['Software Engineering Team Lead Intern', 'Advanced Academic Ambassador - Projects Chair', 'Instructor', 'Operations Team Member']) assert.ok(home.includes(role));
-  assert.ok(home.includes('2025 – Present') && home.includes('June 2029'));
+  assert.ok(home.includes('2025 – Present') && home.includes('June 2028'));
   assert.doesNotMatch(home, /About &amp; journey/);
   for (const html of documents.values()) {
     const nav = html.match(/<nav[^>]*aria-label="Inside today"[^>]*>([\s\S]*?)<\/nav>/)[1];

@@ -21,7 +21,7 @@ export const profile = {
     institution: 'University of California, Los Angeles (UCLA)',
     school: 'Henry Samueli School of Engineering',
     degree: 'Bachelor of Science in Computer Science',
-    expectedGraduation: 'June 2029',
+    expectedGraduation: 'June 2028',
   },
   resumeUrl: '/aansh-singh-resume.pdf',
   role: 'Software Engineer',

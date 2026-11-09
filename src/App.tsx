@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, type ComponentType, type RefObject } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { MotionProvider, MotionRule, MotionToggle } from './components/Motion';
+import { MotionProvider, MotionRule, MotionToggle, PaperOpening } from './components/Motion';
 import { FrontMasthead, IndexBar, InsideMasthead } from './components/Masthead';
 import { RouteMetadata } from './components/RouteMetadata';
 import { NotFound } from './pages/NotFound';
@@ -46,6 +46,7 @@ export function App({ pages }: { pages: PageComponents }) {
   const main = useRef<HTMLElement>(null);
   const front = pathname === '/';
   return <MotionProvider>
+    <PaperOpening />
     <RouteMetadata />
     <a className="skip-link" href="#main">{ui.skipLink}</a>
     <div className="paper-grain">

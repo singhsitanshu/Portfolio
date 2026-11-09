@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ui } from '../content/site';
+import { useLocation } from 'react-router-dom';
 
 // Motion is CSS only (T-16, src/styles/motion.css). This module keeps the
 // reader's preference: the system setting always wins, and the Reduce motion
@@ -21,6 +22,17 @@ function useMedia(query: string, serverValue = false) {
 }
 
 const Settings = createContext({ reduced: false, systemReduced: false, toggle: () => {} });
+
+// The document arms this once before paint; route changes never re-arm it.
+export function PaperOpening() {
+  const { pathname, hash } = useLocation();
+  const { reduced } = useContext(Settings);
+  useEffect(() => {
+    const finish = () => document.documentElement.removeAttribute('data-paper-opening');
+    if (pathname !== '/' || hash || reduced || window.scrollY > 0) finish();
+  }, [pathname, hash, reduced]);
+  return null;
+}
 
 export function MotionProvider({ children }: { children: ReactNode }) {
   const systemReduced = useMedia(reducedQuery);

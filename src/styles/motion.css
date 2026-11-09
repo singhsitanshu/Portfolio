@@ -1,6 +1,7 @@
 /*
  * Motion (T-16): print-flavoured and brief, CSS only.
- * On load the nameplate and rules draw in over 400ms, then the front page's
+ * On load the homepage spins into view, unless reduced motion is requested.
+ * On inside pages the nameplate and rules draw in over 400ms, then the page's
  * blocks fade up in sequence; everything settles within 1.2s. Content starts
  * at half opacity and is clickable throughout. All of it is off under
  * prefers-reduced-motion and when the Reduce motion toggle sets
@@ -9,6 +10,30 @@
 @keyframes print-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes print-ink { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 @keyframes print-rise { from { opacity: 0.5; transform: translateY(var(--space-2)); } to { opacity: 1; transform: none; } }
+
+/* Crop the long broadsheet to its first viewport while it spins, then release
+   the whole document. No duplicate content, loading screen, or layout shift. */
+@keyframes paper-arrive {
+  0% { opacity: 0; transform: rotate(-1080deg) scale(0.08); }
+  12% { opacity: 1; }
+  75% { transform: rotate(-18deg) scale(0.86); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes paper-crop {
+  from, to { clip-path: inset(0 0 max(0px, calc(100% - 100svh)) 0); }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  :root[data-paper-opening]:not([data-reduce-motion]) .motion-root {
+    overflow: clip;
+  }
+  :root[data-paper-opening]:not([data-reduce-motion]) .paper-grain {
+    background: var(--paper);
+    transform-origin: 50% 50svh;
+    animation: paper-arrive 1600ms cubic-bezier(0.16, 0.65, 0.3, 1) backwards,
+      paper-crop 1600ms step-end backwards;
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   :root:not([data-reduce-motion]) .nameplate,

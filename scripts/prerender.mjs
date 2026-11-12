@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { pages, renderHead, site, escapeHtml } from '../src/content/metadata.ts';
+import { renderLlmsTxt } from '../src/content/llms.ts';
 
 const serverOutput = resolve('.prerender');
 try {
@@ -21,6 +22,7 @@ try {
     console.log(`Prerendered ${page.path} → ${target.slice(resolve('.').length + 1)}`);
   }
   await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(page => `  <url><loc>${escapeHtml(new URL(page.path, site.origin).href)}</loc></url>`).join('\n')}\n</urlset>\n`);
+  await writeFile(resolve('dist', site.llms.slice(1)), renderLlmsTxt());
   await writeFile('dist/robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${site.origin}/sitemap.xml\n`);
 } finally {
   await rm(serverOutput, { recursive: true, force: true });

@@ -6,6 +6,8 @@ export const site = {
   origin: 'https://aanshsingh.com',
   name: masthead.nameplate,
   image: '/social-preview-times-v1.jpg',
+  // Plain Markdown version of the site for AI agents (src/content/llms.ts).
+  llms: '/llms.txt',
   imageAlt: `The front page of ${masthead.nameplate}: the nameplate, the edition line “${profile.role} · ${profile.educationLabel}”, and ${profile.name}'s name in a banner headline.`,
 } as const;
 
@@ -56,6 +58,7 @@ export function metadataTags(path: string): HeadTag[] {
     { tag: 'meta', attributes: { name: 'twitter:description', content: page.description } },
     { tag: 'meta', attributes: { name: 'twitter:image', content: new URL(site.image, site.origin).href } },
     { tag: 'meta', attributes: { name: 'twitter:image:alt', content: site.imageAlt } },
+    { tag: 'link', attributes: { rel: 'alternate', type: 'text/markdown', href: site.llms, title: `${profile.name}: plain-text profile for AI agents` } },
   ];
   if (page.canonical) tags.push(
     { tag: 'link', attributes: { rel: 'canonical', href: page.canonical } },

@@ -89,6 +89,8 @@ export const notFound = {
 export const colophon = {
   text: 'The Aansh Times is set in Playfair Display and Libre Caslon. Printed in Los Angeles.',
   signature: `${profile.name} / ${profile.role}`,
+  // Visible pointer to /llms.txt: many agents read page text, not <head>.
+  agents: { label: 'For AI agents and tools: a plain-text version of this site is at', link: 'llms.txt' },
 } as const;
 
 // Front-page masthead (T-06). The edition date is the build date, added by the

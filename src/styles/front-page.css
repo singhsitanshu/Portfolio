@@ -219,7 +219,7 @@
 .colophon-nameplate { margin: 0; font: var(--weight-regular) var(--text-2xl) / 1 var(--font-nameplate); }
 .colophon-text { margin: 0; max-width: var(--measure); font: italic var(--weight-regular) var(--text-md) / var(--leading-snug) var(--font-headline); }
 .colophon-links { display: flex; gap: var(--space-5); }
-.colophon-links a { text-decoration: underline; text-decoration-thickness: var(--rule-hairline); text-underline-offset: 0.35em; }
+.colophon-links a, .colophon-text a { text-decoration: underline; text-decoration-thickness: var(--rule-hairline); text-underline-offset: 0.35em; }
 .colophon-links a, .motion-toggle {
   display: inline-flex;
   align-items: center;

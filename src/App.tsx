@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { MotionProvider, MotionRule, MotionToggle } from './components/Motion';
 import { FrontMasthead, IndexBar, InsideMasthead } from './components/Masthead';
 import { RouteMetadata } from './components/RouteMetadata';
+import { site } from './content/metadata';
 import { NotFound } from './pages/NotFound';
 import { colophon, masthead, projects, profile, ui, type Project } from './content/site';
 import { Rule } from './components/print';
@@ -62,6 +63,7 @@ export function App({ pages }: { pages: PageComponents }) {
             <p className="colophon-nameplate">{masthead.nameplate}</p>
             <p className="colophon-text">{colophon.text}</p>
             <p className="credit">{colophon.signature}</p>
+            <p className="colophon-text">{colophon.agents.label} <a href={site.llms}>{colophon.agents.link}</a>.</p>
             <nav className="colophon-links" aria-label={ui.footerSocialLabel}><a href={profile.links.github}>{ui.github}</a><a href={profile.links.linkedin}>{ui.linkedin}</a></nav>
             <MotionToggle />
           </div>

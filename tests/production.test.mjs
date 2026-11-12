@@ -182,6 +182,10 @@ test('llms.txt gives agents the résumé text and site facts, and every page poi
     assert.ok(text.includes(fact), `llms.txt includes ${fact}`);
   }
   assert.doesNotMatch(text, /undefined|\[object Object\]/);
+  // Valid UTF-8 with no BOM, served with an explicit charset (Cloudflare _headers).
+  const bytes = await readFile(resolve(root, 'llms.txt'));
+  assert.ok(Buffer.from(text, 'utf8').equals(bytes) && bytes[0] !== 0xef, 'llms.txt is UTF-8 without a BOM');
+  assert.match(await readFile(resolve(root, '_headers'), 'utf8'), /^\/llms\.txt\n {2}Content-Type: text\/plain; charset=utf-8$/m);
   for (const page of [...fixtures, { path: '/404' }]) {
     const html = documents.get(page.path);
     assert.deepEqual(tags(html, 'link').filter(tag => tag.rel === 'alternate').map(tag => [tag.type, tag.href]), [['text/markdown', '/llms.txt']], `${page.path}: head points to llms.txt`);
@@ -278,7 +282,9 @@ test('preview HTTP responses expose route metadata and a real 404 without execut
     assert.equal(response.status, 404);
     assert.match(await response.text(), /Page not found\./);
   }
-  for (const file of outputFiles.filter(file => !file.endsWith('.html'))) {
+  assert.match((await fetch(new URL('/llms.txt', base))).headers.get('content-type'), /^text\/plain; charset=utf-8$/i);
+  // _headers is Cloudflare configuration, never served.
+  for (const file of outputFiles.filter(file => !file.endsWith('.html') && !file.endsWith('_headers'))) {
     const asset = file.slice(root.length).replaceAll('\\', '/');
     const response = await fetch(new URL(asset, base));
     assert.equal(response.status, 200);

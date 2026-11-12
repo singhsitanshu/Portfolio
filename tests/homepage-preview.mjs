@@ -7,7 +7,9 @@ import { readFile, stat } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 
 const root = resolve('dist');
-const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.pdf': 'application/pdf', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.xml': 'application/xml', '.txt': 'text/plain' };
+// Text types name their charset, as Cloudflare does (public/_headers); otherwise
+// browsers decode UTF-8 as Windows-1252.
+const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.pdf': 'application/pdf', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
 createServer(async (request, response) => {
   try {
     const url = new URL(request.url, 'http://127.0.0.1:4176');

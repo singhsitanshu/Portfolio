@@ -186,6 +186,8 @@
   text-transform: uppercase;
 }
 .classified-lede { margin: 0; font: var(--weight-regular) var(--size-body) / var(--leading-body) var(--font-body); }
+.classified-terms { display: grid; gap: var(--space-2); width: 100%; margin: 0; padding-block: var(--space-2); border-block: var(--rule-hairline) solid var(--ink); }
+.classified-terms dd { margin: 0; font: var(--weight-regular) var(--text-base) / var(--leading-snug) var(--font-body); }
 .classified-reply { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: var(--space-1) var(--space-2); margin: 0; }
 .classified-email {
   display: inline-flex;

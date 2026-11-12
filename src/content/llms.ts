@@ -35,11 +35,19 @@ export function renderLlmsTxt() {
     '## Contact and links',
     list([
       `Email: ${profile.email}`,
+      `Phone: ${profile.phone.display}`,
       `Website: ${absolute('/')}`,
       `GitHub: ${profile.links.github}`,
       `LinkedIn: ${profile.links.linkedin}`,
       `Résumé (PDF): ${absolute(profile.resumeUrl)}`,
-      `Location (as listed on the résumé): ${resume.location}`,
+    ]),
+
+    '## Availability and eligibility',
+    list([
+      `Seeking: ${profile.availability.seeking}`,
+      `Work authorization: ${profile.availability.workAuthorization}`,
+      `Location: ${profile.availability.location}`,
+      `Education: ${profile.education.degree}, ${profile.education.institution}; expected graduation ${profile.education.expectedGraduation}.`,
     ]),
 
     '## Résumé',

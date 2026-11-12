@@ -1,13 +1,12 @@
 // Text transcription of public/aansh-singh-resume.pdf, published in /llms.txt so
 // agents that cannot read PDFs still get the résumé. Wording is the PDF's own.
-// The phone number is deliberately left out of the published text.
+// The phone number lives in profile.phone (site.ts).
 // When the PDF changes, update this file and pdfSha256 (shasum -a 256); the
 // production test fails until both match.
 // Imports keep explicit .ts extensions: Node scripts load this module directly.
 
 export const resume = {
   pdfSha256: '670c39cae76de11ab08dece55468bb98f1ac383e58adbf0d4cca2130b0b18e91',
-  location: 'Austin, TX',
   education: [
     {
       institution: 'University of California, Los Angeles',

@@ -12,6 +12,15 @@ import { taskforgeMeasurements } from './taskforge.ts';
 export const profile = {
   name: 'Aansh Singh',
   email: 'singhsitanshu@ucla.edu',
+  // Published for agents (llms.txt, JSON-LD) at the owner's request, Nov 12, 2026; not shown on the pages.
+  phone: { display: '512-221-8562', international: '+1-512-221-8562' },
+  // What application agents ask for (owner, Nov 12, 2026). Shown in Contact,
+  // published in llms.txt and the JSON-LD description.
+  availability: {
+    seeking: 'Summer 2027 software engineering internships, plus off-cycle (fall or winter) co-ops and part-time roles.',
+    workAuthorization: 'Authorized to work in the United States; will not require visa sponsorship.',
+    location: 'Based in Los Angeles, CA (UCLA) and Austin, TX; open to relocating anywhere in the U.S. and to remote work.',
+  },
   links: {
     linkedin: 'https://www.linkedin.com/in/aansh-singh/',
     github: 'https://github.com/singhsitanshu',
@@ -399,6 +408,7 @@ export const homepage = {
     heading: 'Wanted',
     title: 'Let’s build something useful.',
     lede: 'Have a project or an idea to discuss? Get in touch.',
+    terms: { seeking: 'Seeking', workAuthorization: 'Work authorization', location: 'Location' },
     replyLabel: 'Reply to',
     copyButton: 'Copy email',
     copying: 'Copying email…',

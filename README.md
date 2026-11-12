@@ -15,9 +15,9 @@ The routes are `/`, `/projects/codegraph` and `/projects/taskforge`. The front p
 
 - `src/content/site.ts`: every user-facing homepage string, plus the facts shared with case studies and metadata. Layout components never hold copy.
 - `src/content/codegraph.ts`, `taskforge.ts`, `*-case-study.ts`: measured results and case-study copy.
-- `src/content/resume.ts`: a text transcription of the résumé PDF (minus the phone number) with the PDF's SHA-256; the production test fails when the PDF changes until both are updated.
+- `src/content/resume.ts`: a text transcription of the résumé PDF with the PDF's SHA-256; the production test fails when the PDF changes until both are updated.
 - `src/content/llms.ts`: renders `/llms.txt`, the plain Markdown version of the site for AI agents (résumé text, all roles, projects and measured results). Every page links to it in `<head>` and in the colophon.
-- `src/content/metadata.ts`: route titles, descriptions, Open Graph/Twitter tags, font preloads and the JSON-LD `Person`.
+- `src/content/metadata.ts`: route titles, descriptions, Open Graph/Twitter tags, font preloads and the JSON-LD `@graph` (`ProfilePage`/`WebPage`, `Person` with availability and contact details, and a `SoftwareSourceCode` per project).
 - `src/styles/tokens.css`: the single source of design tokens (color, type scale, spacing, rules, grid, motion). Every other stylesheet uses tokens only.
 - `src/styles/fonts.css`: self-hosted Latin font subsets (`public/fonts/`, SIL OFL; see `OFL-LICENSES.txt`) and metric-matched local fallbacks.
 - `src/styles/`: `typography`, `grid` (12/6/1 columns), `print` (primitives, paper grain), `masthead`, `front-page`, `infographics`, `article`, `motion`, `styleguide`.

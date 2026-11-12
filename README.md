@@ -15,7 +15,9 @@ The routes are `/`, `/projects/codegraph` and `/projects/taskforge`. The front p
 
 - `src/content/site.ts`: every user-facing homepage string, plus the facts shared with case studies and metadata. Layout components never hold copy.
 - `src/content/codegraph.ts`, `taskforge.ts`, `*-case-study.ts`: measured results and case-study copy.
-- `src/content/metadata.ts`: route titles, descriptions, Open Graph/Twitter tags, font preloads and the JSON-LD `Person`.
+- `src/content/resume.ts`: a text transcription of the résumé PDF with the PDF's SHA-256; the production test fails when the PDF changes until both are updated.
+- `src/content/llms.ts`: renders `/llms.txt`, the plain Markdown version of the site for AI agents (résumé text, all roles, projects and measured results). Every page links to it in `<head>` and in the colophon.
+- `src/content/metadata.ts`: route titles, descriptions, Open Graph/Twitter tags, font preloads and the JSON-LD `@graph` (`ProfilePage`/`WebPage`, `Person` with availability and contact details, and a `SoftwareSourceCode` per project).
 - `src/styles/tokens.css`: the single source of design tokens (color, type scale, spacing, rules, grid, motion). Every other stylesheet uses tokens only.
 - `src/styles/fonts.css`: self-hosted Latin font subsets (`public/fonts/`, SIL OFL; see `OFL-LICENSES.txt`) and metric-matched local fallbacks.
 - `src/styles/`: `typography`, `grid` (12/6/1 columns), `print` (primitives, paper grain), `masthead`, `front-page`, `infographics`, `article`, `motion`, `styleguide`.
@@ -29,7 +31,7 @@ The routes are `/`, `/projects/codegraph` and `/projects/taskforge`. The front p
 
 ## Static hosting
 
-`npm run build` emits `dist/index.html`, `dist/projects/codegraph.html`, `dist/projects/taskforge.html` and `dist/404.html`, with complete rendered content and route-specific head metadata. It also generates `sitemap.xml` and `robots.txt`. The client loads the current page's code before hydrating, then lazy-loads other pages. The temporary `.prerender/` server bundle is removed after generation.
+`npm run build` emits `dist/index.html`, `dist/projects/codegraph.html`, `dist/projects/taskforge.html` and `dist/404.html`, with complete rendered content and route-specific head metadata. It also generates `sitemap.xml`, `robots.txt` and `llms.txt`. The client loads the current page's code before hydrating, then lazy-loads other pages. The temporary `.prerender/` server bundle is removed after generation.
 
 There is no production server runtime, CMS, authentication or form service. `wrangler.jsonc` configures **Cloudflare Workers Static Assets** to serve `dist/`, drop trailing slashes on project URLs, and serve the generated `404.html` with HTTP 404 for unknown paths ([static routing documentation](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/)). Run `npm run preview:cloudflare` after building to verify these rules locally.
 

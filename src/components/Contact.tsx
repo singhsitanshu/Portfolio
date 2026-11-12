@@ -21,6 +21,9 @@ export function Contact() {
       <h3 className="classified-head" id="contact-title">{copy.heading}</h3>
       <p className="headline-secondary">{copy.title}</p>
       <p className="classified-lede">{copy.lede}</p>
+      <dl className="classified-terms">
+        {(Object.keys(copy.terms) as (keyof typeof copy.terms)[]).map(key => <div key={key}><dt className="label">{copy.terms[key]}</dt><dd>{profile.availability[key]}</dd></div>)}
+      </dl>
       <p className="classified-reply"><span className="label">{copy.replyLabel}</span> <a className="classified-email" href={`mailto:${profile.email}`}>{profile.email}</a></p>
       <button type="button" className="print-button" onClick={copyEmail} disabled={copying}>{copy.copyButton}</button>
       <p className="copy-feedback" role="status" aria-live="polite" aria-atomic="true">{feedback}</p>

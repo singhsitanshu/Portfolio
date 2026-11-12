@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile, readdir, stat, access } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { gzipSync } from 'node:zlib';
+import { createHash } from 'node:crypto';
 
 const origin = 'https://aanshsingh.com';
 // Stories rebuilt as front-page articles; the rest keep the legacy card checks until converted.
@@ -68,11 +69,26 @@ test('three generated pages expose distinct metadata and complete content withou
     assert.deepEqual(inline.map(([, , body]) => body.includes('portfolio-reduce-motion')), [true], 'the only inline script applies the saved motion preference');
     const jsonLd = scripts.filter(([, attributes]) => attributes.includes('application/ld+json'));
     assert.equal(jsonLd.length, 1, `${page.path}: one JSON-LD block`);
-    const person = JSON.parse(jsonLd[0][2]);
+    const { '@context': context, '@graph': graph } = JSON.parse(jsonLd[0][2]);
+    assert.equal(context, 'https://schema.org');
+    const [webPage, person, ...code] = graph;
+    assert.equal(webPage['@type'], page.path === '/' ? 'ProfilePage' : 'WebPage');
+    assert.equal(webPage.url, origin + page.path);
     assert.equal(person['@type'], 'Person');
     assert.equal(person.name, 'Aansh Singh');
+    assert.equal(person.email, 'mailto:singhsitanshu@ucla.edu');
+    assert.equal(person.telephone, '+1-512-221-8562');
     assert.match(person.alumniOf.name, /University of California, Los Angeles/);
+    assert.match(person.hasCredential.name, /Computer Science \(expected June 2028\)/);
+    for (const fact of ['Summer 2027', 'will not require visa sponsorship', 'open to relocating']) assert.ok(person.description.includes(fact), `${page.path}: Person description includes ${fact}`);
+    assert.ok(person.knowsAbout.includes('Go') && person.knowsAbout.includes('PyTorch'));
     assert.deepEqual(person.sameAs, ['https://github.com/singhsitanshu', 'https://www.linkedin.com/in/aansh-singh/']);
+    assert.deepEqual(code.map(entry => [entry['@type'], entry.codeRepository, entry.author['@id']]), [
+      ['SoftwareSourceCode', 'https://github.com/singhsitanshu/Codegraph', person['@id']],
+      ['SoftwareSourceCode', 'https://github.com/singhsitanshu/TaskForge', person['@id']],
+    ]);
+    const linked = page.path === '/' ? webPage.mainEntity['@id'] : webPage.about['@id'];
+    assert.ok(graph.some(entry => entry['@id'] === linked), `${page.path}: page links to an entity in the graph`);
   }
   assert.equal(descriptions.size, 3);
 });
@@ -154,6 +170,23 @@ test('sitemap, robots, and noindex not-found output use the intended origin', as
   assert.equal(meta(html, 'og:url').length, 0);
   assert.match(html, /Return home/);
   assert.match(html, /View Projects/);
+});
+
+test('llms.txt gives agents the résumé text and site facts, and every page points to it', async () => {
+  const { resume } = await import('../src/content/resume.ts');
+  const pdf = await readFile(resolve('public/aansh-singh-resume.pdf'));
+  assert.equal(createHash('sha256').update(pdf).digest('hex'), resume.pdfSha256, 'résumé PDF changed: update src/content/resume.ts to match it, then pdfSha256');
+  const text = await readFile(resolve(root, 'llms.txt'), 'utf8');
+  assert.match(text, /^# Aansh Singh\n\n> /);
+  for (const fact of ['singhsitanshu@ucla.edu', 'Expected Graduation: June 2028', `${origin}/aansh-singh-resume.pdf`, 'Bruin Underwater Robotics', 'exploretech.la', 'TensorRT', `${origin}/projects/codegraph`, 'https://github.com/singhsitanshu/TaskForge', '97.5%', '15.84×', 'Phone: 512-221-8562', 'Seeking: Summer 2027', 'will not require visa sponsorship', 'Austin, TX; open to relocating']) {
+    assert.ok(text.includes(fact), `llms.txt includes ${fact}`);
+  }
+  assert.doesNotMatch(text, /undefined|\[object Object\]/);
+  for (const page of [...fixtures, { path: '/404' }]) {
+    const html = documents.get(page.path);
+    assert.deepEqual(tags(html, 'link').filter(tag => tag.rel === 'alternate').map(tag => [tag.type, tag.href]), [['text/markdown', '/llms.txt']], `${page.path}: head points to llms.txt`);
+    assert.ok(tags(html, 'a').some(tag => tag.href === '/llms.txt'), `${page.path}: visible link to llms.txt`);
+  }
 });
 
 test('social image dimensions, MIME signature, and production asset sizes are appropriate', async () => {

@@ -47,6 +47,8 @@ The canonical URLs are `https://aanshsingh.com/`, `https://aanshsingh.com/projec
 
 Canonical homepage anchors are `#main`, `#projects`, `#experience`, `#education` and `#contact`; legacy `#work` and `#about` still resolve.
 
+Fresh homepage loads open with a 1.6-second spinning newspaper animation. Inside pages, direct hash links, system reduced motion, and the saved Reduce motion setting bypass it. Keyboard, pointer, touch, wheel, or focus interaction ends the intro immediately; client-side navigation does not replay it. A pre-paint script arms the CSS animation and clears it after two seconds even if the client bundle fails to load. With JavaScript disabled, the complete static page displays normally.
+
 ## Social preview capture and refresh
 
 The share image, `public/social-preview-times-v1.jpg` (1200 × 630), is the front page's masthead and name banner. To reproduce it:

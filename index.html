@@ -8,8 +8,31 @@
     <link rel="icon" href="/favicon.ico?v=2" sizes="32x32" />
     <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
-    <!-- T-16: apply a saved Reduce motion choice before first paint, so load animations never start. -->
-    <script>try{if(localStorage.getItem('portfolio-reduce-motion')==='true')document.documentElement.setAttribute('data-reduce-motion','')}catch(e){}</script>
+    <!-- Apply motion preferences and arm the homepage intro before first paint. -->
+    <script>
+      try{if(localStorage.getItem('portfolio-reduce-motion')==='true')document.documentElement.setAttribute('data-reduce-motion','')}catch(e){}
+      (() => {
+        const root = document.documentElement;
+        const media = matchMedia('(prefers-reduced-motion: no-preference)');
+        if (location.pathname !== '/' || location.hash || root.hasAttribute('data-reduce-motion') || !media.matches) return;
+        root.setAttribute('data-paper-opening', '');
+        const controller = new AbortController();
+        const options = { passive: true, signal: controller.signal };
+        const finish = () => {
+          root.removeAttribute('data-paper-opening');
+          controller.abort();
+          clearTimeout(timeout);
+        };
+        // Restore the page even if the client bundle cannot load.
+        const timeout = setTimeout(finish, 2000);
+        // Listen before hydration so even the first keystroke skips the intro.
+        for (const event of ['keydown', 'pointerdown', 'wheel', 'touchstart', 'focusin', 'pagehide', 'popstate', 'hashchange']) window.addEventListener(event, finish, options);
+        window.addEventListener('animationend', event => {
+          if (event.animationName === 'paper-arrive') finish();
+        }, options);
+        media.addEventListener('change', finish, options);
+      })();
+    </script>
     <!--metadata:start--><!--metadata:end-->
   </head>
   <body>

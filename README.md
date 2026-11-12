@@ -31,7 +31,7 @@ The routes are `/`, `/projects/codegraph` and `/projects/taskforge`. The front p
 
 ## Static hosting
 
-`npm run build` emits `dist/index.html`, `dist/projects/codegraph.html`, `dist/projects/taskforge.html` and `dist/404.html`, with complete rendered content and route-specific head metadata. It also generates `sitemap.xml`, `robots.txt` and `llms.txt`. The client loads the current page's code before hydrating, then lazy-loads other pages. The temporary `.prerender/` server bundle is removed after generation.
+`npm run build` emits `dist/index.html`, `dist/projects/codegraph.html`, `dist/projects/taskforge.html` and `dist/404.html`, with complete rendered content and route-specific head metadata. It also generates `sitemap.xml`, `robots.txt` and `llms.txt`. `public/_headers` makes Cloudflare serve the text files as `text/plain; charset=utf-8`; production otherwise sends bare `text/plain`, and browsers then misread UTF-8 characters such as é and ×. The client loads the current page's code before hydrating, then lazy-loads other pages. The temporary `.prerender/` server bundle is removed after generation.
 
 There is no production server runtime, CMS, authentication or form service. `wrangler.jsonc` configures **Cloudflare Workers Static Assets** to serve `dist/`, drop trailing slashes on project URLs, and serve the generated `404.html` with HTTP 404 for unknown paths ([static routing documentation](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/)). Run `npm run preview:cloudflare` after building to verify these rules locally.
 

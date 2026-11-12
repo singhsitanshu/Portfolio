@@ -1,0 +1,8 @@
+# Cloudflare Workers Static Assets response headers (copied to dist/ by Vite).
+# Text files are UTF-8 (llms.txt has é, ×, ≈). Without a charset, browsers
+# guess Windows-1252 and show rÃ©sumÃ© and 15.84Ã—.
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
